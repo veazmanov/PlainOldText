@@ -1,7 +1,7 @@
 <?php
 // ./html/data.php
 
-$site_name = "Old News";
+$site_name = "Plain Old Text";
 
 // Option B: If oldnews-articles-only is NEXT TO the html/ folder (one level up)
 $articles_base = dirname(__DIR__) . '/oldnews-articles-only';

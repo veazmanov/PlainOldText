@@ -2,20 +2,7 @@
 
 # ./deploy
 
-# Check if pandoc is installed on the machine
-if ! command -v pandoc &> /dev/null; then
-    echo "Error: pandoc is not installed or accessible in your path."
-    echo "Install it via Homebrew: brew install pandoc"
-    exit 1
-fi
-
-echo "Compiling about.md to html/about.php..."
-
-# Compile Markdown into clean HTML structural elements
-# Using 'html' format ensures no global headers or footer wrappers are generated
-pandoc about.md -f markdown -t html -o ./html/about.php
-
 echo "Deploying files to production..."
 deploy html oldnews
 
-echo "Done! Visit https://oldnews.vjbe.net"
+echo "Done! Visit https://oldtext.vjbe.net"

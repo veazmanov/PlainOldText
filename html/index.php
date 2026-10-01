@@ -156,11 +156,25 @@ function render_article($uri, $full_path)
     $pub_name = $publications[$pub_key] ?? (!empty($pub_key) ? ucfirst(str_replace('_', ' ', $pub_key)) : 'Archive Entry');
     $date_str = (!empty($meta['date']) && $meta['date'] !== '//') ? $meta['date'] : 'Undated';
     $photo_link = "/photocopy/" . $uri;
-    $page_num = $meta['page'] ?? null; 
-
+    $page_num = $meta['page'] ?? null;
     $source_url = $meta['source_url'] ?? null;
     $article_header_partial = __DIR__ . '/partials/article_header.php';
+
     $content = file_get_contents($full_path);
+
+    // Lift the article's first heading out so it renders above the source panel.
+    $article_title_html = null;
+    if (preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $content, $m, PREG_OFFSET_CAPTURE)) {
+        $before = trim(strip_tags(substr($content, 0, $m[0][1])));
+        if ($before === '') {
+            $article_title_html = $m[0][0];
+            $content = substr($content, $m[0][1] + strlen($m[0][0]));
+        }
+    }
+    if ($article_title_html === null) {
+        $article_title_html = '<h1>' . htmlspecialchars($title) . '</h1>';
+    }
+
     include(__DIR__ . '/layout.php');
     exit();
 }

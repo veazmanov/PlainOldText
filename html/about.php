@@ -1,83 +1,108 @@
-<!-- ./about.md -->
+<!-- ./html/about.php -->
 <p>Get in touch: <strong>victor@vjbe.net</strong>.</p>
-<h1 id="what-is-old-news">What is Old News?</h1>
-<p>Old News is an open-access, community-driven repository providing
-high-fidelity, plain-text transcriptions of interesting historic
-newspaper articles. We believe plain text is the ultimate long-term data
-store: it is lightweight, easy to format, and a pleasure to read or
-reference.</p>
-<h1 id="why-did-you-make-old-news">Why did you make Old News?</h1>
-<p>Old News was originally born out of frustration while reading a
-history of 19th-century science that relies heavily on newspaper
-articles to support its claims, but leaves it to the reader to hunt down
-the original pages on platforms like The British Newspaper Archive.
-Since the text is in the public domain, we thought it would cost little
-effort to transcribe the works and host them on this site, making them
-easy to read and reference. Since then the archive has grown.</p>
+
+<h1 id="what-is-old-text">What is Plain Old Text?</h1>
+<p>Plain Old Text is an open-access archive of historic sources, transcribed
+as plain text. Most of what is here so far comes from periodicals:
+newspapers, weekly reviews and medical journals. But the format is the
+point, not the medium. Any public-domain source that is worth reading
+and hard to get hold of can have a place here.</p>
+<p>Every transcription comes with scans of the original pages and,
+where possible, a link back to the digital source, so you can always
+check the text against the page it came from.</p>
+
+<h1 id="why-plain-text">Why plain text?</h1>
+<p>Historic sources are usually locked inside page scans, paywalled
+databases or OCR output that is too garbled to quote. Plain text fixes
+that. It is:</p>
+<ul>
+<li><strong>Durable.</strong> A text file written today will still open
+in fifty years, on any device, with no special software.</li>
+<li><strong>Usable.</strong> You can search it, quote it, cite it,
+diff it and feed it into whatever tools you like.</li>
+<li><strong>Readable.</strong> It is a pleasure to read on any screen,
+and easy to reformat.</li>
+<li><strong>Correctable.</strong> Every transcription lives in a public
+repository, so anyone can propose a fix.</li>
+</ul>
+
+<h1 id="why-did-you-make-old-text">Why did you make Plain Old Text?</h1>
+<p>The project began, under the name Old News, out of frustration while
+reading a history of 19th-century science that leans heavily on
+newspaper articles but leaves the reader to hunt down the original pages
+on platforms like The British Newspaper Archive. Since the texts are in
+the public domain, it seemed a small effort to transcribe them and host
+them somewhere easy to read and reference. The archive has grown since
+then, and so has its scope, hence the new name.</p>
+
 <h1 id="how-to-contribute">How to Contribute</h1>
-<p>Contributions and text corrections are highly encouraged. Whether you
-are fixing a typo or transcribing an entirely new source, your help
-keeps this archive accurate and accessible.</p>
+<p>Corrections and new transcriptions are very welcome. Whether you are
+fixing a typo or adding an entirely new source, your help keeps the
+archive accurate and accessible.</p>
+
 <h2 id="fixing-typos-mistakes">Fixing Typos &amp; Mistakes</h2>
-<p>If you spot a typo or formatting error in our transcriptions, you can
-submit a pull request directly to our <a
+<p>Each article has a <em>View/Edit Plain Text</em> link. To fix a typo
+or formatting error, submit a pull request to the <a
 href="https://github.com/victorelgersma/oldnews-article-repo">article
 repository</a> on GitHub. For other kinds of mistakes, or if you prefer
-not to use GitHub, feel free to drop an email to
-<strong>victor@vjbe.net</strong>.</p>
+not to use GitHub, email <strong>victor@vjbe.net</strong>.</p>
+
 <h2 id="adding-new-sources">Adding New Sources</h2>
-<p>If you would like to contribute a new transcription, please
-include:</p>
+<p>To contribute a new transcription, please include:</p>
 <ul>
-<li>The complete, high-fidelity text transcription.</li>
-<li>The raw screenshots or images used for your OCR process (to allow
-verification).</li>
-<li>The link to the original digital source, if applicable.</li>
-<li>The name of the publication, the date, and the page number.</li>
-<li>The author (if applicable)</li>
+<li>The complete transcription.</li>
+<li>The scans or screenshots you worked from, so the text can be
+verified.</li>
+<li>A link to the original digital source, if there is one.</li>
+<li>The title of the publication or work, the date, and the page
+number.</li>
+<li>The author, if known.</li>
 </ul>
+
 <h3 id="transcription-pipeline">Transcription Pipeline</h3>
-<p>Feel free to use any method of transcription you like. For your
-convenience I have open-sourced the pipeline I use.</p>
-<h1 id="our-sources">Our Sources</h1>
-<p>We are constantly expanding our archive. We actively source and
-transcribe material from the following platforms:</p>
+<p>You can transcribe however you like. If it helps, the pipeline I use
+is <a href="https://github.com/victorelgersma/oldnews-OCR-pipeline">open
+source</a>.</p>
+
+<h1 id="our-sources">Where the Sources Come From</h1>
+<p>Most transcriptions so far come from:</p>
 <ul>
 <li><a href="https://www.britishnewspaperarchive.co.uk/">The British
 Newspaper Archive</a></li>
 <li><a href="https://archive.spectator.co.uk/">The Spectator
 Archive</a></li>
 </ul>
-<p>We also closely monitor and utilize these outstanding digital
-repositories:</p>
+<p>Other excellent repositories of digitised material:</p>
 <ul>
-<li><a href="https://www.delpher.nl">Delpher</a> – Dutch historical
-newspapers, books, and journals.</li>
-<li><a
-href="https://gallica.bnf.fr/accueil/fr/html/accueil-fr">Gallica</a> –
-The digital library of the Bibliothèque nationale de France.</li>
-<li><a href="https://www.gale.com/end-users">Gale</a> – Global research
+<li><a href="https://www.delpher.nl">Delpher</a>: Dutch historical
+newspapers, books and journals.</li>
+<li><a href="https://gallica.bnf.fr/accueil/fr/html/accueil-fr">Gallica</a>:
+the digital library of the Bibliothèque nationale de France.</li>
+<li><a href="https://www.gale.com/end-users">Gale</a>: research
 databases and primary source archives.</li>
 </ul>
+
 <hr />
+
 <h1 id="scholarship">Scholarship</h1>
-<p>Old News has been used to support the following pieces of
-scholarship:</p>
+<p>Plain Old Text has been used in the following work:</p>
 <ul>
-<li>(May 2026): Victor Elgersma used articles from Old News to write
-about the status of the Nebular Hypothesis in the mid-19th century. You
-can view his article <a
-href="https://samizdat.vjbe.net/2026-04-30-SciPub%20Research%20Essay%202.pdf">here</a></li>
+<li>(May 2026) Victor Elgersma used sources from the archive to write
+about the status of the nebular hypothesis in the mid-19th century. <a
+href="https://samizdat.vjbe.net/2026-04-30-SciPub%20Research%20Essay%202.pdf">Read
+the essay</a>.</li>
 </ul>
+<p>If you have used Plain Old Text in your own work, let me know and I will
+add it here.</p>
+
 <hr />
-<h1 id="github-links">GitHub Links:</h1>
+
+<h1 id="github-links">GitHub</h1>
 <ul>
-<li><a
-href="https://github.com/victorelgersma/oldnews-article-repo"><strong>Old
-News Article Repository</strong></a></li>
-<li><a
-href="https://github.com/victorelgersma/oldnews-OCR-pipeline"><strong>Transcription
-Pipeline</strong></a></li>
+<li><a href="https://github.com/victorelgersma/oldnews-article-repo"><strong>Article
+repository</strong></a>: the plain-text transcriptions</li>
+<li><a href="https://github.com/victorelgersma/oldnews-OCR-pipeline"><strong>Transcription
+pipeline</strong></a></li>
 <li><a href="https://github.com/victorelgersma/old-news"><strong>This
-Website</strong></a>.</li>
+website</strong></a></li>
 </ul>
