@@ -8,51 +8,13 @@ $folder_name = str_replace('.html', '', $uri);
 
 $meta = $metadata[$uri] ?? [];
 
-// Environment check: look for production path, fallback to local directory structure
-$local_photo_path = "/var/www/vjbe.net/html/oldnews-photos/" . $folder_name;
-if (!is_dir($local_photo_path)) {
-    // Local dev fallback folder inside your workspace
-    $local_photo_path = __DIR__ . "/oldnews-photos/" . $folder_name;
-}
-
 $photos_url_base = "https://oldnews-photos.vjbe.net";
 
-$images = [];
-if (is_dir($local_photo_path)) {
-    $files = scandir($local_photo_path);
-
-    // Group files by their base name to manage format prioritization
-    // e.g., $groups['page_1'] = ['webp' => true, 'png' => true]
-    $file_groups = [];
-
-    foreach ($files as $file) {
-        if ($file !== '.' && $file !== '..' && preg_match('/^(.*)\.(webp|png|jpg|jpeg)$/i', $file, $matches)) {
-            $base_name = $matches[1];
-            $extension = strtolower($matches[2]);
-
-            if (!isset($file_groups[$base_name])) {
-                $file_groups[$base_name] = [];
-            }
-            $file_groups[$base_name][$extension] = $file;
-        }
-    }
-
-    // Resolve which format to show for each unique image base name
-    foreach ($file_groups as $base_name => $extensions) {
-        if (isset($extensions['webp'])) {
-            // WebP available -> Priority 1
-            $chosen_file = $extensions['webp'];
-        } elseif (isset($extensions['png'])) {
-            // PNG available -> Priority 2
-            $chosen_file = $extensions['png'];
-        } else {
-            // Fallback to JPG/JPEG
-            $chosen_file = $extensions['jpg'] ?? $extensions['jpeg'];
-        }
-
-        $images[] = rtrim($photos_url_base, '/') . '/' . $folder_name . '/' . $chosen_file;
-    }
-}
+// Scan filenames come from the article's data.json ("scans"); see sync_scans.php in the article repo.
+$images = array_map(
+    fn($file) => $photos_url_base . '/' . rawurlencode($folder_name) . '/' . rawurlencode($file),
+    $meta['scans'] ?? []
+);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,7 +96,6 @@ if (is_dir($local_photo_path)) {
     <?php if (empty($images)): ?>
         <div class="error-msg">
             <p>No photocopies found.</p>
-            <!-- <p style="font-size: 0.8rem;">Checked Disk Path: <code><?= htmlspecialchars($local_photo_path) ?></code></p> -->
         </div>
     <?php else: ?>
         <?php foreach ($images as $index => $img): ?>

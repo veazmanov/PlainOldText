@@ -48,6 +48,7 @@ if (is_dir($articles_base)) {
                         'pub_key'    => $json_data['newspaper'] ?? '',
                         'summary'    => $json_data['summary'] ?? '',
                         'page'       => $json_data['page'] ?? null,   // <-- new
+                        'scans'      => $json_data['scans'] ?? [],
                         
                         // FIX: Explicitly save the dynamic root-relative link here!
                         'link'       => '/' . $item 
