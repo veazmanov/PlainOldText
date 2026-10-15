@@ -59,11 +59,6 @@ number.</li>
 <li>The author, if known.</li>
 </ul>
 
-<h3 id="transcription-pipeline">Transcription Pipeline</h3>
-<p>You can transcribe however you like. If it helps, the pipeline I use
-is <a href="https://github.com/victorelgersma/oldnews-OCR-pipeline">open
-source</a>.</p>
-
 <h1 id="our-sources">Where the Sources Come From</h1>
 <p>Most transcriptions so far come from:</p>
 <ul>
@@ -94,15 +89,3 @@ the essay</a>.</li>
 </ul>
 <p>If you have used Plain Old Text in your own work, let me know and I will
 add it here.</p>
-
-<hr />
-
-<h1 id="github-links">GitHub</h1>
-<ul>
-<li><a href="https://github.com/victorelgersma/old-news/tree/main/articles"><strong>Article
-repository</strong></a>: the plain-text transcriptions</li>
-<li><a href="https://github.com/victorelgersma/oldnews-OCR-pipeline"><strong>Transcription
-pipeline</strong></a></li>
-<li><a href="https://github.com/victorelgersma/old-news"><strong>This
-website</strong></a></li>
-</ul>

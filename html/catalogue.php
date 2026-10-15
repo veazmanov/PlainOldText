@@ -449,5 +449,6 @@ usort($links, function ($a, $b) use ($sort) {
             apply();
         })();
     </script>
+    <?php include __DIR__ . '/partials/footer.php'; ?>
 </body>
 </html>
