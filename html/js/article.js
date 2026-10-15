@@ -18,10 +18,20 @@
         toggle.textContent = open ? 'Hide scans' : 'Original scans';
         toggle.setAttribute('href', open ? textUrl : textUrl + '/scans');
         history.replaceState(null, '', (open ? textUrl + '/scans' : textUrl) + location.search + location.hash);
+        // Edition links keep the scans open or closed
+        document.querySelectorAll('.edition-switch a').forEach(function (a) {
+            var url = new URL(a.href);
+            url.pathname = open ? textUrl + '/scans' : textUrl;
+            a.href = url.toString();
+        });
         if (open) {
             // Start the scans at the same point as the text, re-aligning as they load.
             offset = 0;
             align();
+            panel.querySelectorAll('iframe[data-src]').forEach(function (frame) {
+                frame.src = frame.getAttribute('data-src');
+                frame.removeAttribute('data-src');
+            });
             panel.querySelectorAll('img').forEach(function (img) {
                 img.loading = 'eager';
                 if (!img.complete) img.addEventListener('load', function () { if (offset === 0) align(); }, { once: true });

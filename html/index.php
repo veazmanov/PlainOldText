@@ -59,20 +59,20 @@ if (preg_match('#^photocopy/(.+)$#', $clean_uri, $m) && isset($metadata[$m[1]]))
     exit;
 }
 
-// 6. Markdown Route: /<slug>/markdown serves the article's plain-text source
+// 6. Markdown Route: /<slug>/markdown[?edition=<id>] serves the plain-text source of an edition
 if (preg_match('#^(.+)/markdown$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
-    $md_files = glob($articles_base . '/' . $m[1] . '/*.md');
-    if (empty($md_files)) {
+    $edition = pick_edition(article_editions($m[1]));
+    if (!$edition || !$edition['md']) {
         http_response_code(404);
         render_404();
         exit;
     }
     header('Content-Type: text/plain; charset=utf-8');
-    readfile($md_files[0]);
+    readfile($edition['md']);
     exit;
 }
 
-// 7. Article Route: /<slug>, and /<slug>/scans with the original scans open
+// 7. Article Route: /<slug>, and /<slug>/scans with the original scans open (both take ?edition=<id>)
 if (preg_match('#^(.+?)(/scans)?$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
     render_article($m[1], !empty($m[2]));
     exit;
@@ -90,7 +90,7 @@ function get_compiled_links()
     $links = [];
 
     foreach ($metadata as $uri => $meta) {
-        $article = get_article_preview($articles_base . '/' . $uri);
+        $article = get_article_preview($uri);
         $links[] = $meta + [
             'uri' => $uri,
             'excerpt' => $article['excerpt'],
@@ -101,15 +101,23 @@ function get_compiled_links()
     return $links;
 }
 
-// Opening text and word count of an article's transcription, for catalogue cards.
-function get_article_preview($dir)
+// The edition named by ?edition=, or the default (first) one; null if there are none.
+function pick_edition($editions)
 {
-    $html_files = glob($dir . '/*.html');
-    if (empty($html_files)) {
+    $id = $_GET['edition'] ?? '';
+    return $editions[$id] ?? (reset($editions) ?: null);
+}
+
+// Opening text and word count of an article's default edition, for catalogue cards.
+function get_article_preview($uri)
+{
+    $editions = article_editions($uri);
+    if (empty($editions)) {
         return ['excerpt' => null, 'words' => 0];
     }
 
-    $html = file_get_contents($html_files[0]);
+    // Editorial notes (sources, transcription conventions) aren't part of the text.
+    $html = preg_replace('#<div class="editorial-note">.*?</div>#s', '', file_get_contents(reset($editions)['html']));
     $text = function ($fragment) {
         $plain = html_entity_decode(strip_tags($fragment), ENT_QUOTES | ENT_HTML5, 'UTF-8');
         return trim(preg_replace('/\s+/u', ' ', $plain));
@@ -154,41 +162,48 @@ function render_article($uri, $scans_open = false)
         fn($file) => 'https://oldnews-photos.vjbe.net/' . rawurlencode($uri) . '/' . rawurlencode($file),
         $meta['scans']
     );
-    if ($scans_open && empty($scans)) {
+    // Scans are page images on the photo host, or one PDF (scans_pdf)
+    $scans_pdf = $meta['scans_pdf'];
+    $has_scans = !empty($scans) || $scans_pdf;
+    if ($scans_open && !$has_scans) {
         header('Location: ' . $slug_url);
         exit;
     }
 
-    $html_files = glob($articles_base . '/' . $uri . '/*.html');
-    $md_files = glob($articles_base . '/' . $uri . '/*.md');
-    $markdown_url = !empty($md_files) ? $slug_url . '/markdown' : null;
+    $editions = article_editions($uri);
+    $edition = pick_edition($editions);
+    $edition_id = $edition ? array_search($edition, $editions, true) : null;
+    // Keep a non-default edition in the article's links (?edition=<id>)
+    $edition_query = ($edition_id !== null && $edition_id !== array_key_first($editions))
+        ? '?edition=' . rawurlencode($edition_id) : '';
+    $markdown_url = ($edition && $edition['md']) ? $slug_url . '/markdown' . $edition_query : null;
     $github_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . '/'
-        . rawurlencode(!empty($md_files) ? basename($md_files[0]) : 'main.md');
+        . rawurlencode($edition && $edition['md'] ? basename($edition['md']) : 'main.md');
     $summary = $meta['summary'];
     $title = $meta['title'];
     $pub_name = $meta['pub'];
     $date_str = $meta['date'];
     // "Original scans" goes to the scans view, or back to the text when the scans are open
-    $photo_link = $scans_open ? $slug_url : $slug_url . '/scans';
+    $photo_link = ($scans_open ? $slug_url : $slug_url . '/scans') . $edition_query;
     $page_num = $meta['page'];
     $source_url = $meta['source_url'];
     $article_header_partial = __DIR__ . '/partials/article_header.php';
 
-    if (!empty($html_files)) {
-        $content = file_get_contents($html_files[0]);
+    if ($edition) {
+        $content = file_get_contents($edition['html']);
     } else {
         $content = "
         <div style='padding: 1.5rem; border-radius: 4px;'>
             <h3>Transcription Pending</h3>
             <p>The text for this article is still processing in our digital humanities pipeline.</p>"
-            . (!empty($scans) ? "
+            . ($has_scans ? "
             <p>In the meantime, you can read the <a href='$slug_url/scans'>original scans</a>.</p>" : '') . "
         </div>";
     }
 
     // Lift the article's first heading out so it renders above the source panel.
     $article_title_html = null;
-    if (!empty($html_files) && preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $content, $m, PREG_OFFSET_CAPTURE)) {
+    if ($edition && preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $content, $m, PREG_OFFSET_CAPTURE)) {
         $before = trim(strip_tags(substr($content, 0, $m[0][1])));
         if ($before === '') {
             $article_title_html = $m[0][0];

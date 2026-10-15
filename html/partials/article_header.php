@@ -1,7 +1,7 @@
 <?php // ./html/partials/article_header.php ?>
 <div class="source-panel sans">
     <ul class="source-links">
-        <?php if (!empty($scans)): ?>
+        <?php if ($has_scans): ?>
             <li>
                 <a href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
                     aria-controls="scan-panel" aria-expanded="<?= $scans_open ? 'true' : 'false' ?>"><?= $scans_open ? 'Hide scans' : 'Original scans' ?></a>
@@ -33,14 +33,35 @@
             &middot; p.&nbsp;<?= htmlspecialchars($page_num) ?>
         <?php endif; ?>
     </p>
+
+    <?php if (count($editions) > 1): ?>
+        <p class="edition-switch">
+            <?php $first = true; foreach ($editions as $id => $ed):
+                $url = ($scans_open ? $slug_url . '/scans' : $slug_url)
+                    . ($id === array_key_first($editions) ? '' : '?edition=' . rawurlencode($id)); ?>
+                <?= $first ? '' : '&middot;' ?>
+                <?php if ($ed === $edition): ?>
+                    <strong aria-current="page"><?= htmlspecialchars($ed['label']) ?></strong>
+                <?php else: ?>
+                    <a href="<?= htmlspecialchars($url) ?>"><?= htmlspecialchars($ed['label']) ?></a>
+                <?php endif; ?>
+            <?php $first = false; endforeach; ?>
+        </p>
+    <?php endif; ?>
 </div>
 
-<?php if (!empty($scans)): ?>
+<?php if ($has_scans): ?>
     <aside class="scan-panel sans" id="scan-panel" <?= $scans_open ? '' : 'hidden' ?> aria-label="Original scans">
         <p class="scan-panel-bar">
             <span>Original scans</span>
             <button type="button" id="scans-close">Close &times;</button>
         </p>
+        <?php if ($scans_pdf): ?>
+            <?php // The PDF only loads once the panel opens (article.js copies data-src to src) ?>
+            <iframe class="scan-pdf" title="Original scans (PDF)"
+                <?= $scans_open ? 'src' : 'data-src' ?>="<?= htmlspecialchars($scans_pdf) ?>#view=FitH"></iframe>
+            <p class="scan-pdf-link"><a href="<?= htmlspecialchars($scans_pdf) ?>">Open the original scans (PDF)</a></p>
+        <?php endif; ?>
         <?php foreach ($scans as $i => $scan): ?>
             <img src="<?= htmlspecialchars($scan) ?>" alt="Original scan, page <?= $i + 1 ?>" loading="lazy" decoding="async">
         <?php endforeach; ?>

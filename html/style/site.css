@@ -614,3 +614,55 @@ body:where(.page-article) > article {
         display: none;
     }
 }
+
+/* ---- Editions (e.g. reading and diplomatic) of one source ---- */
+:where(.page-article) .source-panel .edition-switch {
+    margin-top: 0.5rem;
+}
+
+:where(.page-article) .edition-switch strong {
+    color: #111;
+    font-weight: normal;
+}
+
+/* ---- Editorial notes in a transcription (source, conventions) ---- */
+:where(.page-article) .editorial-note {
+    max-width: 500px;
+    margin: 0 0 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+:where(.page-article) .editorial-note p {
+    text-indent: 0;
+    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: #666;
+}
+
+/* ---- Scans as a PDF: embedded on wide screens, a link on narrow ones ---- */
+:where(.page-article) .scan-pdf {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 4.5rem);
+    border: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+:where(.page-article) .scan-pdf-link {
+    display: none;
+}
+
+@media (max-width: 999px) {
+    :where(.page-article) .scan-pdf {
+        display: none;
+    }
+
+    :where(.page-article) .scan-pdf-link {
+        display: block;
+        text-indent: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+}
