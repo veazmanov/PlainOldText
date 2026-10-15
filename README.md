@@ -1,7 +1,5 @@
 # Old News Dot Com
 
-Main is broken, work on 'fixed-version'
-
 This repo hosts oldnews.vjbe.net: the PHP site and the article transcriptions it serves.
 
 - `articles/<slug>/` — one folder per article: `main.md` (the transcription) and `data.json` (title, newspaper, date, summary, scans). See `articles/data.example.json`. Articles are public domain (`articles/UNLICENSE`).
