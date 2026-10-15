@@ -70,7 +70,20 @@ if (strpos($clean_uri, 'photocopy/') === 0) {
     exit;
 }
 
-// 6. Flat Article Route
+// 6. Markdown Route: /<slug>/markdown serves the article's plain-text source
+if (preg_match('#^(.+)/markdown$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
+    $md_files = glob($articles_base . '/' . $m[1] . '/*.md');
+    if (empty($md_files)) {
+        http_response_code(404);
+        render_404();
+        exit;
+    }
+    header('Content-Type: text/plain; charset=utf-8');
+    readfile($md_files[0]);
+    exit;
+}
+
+// 7. Flat Article Route
 if (array_key_exists($clean_uri, $metadata)) {
     $target_file = $articles_base . '/' . $clean_uri;
     $html_files = glob($target_file . '/*.html');
@@ -145,7 +158,7 @@ function get_article_preview($dir)
 
 function render_catalogue()
 {
-    global $site_name;
+    global $site_name, $categories;
     $links = get_compiled_links();
     $current_page = 'catalogue';
     include(__DIR__ . '/catalogue.php');
@@ -156,7 +169,14 @@ function render_article($uri, $full_path)
     global $metadata, $site_name;
     $meta = $metadata[$uri];
 
-    $plaintext_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . "/main.md";
+    $md_files = glob(dirname($full_path) . '/*.md');
+    $markdown_url = !empty($md_files) ? '/' . rawurlencode($uri) . '/markdown' : null;
+    $github_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . '/'
+        . rawurlencode(!empty($md_files) ? basename($md_files[0]) : 'main.md');
+    $scans = array_map(
+        fn($file) => 'https://oldnews-photos.vjbe.net/' . rawurlencode($uri) . '/' . rawurlencode($file),
+        $meta['scans']
+    );
     $summary = $meta['summary'];
     $title = $meta['title'];
     $pub_name = $meta['pub'];

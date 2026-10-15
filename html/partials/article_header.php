@@ -2,48 +2,73 @@
 <div class="source-panel sans">
     <p class="source-line">
         <em><?= htmlspecialchars($pub_name) ?></em>
-        &middot; <?= htmlspecialchars($date_str) ?>
+        &ndash; <?= htmlspecialchars($date_str) ?>
         <?php if (!empty($page_num)): ?>
             &middot; p.&nbsp;<?= htmlspecialchars($page_num) ?>
         <?php endif; ?>
     </p>
 
-    <details class="source-tools" id="source-tools">
-        <summary>Scans, plain text &amp; source</summary>
-        <ul class="source-links">
-            <li>
-                <a href="<?= htmlspecialchars($photo_link) ?>" target="_blank" rel="noopener">Original scans</a>
-            </li>
-            <li>
-                <a href="<?= htmlspecialchars($plaintext_url) ?>" target="_blank" rel="noopener">View/edit plain text</a>
-            </li>
-            <?php if (!empty($source_url)): ?>
-                <li>
-                    <a href="<?= htmlspecialchars($source_url) ?>" target="_blank" rel="noopener">Go to source</a>
-                </li>
-            <?php endif; ?>
-        </ul>
-    </details>
-
     <?php if (!empty($summary)): ?>
-        <details class="source-summary">
-            <summary>Summary</summary>
-            <p><?= htmlspecialchars($summary) ?></p>
-        </details>
+        <p class="source-summary"><?= htmlspecialchars($summary) ?></p>
     <?php endif; ?>
+
+    <ul class="source-links">
+        <li>
+            <a href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle" target="_blank" rel="noopener"
+                aria-controls="scan-panel" aria-expanded="false">Original scans</a>
+        </li>
+        <?php if (!empty($markdown_url)): ?>
+            <li>
+                <a href="<?= htmlspecialchars($markdown_url) ?>">View as markdown</a>
+            </li>
+        <?php endif; ?>
+        <li>
+            <a href="<?= htmlspecialchars($github_url) ?>" target="_blank" rel="noopener">Edit on GitHub</a>
+        </li>
+        <?php if (!empty($source_url)): ?>
+            <li>
+                <a href="<?= htmlspecialchars($source_url) ?>" target="_blank" rel="noopener">Go to source</a>
+            </li>
+        <?php endif; ?>
+    </ul>
 </div>
 
-<script>
-    // On desktop, show the links as a quiet inline row; on mobile, keep them collapsed.
-    (function () {
-        var tools = document.getElementById('source-tools');
-        if (!tools || !window.matchMedia) return;
-        var desktop = window.matchMedia('(min-width: 761px)');
-        var sync = function () { tools.open = desktop.matches; };
-        sync();
-        if (desktop.addEventListener) desktop.addEventListener('change', sync);
-    })();
-</script>
+<?php if (!empty($scans)): ?>
+    <aside class="scan-panel sans" id="scan-panel" hidden aria-label="Original scans">
+        <p class="scan-panel-bar">
+            <a href="<?= htmlspecialchars($photo_link) ?>" target="_blank" rel="noopener">Open in new tab</a>
+            <button type="button" id="scans-close">Close &times;</button>
+        </p>
+        <?php foreach ($scans as $i => $scan): ?>
+            <img src="<?= htmlspecialchars($scan) ?>" alt="Original scan, page <?= $i + 1 ?>" loading="lazy" decoding="async">
+        <?php endforeach; ?>
+    </aside>
+
+    <script>
+        // On wide screens, "Original scans" opens the scans beside the text instead of a new tab.
+        (function () {
+            var toggle = document.getElementById('scans-toggle');
+            var panel = document.getElementById('scan-panel');
+            var close = document.getElementById('scans-close');
+            var wide = window.matchMedia('(min-width: 1000px)');
+
+            function show(open) {
+                panel.hidden = !open;
+                document.body.classList.toggle('show-scans', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                toggle.textContent = open ? 'Hide scans' : 'Original scans';
+            }
+
+            toggle.addEventListener('click', function (e) {
+                if (!wide.matches) return; // narrow screens follow the link to the scans page
+                e.preventDefault();
+                show(panel.hidden);
+            });
+            close.addEventListener('click', function () { show(false); });
+            wide.addEventListener('change', function (mq) { if (!mq.matches) show(false); });
+        })();
+    </script>
+<?php endif; ?>
 
 <style>
     /* ---- Newspaper styling for the article body ---- */
@@ -105,6 +130,11 @@
         margin-bottom: 1.5rem;
     }
 
+    /* Keep the source panel close under the nav */
+    body > article {
+        padding-top: 0.5rem;
+    }
+
     /* ---- Article title ---- */
     .article-head > h1,
     .article-head > h2,
@@ -135,51 +165,32 @@
         margin: 0.3rem 0;
     }
 
-    .source-panel .source-line {
-        text-align: center;
-    }
-
-    .source-panel details {
-        margin: 0.3rem 0;
-    }
-
-    .source-panel summary {
-        cursor: pointer;
-        list-style: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        color: #777;
-    }
-
-    .source-panel summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .source-panel summary::before {
-        content: "\25B8";
-        font-size: 0.7rem;
-        display: inline-block;
-        transition: transform 0.15s ease;
-    }
-
-    .source-panel details[open] > summary::before {
-        transform: rotate(90deg);
-    }
-
-    .source-panel summary:hover {
-        color: #111;
+    .source-panel .source-summary {
+        color: #444;
+        font-style: italic;
+        margin: 0.5rem 0;
     }
 
     .source-links {
         list-style: none;
-        margin: 0.4rem 0 0;
+        width: auto;
+        margin: 0.5rem 0 0;
         padding: 0;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
     .source-links li {
-        margin: 0.25rem 0;
+        display: inline;
+        margin: 0;
         padding: 0;
+        font-size: inherit;
+    }
+
+    .source-links li + li::before {
+        content: "\00B7";
+        margin: 0 0.5rem;
+        color: #bbb;
     }
 
     .source-panel a {
@@ -190,45 +201,66 @@
         color: #111;
     }
 
-    .source-summary p {
-        color: #444;
-        font-style: italic;
-        margin-top: 0.4rem;
-    }
-
-    /* Mobile: centre the toggles under the centred title */
     @media (max-width: 760px) {
-        .source-panel {
+        .source-panel,
+        .source-panel p {
             text-align: center;
         }
-
-        .source-links li {
-            display: block;
-        }
     }
 
-    /* Desktop: links become one quiet inline row, no toggle */
-    @media (min-width: 761px) {
-        .source-panel .source-line {
-            text-align: left;
-        }
+    /* ---- Scans beside the text (wide screens, toggled by "Original scans") ---- */
+    body.show-scans {
+        width: 46vw;
+        max-width: none;
+        margin-left: 0;
+        padding-left: 3vw;
+    }
 
-        .source-tools[open] > summary {
-            display: none;
-        }
+    .scan-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 48vw;
+        overflow-y: auto;
+        padding: 0 1.5rem 2rem;
+        box-sizing: border-box;
+        background: #f4f1e8;
+        border-left: 1px solid #ddd;
+        z-index: 10;
+    }
 
-        .source-links {
-            margin: 0;
-        }
+    .scan-panel-bar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: none;
+        margin: 0 -1.5rem 1rem;
+        padding: 0.6rem 1.5rem;
+        background: #f4f1e8;
+        border-bottom: 1px solid #ddd;
+        font-size: 0.85rem;
+        text-indent: 0;
+    }
 
-        .source-links li {
-            display: inline;
-        }
+    .scan-panel-bar button {
+        font: inherit;
+        color: #555;
+        background: none;
+        border: 0;
+        cursor: pointer;
+    }
 
-        .source-links li + li::before {
-            content: "\00B7";
-            margin: 0 0.5rem;
-            color: #bbb;
-        }
+    .scan-panel-bar button:hover {
+        color: #111;
+    }
+
+    .scan-panel img {
+        display: block;
+        width: 100%;
+        margin: 0 0 1.5rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
     }
 </style>

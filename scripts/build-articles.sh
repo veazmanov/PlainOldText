@@ -1,7 +1,7 @@
 #!/opt/homebrew/bin/bash
 
 # ./scripts/build-articles.sh
-# Converts articles/<slug>/*.md to HTML with pandoc and copies data.json alongside,
+# Converts articles/<slug>/*.md to HTML with pandoc and copies the markdown and data.json alongside,
 # into oldnews-articles-only/ (gitignored), which html/data.php reads and ./deploy uploads.
 
 # TODO: remove all .polished.md stuff and just convert all markdown files
@@ -66,6 +66,9 @@ find "$SOURCE_DIR" -type f -name "*.md" -exec dirname {} \; | sort -u | while re
 
     # 4. Run Pandoc
     pandoc "$input_file" --math-method=mathjax -o "$output_file"
+
+    # 4b. Copy the markdown too, served at /<slug>/markdown
+    cp "$input_file" "$output_dir/"
 
     # 5. Copy data.json from the source directory if it exists
     source_json="$current_dir/data.json"
