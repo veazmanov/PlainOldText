@@ -122,6 +122,8 @@ function get_compiled_links()
             }
         }
 
+        $article = get_article_preview($articles_base . '/' . $uri);
+
         $links[] = [
             'uri' => $uri,
             'title' => $meta['title'] ?? 'Untitled Article',
@@ -130,7 +132,9 @@ function get_compiled_links()
             'summary' => $summary,
             'sort_date' => $sort_date,
             'featured' => $featured,
-            'image' => $img_src
+            'image' => $img_src,
+            'excerpt' => $article['excerpt'],
+            'words' => $article['words']
         ];
     }
 
@@ -139,6 +143,41 @@ function get_compiled_links()
     });
 
     return $links;
+}
+
+// Opening text and word count of an article's transcription, for catalogue cards.
+function get_article_preview($dir)
+{
+    $html_files = glob($dir . '/*.html');
+    if (empty($html_files)) {
+        return ['excerpt' => null, 'words' => 0];
+    }
+
+    $html = file_get_contents($html_files[0]);
+    $text = function ($fragment) {
+        $plain = html_entity_decode(strip_tags($fragment), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        return trim(preg_replace('/\s+/u', ' ', $plain));
+    };
+
+    // Skip short lines (bylines, book titles) and take the first real paragraph.
+    $excerpt = null;
+    if (preg_match_all('/<p\b[^>]*>(.*?)<\/p>/is', $html, $matches)) {
+        foreach ($matches[1] as $p) {
+            $candidate = $text($p);
+            if (mb_strlen($candidate) >= 200) {
+                $excerpt = $candidate;
+                break;
+            }
+        }
+    }
+    if ($excerpt !== null && mb_strlen($excerpt) > 420) {
+        $excerpt = preg_replace('/[\s,;:]+\S*$/u', '', mb_substr($excerpt, 0, 420)) . '…';
+    }
+
+    return [
+        'excerpt' => $excerpt,
+        'words' => str_word_count($text($html))
+    ];
 }
 
 function render_catalogue()

@@ -1,4 +1,6 @@
 
+- [ ] convert "data.json" into frontmatter
+- [ ] make side by side view (plain text / scans)
 - [ ] add to the about page that I was partly inspired by https://classics.mit.edu/Browse/browse-Aristotle.html
 - [ ] view /edit should be two buttons - one should link to the actual plain text, the other should link to the github page where I can edit it. 
 - [ ] add full text search on the homepage

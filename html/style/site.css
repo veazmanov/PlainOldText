@@ -1,0 +1,402 @@
+/* ./html/style/site.css
+ * Site styles, loaded after tufte.css on every page.
+ *
+ * Sections:
+ *   1. Site header and footer (all pages)
+ *   2. Catalogue
+ *   3. Article pages      (body:where(.page-article))
+ *   4. Original scans     (body:where(.page-scans))
+ *
+ * Page sections are nested under :where(), so they add no specificity.
+ */
+
+
+/* ===================================================================
+   1. Site header and footer
+   =================================================================== */
+
+.site-nav {
+    margin: 0 0 3rem 0;
+}
+
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav li {
+    display: inline;
+}
+
+.site-nav li + li::before {
+    content: "/";
+    color: #999;
+    margin: 0 0.75rem;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.95rem;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+}
+
+.site-nav li.active a {
+    color: #111;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* Collapsible <details> with a rotating ▸ marker (catalogue summaries, source panel) */
+
+.disclosure > summary {
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.disclosure > summary::-webkit-details-marker {
+    display: none;
+}
+
+.disclosure > summary::before {
+    content: "\25B8";
+    font-size: 0.7rem;
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+
+.disclosure[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+
+/* ===================================================================
+   2. Catalogue
+   =================================================================== */
+
+.archive-list {
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.archive-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.meta-group {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    color: #666;
+}
+
+.pub-tag {
+    font-variant: small-caps;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.date-tag {
+    font-size: 0.85rem;
+}
+
+.content-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.article-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #111;
+}
+
+.article-title:hover {
+    text-decoration: underline;
+}
+
+.summary-toggle {
+    font-size: 0.85rem;
+}
+
+.summary-toggle summary {
+    color: #0066cc;
+    width: fit-content;
+}
+
+.summary-toggle summary:hover {
+    text-decoration: underline;
+}
+
+.summary-text {
+    margin: 0.4rem 0 0;
+    color: #444;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.sort-controls {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.sort-link {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.sort-link.active {
+    color: #111;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+@media (min-width: 600px) {
+    .archive-item {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 2rem;
+    }
+
+    .meta-group {
+        flex-shrink: 0;
+        width: 150px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+}
+
+
+
+
+/* ===================================================================
+   3. Article pages (articles and pending transcriptions)
+   =================================================================== */
+
+:where(.page-article) {
+
+    /* ---- Newspaper styling for the article body ---- */
+
+    & article p {
+        text-indent: 1.5em;
+    }
+
+    & .centered {
+        text-align: center;
+    }
+
+    & section > :is(h1, h2, h3) {
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+        font-style: normal;
+    }
+
+    & h1 { font-size: 2rem; }
+    & h2 { font-size: 1.8rem; }
+    & h3 { font-size: 1.6rem; }
+
+    & p {
+        max-width: 500px;
+        width: 100%;
+        text-align: justify;
+        font-kerning: none;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+    }
+
+    & section > p {
+        width: 100%;
+    }
+
+    @media (max-width: 760px) {
+        & section > :is(h1, h2, h3) {
+            max-width: 100%;
+        }
+    }
+
+    /* ---- Quieter site header, so the article title leads ---- */
+
+    & > header > h1 {
+        font-size: 1.3rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    & > header > .subtitle {
+        font-size: 0.95rem;
+        margin-top: 0.2rem;
+    }
+
+    & > header .site-nav {
+        margin-bottom: 1.5rem;
+    }
+
+    /* ---- Article title ---- */
+
+    & .article-head > :is(h1, h2, h3) {
+        font-size: 2.3rem;
+        line-height: 1.15;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    /* ---- Source panel: small, muted, sits above the title ---- */
+
+    & .source-panel {
+        max-width: 500px;
+        margin-bottom: 2.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #eee;
+        font-size: 0.85rem;
+        color: #777;
+    }
+
+    & .source-panel p {
+        text-indent: 0;
+        text-align: left;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+        font-kerning: auto;
+        margin: 0.3rem 0;
+    }
+
+    & .source-panel .source-line {
+        text-align: center;
+    }
+
+    & .source-panel details {
+        margin: 0.3rem 0;
+    }
+
+    & .source-panel summary {
+        color: #777;
+    }
+
+    & .source-panel summary:hover {
+        color: #111;
+    }
+
+    & .source-links {
+        list-style: none;
+        margin: 0.4rem 0 0;
+        padding: 0;
+    }
+
+    & .source-links li {
+        margin: 0.25rem 0;
+        padding: 0;
+    }
+
+    & .source-panel a {
+        color: #555;
+    }
+
+    & .source-panel a:hover {
+        color: #111;
+    }
+
+    & .source-summary p {
+        color: #444;
+        font-style: italic;
+        margin-top: 0.4rem;
+    }
+
+    /* Mobile: centre the toggles under the centred title */
+    @media (max-width: 760px) {
+        & .source-panel {
+            text-align: center;
+        }
+
+        & .source-links li {
+            display: block;
+        }
+    }
+
+    /* Desktop: links become one quiet inline row, no toggle */
+    @media (min-width: 761px) {
+        & .source-panel .source-line {
+            text-align: left;
+        }
+
+        & .source-tools[open] > summary {
+            display: none;
+        }
+
+        & .source-links {
+            margin: 0;
+        }
+
+        & .source-links li {
+            display: inline;
+        }
+
+        & .source-links li + li::before {
+            content: "\00B7";
+            margin: 0 0.5rem;
+            color: #bbb;
+        }
+    }
+}
+
+
+/* ===================================================================
+   4. Original scans viewer
+   =================================================================== */
+
+body:where(.page-scans) {
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+}
+
+:where(.page-scans) {
+    & .controls {
+        margin: 2rem auto;
+        max-width: 900px;
+        text-align: left;
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    & img {
+        display: block;
+        margin: 2rem auto;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+        border: 1px solid #333;
+    }
+
+    & a {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px solid #8cf;
+        transition: border-color 0.2s ease;
+    }
+
+    & a:hover {
+        border-bottom-color: transparent;
+    }
+
+    & .error-msg {
+        margin-top: 5rem;
+    }
+}
