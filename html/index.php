@@ -27,11 +27,6 @@ if ($clean_uri === "catalogue") {
 if ($clean_uri === "about") {
     $title = "About";
     $pub_name = $site_name;
-    $day_name = "";
-    $day_num = "";
-    $date_str = "";
-    $photo_link = "/";
-    $is_about_page = true;
 
     ob_start();
     $current_page = 'about';
@@ -47,10 +42,6 @@ if ($clean_uri === "about") {
 if ($clean_uri === "contribute") {
     $title = "Contribute";
     $pub_name = $site_name;
-    $day_name = "";
-    $day_num = "";
-    $date_str = "";
-    $photo_link = "/";
 
     ob_start();
     $current_page = 'contribute';
@@ -102,64 +93,17 @@ render_404();
 
 function get_compiled_links()
 {
-    global $metadata, $publications, $articles_base;
+    global $metadata, $articles_base;
     $links = [];
 
     foreach ($metadata as $uri => $meta) {
-        $pub_key = $meta['pub_key'] ?? '';
-        $summary = $meta['summary'] ?? null;
-        $featured = false;
-        $custom_cover = null;
-
-        $data_json_path = $articles_base . '/' . $uri . '/data.json';
-        if (file_exists($data_json_path)) {
-            $json = json_decode(file_get_contents($data_json_path), true);
-            if ($json !== null) {
-                $summary = $json['summary'] ?? $summary;
-                $featured = $json['featured'] ?? false;
-                $custom_cover = $json['cover_image'] ?? null; // Optional override image
-            }
-        }
-
-        $display_date = (!empty($meta['date']) && $meta['date'] !== '//') ? $meta['date'] : 'Undated';
-        $resolved_pub = $publications[$pub_key] ?? (!empty($pub_key) ? ucfirst(str_replace('_', ' ', $pub_key)) : 'Archive Entry');
-        $sort_date = $meta['sort_date'] ?? '0000-00-00';
-
-        // Automatically resolve clipping thumbnail fallback
-        $img_src = $custom_cover;
-        if (empty($img_src)) {
-            $folder_name = str_replace('.html', '', $uri);
-            $photo_dir = __DIR__ . "/oldnews-photos/" . $folder_name;
-            if (is_dir($photo_dir)) {
-                $files = scandir($photo_dir);
-                foreach ($files as $file) {
-                    if (preg_match('/\.(webp|png|jpg|jpeg)$/i', $file)) {
-                        $img_src = "https://oldnews-photos.vjbe.net/" . $folder_name . '/' . $file;
-                        break; // Grab the very first image frame discovered
-                    }
-                }
-            }
-        }
-
         $article = get_article_preview($articles_base . '/' . $uri);
-
-        $links[] = [
+        $links[] = $meta + [
             'uri' => $uri,
-            'title' => $meta['title'] ?? 'Untitled Article',
-            'pub' => $resolved_pub,
-            'date' => $display_date,
-            'summary' => $summary,
-            'sort_date' => $sort_date,
-            'featured' => $featured,
-            'image' => $img_src,
             'excerpt' => $article['excerpt'],
             'words' => $article['words']
         ];
     }
-
-    usort($links, function ($a, $b) {
-        return strcmp($b['sort_date'], $a['sort_date']); // Newest items first
-    });
 
     return $links;
 }
@@ -209,18 +153,17 @@ function render_catalogue()
 
 function render_article($uri, $full_path)
 {
-    global $metadata, $publications, $site_name;
+    global $metadata, $site_name;
     $meta = $metadata[$uri];
 
     $plaintext_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . "/main.md";
-    $summary = $meta['summary'] ?? '';
+    $summary = $meta['summary'];
     $title = $meta['title'];
-    $pub_key = $meta['pub_key'];
-    $pub_name = $publications[$pub_key] ?? (!empty($pub_key) ? ucfirst(str_replace('_', ' ', $pub_key)) : 'Archive Entry');
-    $date_str = (!empty($meta['date']) && $meta['date'] !== '//') ? $meta['date'] : 'Undated';
+    $pub_name = $meta['pub'];
+    $date_str = $meta['date'];
     $photo_link = "/photocopy/" . $uri;
-    $page_num = $meta['page'] ?? null;
-    $source_url = $meta['source_url'] ?? null;
+    $page_num = $meta['page'];
+    $source_url = $meta['source_url'];
     $article_header_partial = __DIR__ . '/partials/article_header.php';
 
     $content = file_get_contents($full_path);
@@ -242,34 +185,29 @@ function render_article($uri, $full_path)
     exit();
 }
 
-// Keep render_404 and render_pending_transcription functions identical to what you have...
 function render_404()
 {
     global $site_name;
     $title = "404 Not Found";
     $pub_name = $site_name;
-    $day_name = $day_num = $date_str = "";
-    $photo_link = "/";
     $content = "<p>We are sorry, but that piece doesn't exist in the archive yet.</p>";
     include(__DIR__ . '/layout.php');
 }
 
 function render_pending_transcription($uri)
 {
-    global $metadata, $publications;
+    global $metadata, $site_name;
 
     $meta = $metadata[$uri];
     $title = $meta['title'];
-    $pub_key = $meta['pub_key'];
-    $pub_name = $publications[$pub_key] ?? (!empty($pub_key) ? ucfirst(str_replace('_', ' ', $pub_key)) : 'Archive Entry');
-    $date_str = (!empty($meta['date']) && $meta['date'] !== '//') ? $meta['date'] : 'Undated';
-    $photo_link = "/photocopy/" . $uri;
+    $pub_name = $meta['pub'];
+    $photo_link = "/photocopy/" . rawurlencode($uri);
 
     $content = "
         <div style='padding: 1.5rem; border-radius: 4px;'>
             <h3>Transcription Pending</h3>
             <p>The text for this article is still processing in our digital humanities pipeline.</p>
-            <p>Click <strong>'View Photocopies'</strong> above to look at the original print clippings.</p>
+            <p>In the meantime, you can read the <a href='$photo_link'>original scans</a>.</p>
         </div>";
 
     include(__DIR__ . '/layout.php');

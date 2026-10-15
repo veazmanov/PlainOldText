@@ -1,3 +1,4 @@
+<?php $current_page = $current_page ?? ''; ?>
 <h1><?= htmlspecialchars($site_name) ?></h1>
 <p class="subtitle">Plain Text Historic Sources</p>
 
