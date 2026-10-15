@@ -12,22 +12,3 @@
     </p>
 </footer>
 
-<style>
-.site-footer .footer-links {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.footer-github {
-    margin-left: auto;
-    color: #666;
-    line-height: 0;
-    background: none;
-    text-shadow: none;
-}
-
-.footer-github:hover {
-    color: #111;
-}
-</style>

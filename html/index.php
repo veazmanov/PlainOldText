@@ -53,20 +53,9 @@ if ($clean_uri === "contribute") {
     exit;
 }
 
-// 5. Photocopy Viewer Route
-if (strpos($clean_uri, 'photocopy/') === 0) {
-    $uri = str_replace('photocopy/', '', $clean_uri);
-    $uri = ltrim($uri, '/');
-    $uri = str_replace(['../', '..\\'], '', $uri);
-
-    if (!isset($metadata[$uri])) {
-        http_response_code(404);
-        render_404();
-        exit;
-    }
-
-    $_GET['uri'] = $uri;
-    include(__DIR__ . '/photocopy.php');
+// 5. Old scans URL: /photocopy/<slug> now lives at /<slug>/scans
+if (preg_match('#^photocopy/(.+)$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
+    header('Location: /' . rawurlencode($m[1]) . '/scans', true, 301);
     exit;
 }
 
@@ -83,18 +72,9 @@ if (preg_match('#^(.+)/markdown$#', $clean_uri, $m) && isset($metadata[$m[1]])) 
     exit;
 }
 
-// 7. Flat Article Route
-if (array_key_exists($clean_uri, $metadata)) {
-    $target_file = $articles_base . '/' . $clean_uri;
-    $html_files = glob($target_file . '/*.html');
-    $real_target = !empty($html_files) ? realpath($html_files[0]) : false;
-    $real_base = realpath($articles_base);
-
-    if ($real_target !== false && strpos($real_target, $real_base) === 0 && is_file($real_target)) {
-        render_article($clean_uri, $real_target);
-    } else {
-        render_pending_transcription($clean_uri);
-    }
+// 7. Article Route: /<slug>, and /<slug>/scans with the original scans open
+if (preg_match('#^(.+?)(/scans)?$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
+    render_article($m[1], !empty($m[2]));
     exit;
 }
 
@@ -164,33 +144,51 @@ function render_catalogue()
     include(__DIR__ . '/catalogue.php');
 }
 
-function render_article($uri, $full_path)
+function render_article($uri, $scans_open = false)
 {
-    global $metadata, $site_name;
+    global $metadata, $articles_base, $site_name;
     $meta = $metadata[$uri];
+    $slug_url = '/' . rawurlencode($uri);
 
-    $md_files = glob(dirname($full_path) . '/*.md');
-    $markdown_url = !empty($md_files) ? '/' . rawurlencode($uri) . '/markdown' : null;
-    $github_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . '/'
-        . rawurlencode(!empty($md_files) ? basename($md_files[0]) : 'main.md');
     $scans = array_map(
         fn($file) => 'https://oldnews-photos.vjbe.net/' . rawurlencode($uri) . '/' . rawurlencode($file),
         $meta['scans']
     );
+    if ($scans_open && empty($scans)) {
+        header('Location: ' . $slug_url);
+        exit;
+    }
+
+    $html_files = glob($articles_base . '/' . $uri . '/*.html');
+    $md_files = glob($articles_base . '/' . $uri . '/*.md');
+    $markdown_url = !empty($md_files) ? $slug_url . '/markdown' : null;
+    $github_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . '/'
+        . rawurlencode(!empty($md_files) ? basename($md_files[0]) : 'main.md');
     $summary = $meta['summary'];
     $title = $meta['title'];
     $pub_name = $meta['pub'];
     $date_str = $meta['date'];
-    $photo_link = "/photocopy/" . $uri;
+    // "Original scans" goes to the scans view, or back to the text when the scans are open
+    $photo_link = $scans_open ? $slug_url : $slug_url . '/scans';
     $page_num = $meta['page'];
     $source_url = $meta['source_url'];
     $article_header_partial = __DIR__ . '/partials/article_header.php';
 
-    $content = file_get_contents($full_path);
+    if (!empty($html_files)) {
+        $content = file_get_contents($html_files[0]);
+    } else {
+        $content = "
+        <div style='padding: 1.5rem; border-radius: 4px;'>
+            <h3>Transcription Pending</h3>
+            <p>The text for this article is still processing in our digital humanities pipeline.</p>"
+            . (!empty($scans) ? "
+            <p>In the meantime, you can read the <a href='$slug_url/scans'>original scans</a>.</p>" : '') . "
+        </div>";
+    }
 
     // Lift the article's first heading out so it renders above the source panel.
     $article_title_html = null;
-    if (preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $content, $m, PREG_OFFSET_CAPTURE)) {
+    if (!empty($html_files) && preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $content, $m, PREG_OFFSET_CAPTURE)) {
         $before = trim(strip_tags(substr($content, 0, $m[0][1])));
         if ($before === '') {
             $article_title_html = $m[0][0];
@@ -211,24 +209,5 @@ function render_404()
     $title = "404 Not Found";
     $pub_name = $site_name;
     $content = "<p>We are sorry, but that piece doesn't exist in the archive yet.</p>";
-    include(__DIR__ . '/layout.php');
-}
-
-function render_pending_transcription($uri)
-{
-    global $metadata, $site_name;
-
-    $meta = $metadata[$uri];
-    $title = $meta['title'];
-    $pub_name = $meta['pub'];
-    $photo_link = "/photocopy/" . rawurlencode($uri);
-
-    $content = "
-        <div style='padding: 1.5rem; border-radius: 4px;'>
-            <h3>Transcription Pending</h3>
-            <p>The text for this article is still processing in our digital humanities pipeline.</p>
-            <p>In the meantime, you can read the <a href='$photo_link'>original scans</a>.</p>
-        </div>";
-
     include(__DIR__ . '/layout.php');
 }

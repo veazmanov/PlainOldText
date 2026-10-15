@@ -3,6 +3,13 @@
 
 $site_name = "Plain Old Text";
 
+// URL for a file under html/, versioned by its modification time so browsers refetch it after a deploy.
+function asset($path)
+{
+    $file = __DIR__ . '/' . $path;
+    return '/' . $path . (is_file($file) ? '?v=' . filemtime($file) : '');
+}
+
 $articles_base = dirname(__DIR__) . '/oldnews-articles-only';
 
 // Values for "category" in data.json, with their labels in the catalogue filter.

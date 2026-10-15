@@ -1,13 +1,12 @@
 /* ./html/style/site.css
- * Site styles, loaded after tufte.css on every page.
+ * Site styles, loaded after tufte.css on every page (see partials/head.php).
  *
  * Sections:
  *   1. Site header and footer (all pages)
- *   2. Catalogue
- *   3. Article pages      (body:where(.page-article))
- *   4. Original scans     (body:where(.page-scans))
+ *   2. Catalogue              (body.page-catalogue)
+ *   3. Article pages          (body.page-article)
  *
- * Page sections are nested under :where(), so they add no specificity.
+ * Page sections are scoped with :where(), so they add no specificity.
  */
 
 
@@ -43,35 +42,29 @@
     letter-spacing: 0.05em;
 }
 
+/* TARGET THE LINK INSIDE THE ACTIVE LI */
 .site-nav li.active a {
     color: #111;
     font-weight: bold;
-    pointer-events: none;
+    pointer-events: none; /* Optional: stops users re-clicking the page they're already on */
 }
 
-/* Collapsible <details> with a rotating ▸ marker (catalogue summaries, source panel) */
-
-.disclosure > summary {
-    cursor: pointer;
-    list-style: none;
-    display: inline-flex;
+.site-footer .footer-links {
+    display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.4rem;
 }
 
-.disclosure > summary::-webkit-details-marker {
-    display: none;
+.footer-github {
+    margin-left: auto;
+    color: #666;
+    line-height: 0;
+    background: none;
+    text-shadow: none;
 }
 
-.disclosure > summary::before {
-    content: "\25B8";
-    font-size: 0.7rem;
-    display: inline-block;
-    transition: transform 0.15s ease;
-}
-
-.disclosure[open] > summary::before {
-    transform: rotate(90deg);
+.footer-github:hover {
+    color: #111;
 }
 
 
@@ -79,324 +72,545 @@
    2. Catalogue
    =================================================================== */
 
-.archive-list {
-    margin-top: 1.5rem;
-    padding: 0;
-    list-style: none;
+:root {
+    --paper: #fdfaef;
+    --paper-edge: #e7dfc9;
+    --ink: #1a1712;
+    --ink-muted: #6b6455;
+    --accent: #8a2b1d;
 }
 
-.archive-item {
+/* ---- Toolbar: search, sort, count ---- */
+:where(.page-catalogue) .catalogue-tools {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-bottom: 2rem;
+    padding-right: 12.5%;
 }
-
-.meta-group {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-    color: #666;
+:where(.page-catalogue) .search-field {
+    position: relative;
+    flex: 1 1 22rem;
+    max-width: 32rem;
 }
-
-.pub-tag {
-    font-variant: small-caps;
-    font-size: 0.85rem;
-    font-weight: 600;
+:where(.page-catalogue) .search-field label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    margin-bottom: 0.35rem;
 }
-
-.date-tag {
-    font-size: 0.85rem;
+:where(.page-catalogue) .search-field input {
+    width: 100%;
+    font: inherit;
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 1.25rem;
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid var(--ink);
+    border-radius: 0;
+    padding: 0.35rem 2rem 0.35rem 0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
-
-.content-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    min-width: 0;
+:where(.page-catalogue) .search-field input::placeholder {
+    color: #aaa294;
+    font-style: italic;
 }
-
-.article-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: #111;
+:where(.page-catalogue) .search-field input:focus {
+    border-bottom-color: var(--accent);
 }
-
-.article-title:hover {
-    text-decoration: underline;
+:where(.page-catalogue) .search-field input::-webkit-search-cancel-button {
+    cursor: pointer;
 }
-
-.summary-toggle {
-    font-size: 0.85rem;
+:where(.page-catalogue) .search-field kbd {
+    position: absolute;
+    right: 0;
+    bottom: 0.55rem;
+    font-family: inherit;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    border: 1px solid var(--paper-edge);
+    border-radius: 3px;
+    padding: 0 0.35rem;
+    pointer-events: none;
 }
-
-.summary-toggle summary {
-    color: #0066cc;
-    width: fit-content;
+:where(.page-catalogue) .search-field input:focus ~ kbd,
+:where(.page-catalogue) .search-field input:not(:placeholder-shown) ~ kbd {
+    display: none;
 }
-
-.summary-toggle summary:hover {
-    text-decoration: underline;
-}
-
-.summary-text {
-    margin: 0.4rem 0 0;
-    color: #444;
+:where(.page-catalogue) .sort-controls {
     font-size: 0.9rem;
-    line-height: 1.5;
+    color: var(--ink-muted);
+    white-space: nowrap;
 }
-
-.sort-controls {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    color: #666;
-}
-
-.sort-link {
+:where(.page-catalogue) .sort-link {
     text-decoration: none;
     color: #0066cc;
 }
-
-.sort-link.active {
-    color: #111;
+:where(.page-catalogue) .sort-link.active {
+    color: var(--ink);
     font-weight: bold;
     pointer-events: none;
 }
-
-@media (min-width: 600px) {
-    .archive-item {
-        flex-direction: row;
-        align-items: baseline;
-        gap: 2rem;
-    }
-
-    .meta-group {
-        flex-shrink: 0;
-        width: 150px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-    }
+:where(.page-catalogue) .category-filter {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+:where(.page-catalogue) .category-filter button {
+    font: inherit;
+    font-size: 0.85rem;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--paper-edge);
+    border-radius: 999px;
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+}
+:where(.page-catalogue) .category-filter button:hover:not(:disabled) {
+    border-color: var(--ink-muted);
+}
+:where(.page-catalogue) .category-filter button[aria-pressed="true"] {
+    color: var(--paper);
+    background: var(--ink);
+    border-color: var(--ink);
+}
+:where(.page-catalogue) .category-filter button:disabled {
+    color: #b5ad9c;
+    cursor: default;
+}
+:where(.page-catalogue) .category-filter .n {
+    color: var(--ink-muted);
+    margin-left: 0.2rem;
+}
+:where(.page-catalogue) .category-filter button[aria-pressed="true"] .n {
+    color: inherit;
+    opacity: 0.7;
+}
+:where(.page-catalogue) .result-count {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
 }
 
-
-
-
-/* ===================================================================
-   3. Article pages (articles and pending transcriptions)
-   =================================================================== */
-
-:where(.page-article) {
-
-    /* ---- Newspaper styling for the article body ---- */
-
-    & article p {
-        text-indent: 1.5em;
-    }
-
-    & .centered {
-        text-align: center;
-    }
-
-    & section > :is(h1, h2, h3) {
-        max-width: 500px;
-        width: 100%;
-        text-align: center;
-        font-style: normal;
-    }
-
-    & h1 { font-size: 2rem; }
-    & h2 { font-size: 1.8rem; }
-    & h3 { font-size: 1.6rem; }
-
-    & p {
-        max-width: 500px;
-        width: 100%;
-        text-align: justify;
-        font-kerning: none;
-        letter-spacing: -0.01em;
-        line-height: 1.2;
-    }
-
-    & section > p {
-        width: 100%;
-    }
-
-    @media (max-width: 760px) {
-        & section > :is(h1, h2, h3) {
-            max-width: 100%;
-        }
-    }
-
-    /* ---- Quieter site header, so the article title leads ---- */
-
-    & > header > h1 {
-        font-size: 1.3rem;
-        margin-top: 2rem;
-        margin-bottom: 0;
-    }
-
-    & > header > .subtitle {
-        font-size: 0.95rem;
-        margin-top: 0.2rem;
-    }
-
-    & > header .site-nav {
-        margin-bottom: 1.5rem;
-    }
-
-    /* ---- Article title ---- */
-
-    & .article-head > :is(h1, h2, h3) {
-        font-size: 2.3rem;
-        line-height: 1.15;
-        margin-top: 0;
-        margin-bottom: 2rem;
-    }
-
-    /* ---- Source panel: small, muted, sits above the title ---- */
-
-    & .source-panel {
-        max-width: 500px;
-        margin-bottom: 2.5rem;
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid #eee;
-        font-size: 0.85rem;
-        color: #777;
-    }
-
-    & .source-panel p {
-        text-indent: 0;
-        text-align: left;
-        font-size: 0.85rem;
-        line-height: 1.5;
-        letter-spacing: 0;
-        font-kerning: auto;
-        margin: 0.3rem 0;
-    }
-
-    & .source-panel .source-line {
-        text-align: center;
-    }
-
-    & .source-panel details {
-        margin: 0.3rem 0;
-    }
-
-    & .source-panel summary {
-        color: #777;
-    }
-
-    & .source-panel summary:hover {
-        color: #111;
-    }
-
-    & .source-links {
-        list-style: none;
-        margin: 0.4rem 0 0;
-        padding: 0;
-    }
-
-    & .source-links li {
-        margin: 0.25rem 0;
-        padding: 0;
-    }
-
-    & .source-panel a {
-        color: #555;
-    }
-
-    & .source-panel a:hover {
-        color: #111;
-    }
-
-    & .source-summary p {
-        color: #444;
-        font-style: italic;
-        margin-top: 0.4rem;
-    }
-
-    /* Mobile: centre the toggles under the centred title */
-    @media (max-width: 760px) {
-        & .source-panel {
-            text-align: center;
-        }
-
-        & .source-links li {
-            display: block;
-        }
-    }
-
-    /* Desktop: links become one quiet inline row, no toggle */
-    @media (min-width: 761px) {
-        & .source-panel .source-line {
-            text-align: left;
-        }
-
-        & .source-tools[open] > summary {
-            display: none;
-        }
-
-        & .source-links {
-            margin: 0;
-        }
-
-        & .source-links li {
-            display: inline;
-        }
-
-        & .source-links li + li::before {
-            content: "\00B7";
-            margin: 0 0.5rem;
-            color: #bbb;
-        }
-    }
+/* ---- Card grid ---- */
+:where(.page-catalogue) section > ul.clip-grid {
+    width: auto;
+    padding: 0;
+    margin: 0 12.5% 0 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+    grid-auto-flow: dense;
+    gap: 2rem 1.75rem;
 }
-
-
-/* ===================================================================
-   4. Original scans viewer
-   =================================================================== */
-
-body:where(.page-scans) {
-    text-align: center;
-    width: 100%;
-    padding-left: 0;
+:where(.page-catalogue) .clip-grid > li {
     margin: 0;
 }
+:where(.page-catalogue) .clip-grid > li[hidden] {
+    display: none;
+}
 
-:where(.page-scans) {
-    & .controls {
-        margin: 2rem auto;
-        max-width: 900px;
-        text-align: left;
-        font-size: 1.2rem;
-        padding: 0 1rem;
+/* ---- A card is a newspaper clipping ---- */
+:where(.page-catalogue) .clip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.1rem 1.3rem 0.9rem;
+    background: var(--paper);
+    border: 1px solid var(--paper-edge);
+    box-shadow:
+        0 1px 0 rgba(60, 45, 10, 0.05),
+        0 10px 24px -18px rgba(60, 45, 10, 0.45);
+    color: var(--ink);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+:where(.page-catalogue) .clip:hover,
+:where(.page-catalogue) .clip:focus-within {
+    transform: translateY(-3px);
+    box-shadow:
+        0 1px 0 rgba(60, 45, 10, 0.05),
+        0 18px 30px -18px rgba(60, 45, 10, 0.55);
+}
+:where(.page-catalogue) .clip:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+:where(.page-catalogue) .clip-masthead {
+    margin: 0;
+    padding: 0.3rem 0 0.25rem;
+    border-top: 1px solid var(--ink);
+    border-bottom: 3px double var(--ink);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+:where(.page-catalogue) .clip-dateline {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--ink);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+}
+
+:where(.page-catalogue) .clip-headline {
+    margin: 1rem 0 0;
+    font-size: 1.45rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.15;
+    text-align: center;
+    text-wrap: balance;
+}
+:where(.page-catalogue) .clip-headline a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+/* Whole card is clickable via the headline link */
+:where(.page-catalogue) .clip-headline a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+:where(.page-catalogue) .clip:hover .clip-headline a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+:where(.page-catalogue) .clip-dinkus {
+    width: 2.5rem;
+    height: 0;
+    margin: 0.75rem auto 0.85rem;
+    border: 0;
+    border-top: 1px solid var(--ink);
+}
+
+:where(.page-catalogue) .clip-body {
+    flex: 1;
+    margin: 0;
+    max-height: 11.5em;
+    overflow: hidden;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
+    mask-image: linear-gradient(to bottom, #000 65%, transparent);
+}
+:where(.page-catalogue) .clip-body::first-letter {
+    float: left;
+    font-size: 3.1em;
+    line-height: 0.85;
+    padding: 0.08em 0.08em 0 0;
+    font-weight: 700;
+    color: var(--accent);
+}
+:where(.page-catalogue) .clip-body.is-summary {
+    font-style: italic;
+    color: #4a4438;
+}
+:where(.page-catalogue) .clip-body.is-summary::first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    font-weight: inherit;
+    color: inherit;
+}
+
+:where(.page-catalogue) .clip-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin: 0.75rem 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--paper-edge);
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+}
+:where(.page-catalogue) .clip-foot .read-more {
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+:where(.page-catalogue) .pending-tag {
+    font-style: italic;
+}
+
+/* Featured pieces get a double-width front-page slot */
+@media (min-width: 900px) {
+    :where(.page-catalogue) .clip-grid > li.is-featured {
+        grid-column: span 2;
+    }
+    :where(.page-catalogue) .is-featured .clip-headline {
+        font-size: 1.9rem;
+    }
+    :where(.page-catalogue) .is-featured .clip-body {
+        columns: 2;
+        column-gap: 1.75rem;
+        column-rule: 1px solid var(--paper-edge);
+        max-height: 13em;
+    }
+}
+
+:where(.page-catalogue) .no-results {
+    width: auto;
+    margin: 3rem 12.5% 0 0;
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-muted);
+}
+
+@media (max-width: 760px) {
+    :where(.page-catalogue) .catalogue-tools,
+    :where(.page-catalogue) section > ul.clip-grid,
+    :where(.page-catalogue) .no-results {
+        padding-right: 0;
+        margin-right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :where(.page-catalogue) .clip {
+        transition: none;
+    }
+    :where(.page-catalogue) .clip:hover,
+    :where(.page-catalogue) .clip:focus-within {
+        transform: none;
+    }
+}
+
+
+/* ===================================================================
+   3. Article pages (articles, pending transcriptions, scans)
+   =================================================================== */
+
+/* ---- Newspaper styling for the article body ---- */
+:where(.page-article) article p {
+    text-indent: 1.5em;
+}
+
+:where(.page-article) .centered {
+    text-align: center;
+}
+
+:where(.page-article) section>h1,
+:where(.page-article) section>h2,
+:where(.page-article) section>h3 {
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    font-style: normal;
+}
+
+:where(.page-article) h1 { font-size: 2rem; }
+:where(.page-article) h2 { font-size: 1.8rem; }
+:where(.page-article) h3 { font-size: 1.6rem; }
+
+:where(.page-article) p {
+    max-width: 500px;
+    width: 100%;
+    text-align: justify;
+    font-kerning: none;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+:where(.page-article) section>p {
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    :where(.page-article) section>h1,
+    :where(.page-article) section>h2,
+    :where(.page-article) section>h3 {
+        max-width: 100%;
+    }
+}
+
+/* ---- Quieter site header on article pages, so the article title leads ---- */
+body:where(.page-article) > header > h1 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+body:where(.page-article) > header > .subtitle {
+    font-size: 0.95rem;
+    margin-top: 0.2rem;
+}
+
+body:where(.page-article) > header .site-nav {
+    margin-bottom: 1.5rem;
+}
+
+/* Keep the source panel close under the nav */
+body:where(.page-article) > article {
+    padding-top: 0.5rem;
+}
+
+/* ---- Article title ---- */
+:where(.page-article) .article-head > h1,
+:where(.page-article) .article-head > h2,
+:where(.page-article) .article-head > h3 {
+    font-size: 2.3rem;
+    line-height: 1.15;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* ---- Source panel: small, muted, sits above the title ---- */
+:where(.page-article) .source-panel {
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+:where(.page-article) .source-panel p {
+    text-indent: 0;
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-kerning: auto;
+    margin: 0.3rem 0;
+}
+
+:where(.page-article) .source-panel .source-summary {
+    color: #444;
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+:where(.page-article) .source-links {
+    list-style: none;
+    width: auto;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+:where(.page-article) .source-links li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+}
+
+:where(.page-article) .source-links li + li::before {
+    content: "\00B7";
+    margin: 0 0.5rem;
+    color: #bbb;
+}
+
+:where(.page-article) .source-panel a {
+    color: #555;
+}
+
+:where(.page-article) .source-panel a:hover {
+    color: #111;
+}
+
+@media (max-width: 760px) {
+    :where(.page-article) .source-panel,
+    :where(.page-article) .source-panel p {
+        text-align: center;
+    }
+}
+
+/* ---- Original scans: beside the text on wide screens (toggled by "Original scans"),
+        and in place of the text on narrow screens at /<slug>/scans ---- */
+@media (min-width: 1000px) {
+    body:where(.page-article).show-scans {
+        width: 46vw;
+        max-width: none;
+        margin-left: 0;
+        padding-left: 3vw;
     }
 
-    & img {
-        display: block;
-        margin: 2rem auto;
-        width: 100%;
-        max-width: 900px;
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
-        border: 1px solid #333;
+    :where(.page-article) .scan-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 48vw;
+        overflow-y: auto;
+        padding: 0 1.5rem 2rem;
+        box-sizing: border-box;
+        background: #f4f1e8;
+        border-left: 1px solid #ddd;
+        z-index: 10;
     }
 
-    & a {
-        text-decoration: none;
-        color: inherit;
-        border-bottom: 1px solid #8cf;
-        transition: border-color 0.2s ease;
+    :where(.page-article) .scan-panel-bar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+        max-width: none;
+        margin: 0 -1.5rem 1rem;
+        padding: 0.6rem 1.5rem;
+        background: #f4f1e8;
+        border-bottom: 1px solid #ddd;
+        font-size: 0.85rem;
+        text-indent: 0;
     }
+}
 
-    & a:hover {
-        border-bottom-color: transparent;
-    }
+:where(.page-article) .scan-panel-bar button {
+    font: inherit;
+    color: #555;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
 
-    & .error-msg {
-        margin-top: 5rem;
+:where(.page-article) .scan-panel-bar button:hover {
+    color: #111;
+}
+
+:where(.page-article) .scan-panel img {
+    display: block;
+    width: 100%;
+    margin: 0 0 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 999px) {
+    :where(.page-article) .scan-panel-bar,
+    body:where(.page-article).show-scans .article-head > h1,
+    body:where(.page-article).show-scans .article-head > h2,
+    body:where(.page-article).show-scans .article-head > h3,
+    body:where(.page-article).show-scans article > section:not(.article-head) {
+        display: none;
     }
 }
