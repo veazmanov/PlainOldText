@@ -23,16 +23,11 @@
     </ul>
 
     <?php if (!empty($summary)): ?>
-        <p class="source-summary"><?= htmlspecialchars($summary) ?></p>
+        <details class="source-summary">
+            <summary>Summary</summary>
+            <p><?= htmlspecialchars($summary) ?></p>
+        </details>
     <?php endif; ?>
-
-    <p class="source-line">
-        <em><?= htmlspecialchars($pub_name) ?></em>
-        &ndash; <?= htmlspecialchars($date_str) ?>
-        <?php if (!empty($page_num)): ?>
-            &middot; p.&nbsp;<?= htmlspecialchars($page_num) ?>
-        <?php endif; ?>
-    </p>
 
     <?php if (count($editions) > 1): ?>
         <p class="edition-switch">
@@ -55,6 +50,15 @@
         <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
     </p>
     <script src="<?= asset('js/cite.js') ?>"></script>
+</div>
+
+<?php // Masthead: the publication and date, directly above the title (styled like the catalogue cards) ?>
+<div class="masthead">
+    <span class="masthead-name"><?= htmlspecialchars($pub_name) ?></span>
+    <span class="masthead-rule" aria-hidden="true"></span>
+    <span class="masthead-date sans">
+        <?= htmlspecialchars($date_str) ?><?php if (!empty($page_num)): ?> &middot; p.&nbsp;<?= htmlspecialchars($page_num) ?><?php endif; ?>
+    </span>
 </div>
 
 <?php if ($has_scans): ?>

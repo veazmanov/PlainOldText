@@ -491,9 +491,7 @@ body:where(.page-article) > article {
 /* ---- Source panel: small, muted, sits above the title ---- */
 :where(.page-article) .source-panel {
     max-width: 500px;
-    margin-bottom: 2.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 1.75rem;
     font-size: 0.85rem;
     color: #777;
 }
@@ -508,10 +506,40 @@ body:where(.page-article) > article {
     margin: 0.3rem 0;
 }
 
-:where(.page-article) .source-panel .source-summary {
+:where(.page-article) .source-summary {
+    margin: 0.5rem 0;
+}
+
+:where(.page-article) .source-summary > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    list-style: none;
+    cursor: pointer;
+    color: #555;
+}
+
+:where(.page-article) .source-summary > summary::-webkit-details-marker {
+    display: none;
+}
+
+:where(.page-article) .source-summary > summary::before {
+    content: "\25B8";
+    font-size: 0.7rem;
+    transition: transform 0.15s ease;
+}
+
+:where(.page-article) .source-summary[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+:where(.page-article) .source-summary > summary:hover {
+    color: #111;
+}
+
+:where(.page-article) .source-summary p {
     color: #444;
     font-style: italic;
-    margin: 0.5rem 0;
 }
 
 :where(.page-article) .source-links {
@@ -697,4 +725,56 @@ body:where(.page-article) > article {
 :where(.page-article) .cite-copy:hover {
     color: #111;
     border-color: #999;
+}
+
+/* ---- Masthead above the title: publication and date, like the catalogue cards ---- */
+:where(.page-article) .masthead {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    max-width: 500px;
+    margin: 0 0 1.75rem;
+    padding: 0.45rem 0 0.4rem;
+    border-top: 1px solid var(--ink);
+    border-bottom: 3px double var(--ink);
+    color: var(--ink);
+}
+
+:where(.page-article) .masthead-name {
+    font-size: 1.45rem;
+    line-height: 1.2;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+}
+
+:where(.page-article) .masthead-rule {
+    flex: 1;
+    align-self: center;
+    border-top: 1px solid var(--ink-muted);
+    opacity: 0.5;
+}
+
+:where(.page-article) .masthead-date {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ink-muted);
+}
+
+@media (max-width: 760px) {
+    :where(.page-article) .masthead {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+        text-align: center;
+    }
+
+    :where(.page-article) .masthead-rule {
+        display: none;
+    }
+
+    :where(.page-article) .masthead-date {
+        white-space: normal;
+    }
 }
