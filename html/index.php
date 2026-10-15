@@ -3,6 +3,11 @@
 require_once('data.php');
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+// Let PHP's built-in dev server serve static files (css, images) directly.
+if (php_sapi_name() === 'cli-server' && $request_uri !== '/' && is_file(__DIR__ . $request_uri)) {
+    return false;
+}
 $clean_uri = ltrim($request_uri, '/');
 $clean_uri = str_replace(['../', '..\\'], '', $clean_uri);
 
