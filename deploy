@@ -2,7 +2,16 @@
 
 # ./deploy
 
+set -e
+
+echo "Building articles..."
+./scripts/build-articles.sh
+
 echo "Deploying files to production..."
 deploy html oldnews
+deploy oldnews-articles-only oldnews-articles-only
+
+# Scans are uploaded separately; run scripts/sync_scans.php afterwards.
+# deploy img oldnews-photos
 
 echo "Done! Visit https://oldtext.vjbe.net"

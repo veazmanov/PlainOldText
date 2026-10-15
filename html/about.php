@@ -43,7 +43,7 @@ archive accurate and accessible.</p>
 <h2 id="fixing-typos-mistakes">Fixing Typos &amp; Mistakes</h2>
 <p>Each article has a <em>View/Edit Plain Text</em> link. To fix a typo
 or formatting error, submit a pull request to the <a
-href="https://github.com/victorelgersma/oldnews-article-repo">article
+href="https://github.com/victorelgersma/old-news/tree/main/articles">article
 repository</a> on GitHub. For other kinds of mistakes, or if you prefer
 not to use GitHub, email <strong>victor@vjbe.net</strong>.</p>
 
@@ -99,7 +99,7 @@ add it here.</p>
 
 <h1 id="github-links">GitHub</h1>
 <ul>
-<li><a href="https://github.com/victorelgersma/oldnews-article-repo"><strong>Article
+<li><a href="https://github.com/victorelgersma/old-news/tree/main/articles"><strong>Article
 repository</strong></a>: the plain-text transcriptions</li>
 <li><a href="https://github.com/victorelgersma/oldnews-OCR-pipeline"><strong>Transcription
 pipeline</strong></a></li>

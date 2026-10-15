@@ -154,7 +154,7 @@ function render_article($uri, $full_path)
     global $metadata, $publications, $site_name;
     $meta = $metadata[$uri];
 
-    $plaintext_url = "https://github.com/victorelgersma/oldnews-article-repo/blob/main/markdown/" . rawurlencode($uri) . "/main.md";
+    $plaintext_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . "/main.md";
     $summary = $meta['summary'] ?? '';
     $title = $meta['title'];
     $pub_key = $meta['pub_key'];

@@ -1,11 +1,10 @@
 <?php
-// ./sync_scans.php
-// Writes each article's scan filenames into markdown/<article>/data.json as "scans",
-// read from the photo host's JSON directory listing. Run after deploying new photos,
-// then ./generate_html.sh copies data.json through to html_polished.
-// Usage: php sync_scans.php [article-folder ...]   (no args = all articles)
+// ./scripts/sync_scans.php
+// Writes each article's scan filenames into articles/<article>/data.json as "scans",
+// read from the photo host's JSON directory listing. Run after uploading new photos.
+// Usage: php scripts/sync_scans.php [article-folder ...]   (no args = all articles)
 
-$articles_base = __DIR__ . '/markdown';
+$articles_base = dirname(__DIR__) . '/articles';
 $photos_url_base = 'https://oldnews-photos.vjbe.net';
 
 function list_scans($photos_url_base, $folder)

@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+# ./scripts/new-article.sh
+# Creates articles/<slug>/ with a main.md and data.json.
+cd "$(dirname "$0")/../articles"
+
 # Ask for the article name
 read -rp "Name: " NAME
 
