@@ -10,6 +10,10 @@
         <li class="<?= $current_page === 'about' ? 'active' : '' ?>">
             <a href="/about">About</a>
         </li>
+
+        <li class="<?= $current_page === 'contribute' ? 'active' : '' ?>">
+            <a href="/contribute">Contribute</a>
+        </li>
     </ul>
 </nav>
 <hr>

@@ -35,30 +35,6 @@ the public domain, it seemed a small effort to transcribe them and host
 them somewhere easy to read and reference. The archive has grown since
 then, and so has its scope, hence the new name.</p>
 
-<h1 id="how-to-contribute">How to Contribute</h1>
-<p>Corrections and new transcriptions are very welcome. Whether you are
-fixing a typo or adding an entirely new source, your help keeps the
-archive accurate and accessible.</p>
-
-<h2 id="fixing-typos-mistakes">Fixing Typos &amp; Mistakes</h2>
-<p>Each article has a <em>View/Edit Plain Text</em> link. To fix a typo
-or formatting error, submit a pull request to the <a
-href="https://github.com/victorelgersma/old-news/tree/main/articles">article
-repository</a> on GitHub. For other kinds of mistakes, or if you prefer
-not to use GitHub, email <strong>victor@vjbe.net</strong>.</p>
-
-<h2 id="adding-new-sources">Adding New Sources</h2>
-<p>To contribute a new transcription, please include:</p>
-<ul>
-<li>The complete transcription.</li>
-<li>The scans or screenshots you worked from, so the text can be
-verified.</li>
-<li>A link to the original digital source, if there is one.</li>
-<li>The title of the publication or work, the date, and the page
-number.</li>
-<li>The author, if known.</li>
-</ul>
-
 <h1 id="our-sources">Where the Sources Come From</h1>
 <p>Most transcriptions so far come from:</p>
 <ul>

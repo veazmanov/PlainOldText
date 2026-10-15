@@ -25,7 +25,7 @@ if ($clean_uri === "catalogue") {
 
 // 3. About Page Route
 if ($clean_uri === "about") {
-    $title = "About | " . $site_name;
+    $title = "About";
     $pub_name = $site_name;
     $day_name = "";
     $day_num = "";
@@ -43,7 +43,26 @@ if ($clean_uri === "about") {
     exit;
 }
 
-// 4. Photocopy Viewer Route
+// 4. Contribute Page Route
+if ($clean_uri === "contribute") {
+    $title = "Contribute";
+    $pub_name = $site_name;
+    $day_name = "";
+    $day_num = "";
+    $date_str = "";
+    $photo_link = "/";
+
+    ob_start();
+    $current_page = 'contribute';
+    include(__DIR__ . '/contribute.php');
+    $content = ob_get_clean();
+
+    include(__DIR__ . '/layout.php');
+
+    exit;
+}
+
+// 5. Photocopy Viewer Route
 if (strpos($clean_uri, 'photocopy/') === 0) {
     $uri = str_replace('photocopy/', '', $clean_uri);
     $uri = ltrim($uri, '/');
@@ -60,7 +79,7 @@ if (strpos($clean_uri, 'photocopy/') === 0) {
     exit;
 }
 
-// 5. Flat Article Route
+// 6. Flat Article Route
 if (array_key_exists($clean_uri, $metadata)) {
     $target_file = $articles_base . '/' . $clean_uri;
     $html_files = glob($target_file . '/*.html');
