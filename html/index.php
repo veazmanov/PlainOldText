@@ -1,6 +1,7 @@
 <?php
 // ./html/index.php
 require_once('data.php');
+require_once('citation.php');
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -154,7 +155,7 @@ function render_catalogue()
 
 function render_article($uri, $scans_open = false)
 {
-    global $metadata, $articles_base, $site_name;
+    global $metadata, $articles_base, $site_name, $site_url;
     $meta = $metadata[$uri];
     $slug_url = '/' . rawurlencode($uri);
 
@@ -176,6 +177,7 @@ function render_article($uri, $scans_open = false)
     // Keep a non-default edition in the article's links (?edition=<id>)
     $edition_query = ($edition_id !== null && $edition_id !== array_key_first($editions))
         ? '?edition=' . rawurlencode($edition_id) : '';
+    $citation = chicago_citation($meta, $site_url . $slug_url . $edition_query);
     $markdown_url = ($edition && $edition['md']) ? $slug_url . '/markdown' . $edition_query : null;
     $github_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . '/'
         . rawurlencode($edition && $edition['md'] ? basename($edition['md']) : 'main.md');

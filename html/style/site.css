@@ -672,3 +672,29 @@ body:where(.page-article) > article {
         font-size: 1rem;
     }
 }
+
+/* ---- "Cite as" with a copy button ---- */
+:where(.page-article) .source-panel .cite-as {
+    margin-top: 0.6rem;
+    color: #555;
+}
+
+:where(.page-article) .cite-label {
+    color: #777;
+}
+
+:where(.page-article) .cite-copy {
+    font: inherit;
+    color: #555;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.4rem;
+    margin-left: 0.25rem;
+    cursor: pointer;
+}
+
+:where(.page-article) .cite-copy:hover {
+    color: #111;
+    border-color: #999;
+}

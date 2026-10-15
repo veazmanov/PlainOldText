@@ -48,6 +48,13 @@
             <?php $first = false; endforeach; ?>
         </p>
     <?php endif; ?>
+
+    <p class="cite-as">
+        <span class="cite-label">Cite as:</span>
+        <span id="citation"><?= $citation ?></span>
+        <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
+    </p>
+    <script src="<?= asset('js/cite.js') ?>"></script>
 </div>
 
 <?php if ($has_scans): ?>

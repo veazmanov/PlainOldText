@@ -2,6 +2,7 @@
 // ./html/data.php
 
 $site_name = "Plain Old Text";
+$site_url = "https://plainoldtext.vjbe.net";
 
 // URL for a file under html/, versioned by its modification time so browsers refetch it after a deploy.
 function asset($path)
@@ -17,6 +18,7 @@ $categories = [
     'newspaper'    => 'Newspapers',
     'letter'       => 'Letters',
     'book-chapter' => 'Book chapters',
+    'journal'      => 'Journals',
 ];
 
 // A source folder may hold several transcriptions, named <edition>.md. These are listed first
@@ -81,6 +83,17 @@ if (is_dir($articles_base)) {
             'page'       => $json_data['page'] ?? null,
             'scans'      => $json_data['scans'] ?? [],
             'scans_pdf'  => $json_data['scans_pdf'] ?? null,
+            // For the citation (see citation.php)
+            'year'       => $year,
+            'month'      => $date_format === 'Y' ? '' : $month,
+            'day'        => $date_format === 'Y' ? '' : $day,
+            'author'     => $json_data['author'] ?? null,
+            'place'      => $json_data['place'] ?? null,
+            'full_title' => $json_data['full_title'] ?? null,
+            'translator' => $json_data['translator'] ?? null,
+            'printer'    => $json_data['printer'] ?? null,
+            'volume'     => $json_data['volume'] ?? null,
+            'issue'      => $json_data['issue'] ?? null,
         ];
     }
 }

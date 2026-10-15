@@ -6,6 +6,7 @@ This repo hosts oldnews.vjbe.net: the PHP site and the article transcriptions it
   - A source with several transcriptions has one `.md` per edition instead of `main.md`, e.g. `reading.md` and `diplomatic.md` (the reading edition is the default; the others are at `?edition=<name>`).
   - Books use `publication` instead of `newspaper`, and may give just a `year`.
   - Scans are page images on oldnews-photos.vjbe.net (`scans`, written by `sync_scans.php`), or one PDF anywhere (`scans_pdf`, a URL).
+  - Each article shows a Chicago footnote citation ("Cite as", see `html/citation.php`), from: `author`, `place` (city, for newspapers whose title doesn't name it), and for books `full_title`, `translator`, `printer`; for journals (category `journal`) `volume` and `issue`.
 - `html/` — the PHP site.
 - `scripts/` — `new-article.sh` creates an article folder, `build-articles.sh` converts the markdown to HTML with pandoc, `sync_scans.php` records scan filenames from oldnews-photos.vjbe.net into `data.json`.
 
