@@ -2,7 +2,7 @@
 
 This repo hosts oldnews.vjbe.net: the PHP site and the article transcriptions it serves.
 
-- `articles/<slug>/` — one folder per article: `main.md` (the transcription) and `data.json` (title, newspaper, date, summary, scans). See `articles/data.example.json`. Articles are public domain (`articles/UNLICENSE`).
+- `articles/<slug>/` — one folder per article: `main.md` (the transcription) and `data.json` (title, newspaper, category, date, summary, scans; category is `newspaper`, `letter` or `book-chapter`). See `articles/data.example.json`. Articles are public domain (`articles/UNLICENSE`).
 - `html/` — the PHP site.
 - `scripts/` — `new-article.sh` creates an article folder, `build-articles.sh` converts the markdown to HTML with pandoc, `sync_scans.php` records scan filenames from oldnews-photos.vjbe.net into `data.json`.
 

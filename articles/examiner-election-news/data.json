@@ -4,6 +4,7 @@
   "day": 8,
   "title": "Election News",
   "newspaper": "The Examiner",
+  "category": "newspaper",
   "summary": "This election roundup details the shifting candidate fields and strategic maneuvers between Tory and Liberal factions across several British boroughs. It highlights a concerted push by Radical Reformers to mobilize independent voters, contest Conservative strongholds, and maintain momentum for the Whig ministry.",
   "source_url": "https://www.britishnewspaperarchive.co.uk/viewer/bl/0000054/18400308/008/0010",
     "scans": [

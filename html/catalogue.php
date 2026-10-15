@@ -1,6 +1,8 @@
 <?php
 $sort = $_GET['sort'] ?? 'newest';
 $query = trim($_GET['q'] ?? '');
+$category = $_GET['category'] ?? '';
+$category_counts = array_count_values(array_column($links, 'category'));
 usort($links, function ($a, $b) use ($sort) {
     $timeA = strtotime($a['sort_date']);
     $timeB = strtotime($b['sort_date']);
@@ -100,6 +102,42 @@ usort($links, function ($a, $b) use ($sort) {
             color: var(--ink);
             font-weight: bold;
             pointer-events: none;
+        }
+        .category-filter {
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .category-filter button {
+            font: inherit;
+            font-size: 0.85rem;
+            color: var(--ink);
+            background: transparent;
+            border: 1px solid var(--paper-edge);
+            border-radius: 999px;
+            padding: 0.2rem 0.8rem;
+            cursor: pointer;
+        }
+        .category-filter button:hover:not(:disabled) {
+            border-color: var(--ink-muted);
+        }
+        .category-filter button[aria-pressed="true"] {
+            color: var(--paper);
+            background: var(--ink);
+            border-color: var(--ink);
+        }
+        .category-filter button:disabled {
+            color: #b5ad9c;
+            cursor: default;
+        }
+        .category-filter .n {
+            color: var(--ink-muted);
+            margin-left: 0.2rem;
+        }
+        .category-filter button[aria-pressed="true"] .n {
+            color: inherit;
+            opacity: 0.7;
         }
         .result-count {
             flex-basis: 100%;
@@ -330,6 +368,18 @@ usort($links, function ($a, $b) use ($sort) {
                     <a href="?sort=newest" class="sort-link <?= $sort === 'newest' ? 'active' : '' ?>" data-sort="newest">Newest</a> |
                     <a href="?sort=oldest" class="sort-link <?= $sort === 'oldest' ? 'active' : '' ?>" data-sort="oldest">Oldest</a>
                 </div>
+                <div class="category-filter" role="group" aria-label="Category">
+                    <button type="button" data-category="" aria-pressed="<?= $category === '' ? 'true' : 'false' ?>">
+                        All<span class="n"><?= count($links) ?></span>
+                    </button>
+                    <?php foreach ($categories as $key => $label):
+                        $n = $category_counts[$key] ?? 0; ?>
+                        <button type="button" data-category="<?= htmlspecialchars($key) ?>"
+                            aria-pressed="<?= $category === $key ? 'true' : 'false' ?>" <?= $n === 0 ? 'disabled' : '' ?>>
+                            <?= htmlspecialchars($label) ?><span class="n"><?= $n ?></span>
+                        </button>
+                    <?php endforeach; ?>
+                </div>
                 <p class="result-count" id="result-count" aria-live="polite">
                     <?= number_format(count($links)) ?> articles
                 </p>
@@ -348,7 +398,8 @@ usort($links, function ($a, $b) use ($sort) {
                     $body = $article['excerpt'] ?: $article['summary'];
                 ?>
                     <li class="<?= !empty($article['featured']) ? 'is-featured' : '' ?>"
-                        data-search="<?= htmlspecialchars($search_text) ?>">
+                        data-search="<?= htmlspecialchars($search_text) ?>"
+                        data-category="<?= htmlspecialchars($article['category']) ?>">
                         <div class="clip">
                             <p class="clip-masthead"><?= htmlspecialchars($article['pub']) ?></p>
                             <p class="clip-dateline sans">
@@ -386,7 +437,7 @@ usort($links, function ($a, $b) use ($sort) {
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <p class="no-results" id="no-results" hidden>No articles match your search.</p>
+            <p class="no-results" id="no-results" hidden>No articles match.</p>
         </section>
     </article>
 
@@ -397,6 +448,8 @@ usort($links, function ($a, $b) use ($sort) {
             var count = document.getElementById('result-count');
             var empty = document.getElementById('no-results');
             var sortLinks = document.querySelectorAll('.sort-link');
+            var categoryButtons = Array.prototype.slice.call(document.querySelectorAll('.category-filter button'));
+            var category = new URLSearchParams(location.search).get('category') || '';
             var total = items.length;
 
             var normalise = function (s) {
@@ -412,28 +465,42 @@ usort($links, function ($a, $b) use ($sort) {
                 var shown = 0;
 
                 items.forEach(function (li) {
-                    var match = terms.every(function (t) { return li._haystack.indexOf(t) !== -1; });
+                    var match = (!category || li.getAttribute('data-category') === category)
+                        && terms.every(function (t) { return li._haystack.indexOf(t) !== -1; });
                     li.hidden = !match;
                     if (match) shown++;
                 });
 
-                count.textContent = terms.length
+                categoryButtons.forEach(function (b) {
+                    b.setAttribute('aria-pressed', b.getAttribute('data-category') === category ? 'true' : 'false');
+                });
+
+                count.textContent = (terms.length || category)
                     ? shown + ' of ' + total + ' articles'
                     : total + ' articles';
                 empty.hidden = shown !== 0;
 
-                // Keep the query in the URL and across sort changes
+                // Keep the query and category in the URL and across sort changes
                 var params = new URLSearchParams(location.search);
                 if (q) params.set('q', q); else params.delete('q');
+                if (category) params.set('category', category); else params.delete('category');
                 var qs = params.toString();
                 history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
 
                 sortLinks.forEach(function (a) {
                     var p = new URLSearchParams({ sort: a.getAttribute('data-sort') });
                     if (q) p.set('q', q);
+                    if (category) p.set('category', category);
                     a.setAttribute('href', '?' + p.toString());
                 });
             }
+
+            categoryButtons.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    category = b.getAttribute('data-category');
+                    apply();
+                });
+            });
 
             input.addEventListener('input', apply);
             input.addEventListener('keydown', function (e) {

@@ -1,8 +1,6 @@
 
-- [ ] convert "data.json" into frontmatter
-- [ ] make side by side view (plain text / scans)
+- [ ] add a discussion forum?
 - [ ] add to the about page that I was partly inspired by https://classics.mit.edu/Browse/browse-Aristotle.html
-- [ ] view /edit should be two buttons - one should link to the actual plain text, the other should link to the github page where I can edit it. 
 - [ ] add full text search on the homepage
 - [ ] or, alternatively: create a separate step to add the sidenotes (i.e manage the sidenotes separately in a JSON array with the words that the sidenote should appear after and the sidenote itself). This should be a compilation step in the digital humanities pipeline, not here, but here there will be a little switch that allows users to turn sidenotes on and off. a
 - [ ] add a proper sql based viewcounter. 

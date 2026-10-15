@@ -29,6 +29,8 @@ read -rp "Year: " YEAR
 read -rp "Month: " MONTH
 read -rp "Day: " DAY
 read -rp "Newspaper: " NEWSPAPER
+read -rp "Category (newspaper, letter, book-chapter) [newspaper]: " CATEGORY
+CATEGORY=${CATEGORY:-newspaper}
 read -rp "Source URL: " SOURCE_URL
 
 # Write JSON
@@ -39,6 +41,7 @@ cat > "$SLUG/data.json" <<EOF
   "day": $DAY,
   "title": "$NAME",
   "newspaper": "$NEWSPAPER",
+  "category": "$CATEGORY",
   "source_url": "$SOURCE_URL"
 }
 EOF
