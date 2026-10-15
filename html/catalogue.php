@@ -45,7 +45,7 @@ include __DIR__ . '/partials/head.php';
                     <?php endforeach; ?>
                 </div>
                 <p class="result-count" id="result-count" aria-live="polite">
-                    <?= number_format(count($links)) ?> articles
+                    <?= number_format(count($links)) ?> items
                 </p>
             </form>
 
@@ -101,7 +101,7 @@ include __DIR__ . '/partials/head.php';
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <p class="no-results" id="no-results" hidden>No articles match.</p>
+            <p class="no-results" id="no-results" hidden>No items match.</p>
         </section>
     </article>
 

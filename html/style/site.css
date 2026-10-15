@@ -67,6 +67,12 @@
     color: #111;
 }
 
+.site-footer .footer-credit {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
 
 /* ===================================================================
    2. Catalogue

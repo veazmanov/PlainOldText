@@ -34,8 +34,8 @@
         });
 
         count.textContent = (terms.length || category)
-            ? shown + ' of ' + total + ' articles'
-            : total + ' articles';
+            ? shown + ' of ' + total + ' items'
+            : total + ' items';
         empty.hidden = shown !== 0;
 
         // Keep the query and category in the URL and across sort changes
