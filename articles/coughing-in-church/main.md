@@ -1,0 +1,5 @@
+# Coughing in Church
+
+A northern newspaper lately contained a computation of the coughs in a congregation in Scotland during divine service, and the figures rose to thousands. Writing on the subject for the perusal of his congregation, Dr. Donald Fraser says:—
+
+We have a vague impression that it is the Scotch in our own flock who keep up the coughing clamour. Is it that they are the most zealous church-goers, and are in their places despite those catarrhs and irritated windpipes which would have kept Englishmen at home? Or is it due simply to a roughness of manners which takes no account of the annoyance given to the preacher and to their neighbours in the pews? Or shall we say that it is in most cases a mere heedless habit? One cough seems to suggest another, and the preacher has to shout against a sort of "platoon fire" from the pews.
