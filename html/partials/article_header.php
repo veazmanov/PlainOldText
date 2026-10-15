@@ -1,17 +1,5 @@
 <!-- ./html/partials/article_header.php -->
 <div class="source-panel sans">
-    <p class="source-line">
-        <em><?= htmlspecialchars($pub_name) ?></em>
-        &ndash; <?= htmlspecialchars($date_str) ?>
-        <?php if (!empty($page_num)): ?>
-            &middot; p.&nbsp;<?= htmlspecialchars($page_num) ?>
-        <?php endif; ?>
-    </p>
-
-    <?php if (!empty($summary)): ?>
-        <p class="source-summary"><?= htmlspecialchars($summary) ?></p>
-    <?php endif; ?>
-
     <ul class="source-links">
         <li>
             <a href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle" target="_blank" rel="noopener"
@@ -31,6 +19,18 @@
             </li>
         <?php endif; ?>
     </ul>
+
+    <?php if (!empty($summary)): ?>
+        <p class="source-summary"><?= htmlspecialchars($summary) ?></p>
+    <?php endif; ?>
+
+    <p class="source-line">
+        <em><?= htmlspecialchars($pub_name) ?></em>
+        &ndash; <?= htmlspecialchars($date_str) ?>
+        <?php if (!empty($page_num)): ?>
+            &middot; p.&nbsp;<?= htmlspecialchars($page_num) ?>
+        <?php endif; ?>
+    </p>
 </div>
 
 <?php if (!empty($scans)): ?>
@@ -174,7 +174,7 @@
     .source-links {
         list-style: none;
         width: auto;
-        margin: 0.5rem 0 0;
+        margin: 0 0 0.5rem;
         padding: 0;
         font-size: 0.85rem;
         line-height: 1.5;
