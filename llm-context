@@ -1,4 +1,8 @@
-ld News - Project Environment Context
+Plain Old Text - Project Environment Context
+
+## Domain
+- Public site: https://sources.vjbe.net (`$site_url` in `html/data.php`; citations and canonical tags derive from it).
+- Scans are served from https://oldnews-photos.vjbe.net.
 
 ## Deployment & Path Architecture
 - Physical Path: /home/elgersmav/html/oldnews/
@@ -6,16 +10,12 @@ ld News - Project Environment Context
 - Base Directory Configuration ($base_dir): /var/www/vjbe.net/html/oldnews
 
 ## Routing System
-- Handled via file-based custom router in `./html/index.php`.
-- Strict whitelist check against metadata array keys in `data.php`.
-- Views include `home.php`, `about.php`, `photocopy.php`, and a shared master template wrapper `layout.php`.
-
-## Analytics & Tracking (Unique Visitors)
-- Path Target for persistent metric data: `/var/www/vjbe.net/html/oldnews/stats/`
-- Filenames inside stats are sanitized strings matching page URIs (e.g., `home.txt`).
-- Session state tracking handles client uniqueness checking via `$_SESSION['visited_pages']`.
+- Front controller: `./html/index.php`; article metadata comes from `data.php`.
+- Routes: `/` redirects to `/catalogue`; `/about`, `/contribute`.
+- `/stable/<id>` is each article's canonical URL (`<id>` is the permanent 5-character id in `data.json`), with `/stable/<id>/scans` and `/stable/<id>/markdown`; all take `?edition=<name>`.
+- Old slug URLs (`/<slug>`, `/<slug>/scans`, `/<slug>/markdown`) and `/photocopy/<slug>` 301-redirect to their stable URLs.
+- Views: `about.php`, `contribute.php`, `catalogue.php`, partials in `partials/`, wrapped by `layout.php`.
 
 ## Deployment Mechanics
-- Run script `./html/run-dev.sh` uses the local PHP development server wrapper (`php -S localhost:8000`).
+- `./dev` runs the local PHP development server (`php -S localhost:8000 -t html html/index.php`).
 - Deploy operations executed via `./deploy` shell executable script.
-

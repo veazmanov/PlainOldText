@@ -2,7 +2,7 @@
 // ./html/data.php
 
 $site_name = "Plain Old Text";
-$site_url = "https://plainoldtext.vjbe.net";
+$site_url = "https://sources.vjbe.net";
 
 // URL for a file under html/, versioned by its modification time so browsers refetch it after a deploy.
 function asset($path)
@@ -110,4 +110,15 @@ if (is_dir($articles_base)) {
             'issue'      => $json_data['issue'] ?? null,
         ];
     }
+}
+
+// Tufte sidenote
+
+function sn($html)
+{
+    static $n = 0;
+    $id = 'sn-' . ++$n;
+    return '<label for="' . $id . '" class="margin-toggle sidenote-number"></label>'
+        . '<input type="checkbox" id="' . $id . '" class="margin-toggle"/>'
+        . '<span class="sidenote">' . $html . '</span>';
 }
