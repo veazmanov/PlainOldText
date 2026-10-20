@@ -10,6 +10,9 @@ cd "$(dirname "$0")/.." || exit 1
 SOURCE_DIR="articles"
 TARGET_DIR="oldnews-articles-only"
 
+# Start from an empty folder, so an article's old or renamed files (such as an edition .html
+# left over from a previous file name) don't linger and show up as extra editions.
+rm -rf "${TARGET_DIR:?}"
 mkdir -p "$TARGET_DIR"
 
 find "$SOURCE_DIR" -type f -name "*.md" | sort | while read -r input_file; do

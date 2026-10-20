@@ -12,9 +12,8 @@ include __DIR__ . '/partials/head.php';
             <section class="article-head">
                 <?php
                 $current_page = '';
-                include $article_header_partial;
+                include $article_header_partial; // includes the title
                 ?>
-                <?= $article_title_html ?>
             </section>
         <?php endif; ?>
 
