@@ -1,5 +1,5 @@
 // ./html/js/cite.js
-// "Copy" next to "Cite as": puts the citation on the clipboard, with italics where the paste target
+// "Copy" under "View citation" in the cog menu: puts the citation on the clipboard, with italics where the paste target
 // supports them, or selects it for copying by hand.
 document.querySelectorAll('.cite-copy').forEach(function (button) {
     var citation = document.getElementById(button.getAttribute('data-target'));

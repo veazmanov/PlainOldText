@@ -1,6 +1,7 @@
 <?php // ./html/partials/article_header.php
-// The top of an article page: the title, a dateline (publication, date, page), a cog menu with the
-// page tools (scans, markdown, GitHub, source, summary), the edition switch and the citation.
+// The top of an article page: the title, a dateline (publication, date, page), the edition switch,
+// and a cog menu with the page tools in three groups: Source (scans, source link), Text (markdown,
+// GitHub) and Reference (summary, citation).
 ?>
 <div class="article-top">
     <?= $article_title_html ?>
@@ -10,37 +11,63 @@
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
                 <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"
                     d="M10.3 2.5h3.4l.5 2.6a7.6 7.6 0 0 1 1.9 1.1l2.5-.9 1.7 2.9-2 1.7a7.6 7.6 0 0 1 0 2.2l2 1.7-1.7 2.9-2.5-.9a7.6 7.6 0 0 1-1.9 1.1l-.5 2.6h-3.4l-.5-2.6a7.6 7.6 0 0 1-1.9-1.1l-2.5.9-1.7-2.9 2-1.7a7.6 7.6 0 0 1 0-2.2l-2-1.7 1.7-2.9 2.5.9a7.6 7.6 0 0 1 1.9-1.1z"/>
-                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
             </svg>
         </summary>
         <div class="page-tools-menu">
+            <?php if ($has_scans || !empty($source_url)): ?>
+                <p class="menu-heading">Source</p>
+                <ul>
+                    <?php if ($has_scans): ?>
+                        <li>
+                            <a class="menu-item" href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
+                                aria-controls="scan-panel" aria-expanded="<?= $scans_open ? 'true' : 'false' ?>"><?= $scans_open ? 'Hide scans' : 'Original scans' ?></a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (!empty($source_url)): ?>
+                        <li>
+                            <details class="menu-disclosure">
+                                <summary class="menu-item">Go to source</summary>
+                                <p class="menu-reveal">
+                                    <a class="source-link" href="<?= htmlspecialchars($source_url) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($source_url) ?></a>
+                                </p>
+                            </details>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            <?php endif; ?>
+
+            <p class="menu-heading">Text</p>
             <ul>
-                <?php if ($has_scans): ?>
-                    <li>
-                        <a href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
-                            aria-controls="scan-panel" aria-expanded="<?= $scans_open ? 'true' : 'false' ?>"><?= $scans_open ? 'Hide scans' : 'Original scans' ?></a>
-                    </li>
-                <?php endif; ?>
-                <?php if (!empty($source_url)): ?>
-                    <li>
-                        <a href="<?= htmlspecialchars($source_url) ?>" target="_blank" rel="noopener">Go to source</a>
-                    </li>
-                <?php endif; ?>
                 <?php if (!empty($markdown_url)): ?>
                     <li>
-                        <a href="<?= htmlspecialchars($markdown_url) ?>">View as markdown</a>
+                        <a class="menu-item" href="<?= htmlspecialchars($markdown_url) ?>">View as markdown</a>
                     </li>
                 <?php endif; ?>
                 <li>
-                    <a href="<?= htmlspecialchars($github_url) ?>" target="_blank" rel="noopener">Edit on GitHub</a>
+                    <a class="menu-item" href="<?= htmlspecialchars($github_url) ?>" target="_blank" rel="noopener">Edit on GitHub</a>
                 </li>
             </ul>
-            <?php if (!empty($summary)): ?>
-                <details class="source-summary">
-                    <summary>Summary</summary>
-                    <p><?= htmlspecialchars($summary) ?></p>
-                </details>
-            <?php endif; ?>
+
+            <p class="menu-heading">Reference</p>
+            <ul>
+                <?php if (!empty($summary)): ?>
+                    <li>
+                        <details class="menu-disclosure">
+                            <summary class="menu-item">Summary</summary>
+                            <p class="menu-reveal menu-summary"><?= htmlspecialchars($summary) ?></p>
+                        </details>
+                    </li>
+                <?php endif; ?>
+                <li>
+                    <details class="menu-disclosure">
+                        <summary class="menu-item">View citation</summary>
+                        <div class="menu-reveal">
+                            <p class="menu-citation" id="citation"><?= $citation ?></p>
+                            <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
+                        </div>
+                    </details>
+                </li>
+            </ul>
         </div>
     </details>
 </div>
@@ -67,11 +94,6 @@
     </p>
 <?php endif; ?>
 
-<p class="cite-as sans">
-    <span class="cite-label">Cite as:</span>
-    <span id="citation"><?= $citation ?></span>
-    <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
-</p>
 <script src="<?= asset('js/cite.js') ?>"></script>
 <script src="<?= asset('js/page-tools.js') ?>"></script>
 

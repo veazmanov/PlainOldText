@@ -635,13 +635,34 @@ body:where(.page-article) > article {
     top: calc(100% + 0.4rem);
     right: 0;
     z-index: 20;
-    width: 15rem;
-    padding: 0.4rem 0;
+    width: 19rem;
+    max-width: calc(100vw - 2rem);
+    padding: 0.25rem 0 0.4rem;
     background: #f3eedf;
     border: 1px solid #ddd3b9;
     border-radius: 6px;
     box-shadow: 0 10px 24px -12px rgba(60, 45, 10, 0.45);
     font-size: 0.9rem;
+}
+
+:where(.page-article) .page-tools-menu p.menu-heading {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0.6rem 1rem 0.2rem;
+    text-indent: 0;
+    text-align: left;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+:where(.page-article) .page-tools-menu p.menu-heading:not(:first-child) {
+    margin-top: 0.3rem;
+    border-top: 1px solid #ddd3b9;
+    padding-top: 0.65rem;
 }
 
 :where(.page-article) .page-tools-menu ul {
@@ -659,62 +680,113 @@ body:where(.page-article) > article {
     font-size: inherit;
 }
 
-:where(.page-article) .page-tools-menu a {
-    display: block;
+/* One row: a plain link, or the summary of a disclosure (chevron on the right) */
+:where(.page-article) .page-tools-menu .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0.4rem 1rem;
     color: var(--ink);
     text-decoration: none;
     background: none;
     text-shadow: none;
+    list-style: none;
+    cursor: pointer;
 }
 
-:where(.page-article) .page-tools-menu a:hover,
-:where(.page-article) .page-tools-menu a:focus-visible {
+:where(.page-article) .page-tools-menu .menu-item::-webkit-details-marker {
+    display: none;
+}
+
+:where(.page-article) .page-tools-menu .menu-item:hover,
+:where(.page-article) .page-tools-menu .menu-item:focus-visible {
     background: #e9e2cd;
     outline: none;
 }
 
-:where(.page-article) .source-summary {
-    margin: 0.4rem 0 0;
-    padding: 0.4rem 1rem 0.2rem;
-    border-top: 1px solid #ddd3b9;
-}
-
-:where(.page-article) .source-summary > summary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    list-style: none;
-    cursor: pointer;
-    color: var(--ink);
-    padding: 0.2rem 0;
-}
-
-:where(.page-article) .source-summary > summary::-webkit-details-marker {
-    display: none;
-}
-
-:where(.page-article) .source-summary > summary::before {
-    content: "\25B8";
-    font-size: 0.7rem;
+:where(.page-article) .menu-disclosure > summary::after {
+    content: "";
+    width: 0.38em;
+    height: 0.38em;
+    margin-right: 0.15em;
+    border-right: 1.5px solid var(--ink-muted);
+    border-bottom: 1.5px solid var(--ink-muted);
+    transform: translateY(-0.1em) rotate(45deg);
     transition: transform 0.15s ease;
 }
 
-:where(.page-article) .source-summary[open] > summary::before {
-    transform: rotate(90deg);
+:where(.page-article) .menu-disclosure[open] > summary::after {
+    transform: translateY(0.12em) rotate(-135deg);
 }
 
-:where(.page-article) .source-summary p {
+/* What a disclosure reveals: the source URL, the summary, or the citation and Copy */
+:where(.page-article) .page-tools-menu .menu-reveal {
+    width: auto;
     max-width: none;
-    margin: 0.3rem 0 0.5rem;
+    margin: 0 1rem 0.5rem;
+    padding: 0.5rem 0.65rem;
     text-indent: 0;
     text-align: left;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.45;
     letter-spacing: 0;
     font-kerning: auto;
-    font-style: italic;
     color: #4a4438;
+    background: var(--paper);
+    border: 1px solid #ddd3b9;
+    border-radius: 4px;
+}
+
+:where(.page-article) .menu-reveal p {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    text-indent: 0;
+    text-align: left;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+:where(.page-article) .page-tools-menu .source-link {
+    color: #0b5394;
+    overflow-wrap: anywhere;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    background: none;
+    text-shadow: none;
+}
+
+:where(.page-article) .page-tools-menu .menu-summary {
+    font-style: italic;
+}
+
+:where(.page-article) .page-tools-menu .menu-citation a {
+    color: inherit;
+    overflow-wrap: anywhere;
+    background: none;
+    text-shadow: none;
+}
+
+:where(.page-article) .page-tools-menu .cite-copy {
+    display: block;
+    margin: 0.5rem 0 0 auto;
+    font: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: #f3eedf;
+    border: 1px solid #ddd3b9;
+    border-radius: 999px;
+    padding: 0.15rem 0.8rem;
+    cursor: pointer;
+}
+
+:where(.page-article) .page-tools-menu .cite-copy:hover {
+    border-color: var(--ink-muted);
+}
+
+:where(.page-article) .page-tools-menu .cite-copy[hidden] {
+    display: none;
 }
 
 /* ---- Dateline under the title: publication, date and page ---- */
@@ -802,7 +874,6 @@ body:where(.page-article) > article {
 }
 
 @media (max-width: 999px) {
-    body:where(.page-article).show-scans .cite-as,
     body:where(.page-article).show-scans article > section:not(.article-head) {
         display: none;
     }
@@ -882,43 +953,6 @@ body:where(.page-article) > article {
     }
 }
 
-/* ---- "Cite as" with a copy button ---- */
-:where(.page-article) p.cite-as {
-    max-width: 500px;
-    margin: 0;
-    text-indent: 0;
-    text-align: left;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    letter-spacing: 0;
-    font-kerning: auto;
-    color: #666;
-}
-
-:where(.page-article) .cite-as a {
-    color: #555;
-}
-
-:where(.page-article) .cite-label {
-    color: #888;
-}
-
-:where(.page-article) .cite-copy {
-    font: inherit;
-    color: #555;
-    background: none;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    padding: 0 0.4rem;
-    margin-left: 0.25rem;
-    cursor: pointer;
-}
-
-:where(.page-article) .cite-copy:hover {
-    color: #111;
-    border-color: #999;
-}
-
 @media (max-width: 760px) {
     :where(.page-article) .article-top > h1,
     :where(.page-article) .article-top > h2,
@@ -929,7 +963,7 @@ body:where(.page-article) > article {
 
 @media (prefers-reduced-motion: reduce) {
     :where(.page-article) .page-tools svg,
-    :where(.page-article) .source-summary > summary::before {
+    :where(.page-article) .menu-disclosure > summary::after {
         transition: none;
     }
 }
