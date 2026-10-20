@@ -1,52 +1,55 @@
 <?php
 // ./html/card_scan.php
 // Small images of each article's first scan, for the corner of its catalogue card.
-// The scans live next to the site on the server (~/html/oldnews-photos/<slug>/, served at
-// oldnews-photos.vjbe.net). /stable/<id>/card makes a ~700px-wide image of the top of the first scan
-// the first time it's asked for, keeps it in the system temp folder, and serves that afterwards.
-// Without PHP's GD extension it redirects to the full scan instead.
+// /stable/<id>/card makes a ~700px-wide image of the top of the first scan the first time it's asked
+// for, keeps it in the system temp folder, and serves that afterwards. The scan is read from the
+// photo folder next to the site when there is one (~/html/oldnews-photos on the server), and otherwise
+// downloaded from oldnews-photos.vjbe.net, so this works locally too. Without PHP's GD extension, or if
+// the scan can't be read, it redirects to the full scan instead.
 
 $photos_base = dirname(__DIR__) . '/oldnews-photos';
+$photos_url_base = getenv('PHOTOS_URL_BASE') ?: 'https://oldnews-photos.vjbe.net';
 
-// The first scan of an article, as a file on disk, or null
-function card_scan_source($uri)
+// The first scan's filename, or null
+function card_scan_name($uri)
 {
-    global $metadata, $photos_base;
-    $scans = $metadata[$uri]['scans'] ?? [];
-    if (empty($scans)) {
-        return null;
-    }
-    $file = $photos_base . '/' . $uri . '/' . $scans[0];
-    return is_file($file) ? $file : null;
+    global $metadata;
+    return $metadata[$uri]['scans'][0] ?? null;
 }
 
-// URL of the card image (versioned by the scan's date, so browsers can keep it), or null
+// URL of the card image, or null. ?v= changes when the first scan does, so browsers can keep it.
 function card_scan_url($uri)
 {
     global $metadata;
-    $file = card_scan_source($uri);
-    return $file ? '/stable/' . $metadata[$uri]['id'] . '/card?v=' . filemtime($file) : null;
+    $name = card_scan_name($uri);
+    return $name ? '/stable/' . $metadata[$uri]['id'] . '/card?v=' . substr(md5($name), 0, 8) : null;
 }
 
 function serve_card_scan($uri)
 {
-    global $metadata;
-    $file = card_scan_source($uri);
-    if ($file === null) {
+    global $metadata, $photos_base, $photos_url_base;
+    $name = card_scan_name($uri);
+    if ($name === null) {
         http_response_code(404);
         exit;
     }
+    $remote = $photos_url_base . '/' . rawurlencode($uri) . '/' . rawurlencode($name);
+    $local = $photos_base . '/' . $uri . '/' . $name;
 
     $webp = function_exists('imagewebp');
     $type = $webp ? 'image/webp' : 'image/jpeg';
     $cache_dir = sys_get_temp_dir() . '/plainoldtext-cards';
-    $cache = $cache_dir . '/' . $metadata[$uri]['id'] . '-' . filemtime($file) . ($webp ? '.webp' : '.jpg');
+    $cache = $cache_dir . '/' . $metadata[$uri]['id'] . '-' . substr(md5($name), 0, 8) . ($webp ? '.webp' : '.jpg');
 
     if (!is_file($cache)) {
-        $image = function_exists('imagecreatefromstring') ? make_card_image($file) : null;
+        $image = null;
+        if (function_exists('imagecreatefromstring')) {
+            $data = is_file($local) ? file_get_contents($local) : fetch_scan($remote);
+            $image = $data !== null ? make_card_image($data) : null;
+        }
         if ($image === null) {
-            // No GD (or an unreadable file): fall back to the full scan
-            header('Location: https://oldnews-photos.vjbe.net/' . rawurlencode($uri) . '/' . rawurlencode(basename($file)));
+            // No GD, or the scan couldn't be read: fall back to the full scan
+            header('Location: ' . $remote);
             exit;
         }
         @mkdir($cache_dir, 0775, true);
@@ -69,11 +72,20 @@ function serve_card_scan($uri)
     exit;
 }
 
+// Download a scan from the photo host, or null
+function fetch_scan($url)
+{
+    $context = stream_context_create(['http' => ['timeout' => 20, 'ignore_errors' => true]]);
+    $data = @file_get_contents($url, false, $context);
+    $ok = isset($http_response_header[0]) && preg_match('#\s200\s#', $http_response_header[0]);
+    return ($data !== false && $ok) ? $data : null;
+}
+
 // The top of the scan (at most 1.4× as tall as it is wide), scaled to 700px wide
-function make_card_image($file)
+function make_card_image($data)
 {
     ini_set('memory_limit', '512M');
-    $source = @imagecreatefromstring(file_get_contents($file));
+    $source = @imagecreatefromstring($data);
     if ($source === false) {
         return null;
     }

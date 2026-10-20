@@ -2,5 +2,5 @@
 .DS_Store   
 .llm-context
 oldnews-articles-only
-# A local copy of the photo host, for the catalogue card images in development
+# An optional local copy of the photo host (the card images otherwise download the scans)
 oldnews-photos/
