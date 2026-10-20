@@ -188,7 +188,7 @@
     width: 100%;
     box-sizing: border-box;
     font: inherit;
-    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-family: et-book, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
     font-size: 1.25rem;
     color: var(--ink);
     background: transparent;
