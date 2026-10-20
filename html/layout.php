@@ -1,7 +1,10 @@
 <?php
 // ./html/layout.php
 $head_title = $title . ' | ' . $pub_name;
-$body_class = isset($article_header_partial) ? 'page-article' . (!empty($scans_open) ? ' show-scans' : '') : '';
+// show-scans: opened at /stable/<id>/scans. scans-auto: the default, open beside the text on wide screens.
+$body_class = isset($article_header_partial)
+    ? 'page-article' . (!empty($scans_open) ? ' show-scans' : (!empty($has_scans) ? ' scans-auto' : ''))
+    : '';
 include __DIR__ . '/partials/head.php';
 ?>
     <header>

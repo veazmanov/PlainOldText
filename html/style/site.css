@@ -813,10 +813,20 @@ body:where(.page-article) > article {
     margin: 0 0.5rem;
 }
 
-/* ---- Original scans: beside the text on wide screens (toggled by "Original scans"),
-        and in place of the text on narrow screens at /<slug>/scans ---- */
+/* ---- Original scans: beside the text on wide screens (open by default: body.scans-auto),
+        and in place of the text on narrow screens at /<slug>/scans (body.show-scans) ---- */
+body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
+    display: none;
+}
+
+@media (max-width: 999px) {
+    body:where(.page-article).scans-auto:not(.show-scans) .scan-panel {
+        display: none;
+    }
+}
+
 @media (min-width: 1000px) {
-    body:where(.page-article).show-scans {
+    body:where(.page-article):is(.show-scans, .scans-auto) {
         width: 46vw;
         max-width: none;
         margin-left: 0;
@@ -888,6 +898,48 @@ body:where(.page-article) > article {
         font-size: 0.85rem;
         color: var(--ink-muted);
     }
+}
+
+/* ---- The scans button under the dateline ---- */
+:where(.page-article) p.article-actions {
+    max-width: 500px;
+    margin: 0 0 1rem;
+    text-indent: 0;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+:where(.page-article) .scans-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--ink);
+    text-decoration: none;
+    background: #f3eedf;
+    border: 1px solid #ddd3b9;
+    border-radius: 999px;
+    padding: 0.25rem 0.9rem;
+    text-shadow: none;
+}
+
+:where(.page-article) .scans-toggle::before {
+    content: "";
+    width: 0.75em;
+    height: 0.9em;
+    border: 1.5px solid currentColor;
+    border-radius: 1px;
+    box-shadow: 2px 2px 0 -0.5px #f3eedf, 2px 2px 0 1px currentColor;
+}
+
+:where(.page-article) .scans-toggle:hover {
+    border-color: var(--ink-muted);
+}
+
+:where(.page-article) .scans-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 /* ---- Editions (e.g. reading and diplomatic) of one source ---- */

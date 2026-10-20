@@ -23,3 +23,7 @@ $body_class = $body_class ?? '';
 </head>
 
 <body<?= $body_class !== '' ? ' class="' . htmlspecialchars($body_class) . '"' : '' ?>>
+<?php if (str_contains($body_class, 'scans-auto')): ?>
+    <?php // A reader who closed the scans gets the text alone next time, without the panel flashing open ?>
+    <script>try { if (localStorage.getItem('pot-scans') === 'hidden') document.body.classList.remove('scans-auto'); } catch (e) {}</script>
+<?php endif; ?>

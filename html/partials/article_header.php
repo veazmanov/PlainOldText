@@ -1,7 +1,8 @@
 <?php // ./html/partials/article_header.php
-// The top of an article page: the title, a dateline (publication, date, page), the edition switch,
-// and a cog menu with the page tools in three groups: Source (scans, source link), Text (markdown,
-// GitHub) and Reference (summary, citation).
+// The top of an article page: the title, a dateline (publication, date, page), the scans button and
+// edition switch, and a cog menu with the page tools in three groups: Source (source link), Text
+// (markdown, GitHub) and Reference (summary, citation). The scans open beside the text by default on
+// wide screens (body.scans-auto); see article.js.
 ?>
 <div class="article-top">
     <?= $article_title_html ?>
@@ -14,25 +15,17 @@
             </svg>
         </summary>
         <div class="page-tools-menu">
-            <?php if ($has_scans || !empty($source_url)): ?>
+            <?php if (!empty($source_url)): ?>
                 <p class="menu-heading">Source</p>
                 <ul>
-                    <?php if ($has_scans): ?>
-                        <li>
-                            <a class="menu-item" href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
-                                aria-controls="scan-panel" aria-expanded="<?= $scans_open ? 'true' : 'false' ?>"><?= $scans_open ? 'Hide scans' : 'Original scans' ?></a>
-                        </li>
-                    <?php endif; ?>
-                    <?php if (!empty($source_url)): ?>
-                        <li>
-                            <details class="menu-disclosure">
-                                <summary class="menu-item">Go to source</summary>
-                                <p class="menu-reveal">
-                                    <a class="source-link" href="<?= htmlspecialchars($source_url) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($source_url) ?></a>
-                                </p>
-                            </details>
-                        </li>
-                    <?php endif; ?>
+                    <li>
+                        <details class="menu-disclosure">
+                            <summary class="menu-item">Go to source</summary>
+                            <p class="menu-reveal">
+                                <a class="source-link" href="<?= htmlspecialchars($source_url) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($source_url) ?></a>
+                            </p>
+                        </details>
+                    </li>
                 </ul>
             <?php endif; ?>
 
@@ -79,6 +72,13 @@
     <span><?= htmlspecialchars($date_str) ?><?php if (!empty($page_num)): ?>, p.&nbsp;<?= htmlspecialchars($page_num) ?><?php endif; ?></span>
 </p>
 
+<?php if ($has_scans): ?>
+    <p class="article-actions sans">
+        <a class="scans-toggle" href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
+            aria-controls="scan-panel" aria-expanded="<?= $scans_open ? 'true' : 'false' ?>"><?= $scans_open ? 'Hide scans' : 'Original scans' ?></a>
+    </p>
+<?php endif; ?>
+
 <?php if (count($editions) > 1): ?>
     <p class="edition-switch sans">
         <?php $first = true; foreach ($editions as $id => $ed):
@@ -98,7 +98,8 @@
 <script src="<?= asset('js/page-tools.js') ?>"></script>
 
 <?php if ($has_scans): ?>
-    <aside class="scan-panel sans" id="scan-panel" <?= $scans_open ? '' : 'hidden' ?> aria-label="Original scans">
+    <?php // Shown by CSS when the body has show-scans (opened) or scans-auto (the default, wide screens only) ?>
+    <aside class="scan-panel sans" id="scan-panel" aria-label="Original scans">
         <p class="scan-panel-bar">
             <span>Original scans</span>
             <button type="button" id="scans-close">Close &times;</button>
