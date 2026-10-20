@@ -47,8 +47,10 @@ function article_editions($uri)
     return $editions;
 }
 
-// One record per article folder that has a data.json, keyed by folder name (the URL slug).
+// One record per article folder that has a data.json, keyed by folder name (the slug).
 $metadata = [];
+// Each article's permanent id (its "id" in data.json, used in /stable/<id>) => slug.
+$stable_ids = [];
 
 if (is_dir($articles_base)) {
     foreach (array_diff(scandir($articles_base), ['.', '..']) as $item) {
@@ -57,6 +59,17 @@ if (is_dir($articles_base)) {
         if (!$json_data) {
             continue;
         }
+
+        $id = strtolower(trim((string) ($json_data['id'] ?? '')));
+        if ($id === '') {
+            error_log("Plain Old Text: skipping article '$item': no \"id\" in data.json (run scripts/assign-ids.php)");
+            continue;
+        }
+        if (isset($stable_ids[$id])) {
+            error_log("Plain Old Text: skipping article '$item': id '$id' is already used by '{$stable_ids[$id]}'");
+            continue;
+        }
+        $stable_ids[$id] = $item;
 
         // A full date, or just a year (e.g. a book)
         $year  = $json_data['year'] ?? '';
@@ -71,6 +84,7 @@ if (is_dir($articles_base)) {
         }
 
         $metadata[$item] = [
+            'id'         => $id,
             'title'      => $json_data['title'] ?? 'Untitled Article',
             // "publication" for books and other non-newspaper sources
             'pub'        => ($json_data['publication'] ?? $json_data['newspaper'] ?? '') ?: 'Archive Entry',

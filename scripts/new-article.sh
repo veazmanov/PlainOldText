@@ -46,6 +46,9 @@ cat > "$SLUG/data.json" <<EOF
 }
 EOF
 
+# Give it a permanent id for its stable URL (/stable/<id>)
+php ../scripts/assign-ids.php "$SLUG"
+
 echo "Created:"
 echo "  $SLUG/"
 echo "    ├── main.md"

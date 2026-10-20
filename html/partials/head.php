@@ -1,7 +1,8 @@
 <?php
 // ./html/partials/head.php
 // Starts every page, through the opening <body> tag.
-// Expects $head_title; optional $body_class (space-separated; 'page-article' also loads MathJax).
+// Expects $head_title; optional $body_class (space-separated; 'page-article' also loads MathJax)
+// and $canonical_url (set by render_article()).
 $body_class = $body_class ?? '';
 ?>
 <!DOCTYPE html>
@@ -11,6 +12,9 @@ $body_class = $body_class ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($head_title) ?></title>
+    <?php if (!empty($canonical_url)): ?>
+        <link rel="canonical" href="<?= htmlspecialchars($canonical_url) ?>">
+    <?php endif; ?>
     <link rel="stylesheet" href="<?= asset('style/tufte.css') ?>">
     <link rel="stylesheet" href="<?= asset('style/site.css') ?>">
     <?php if (in_array('page-article', explode(' ', $body_class))): ?>

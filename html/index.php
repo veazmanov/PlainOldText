@@ -54,29 +54,32 @@ if ($clean_uri === "contribute") {
     exit;
 }
 
-// 5. Old scans URL: /photocopy/<slug> now lives at /<slug>/scans
-if (preg_match('#^photocopy/(.+)$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
-    header('Location: /' . rawurlencode($m[1]) . '/scans', true, 301);
-    exit;
-}
-
-// 6. Markdown Route: /<slug>/markdown[?edition=<id>] serves the plain-text source of an edition
-if (preg_match('#^(.+)/markdown$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
-    $edition = pick_edition(article_editions($m[1]));
-    if (!$edition || !$edition['md']) {
+// 5. Stable Route: /stable/<id>, /stable/<id>/scans with the original scans open, and
+// /stable/<id>/markdown with the plain-text source (all take ?edition=<id>). This is each article's canonical URL.
+if (preg_match('#^stable/([0-9a-hjkmnp-tv-z]{5})(/scans|/markdown)?$#i', $clean_uri, $m)) {
+    $slug = $stable_ids[strtolower($m[1])] ?? null;
+    if ($slug === null) {
         http_response_code(404);
         render_404();
         exit;
     }
-    header('Content-Type: text/plain; charset=utf-8');
-    readfile($edition['md']);
+    $view = $m[2] ?? '';
+    if ($view === '/markdown') {
+        render_markdown($slug);
+    } else {
+        render_article($slug, $view === '/scans');
+    }
     exit;
 }
 
-// 7. Article Route: /<slug>, and /<slug>/scans with the original scans open (both take ?edition=<id>)
-if (preg_match('#^(.+?)(/scans)?$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
-    render_article($m[1], !empty($m[2]));
-    exit;
+// 6. Old scans URL: /photocopy/<slug> now lives at /stable/<id>/scans
+if (preg_match('#^photocopy/(.+)$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
+    redirect_to_stable($m[1], '/scans');
+}
+
+// 7. Old slug URLs: /<slug>, /<slug>/scans and /<slug>/markdown redirect to their stable URLs
+if (preg_match('#^(.+?)(/scans|/markdown)?$#', $clean_uri, $m) && isset($metadata[$m[1]])) {
+    redirect_to_stable($m[1], $m[2] ?? '');
 }
 
 // Fallback 404
@@ -84,6 +87,28 @@ http_response_code(404);
 render_404();
 
 // ---- Render Functions ----
+
+// Permanently redirect to an article's stable URL, keeping the query string (?edition=).
+function redirect_to_stable($slug, $suffix = '')
+{
+    global $metadata;
+    $query = $_SERVER['QUERY_STRING'] ?? '';
+    header('Location: /stable/' . $metadata[$slug]['id'] . $suffix . ($query !== '' ? '?' . $query : ''), true, 301);
+    exit;
+}
+
+// The plain-text source of an article's edition (?edition=<id>), or a 404 if it has none.
+function render_markdown($slug)
+{
+    $edition = pick_edition(article_editions($slug));
+    if (!$edition || !$edition['md']) {
+        http_response_code(404);
+        render_404();
+        return;
+    }
+    header('Content-Type: text/plain; charset=utf-8');
+    readfile($edition['md']);
+}
 
 function get_compiled_links()
 {
@@ -94,6 +119,7 @@ function get_compiled_links()
         $article = get_article_preview($uri);
         $links[] = $meta + [
             'uri' => $uri,
+            'id' => $meta['id'],
             'excerpt' => $article['excerpt'],
             'words' => $article['words']
         ];
@@ -157,7 +183,9 @@ function render_article($uri, $scans_open = false)
 {
     global $metadata, $articles_base, $site_name, $site_url;
     $meta = $metadata[$uri];
-    $slug_url = '/' . rawurlencode($uri);
+    // The article's stable URL, which its citation, links and canonical tag use
+    $slug_url = '/stable/' . $meta['id'];
+    $canonical_url = $site_url . $slug_url;
 
     $scans = array_map(
         fn($file) => 'https://oldnews-photos.vjbe.net/' . rawurlencode($uri) . '/' . rawurlencode($file),

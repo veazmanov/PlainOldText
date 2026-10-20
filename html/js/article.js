@@ -1,6 +1,6 @@
 // ./html/js/article.js
 // On wide screens, "Original scans" opens the scans beside the text, and keeps them roughly in step with it.
-// The URL follows along (/<slug> and /<slug>/scans). On narrow screens /<slug>/scans is its own page.
+// The URL follows along (/stable/<id> and /stable/<id>/scans). On narrow screens /stable/<id>/scans is its own page.
 (function () {
     var toggle = document.getElementById('scans-toggle');
     var panel = document.getElementById('scan-panel');
@@ -53,7 +53,7 @@
     });
     close.addEventListener('click', function () { show(false); });
 
-    // Opened at /<slug>/scans on a wide screen: line the scans up with the text.
+    // Opened at /stable/<id>/scans on a wide screen: line the scans up with the text.
     if (!panel.hidden && wide.matches) show(true);
 
     // Coarse scroll sync: the scans follow the text proportionally, but only once they

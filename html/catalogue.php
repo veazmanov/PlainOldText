@@ -74,7 +74,7 @@ include __DIR__ . '/partials/head.php';
                             </p>
 
                             <h2 class="clip-headline">
-                                <a href="/<?= htmlspecialchars($article['uri']) ?>"
+                                <a href="/stable/<?= htmlspecialchars($article['id']) ?>"
                                     <?php if (!empty($article['summary'])): ?>title="<?= htmlspecialchars($article['summary']) ?>"<?php endif; ?>>
                                     <?= htmlspecialchars($article['title']) ?>
                                 </a>
