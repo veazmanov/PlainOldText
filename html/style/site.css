@@ -406,6 +406,39 @@
     font-weight: 700;
     color: var(--accent);
 }
+/* A card with a scan: the scan fills a wedge in the bottom-right corner, cut on the diagonal,
+   and the transcription wraps along the cut (shape-outside), so the card shows both. */
+:where(.page-catalogue) .clip-body.has-scan {
+    max-height: 13em;
+    text-align: left;
+    hyphens: manual;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+:where(.page-catalogue) .clip-scan {
+    float: right;
+    width: 72%;
+    height: 13em;
+    margin-left: 0.4rem;
+    shape-outside: polygon(100% 0, 100% 100%, 0 100%);
+    shape-margin: 0.5rem;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    /* Zoomed in, so the print reads as print; card_position in data.json picks the spot */
+    background: #d6d0bf 15% 12% / 190% auto no-repeat;
+    filter: grayscale(0.35) contrast(1.05);
+}
+/* Featured cards are wide: one column of text beside a narrower wedge */
+:where(.page-catalogue) .is-featured .clip-scan {
+    width: 45%;
+}
+:where(.page-catalogue) .clip-body.has-scan::first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    font-weight: inherit;
+    color: inherit;
+}
 :where(.page-catalogue) .clip-body.is-summary {
     font-style: italic;
     color: #4a4438;
@@ -452,6 +485,12 @@
         column-gap: 1.75rem;
         column-rule: 1px solid var(--paper-edge);
         max-height: 13em;
+    }
+}
+@media (min-width: 761px) {
+    :where(.page-catalogue) .is-featured .clip-body.has-scan {
+        columns: auto;
+        column-rule: none;
     }
 }
 

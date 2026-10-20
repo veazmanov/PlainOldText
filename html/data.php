@@ -92,11 +92,14 @@ if (is_dir($articles_base)) {
             'date'       => $date_obj ? $date_obj->format($date_format) : 'Undated',
             'sort_date'  => $date_obj ? $date_obj->format('Y-m-d') : '0000-00-00',
             'summary'    => $json_data['summary'] ?? '',
-            'featured'   => !empty($json_data['featured']),
+            // true, or "true"; "false" as a string is not featured
+            'featured'   => filter_var($json_data['featured'] ?? false, FILTER_VALIDATE_BOOLEAN),
             'source_url' => $json_data['source_url'] ?? null,
             'page'       => $json_data['page'] ?? null,
             'scans'      => $json_data['scans'] ?? [],
             'scans_pdf'  => $json_data['scans_pdf'] ?? null,
+            // Which part of the first scan the catalogue card shows (a CSS background-position)
+            'card_position' => $json_data['card_position'] ?? null,
             // For the citation (see citation.php)
             'year'       => $year,
             'month'      => $date_format === 'Y' ? '' : $month,

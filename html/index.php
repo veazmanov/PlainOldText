@@ -2,6 +2,7 @@
 // ./html/index.php
 require_once('data.php');
 require_once('citation.php');
+require_once('card_scan.php');
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -52,6 +53,16 @@ if ($clean_uri === "contribute") {
     include(__DIR__ . '/layout.php');
 
     exit;
+}
+
+// 5a. A card-sized image of the article's first scan, for the catalogue (see card_scan.php)
+if (preg_match('#^stable/([0-9a-hjkmnp-tv-z]{5})/card$#i', $clean_uri, $m)) {
+    $slug = $stable_ids[strtolower($m[1])] ?? null;
+    if ($slug === null) {
+        http_response_code(404);
+        exit;
+    }
+    serve_card_scan($slug);
 }
 
 // 5. Stable Route: /stable/<id>, /stable/<id>/scans with the original scans open, and
@@ -120,6 +131,7 @@ function get_compiled_links()
         $links[] = $meta + [
             'uri' => $uri,
             'id' => $meta['id'],
+            'card_scan' => card_scan_url($uri),
             'excerpt' => $article['excerpt'],
             'words' => $article['words']
         ];

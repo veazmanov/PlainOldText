@@ -100,7 +100,15 @@ include __DIR__ . '/partials/head.php';
                             <hr class="clip-dinkus">
 
                             <?php if (!empty($body)): ?>
-                                <p class="clip-body <?= empty($article['excerpt']) ? 'is-summary' : '' ?>">
+                                <p class="clip-body <?= empty($article['excerpt']) ? 'is-summary' : '' ?><?= $article['card_scan'] ? ' has-scan' : '' ?>">
+                                    <?php if ($article['card_scan']):
+                                        // The first scan fills the bottom-right corner; the text wraps along the diagonal
+                                        $style = "background-image: url('" . htmlspecialchars($article['card_scan']) . "')";
+                                        if (!empty($article['card_position'])) {
+                                            $style .= '; background-position: ' . htmlspecialchars(preg_replace('/[^0-9a-z% .-]/i', '', $article['card_position']));
+                                        } ?>
+                                        <span class="clip-scan" aria-hidden="true" style="<?= $style ?>"></span>
+                                    <?php endif; ?>
                                     <?= htmlspecialchars($body) ?>
                                 </p>
                             <?php else: ?>
