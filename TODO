@@ -1,4 +1,4 @@
-- [ ] add stable URLs
+- [ ] get tufte font back
 - [ ] add comment section 
 - [ ] is it best to have a one paragraph per line or an actually accurately flowed text - i.e the plain text version should have the exact same line breaks as the text it is transcribing. This will make copy-checking much easier. - check whether default is wrong flow. 
 - [ ] consider a .md and a .txt version
