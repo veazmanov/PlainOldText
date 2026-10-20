@@ -1,7 +1,7 @@
 <?php // ./html/partials/article_header.php
 // The top of an article page: the title, a dateline (publication, date, page), the scans button and
 // edition switch, and a cog menu with the page tools in three groups: Source (source link), Text
-// (markdown, GitHub) and Reference (summary, citation). The scans open beside the text by default on
+// (markdown, GitHub, corrections) and Reference (summary, citation). The scans open beside the text by default on
 // wide screens (body.scans-auto); see article.js.
 ?>
 <div class="article-top">
@@ -38,6 +38,12 @@
                 <?php endif; ?>
                 <li>
                     <a class="menu-item" href="<?= htmlspecialchars($github_url) ?>" target="_blank" rel="noopener">Edit on GitHub</a>
+                </li>
+                <li>
+                    <details class="menu-disclosure">
+                        <summary class="menu-item">Submit a correction</summary>
+                        <p class="menu-reveal">Email your correction to <a href="mailto:victor@vjbe.net">victor@vjbe.net</a>.</p>
+                    </details>
                 </li>
             </ul>
 

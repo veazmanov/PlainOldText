@@ -83,12 +83,9 @@ include __DIR__ . '/partials/head.php';
                         data-search="<?= htmlspecialchars($search_text) ?>"
                         data-category="<?= htmlspecialchars($article['category']) ?>">
                         <div class="clip">
-                            <p class="clip-masthead"><?= htmlspecialchars($article['pub']) ?></p>
-                            <p class="clip-dateline sans">
-                                <span><?= htmlspecialchars($article['date']) ?></span>
-                                <?php if ($article['words'] > 0): ?>
-                                    <span><?= number_format($article['words']) ?> words</span>
-                                <?php endif; ?>
+                            <p class="clip-byline sans">
+                                <span class="clip-pub"><?= htmlspecialchars($article['pub']) ?></span>
+                                <span class="clip-date"><?= htmlspecialchars($article['date']) ?></span>
                             </p>
 
                             <h2 class="clip-headline">
@@ -99,16 +96,24 @@ include __DIR__ . '/partials/head.php';
                             </h2>
                             <hr class="clip-dinkus">
 
-                            <?php if (!empty($body)): ?>
-                                <p class="clip-body <?= empty($article['excerpt']) ? 'is-summary' : '' ?><?= $article['card_scan'] ? ' has-scan' : '' ?>">
-                                    <?php if ($article['card_scan']):
-                                        // The first scan fills the bottom-right corner; the text wraps along the diagonal
-                                        $style = "background-image: url('" . htmlspecialchars($article['card_scan']) . "')";
-                                        if (!empty($article['card_position'])) {
-                                            $style .= '; background-position: ' . htmlspecialchars(preg_replace('/[^0-9a-z% .-]/i', '', $article['card_position']));
-                                        } ?>
-                                        <span class="clip-scan" aria-hidden="true" style="<?= $style ?>"></span>
+                            <?php if ($article['card_scan']):
+                                // Cards with a scan split down the middle: text on the left, scan on the right
+                                $style = "background-image: url('" . htmlspecialchars($article['card_scan']) . "')";
+                                if (!empty($article['card_position'])) {
+                                    $style .= '; background-position: ' . htmlspecialchars(preg_replace('/[^0-9a-z% .-]/i', '', $article['card_position']));
+                                } ?>
+                                <div class="clip-split">
+                                    <?php if (!empty($body)): ?>
+                                        <p class="clip-body <?= empty($article['excerpt']) ? 'is-summary' : '' ?>">
+                                            <?= htmlspecialchars($body) ?>
+                                        </p>
+                                    <?php else: ?>
+                                        <div class="clip-body"></div>
                                     <?php endif; ?>
+                                    <div class="clip-scan" aria-hidden="true" style="<?= $style ?>"></div>
+                                </div>
+                            <?php elseif (!empty($body)): ?>
+                                <p class="clip-body <?= empty($article['excerpt']) ? 'is-summary' : '' ?>">
                                     <?= htmlspecialchars($body) ?>
                                 </p>
                             <?php else: ?>
