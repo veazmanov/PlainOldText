@@ -11,7 +11,7 @@
         </a>
     </p>
     <p class="footer-credit sans">
-        Created by <a href="https://vjbe.net">Victor Elgersma-Azmanov</a>
+        Created by <a href="https://vjbe.net">Victor Elgersma Azmanov</a>
     </p>
 </footer>
 

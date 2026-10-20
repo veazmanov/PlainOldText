@@ -8,8 +8,8 @@
 </p>
 
 <p>
-    Most of the material comes from the primary sources used by Victor Elgersma-Azmanov in his
-    essays.<?= sn('Many of the British newspaper articles were used in Victor Elgersma-Azmanov, “The Nebular Hypothesis and the Mid-Victorian Press (1844–1846)” (unpublished essay, Utrecht University, 2026), <a href="https://essays.vjbe.net/nebular">essays.vjbe.net/nebular</a>.') ?><?= sn('The preface to Alexis of Piedmont’s <em>Secrets</em> appears in Victor Elgersma-Azmanov, “Hands-on History: Benefits and Drawbacks” (unpublished essay, Utrecht University, 2026), <a href="https://essays.vjbe.net/hands-on">essays.vjbe.net/hands-on</a>.') ?>
+    Most of the material comes from the primary sources used by Victor Elgersma Azmanov in his
+    essays.<?= sn('Many of the British newspaper articles were used in Victor Elgersma Azmanov, “The Nebular Hypothesis and the Mid-Victorian Press (1844–1846)” (unpublished essay, Utrecht University, 2026), <a href="https://essays.vjbe.net/nebular">essays.vjbe.net/nebular</a>.') ?><?= sn('The preface to Alexis of Piedmont’s <em>Secrets</em> appears in Victor Elgersma Azmanov, “Hands-on History: Benefits and Drawbacks” (unpublished essay, Utrecht University, 2026), <a href="https://essays.vjbe.net/hands-on">essays.vjbe.net/hands-on</a>.') ?>
 </p>
 
 <p>

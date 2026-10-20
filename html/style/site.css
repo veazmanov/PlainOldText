@@ -14,39 +14,109 @@
    1. Site header and footer
    =================================================================== */
 
+/* ---- Masthead: the site name as a logo, on a double-ruled plaque ---- */
+.site-masthead {
+    margin: 3rem 12.5% 0 0;
+    text-align: center;
+}
+
+.site-logo {
+    display: inline-block;
+    padding: 5px;
+    color: #1a1712;
+    text-decoration: none;
+    background: #fdfaef;
+    border: 1px solid #1a1712;
+    box-shadow: 0 1px 0 #e7dfc9, 0 2px 6px rgba(26, 23, 18, 0.08);
+}
+
+.site-logo-name {
+    display: block;
+    padding: 0.55rem 1.6rem 0.6rem;
+    border: 1px solid #1a1712;
+    font-size: 2.1rem;
+    line-height: 1;
+    font-variant: small-caps;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+}
+
+/* Diamond ornaments flanking the name */
+.site-logo-name::before,
+.site-logo-name::after {
+    content: "\25C6";
+    display: inline-block;
+    margin: 0 0.7em;
+    font-size: 0.4em;
+    vertical-align: middle;
+    color: #8a2b1d;
+    letter-spacing: 0;
+}
+
+.site-logo:hover .site-logo-name,
+.site-logo:focus-visible .site-logo-name {
+    border-color: #8a2b1d;
+}
+
+/* ---- Primary nav: a centred band between hairline rules ---- */
 .site-nav {
-    margin: 0 0 3rem 0;
+    margin: 1.5rem 12.5% 0 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .site-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 2.5rem;
 }
 
 .site-nav li {
-    display: inline;
-}
-
-.site-nav li + li::before {
-    content: "/";
-    color: #999;
-    margin: 0 0.75rem;
+    margin: 0;
+    padding: 0;
 }
 
 .site-nav a {
+    display: block;
+    padding: 0.55rem 0.1rem 0.45rem;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
     text-decoration: none;
-    color: #666;
-    font-size: 0.95rem;
+    background: none;
+    text-shadow: none;
+    color: #6b6455;
+    font-size: 1rem;
     font-variant: small-caps;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
 }
 
-/* TARGET THE LINK INSIDE THE ACTIVE LI */
-.site-nav li.active a {
-    color: #111;
-    font-weight: bold;
-    pointer-events: none; /* Optional: stops users re-clicking the page they're already on */
+.site-nav a:hover {
+    color: #1a1712;
+}
+
+.site-nav a[aria-current="page"] {
+    color: #1a1712;
+    border-bottom-color: #8a2b1d;
+}
+
+@media (max-width: 760px) {
+    .site-masthead,
+    .site-nav {
+        margin-right: 0;
+    }
+
+    .site-logo-name {
+        font-size: 1.6rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+    .site-nav ul {
+        gap: 0 1.5rem;
+    }
 }
 
 .site-footer .footer-links {
@@ -559,15 +629,13 @@
 }
 
 /* ---- Quieter site header on article pages, so the article title leads ---- */
-body:where(.page-article) > header > h1 {
-    font-size: 1.3rem;
+body:where(.page-article) .site-masthead {
     margin-top: 2rem;
-    margin-bottom: 0;
 }
 
-body:where(.page-article) > header > .subtitle {
-    font-size: 0.95rem;
-    margin-top: 0.2rem;
+body:where(.page-article) .site-logo-name {
+    font-size: 1.4rem;
+    padding: 0.4rem 1.1rem;
 }
 
 body:where(.page-article) > header .site-nav {
