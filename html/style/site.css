@@ -86,20 +86,25 @@
     --accent: #8a2b1d;
 }
 
-/* ---- Toolbar: search, sort, count ---- */
+/* ---- Toolbar: a card holding search, the Filters toggle, its panel and the count ---- */
 :where(.page-catalogue) .catalogue-tools {
+    --panel: #f3eedf;
+    --panel-edge: #ddd3b9;
+    margin: 0 12.5% 2.5rem 0;
+    padding: 1.25rem 1.5rem 1rem;
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 6px;
+}
+:where(.page-catalogue) .tools-row {
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
-    justify-content: space-between;
-    gap: 1rem 2rem;
-    margin-bottom: 2rem;
-    padding-right: 12.5%;
+    gap: 1rem;
 }
 :where(.page-catalogue) .search-field {
     position: relative;
-    flex: 1 1 22rem;
-    max-width: 32rem;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 :where(.page-catalogue) .search-field label {
     display: block;
@@ -111,6 +116,7 @@
 }
 :where(.page-catalogue) .search-field input {
     width: 100%;
+    box-sizing: border-box;
     font: inherit;
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
     font-size: 1.25rem;
@@ -125,7 +131,7 @@
     appearance: none;
 }
 :where(.page-catalogue) .search-field input::placeholder {
-    color: #aaa294;
+    color: #a39a87;
     font-style: italic;
 }
 :where(.page-catalogue) .search-field input:focus {
@@ -141,7 +147,7 @@
     font-family: inherit;
     font-size: 0.75rem;
     color: var(--ink-muted);
-    border: 1px solid var(--paper-edge);
+    border: 1px solid var(--panel-edge);
     border-radius: 3px;
     padding: 0 0.35rem;
     pointer-events: none;
@@ -150,46 +156,114 @@
 :where(.page-catalogue) .search-field input:not(:placeholder-shown) ~ kbd {
     display: none;
 }
-:where(.page-catalogue) .sort-controls {
+
+/* ---- Filters toggle ---- */
+:where(.page-catalogue) .filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex: none;
+    font: inherit;
     font-size: 0.9rem;
-    color: var(--ink-muted);
-    white-space: nowrap;
-}
-:where(.page-catalogue) .sort-link {
-    text-decoration: none;
-    color: #0066cc;
-}
-:where(.page-catalogue) .sort-link.active {
     color: var(--ink);
-    font-weight: bold;
-    pointer-events: none;
+    background: var(--paper);
+    border: 1px solid var(--panel-edge);
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+    cursor: pointer;
 }
+:where(.page-catalogue) .filter-toggle:hover {
+    border-color: var(--ink-muted);
+}
+:where(.page-catalogue) .filter-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+:where(.page-catalogue) .filter-toggle::after {
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-0.15em) rotate(45deg);
+    transition: transform 0.15s ease;
+}
+:where(.page-catalogue) .filter-toggle[aria-expanded="true"]::after {
+    transform: translateY(0.1em) rotate(-135deg);
+}
+:where(.page-catalogue) .filter-badge {
+    min-width: 1.3em;
+    padding: 0 0.3em;
+    font-size: 0.75rem;
+    line-height: 1.3em;
+    text-align: center;
+    color: var(--paper);
+    background: var(--accent);
+    border-radius: 999px;
+}
+:where(.page-catalogue) .filter-badge[hidden] {
+    display: none;
+}
+
+/* ---- Filter panel: sort and category ---- */
+:where(.page-catalogue) .filter-panel {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--panel-edge);
+}
+:where(.page-catalogue) .filter-panel[hidden] {
+    display: none;
+}
+:where(.page-catalogue) .filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1rem;
+}
+:where(.page-catalogue) .filter-label {
+    flex: 0 0 5.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+}
+:where(.page-catalogue) .sort-controls,
 :where(.page-catalogue) .category-filter {
-    flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
+:where(.page-catalogue) .sort-link,
 :where(.page-catalogue) .category-filter button {
     font: inherit;
     font-size: 0.85rem;
+    line-height: 1.5;
     color: var(--ink);
-    background: transparent;
-    border: 1px solid var(--paper-edge);
+    text-decoration: none;
+    background: var(--paper);
+    border: 1px solid var(--panel-edge);
     border-radius: 999px;
     padding: 0.2rem 0.8rem;
     cursor: pointer;
 }
+:where(.page-catalogue) .sort-link:hover,
 :where(.page-catalogue) .category-filter button:hover:not(:disabled) {
     border-color: var(--ink-muted);
 }
+:where(.page-catalogue) .sort-link.active,
 :where(.page-catalogue) .category-filter button[aria-pressed="true"] {
     color: var(--paper);
     background: var(--ink);
     border-color: var(--ink);
 }
+:where(.page-catalogue) .sort-link.active {
+    pointer-events: none;
+}
 :where(.page-catalogue) .category-filter button:disabled {
     color: #b5ad9c;
+    background: transparent;
     cursor: default;
 }
 :where(.page-catalogue) .category-filter .n {
@@ -201,8 +275,7 @@
     opacity: 0.7;
 }
 :where(.page-catalogue) .result-count {
-    flex-basis: 100%;
-    margin: 0;
+    margin: 0.85rem 0 0;
     font-size: 0.85rem;
     color: var(--ink-muted);
 }
@@ -391,7 +464,6 @@
 }
 
 @media (max-width: 760px) {
-    :where(.page-catalogue) .catalogue-tools,
     :where(.page-catalogue) section > ul.clip-grid,
     :where(.page-catalogue) .no-results {
         padding-right: 0;
@@ -399,7 +471,22 @@
     }
 }
 
+@media (max-width: 760px) {
+    :where(.page-catalogue) .catalogue-tools {
+        margin-right: 0;
+        padding: 1rem 1rem 0.85rem;
+    }
+    :where(.page-catalogue) .filter-label {
+        flex-basis: 100%;
+    }    :where(.page-catalogue) .search-field kbd {
+        display: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
+    :where(.page-catalogue) .filter-toggle::after {
+        transition: none;
+    }
     :where(.page-catalogue) .clip {
         transition: none;
     }

@@ -1,5 +1,5 @@
 // ./html/js/catalogue.js
-// Catalogue search, category filter and sort links; keeps the query and category in the URL.
+// Catalogue search, the Filters toggle, category filter and sort links; keeps the query and category in the URL.
 (function () {
     var input = document.getElementById('catalogue-search');
     var items = Array.prototype.slice.call(document.querySelectorAll('#clip-grid > li'));
@@ -7,6 +7,10 @@
     var empty = document.getElementById('no-results');
     var sortLinks = document.querySelectorAll('.sort-link');
     var categoryButtons = Array.prototype.slice.call(document.querySelectorAll('.category-filter button'));
+    var filterToggle = document.getElementById('filter-toggle');
+    var filterPanel = document.getElementById('filter-panel');
+    var filterBadge = document.getElementById('filter-badge');
+    var sort = new URLSearchParams(location.search).get('sort') || 'newest';
     var category = new URLSearchParams(location.search).get('category') || '';
     var total = items.length;
 
@@ -33,6 +37,12 @@
             b.setAttribute('aria-pressed', b.getAttribute('data-category') === category ? 'true' : 'false');
         });
 
+        // Badge on "Filters": how many filters differ from the default, so they show while collapsed
+        var active = (category ? 1 : 0) + (sort === 'oldest' ? 1 : 0);
+        filterBadge.textContent = active;
+        filterBadge.hidden = active === 0;
+        filterToggle.setAttribute('aria-label', active ? 'Filters, ' + active + ' active' : 'Filters');
+
         count.textContent = (terms.length || category)
             ? shown + ' of ' + total + ' items'
             : total + ' items';
@@ -52,6 +62,12 @@
             a.setAttribute('href', '?' + p.toString());
         });
     }
+
+    filterToggle.addEventListener('click', function () {
+        var open = filterToggle.getAttribute('aria-expanded') !== 'true';
+        filterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        filterPanel.hidden = !open;
+    });
 
     categoryButtons.forEach(function (b) {
         b.addEventListener('click', function () {
