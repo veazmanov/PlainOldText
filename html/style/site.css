@@ -628,23 +628,70 @@
     }
 }
 
-/* ---- Quieter site header on article pages, so the article title leads ---- */
+/* ---- Article pages: the header shrinks to one quiet line (name left, nav right) over the text
+        column, so the article title leads; the catalogue, About and Contribute keep the full one ---- */
+body:where(.page-article) > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 1.5rem;
+    max-width: 500px;
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid #ddd3b9;
+}
+
 body:where(.page-article) .site-masthead {
-    margin-top: 2rem;
+    margin: 0;
+    text-align: left;
+}
+
+body:where(.page-article) .site-logo {
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
 }
 
 body:where(.page-article) .site-logo-name {
-    font-size: 1.4rem;
-    padding: 0.4rem 1.1rem;
+    padding: 0;
+    border: 0;
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+}
+
+body:where(.page-article) .site-logo-name::before {
+    margin: 0 0.6em 0 0;
+}
+
+body:where(.page-article) .site-logo-name::after {
+    content: none;
+}
+
+body:where(.page-article) .site-logo:hover .site-logo-name,
+body:where(.page-article) .site-logo:focus-visible .site-logo-name {
+    color: #8a2b1d;
 }
 
 body:where(.page-article) > header .site-nav {
-    margin-bottom: 1.5rem;
+    margin: 0;
+    border: 0;
 }
 
-/* Keep the source panel close under the nav */
+body:where(.page-article) .site-nav ul {
+    gap: 0 1.1rem;
+}
+
+body:where(.page-article) .site-nav a {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 0.95rem;
+}
+
 body:where(.page-article) > article {
-    padding-top: 0.5rem;
+    padding-top: 0;
 }
 
 /* ---- Title, with the cog menu beside it ---- */
