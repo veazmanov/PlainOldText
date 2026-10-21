@@ -1,8 +1,13 @@
-- [ ] get tufte font back
+- [ ] remove header on the catalogue page 
+- [ ] add the screenshots for the Edinburgh Evening Post
+- [ ] should say "View on Github", not Edit on Github
+- [ ] make contribute page more friendly
+- [ ] make plainoldtext and sources actually be aliases as opposed to redirects
+- [ ] make everything actually a .txt file (not .md)
+- [ ] add dark mode
 - [ ] add comment section 
 - [ ] is it best to have a one paragraph per line or an actually accurately flowed text - i.e the plain text version should have the exact same line breaks as the text it is transcribing. This will make copy-checking much easier. - check whether default is wrong flow. 
 - [ ] consider a .md and a .txt version
-- [ ] add the recipes prologue
 - [ ] un-re-flow all the articles - i.e keep the same line spacing as in the original
 - [ ] add to the about page that I was partly inspired by https://classics.mit.edu/Browse/browse-Aristotle.html
 - [ ] or, alternatively: create a separate step to add the sidenotes (i.e manage the sidenotes separately in a JSON array with the words that the sidenote should appear after and the sidenote itself). This should be a compilation step in the digital humanities pipeline, not here, but here there will be a little switch that allows users to turn sidenotes on and off. a
