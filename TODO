@@ -1,8 +1,9 @@
-- [ ] remove header on the catalogue page 
-- [ ] add the screenshots for the Edinburgh Evening Post
-- [ ] should say "View on Github", not Edit on Github
-- [ ] make contribute page more friendly
-- [ ] make plainoldtext and sources actually be aliases as opposed to redirects
+- [ ] add a little sticky menu item like this https://wiki.php.net/
+- [ ] find the screenshots for https://plainoldtext.vjbe.net/stable/fvds4
+- [x] should say "View on Github", not Edit on Github
+- [x] make contribute page more friendly
+- [x] make plainoldtext and sources actually be aliases as opposed to redirects
+- [ ] make the text file and the screenshots be a bit closer together
 - [ ] make everything actually a .txt file (not .md)
 - [ ] add dark mode
 - [ ] add comment section 

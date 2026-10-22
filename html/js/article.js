@@ -39,6 +39,7 @@
             url.pathname = path;
             a.href = url.toString();
         });
+        place();
         if (open) {
             // Start the scans at the same point as the text, re-aligning as they load.
             offset = 0;
@@ -51,6 +52,20 @@
                 if (!img.complete) img.addEventListener('load', function () { if (offset === 0) align(); }, { once: true });
             });
         }
+    }
+
+    // On wide screens the panel starts a little above the text, below the title, and rises
+    // with the page until it reaches the top of the window, at this scroll position
+    // (the text is looked up each time: this script runs before it is parsed)
+    function pinnedAt() {
+        var text = document.querySelector('article > section:not(.article-head)');
+        if (!text) return 0;
+        return Math.max(0, text.getBoundingClientRect().top + window.scrollY - 2 * 96 / 2.54); // 2cm higher
+    }
+
+    function place() {
+        var top = isOpen() && wide.matches ? Math.max(0, pinnedAt() - window.scrollY) : 0;
+        body.style.setProperty('--scan-top', top + 'px');
     }
 
     function align() {
@@ -76,19 +91,24 @@
     if (wide.matches && body.classList.contains('scans-auto')) show(true, true);
     else if (wide.matches && body.classList.contains('show-scans')) show(true);
 
-    // Coarse scroll sync: the scans follow the text proportionally, but only once they
-    // drift more than a third of a screen from where they should be, so small scrolls
-    // in the text leave the scans still. Scrolling the scans by hand sets an offset
-    // that later syncing keeps.
+    // Coarse scroll sync: once the panel reaches the top of the window, the scans follow
+    // the rest of the text proportionally, but only once they drift more than a third of
+    // a screen from where they should be, so small scrolls in the text leave the scans
+    // still. Scrolling the scans by hand sets an offset that later syncing keeps.
 
     function target() {
-        var textMax = document.documentElement.scrollHeight - window.innerHeight;
+        var start = pinnedAt();
+        var textMax = document.documentElement.scrollHeight - window.innerHeight - start;
         var panelMax = panel.scrollHeight - panel.clientHeight;
-        var fraction = textMax > 0 ? window.scrollY / textMax : 0;
+        var fraction = textMax > 0 ? Math.max(0, window.scrollY - start) / textMax : 0;
         return Math.min(panelMax, Math.max(0, fraction * panelMax + offset));
     }
 
+    window.addEventListener('resize', place);
+    window.addEventListener('load', place);
+
     window.addEventListener('scroll', function () {
+        place();
         if (!isOpen() || !wide.matches) return;
         var to = target();
         if (Math.abs(panel.scrollTop - to) < panel.clientHeight / 3) return;

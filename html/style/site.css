@@ -955,16 +955,20 @@ body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
 }
 
 @media (min-width: 1000px) {
+    /* Fill the space left of the scans, with the 500px text column pushed right so
+       only a 2.5rem gap separates it from the panel */
     body:where(.page-article):is(.show-scans, .scans-auto) {
-        width: 46vw;
+        width: 52vw;
         max-width: none;
         margin-left: 0;
-        padding-left: 3vw;
+        padding-left: max(3vw, calc(52vw - 500px - 2.5rem));
+        padding-right: 2.5rem;
     }
 
+    /* --scan-top: just above where the text starts (set by article.js), so the scans begin below the title */
     :where(.page-article) .scan-panel {
         position: fixed;
-        top: 0;
+        top: var(--scan-top, 0);
         right: 0;
         bottom: 0;
         width: 48vw;
