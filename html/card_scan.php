@@ -55,7 +55,6 @@ function serve_card_scan($uri)
         @mkdir($cache_dir, 0775, true);
         $tmp = $cache . '.' . getmypid();
         $webp ? imagewebp($image, $tmp, 62) : imagejpeg($image, $tmp, 72);
-        imagedestroy($image);
         if (!@rename($tmp, $cache)) {
             // Can't write the cache: send it anyway
             header('Content-Type: ' . $type);
@@ -76,8 +75,14 @@ function serve_card_scan($uri)
 function fetch_scan($url)
 {
     $context = stream_context_create(['http' => ['timeout' => 20, 'ignore_errors' => true]]);
-    $data = @file_get_contents($url, false, $context);
-    $ok = isset($http_response_header[0]) && preg_match('#\s200\s#', $http_response_header[0]);
+    $stream = @fopen($url, 'rb', false, $context);
+    if ($stream === false) {
+        return null;
+    }
+    $headers = stream_get_meta_data($stream)['wrapper_data'] ?? [];
+    $data = stream_get_contents($stream);
+    fclose($stream);
+    $ok = isset($headers[0]) && preg_match('#\s200\s#', $headers[0]);
     return ($data !== false && $ok) ? $data : null;
 }
 
@@ -96,6 +101,5 @@ function make_card_image($data)
 
     $image = imagecreatetruecolor($out_w, $out_h);
     imagecopyresampled($image, $source, 0, 0, 0, 0, $out_w, $out_h, $w, $h);
-    imagedestroy($source);
     return $image;
 }
