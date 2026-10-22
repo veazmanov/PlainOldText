@@ -219,7 +219,7 @@ function render_article($uri, $scans_open = false)
         ? '?edition=' . rawurlencode($edition_id) : '';
     $citation = chicago_citation($meta, $site_url . $slug_url . $edition_query);
     $markdown_url = ($edition && $edition['md']) ? $slug_url . '/markdown' . $edition_query : null;
-    $github_url = "https://github.com/victorelgersma/old-news/blob/main/articles/" . rawurlencode($uri) . '/'
+    $github_url = "https://github.com/veazmanov/PlainOldText/blob/main/articles/" . rawurlencode($uri) . '/'
         . rawurlencode($edition && $edition['md'] ? basename($edition['md']) : 'main.md');
     $summary = $meta['summary'];
     $title = $meta['title'];
