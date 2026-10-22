@@ -37,7 +37,7 @@
                     </li>
                 <?php endif; ?>
                 <li>
-                    <a class="menu-item" href="<?= htmlspecialchars($github_url) ?>" target="_blank" rel="noopener">Edit on GitHub</a>
+                    <a class="menu-item" href="<?= htmlspecialchars($github_url) ?>" target="_blank" rel="noopener">View on GitHub</a>
                 </li>
                 <li>
                     <details class="menu-disclosure">
