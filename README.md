@@ -1,20 +1,40 @@
-# Old News Dot Com
+# Plain Old Text
 
-This repo hosts sources.vjbe.net (Plain Old Text): the PHP site and the article transcriptions it serves.
+A free archive of historical sources transcribed as plain text, each with scans of the original pages, a link to the digital source and a Chicago-style citation. Live at <https://sources.vjbe.net>.
 
-- `articles/<slug>/` — one folder per source: `main.md` (the transcription) and `data.json` (title, newspaper, category, date, summary, scans; category is `newspaper`, `letter` or `book-chapter`). See `articles/data.example.json`. Articles are public domain (`articles/UNLICENSE`).
-  - A source with several transcriptions has one `.md` per edition instead of `main.md`, e.g. `reading.md` and `diplomatic.md` (the reading edition is the default; the others are at `?edition=<name>`).
-  - Every article has a permanent `id` (5 random characters), and its canonical URL is `/stable/<id>` (with `/scans` and `/markdown` under it); the old `/<slug>` URLs redirect there. IDs are permanent: never edit an `id`, and never reuse one, even for a deleted article. `php scripts/assign-ids.php` gives any article without one a new `id` (`new-article.sh` runs it for you).
-  - Books use `publication` instead of `newspaper`, and may give just a `year`.
-  - Scans are page images on oldnews-photos.vjbe.net (`scans`, written by `sync_scans.php`), or one PDF anywhere (`scans_pdf`, a URL).
-  - Each article shows a Chicago footnote citation ("Cite as", see `html/citation.php`), from: `author`, `place` (city, for newspapers whose title doesn't name it), and for books `full_title`, `translator`, `printer`; for journals (category `journal`) `volume` and `issue`.
-- `html/` — the PHP site.
-- `scripts/` — `new-article.sh` creates an article folder, `assign-ids.php` gives new articles their permanent `id`, `build-articles.sh` converts the markdown to HTML with pandoc, `sync_scans.php` records scan filenames from oldnews-photos.vjbe.net into `data.json`.
+This repo holds both the transcriptions (`articles/`) and the PHP site that serves them (`html/`). The code and the transcriptions are public domain (`LICENSE`, `articles/UNLICENSE`).
+
+## Requirements
+
+- PHP 8 (the GD extension is optional; without it, catalogue cards link to the full scan instead of a cropped one)
+- [pandoc](https://pandoc.org), to build the articles
+- bash at `/opt/homebrew/bin/bash` for `deploy` and `build-articles.sh`
+
+## Layout
+
+- `articles/<slug>/` — one folder per source, with the transcription as `main.md` and its metadata in `data.json`.
+- `html/` — the site. `index.php` is the front controller; `data.php` loads the articles and holds the site settings; `citation.php` builds citations; `card_scan.php` makes the catalogue-card images.
+- `scripts/` — `new-article.sh`, `assign-ids.php`, `build-articles.sh` and `sync_scans.php` (see Workflow).
+
+## Articles
+
+A source with several transcriptions has one `.md` per edition instead of `main.md`, e.g. `reading.md` and `diplomatic.md`. The reading edition is the default; others are at `?edition=<name>`.
+
+`data.json` (see `articles/data.example.json`) has:
+
+- `id` — a permanent 5-character id. The article's canonical URL is `/stable/<id>`, with `/stable/<id>/scans` (scans open) and `/stable/<id>/markdown` (the plain-text source). Old `/<slug>` and `/photocopy/<slug>` URLs redirect there. Never edit an `id`, and never reuse one, even for a deleted article.
+- `title`, `summary`, `source_url` (the digitised original), `page`.
+- `category` — `newspaper`, `letter`, `book-chapter` or `journal`.
+- `newspaper`, or `publication` for books and other sources.
+- `year`, `month`, `day` — a full date, or just `year` (e.g. for a book).
+- `scans` — page images on oldnews-photos.vjbe.net, written by `sync_scans.php`; or `scans_pdf`, the URL of a single PDF.
+- Optional: `featured` (highlighted in the catalogue) and `card_position` (the CSS `background-position` of the first scan on its catalogue card).
+- Citation fields: `author`, `place` (the city, for newspapers whose title doesn't name it), `full_title`, `translator` and `printer` for books, `volume` and `issue` for journals.
 
 ## Workflow
 
-- `./scripts/build-articles.sh` builds into `oldnews-articles-only/` (gitignored), which the site reads.
-- `./dev` runs the site at localhost:8000 (build the articles first).
-- After adding an article by hand, run `php scripts/assign-ids.php` to give it an `id`.
-- After uploading scans, run `php scripts/sync_scans.php [slug]`.
-- `./deploy` builds the articles and uploads both the site and the articles.
+- `./scripts/new-article.sh` asks for the title, date and source, and creates `articles/<slug>/` with an `id`. After adding an article by hand, run `php scripts/assign-ids.php` to give it one; the site skips articles without an `id`.
+- After uploading scans to oldnews-photos.vjbe.net, run `php scripts/sync_scans.php [slug]` to record them in `data.json`.
+- `./scripts/build-articles.sh` converts the markdown to HTML with pandoc into `oldnews-articles-only/` (gitignored), which the site reads. Rebuild after changing an article.
+- `./dev` runs the site at <http://localhost:8001>.
+- `./deploy` builds the articles and uploads the site and the built articles. It relies on a separate `deploy` command on your `PATH`; scans are uploaded separately.
