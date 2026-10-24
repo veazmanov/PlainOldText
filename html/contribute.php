@@ -5,9 +5,7 @@
         . 'Albrecht Dürer, <em>Saint Jerome in His Study</em>, 1514. Engraving. '
         . '<a href="https://www.metmuseum.org/art/collection/search/336229">The Metropolitan Museum of Art</a>. '
         . 'Jerome, patron saint of translators and archivists.'
-    ) ?> Plain Old Text grows one
-    source at a time, and every scan, transcription or correction makes it a little more useful for
-    everyone who comes after you.
+    ) ?>
 </p>
 
 <p>
