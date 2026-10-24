@@ -14,7 +14,7 @@
 
 <p>
     Every transcription comes with scans of the original pages, a link back to the digital source, and a Chicago-style
-    citation, so you can check the text against the page it came from and use it in your own work.
+    citation,<?= sn('Following the newspaper and magazine examples in the <em>Chicago Manual of Style</em> citation quick guide, <a href="https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html#cg-news">chicagomanualofstyle.org</a>.') ?> so you can check the text against the page it came from and use it in your own work.
 </p>
 
 <p>
