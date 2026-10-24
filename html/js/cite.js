@@ -1,6 +1,17 @@
 // ./html/js/cite.js
-// "Copy" under "View citation" in the cog menu: puts the citation on the clipboard, with italics where the paste target
-// supports them, or selects it for copying by hand.
+// The dagger after an article's title opens and closes the citation beneath it, without jumping to #cite.
+document.querySelectorAll('.cite-mark').forEach(function (mark) {
+    var panel = document.getElementById(mark.getAttribute('aria-controls'));
+    mark.addEventListener('click', function (event) {
+        event.preventDefault();
+        var open = !panel.classList.contains('open');
+        panel.classList.toggle('open', open);
+        mark.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+});
+
+// "Copy" under the citation: puts it on the clipboard, with italics where the paste target supports them, or selects
+// it for copying by hand.
 document.querySelectorAll('.cite-copy').forEach(function (button) {
     var citation = document.getElementById(button.getAttribute('data-target'));
     button.hidden = false;

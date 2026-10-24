@@ -1,11 +1,12 @@
 <?php // ./html/partials/article_header.php
 // The top of an article page: the title, a dateline (publication, date, page), the scans button and
 // edition switch, and a cog menu with the page tools in three groups: Source (source link), Text
-// (markdown, GitHub, corrections) and Reference (summary, citation). The scans open beside the text by default on
-// wide screens (body.scans-auto); see article.js.
+// (markdown, GitHub, corrections) and Reference (summary). A dagger after the title opens the citation beneath it
+// (cite.js). The scans open beside the text by default on wide screens (body.scans-auto); see article.js.
+$cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-expanded="false" aria-label="Cite this page" title="Cite this page">&dagger;</a>';
 ?>
 <div class="article-top">
-    <?= $article_title_html ?>
+    <?= preg_replace('/(<\/h[1-3]>)$/i', $cite_mark . '$1', trim($article_title_html)) ?>
 
     <details class="page-tools sans" id="page-tools">
         <summary class="page-tools-button" aria-label="Page tools" title="Page tools">
@@ -47,28 +48,25 @@
                 </li>
             </ul>
 
-            <p class="menu-heading">Reference</p>
-            <ul>
-                <?php if (!empty($summary)): ?>
+            <?php if (!empty($summary)): ?>
+                <p class="menu-heading">Reference</p>
+                <ul>
                     <li>
                         <details class="menu-disclosure">
                             <summary class="menu-item">Summary</summary>
                             <p class="menu-reveal menu-summary"><?= htmlspecialchars($summary) ?></p>
                         </details>
                     </li>
-                <?php endif; ?>
-                <li>
-                    <details class="menu-disclosure">
-                        <summary class="menu-item">View citation</summary>
-                        <div class="menu-reveal">
-                            <p class="menu-citation" id="citation"><?= $citation ?></p>
-                            <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
-                        </div>
-                    </details>
-                </li>
-            </ul>
+                </ul>
+            <?php endif; ?>
         </div>
     </details>
+</div>
+
+<?php // The citation, opened by the dagger after the title (shown by :target without JS) ?>
+<div class="title-citation sans" id="cite">
+    <p><span class="title-citation-mark" aria-hidden="true">&dagger;</span> <span id="citation"><?= $citation ?></span></p>
+    <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
 </div>
 
 <?php // Dateline: the publication and date, under the title (styled like the catalogue cards) ?>

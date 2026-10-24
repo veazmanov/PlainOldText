@@ -1,8 +1,9 @@
 <?php $current_page = $current_page ?? ''; ?>
 <div class="site-masthead">
     <a class="site-logo" href="/catalogue">
-        <span class="site-logo-name"><?= htmlspecialchars($site_name) ?></span>
+        <span class="site-logo-name"><?= htmlspecialchars($site_name) ?><span class="site-logo-mark" aria-hidden="true">&dagger;</span></span>
     </a>
+    <p class="site-masthead-note"><span aria-hidden="true">&dagger;</span> plainoldtext.vjbe.net</p>
 </div>
 
 <nav class="site-nav" aria-label="Primary">

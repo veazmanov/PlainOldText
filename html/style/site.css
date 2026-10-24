@@ -58,6 +58,23 @@
     border-color: #8a2b1d;
 }
 
+/* Dagger after the name, glossed by the address beneath the plaque like a footnote */
+.site-logo-mark {
+    margin-left: 0.08em;
+    font-size: 0.5em;
+    vertical-align: super;
+    line-height: 0;
+    letter-spacing: 0;
+}
+
+.site-masthead-note {
+    margin: 0.6rem 0 0;
+    font-size: 0.95rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: #6b6455;
+}
+
 /* ---- Primary nav: a centred band between hairline rules ---- */
 .site-nav {
     margin: 1.5rem 12.5% 0 0;
@@ -685,6 +702,11 @@ body:where(.page-article) .site-logo-name::after {
     content: none;
 }
 
+body:where(.page-article) .site-logo-mark,
+body:where(.page-article) .site-masthead-note {
+    display: none;
+}
+
 body:where(.page-article) .site-logo:hover .site-logo-name,
 body:where(.page-article) .site-logo:focus-visible .site-logo-name {
     color: #8a2b1d;
@@ -906,14 +928,59 @@ body:where(.page-article) > article {
     font-style: italic;
 }
 
-:where(.page-article) .page-tools-menu .menu-citation a {
+/* ---- Citation: a dagger after the title opens it beneath the title (cite.js; :target without JS) ---- */
+:where(.page-article) .cite-mark {
+    margin-left: 0.12em;
+    font-size: 0.55em;
+    vertical-align: super;
+    line-height: 0;
+    color: #8a2b1d;
+    text-decoration: none;
+    background: none;
+    text-shadow: none;
+}
+
+:where(.page-article) .cite-mark:hover,
+:where(.page-article) .cite-mark[aria-expanded="true"] {
+    color: var(--ink);
+}
+
+:where(.page-article) .title-citation:not(.open):not(:target) {
+    display: none;
+}
+
+:where(.page-article) .title-citation {
+    max-width: 500px;
+    margin: 0.9rem 0 0;
+    padding: 0.7rem 0.9rem 0.6rem;
+    background: #fdfaef;
+    border: 1px solid #ddd3b9;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+:where(.page-article) .title-citation p {
+    width: auto;
+    margin: 0;
+    text-align: left;
+    text-indent: 0;
+    hyphens: none;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+:where(.page-article) .title-citation-mark {
+    color: #8a2b1d;
+}
+
+:where(.page-article) .title-citation a {
     color: inherit;
     overflow-wrap: anywhere;
     background: none;
     text-shadow: none;
 }
 
-:where(.page-article) .page-tools-menu .cite-copy {
+:where(.page-article) .title-citation .cite-copy {
     display: block;
     margin: 0.5rem 0 0 auto;
     font: inherit;
@@ -926,11 +993,11 @@ body:where(.page-article) > article {
     cursor: pointer;
 }
 
-:where(.page-article) .page-tools-menu .cite-copy:hover {
+:where(.page-article) .title-citation .cite-copy:hover {
     border-color: var(--ink-muted);
 }
 
-:where(.page-article) .page-tools-menu .cite-copy[hidden] {
+:where(.page-article) .title-citation .cite-copy[hidden] {
     display: none;
 }
 
