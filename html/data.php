@@ -125,3 +125,13 @@ function sn($html)
         . '<input type="checkbox" id="' . $id . '" class="margin-toggle"/>'
         . '<span class="sidenote">' . $html . '</span>';
 }
+
+// Tufte margin note: unnumbered, shown behind a ⊕ toggle on narrow screens
+function mn($html)
+{
+    static $n = 0;
+    $id = 'mn-' . ++$n;
+    return '<label for="' . $id . '" class="margin-toggle">&#8853;</label>'
+        . '<input type="checkbox" id="' . $id . '" class="margin-toggle"/>'
+        . '<span class="marginnote">' . $html . '</span>';
+}

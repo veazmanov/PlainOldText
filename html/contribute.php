@@ -1,13 +1,18 @@
 <!-- ./html/contribute.php -->
 <p>
-    <span class="newthought">Thank you for thinking of contributing.</span> Plain Old Text grows one
+    <span class="newthought">Thank you for thinking of contributing.</span><?= mn(
+        '<img src="' . asset('img/durer-st-jerome.webp') . '" alt="Albrecht Dürer\'s engraving of Saint Jerome writing at a desk in his study, with a lion and a dog asleep in the foreground" width="800" height="1032" loading="lazy">'
+        . 'Albrecht Dürer, <em>Saint Jerome in His Study</em>, 1514. Engraving. '
+        . '<a href="https://www.metmuseum.org/art/collection/search/336229">The Metropolitan Museum of Art</a>. '
+        . 'Jerome, patron saint of translators and archivists.'
+    ) ?> Plain Old Text grows one
     source at a time, and every scan, transcription or correction makes it a little more useful for
     everyone who comes after you.
 </p>
 
 <p>
     If you have scans of a historical source, a transcription you've made, or both, just email them to
-    <a href="mailto:victor@vjbe.net">victor@vjbe.net</a>. They don't need to be perfect: a rough
+    <a href="mailto:victor@azmanov.net">victor@azmanov.net</a>. They don't need to be perfect: a rough
     transcription or a handful of phone photos of the pages is a fine place to start, and we can tidy
     things up together. It helps to mention where the source came from (a library, archive or
     digitised collection) so it can be cited properly.

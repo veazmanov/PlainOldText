@@ -121,6 +121,7 @@
 
 .site-footer .footer-links {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.4rem;
 }
@@ -141,6 +142,21 @@
     margin-top: 0;
     font-size: 0.9rem;
     color: #666;
+}
+
+/* ---- Margin-note figures (mn() in data.php): image above its caption ---- */
+.marginnote > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+/* ---- About page: embedded talk video ---- */
+.about-video video {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 

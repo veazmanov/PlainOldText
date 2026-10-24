@@ -8,8 +8,8 @@
 </p>
 
 <p>
-    Most of the material comes from the primary sources used by Victor Elgersma-Azmanov in his
-    essays.<?= sn('Many of the British newspaper articles were used in Elgersma-Azmanov 2026, “The Nebular Hypothesis and the Mid-Victorian Press (1844–1846)” (unpublished essay, Utrecht University), <a href="https://essays.vjbe.net/nebular">essays.vjbe.net/nebular</a>.') ?><?= sn('The preface to Alexis of Piedmont’s <em>Secrets</em> appears in Elgersma-Azmanov 2026, “Hands-on History: Benefits and Drawbacks” (unpublished essay, Utrecht University), <a href="https://essays.vjbe.net/hands-on">essays.vjbe.net/hands-on</a>.') ?>
+    Most of the material comes from the primary sources used by Victor Azmanov in his
+    essays.<?= sn('Many of the British newspaper articles were used in Azmanov 2026, “The Nebular Hypothesis and the Mid-Victorian Press (1844–1846)” (unpublished essay, Utrecht University), <a href="https://essays.vjbe.net/nebular">essays.vjbe.net/nebular</a>.') ?><?= sn('The preface to Alexis of Piedmont’s <em>Secrets</em> appears in Azmanov 2026, “Hands-on History: Benefits and Drawbacks” (unpublished essay, Utrecht University), <a href="https://essays.vjbe.net/hands-on">essays.vjbe.net/hands-on</a>.') ?>
 </p>
 
 <p>
@@ -20,7 +20,7 @@
 <p>
     We welcome metadata corrections and new contributions. Either email the author
     or make a pull request on our GitHub
-    repository.<?= sn('Email: <a href="mailto:victor@vjbe.net">victor@vjbe.net</a>. GitHub: <a href="https://github.com/veazmanov/PlainOldText">github.com/veazmanov/PlainOldText</a>.') ?>
+    repository.<?= sn('Email: <a href="mailto:victor@azmanov.net">victor@azmanov.net</a>. GitHub: <a href="https://github.com/veazmanov/PlainOldText">github.com/veazmanov/PlainOldText</a>.') ?>
 </p>
 
 <nav aria-label="Contents">
@@ -29,6 +29,7 @@
         <li><a href="#someone-elses-job">Isn't this someone else's job?</a></li>
         <li><a href="#copyright">Is this copyright infringement?</a></li>
         <li><a href="#why-did-you-make-old-text">Why did you make Plain Old Text?</a></li>
+        <li><a href="#talk">Talk at the Centre for Digital Humanities</a></li>
         <li><a href="#our-sources">See also</a></li>
     </ul>
 </nav>
@@ -72,6 +73,17 @@
     the public domain, it seemed a small effort to transcribe them and host
     them somewhere easy to read and reference. The archive has grown since
     then, and so has its scope, hence the new name.</p>
+
+<h1 id="talk">Talk at the Centre for Digital Humanities</h1>
+<p>
+    On 23 October 2026, Victor Azmanov gave a talk about Plain Old Text at the Centre for Digital Humanities.
+    The <a href="https://drive.vjbe.net/2026-10-22-cdh-slides-v5.pdf">slides</a> are also available.
+</p>
+<figure class="about-video">
+    <video controls preload="metadata" playsinline src="https://video.vjbe.net/2026-10-24-cdh.mp4#t=0.1">
+        Your browser can't play this video. <a href="https://video.vjbe.net/2026-10-24-cdh.mp4">Download it instead</a>.
+    </video>
+</figure>
 
 <h1 id="our-sources">See also</h1>
 <p>Some good archives of scanned newspaper articles:</p>
