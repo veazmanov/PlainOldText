@@ -29,7 +29,7 @@
         <li><a href="#someone-elses-job">Isn't this someone else's job?</a></li>
         <li><a href="#copyright">Is this copyright infringement?</a></li>
         <li><a href="#why-did-you-make-old-text">Why did you make Plain Old Text?</a></li>
-        <li><a href="#talk">Talk at the Centre for Digital Humanities</a></li>
+        <li><a href="#talk">Verifiability and Pointability: The Two Problems with References</a></li>
         <li><a href="#our-sources">See also</a></li>
     </ul>
 </nav>
@@ -74,9 +74,9 @@
     them somewhere easy to read and reference. The archive has grown since
     then, and so has its scope, hence the new name.</p>
 
-<h1 id="talk">Talk at the Centre for Digital Humanities</h1>
+<h1 id="talk">Verifiability and Pointability: The Two Problems with References</h1>
 <p>
-    On 23 October 2026, Victor Azmanov gave a talk about Plain Old Text at the Centre for Digital Humanities.
+    On 23 October 2026, Victor Azmanov gave a talk about Plain Old Text at the Centre for Digital Humanities.<?= sn('The talk was originally called <em>Two Problems with Footnotes</em>. Thanks to Albena Azmanova for pointing out that “references” is the better word.') ?>
     The <a href="https://drive.vjbe.net/2026-10-22-cdh-slides-v5.pdf">slides</a> are also available.
 </p>
 <figure class="about-video">
