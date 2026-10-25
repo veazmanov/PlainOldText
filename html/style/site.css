@@ -16,7 +16,7 @@
    =================================================================== */
 
 /* Every colour is a variable here. The dark theme follows the reader's system setting, unless the toggle in
-   the footer (theme.js) has set <html data-theme="light|dark">. Its values are repeated for the two cases. */
+   the top nav (theme.js) has set <html data-theme="light|dark">. Its values are repeated for the two cases. */
 :root {
     color-scheme: light;
     --page: #fffff8;
@@ -214,7 +214,7 @@ hr {
     }
 
     .site-nav ul {
-        gap: 0 1.5rem;
+        gap: 0 1.1rem;
     }
 }
 
@@ -237,9 +237,17 @@ hr {
     color: var(--ink);
 }
 
-/* ---- Light/dark toggle beside the GitHub link (theme.js); it shows the theme it switches to ---- */
+/* ---- Light/dark toggle, the last item in the top nav (theme.js); it shows the theme it switches to ---- */
+.site-nav .site-nav-theme {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav .site-nav-theme[hidden] {
+    display: none;
+}
+
 .theme-toggle {
-    margin-left: auto;
     padding: 0;
     color: var(--ink-muted);
     line-height: 0;
@@ -248,16 +256,13 @@ hr {
     cursor: pointer;
 }
 
+.theme-toggle svg {
+    width: 1.05rem;
+    height: 1.05rem;
+}
+
 .theme-toggle:hover {
     color: var(--ink);
-}
-
-.theme-toggle[hidden] {
-    display: none;
-}
-
-.theme-toggle:not([hidden]) + .footer-github {
-    margin-left: 0.6rem;
 }
 
 .theme-icon-light {

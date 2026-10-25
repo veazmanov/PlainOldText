@@ -1,5 +1,5 @@
 // ./html/js/theme.js
-// The footer's light/dark toggle. The page follows the system setting until the reader picks the other theme,
+// The light/dark toggle at the end of the top nav. The page follows the system setting until the reader picks the other theme,
 // which is kept in <html data-theme> and localStorage (read back in head.php); picking the system's own theme
 // again forgets the choice, so the page follows the system once more.
 (function () {
@@ -35,5 +35,5 @@
 
     system.addEventListener('change', label);
     label();
-    button.hidden = false;
+    document.getElementById('theme-toggle-item').hidden = false;
 })();
