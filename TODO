@@ -1,4 +1,8 @@
 - [x] consider linking to wikidata, iiif and the MIT open text archive in the footer as (project similar in spirit)
+- [ ] find a good way to display editorial comments / clarificatory comments
+- [ ] perhaps get AI to generate some useful clarificatory comments for an educated 21st century audience. 
+- [ ] see if I can store some session data regarding how far someone is in a text? 
+- [ ] consider republishing this https://en.wikisource.org/wiki/Philosophical_Essays_Concerning_Human_Understanding
 - [ ] register @plainoldtext.vjbe.net for an isolated email address? 
 - [ ] add a little sticky menu item like this https://wiki.php.net/
 - [ ] find the screenshots for https://plainoldtext.vjbe.net/stable/fvds4
@@ -7,7 +11,7 @@
 - [x] make plainoldtext and sources actually be aliases as opposed to redirects
 - [ ] make the text file and the screenshots be a bit closer together
 - [ ] make everything actually a .txt file (not .md)
-- [ ] add dark mode
+- [x] add dark mode
 - [ ] add comment section 
 - [ ] is it best to have a one paragraph per line or an actually accurately flowed text - i.e the plain text version should have the exact same line breaks as the text it is transcribing. This will make copy-checking much easier. - check whether default is wrong flow. 
 - [ ] consider a .md and a .txt version
