@@ -20,7 +20,7 @@
 <p>
     We welcome metadata corrections and new contributions. Either email the author
     or make a pull request on our GitHub
-    repository.<?= sn('Email: <a href="mailto:victor@azmanov.net">victor@azmanov.net</a>. GitHub: <a href="https://github.com/veazmanov/PlainOldText">github.com/veazmanov/PlainOldText</a>.') ?>
+    repository.<?= sn('Email: <a href="mailto:plainoldtext@vjbe.net">plainoldtext@vjbe.net</a>. GitHub: <a href="https://github.com/veazmanov/PlainOldText">github.com/veazmanov/PlainOldText</a>.') ?>
 </p>
 
 <nav aria-label="Contents">

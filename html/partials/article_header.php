@@ -43,7 +43,7 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
                 <li>
                     <details class="menu-disclosure">
                         <summary class="menu-item">Submit a correction</summary>
-                        <p class="menu-reveal">Email your correction to <a href="mailto:victor@azmanov.net">victor@azmanov.net</a>.</p>
+                        <p class="menu-reveal">Email your correction to <a href="mailto:plainoldtext@vjbe.net">plainoldtext@vjbe.net</a>.</p>
                     </details>
                 </li>
             </ul>

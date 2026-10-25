@@ -10,7 +10,7 @@
 
 <p>
     If you have scans of a historical source, a transcription you've made, or both, just email them to
-    <a href="mailto:victor@azmanov.net">victor@azmanov.net</a>. They don't need to be perfect: a rough
+    <a href="mailto:plainoldtext@vjbe.net">plainoldtext@vjbe.net</a>. They don't need to be perfect: a rough
     transcription or a handful of phone photos of the pages is a fine place to start, and we can tidy
     things up together. It helps to mention where the source came from (a library, archive or
     digitised collection) so it can be cited properly.
