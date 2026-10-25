@@ -610,6 +610,7 @@ hr {
     font-size: 0.98rem;
     line-height: 1.45;
     text-align: justify;
+    -webkit-hyphens: auto; /* Safari */
     hyphens: auto;
     -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
     mask-image: linear-gradient(to bottom, #000 65%, transparent);
@@ -622,14 +623,17 @@ hr {
     font-weight: 700;
     color: var(--accent);
 }
-/* A card with a scan splits down the middle: text on the left, scan on the right */
+/* A card with a scan splits down the middle: text on the left, scan on the right. A fixed height and a row
+   that can't outgrow it: with only a max-height, Safari lets the row grow to fit the whole text, which then
+   runs out of the card. */
 :where(.page-catalogue) .clip-split {
-    flex: 1;
+    flex: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
     gap: 0.75rem;
-    min-height: 13em;
-    max-height: 13em;
+    height: 13em;
+    overflow: hidden;
 }
 :where(.page-catalogue) .clip .clip-split .clip-body {
     max-height: none;
