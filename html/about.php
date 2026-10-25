@@ -26,6 +26,7 @@
 <nav aria-label="Contents">
     <ul class="toc">
         <li><a href="#why-plain-text">Why plain text?</a></li>
+        <li><a href="#already-transcribed">Why host texts that are already transcribed elsewhere?</a></li>
         <li><a href="#someone-elses-job">Isn't this someone else's job?</a></li>
         <li><a href="#copyright">Is this copyright infringement?</a></li>
         <li><a href="#why-did-you-make-old-text">Why did you make Plain Old Text?</a></li>
@@ -58,6 +59,15 @@
     It aims for quality instead: every transcription is checked by hand against the original, and
     every article comes with an accurate citation. The person best placed to do this work is
     precisely the historian who is using these sources in their own research.
+</p>
+
+<h1 id="already-transcribed">Why host texts that are already transcribed elsewhere?</h1>
+<p>
+    Some of our texts already have good transcriptions elsewhere, for instance on Wikisource. We
+    host them anyway, not because those transcriptions are bad, but because we prefer reading
+    them here. Set in ET Book on the Tufte CSS book layout,<?= sn('ET Book is the typeface Edward Tufte commissioned for his books; Tufte CSS, by Dave Liepmann, brings their layout to the web, sidenotes included. <a href="https://edwardtufte.github.io/tufte-css/">edwardtufte.github.io/tufte-css</a>.') ?>
+    a text looks a little like the pamphlet or newspaper it was first printed in, more so
+    than on a general-purpose wiki page. We always credit the transcription we started from.
 </p>
 
 <h1 id="copyright">Is this copyright infringement?</h1>
