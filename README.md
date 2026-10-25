@@ -31,6 +31,7 @@ A source with several transcriptions has one `.md` per edition instead of `main.
 - Optional: `featured` (highlighted in the catalogue) and `card_position` (the CSS `background-position` of the first scan on its catalogue card).
 - Citation fields: `author`, `place` (the city, for newspapers whose title doesn't name it), `full_title`, `translator` and `printer` for books, `volume` and `issue` for journals.
 - Optional: `collection` — the key of the collection the article is a part of (see Collections).
+- Optional: `notes` — editor's notes, shown as lettered sidenotes (a, b, c…) beside the text. Each has `edition` (the `.md` file name without extension), `type` (`explanatory`, `sic` for a misprint kept in the text, or `query` for a likely transcription error), `on` (the exact phrase the note follows, which must occur once in the text as a reader sees it) and `note` (Markdown *italics* allowed). `php scripts/check-notes.php` checks every anchor.
 
 ## Collections
 

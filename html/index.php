@@ -3,6 +3,7 @@
 require_once('data.php');
 require_once('citation.php');
 require_once('card_scan.php');
+require_once('notes.php');
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -333,6 +334,10 @@ function render_article($uri, $scans_open = false)
     }
     if ($article_title_html === null) {
         $article_title_html = '<h1>' . htmlspecialchars($title) . '</h1>';
+    }
+
+    if ($edition) {
+        $content = apply_editor_notes($content, $meta['notes'], $edition_id);
     }
 
     [$collection, $part_nav] = collection_nav($uri);

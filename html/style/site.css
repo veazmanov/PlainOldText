@@ -293,6 +293,12 @@ hr {
     color: var(--ink-muted);
 }
 
+/* ---- Sidenote markers: an inline block, which would otherwise take its paragraph's first-line indent and
+        leave a gap before the number ---- */
+label.sidenote-number {
+    text-indent: 0;
+}
+
 /* ---- Margin-note figures (mn() in data.php): image above its caption ---- */
 .marginnote > img {
     display: block;
@@ -1197,6 +1203,60 @@ body:where(.page-article) > article {
     font-style: italic;
     line-height: 1.5;
     color: var(--ink-muted);
+}
+
+/* ---- Editor's notes (notes.php): Tufte sidenotes, lettered a, b, c… so they don't look like the
+        author's own numbered footnotes ---- */
+:where(.page-article) > article {
+    counter-reset: editor-note-counter;
+}
+
+:where(.page-article) label.editor-note-number {
+    counter-increment: editor-note-counter;
+}
+
+/* An author's footnote marker straight after a note's letter */
+:where(.page-article) .editor-note + .footnote-ref {
+    margin-left: 0.15rem;
+}
+
+:where(.page-article) label.editor-note-number::after,
+:where(.page-article) .editor-note::before {
+    content: counter(editor-note-counter, lower-alpha);
+    color: var(--accent);
+    font-style: italic;
+}
+
+:where(.page-article) .editor-note::before {
+    content: counter(editor-note-counter, lower-alpha) "\00a0\00a0";
+}
+
+:where(.page-article) .editor-note {
+    color: var(--ink-soft);
+    font-style: normal;
+    text-align: left;
+    text-indent: 0;
+    hyphens: none;
+}
+
+/* A note anchored in italic text (a quotation) is still set in roman */
+:where(.page-article) .editor-note em {
+    font-style: italic;
+}
+
+/* In verse (an indented blockquote), line the note up with those beside paragraphs: Tufte places blockquote
+   sidenotes for a full-width quotation, which here would push them off the page. Phones use Tufte's toggles. */
+@media (min-width: 761px) {
+    :where(.page-article) blockquote:has(.editor-note) {
+        max-width: 460px;
+    }
+
+    :where(.page-article) blockquote .editor-note {
+        width: 250px;
+        min-width: 0;
+        margin-right: -300px;
+        font-size: 1.1rem;
+    }
 }
 
 /* ---- Collections: "Part of" under the dateline, the parts' navigation and the contents page ---- */

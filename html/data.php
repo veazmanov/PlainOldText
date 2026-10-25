@@ -113,6 +113,8 @@ if (is_dir($articles_base)) {
             'issue'      => $json_data['issue'] ?? null,
             // The key of the collection (in collections.json) this article is a part of
             'collection' => $json_data['collection'] ?? null,
+            // Editor's notes, shown as lettered sidenotes (see notes.php)
+            'notes'      => $json_data['notes'] ?? [],
         ];
     }
 }
