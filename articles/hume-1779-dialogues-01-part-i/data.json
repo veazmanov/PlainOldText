@@ -10,5 +10,55 @@
     "year": "1779",
     "page": "13–39",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_1",
-    "summary": "Demea explains why he teaches his children natural theology last. Philo welcomes this, on the grounds that reason is too weak to reach so far, and Cleanthes asks whether a sceptic can really live by his doubts. The three then debate whether religion has gained more from scepticism or from reason."
+    "summary": "Demea explains why he teaches his children natural theology last. Philo welcomes this, on the grounds that reason is too weak to reach so far, and Cleanthes asks whether a sceptic can really live by his doubts. The three then debate whether religion has gained more from scepticism or from reason.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "The father of Pamphilus",
+            "note": "Pamphilus, the narrator, is Cleanthes's pupil; he listens but takes no part in the argument."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "last of all the Nature of the Gods",
+            "note": "Hume's note: Chrysippus, the third head of the Stoic school, as quoted by Plutarch in *On Stoic Self-Contradictions* (*De Stoicorum repugnantiis*)."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "study and study and",
+            "note": "A transcription error: the 1779 printing reads *study and inquiry*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "particularly that of Zeno",
+            "note": "Zeno of Citium (c. 334–262 BC), the founder of Stoicism."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Vain Wisdom all and false Philosophy",
+            "note": "Milton, *Paradise Lost*, ii. 565–569, of the fallen angels' philosophising."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "a celebrated writer",
+            "note": "Hume's note: *L'art de penser*, that is *La Logique, ou l'art de penser* (1662), the 'Port-Royal Logic' of Antoine Arnauld and Pierre Nicole."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "A celebrated prelate",
+            "note": "Hume's note: Pierre-Daniel Huet (1630–1721), Bishop of Avranches, author of the *Demonstratio evangelica* (1679) and of the sceptical *Traité philosophique de la foiblesse de l'esprit humain* (published 1723)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the excellent saying of Lord Bacon",
+            "note": "Francis Bacon, *Essays*, 'Of Atheism': 'a little philosophy inclineth man's mind to atheism; but depth in philosophy bringeth men's minds about to religion.'"
+        }
+    ]
 }

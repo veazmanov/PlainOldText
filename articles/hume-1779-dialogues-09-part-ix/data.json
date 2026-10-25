@@ -10,5 +10,31 @@
     "year": "1779",
     "page": "159–170",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_9",
-    "summary": "Demea offers the a priori argument: everything that exists must have a cause, and the chain of causes ends in a necessarily existent Being. Cleanthes rejects it: no matter of fact can be demonstrated, and the material world itself might as well be the necessarily existent being."
+    "summary": "Demea offers the a priori argument: everything that exists must have a cause, and the chain of causes ends in a necessarily existent Being. Cleanthes rejects it: no matter of fact can be demonstrated, and the material world itself might as well be the necessarily existent being.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "it is said,",
+            "note": "Hume's note: Dr Clarke, that is Samuel Clarke (1675–1729), whose *Demonstration of the Being and Attributes of God* (Boyle Lectures, 1704) is the source of Demea's argument."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "acording",
+            "note": "Read *according*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "18, a lesser product of 9",
+            "note": "Hume's note cites the *Nouvelles de la République des Lettres*, the monthly review edited by Pierre Bayle, for August 1685."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "seldom been sound",
+            "note": "A transcription error: the 1779 printing has *found*."
+        }
+    ]
 }

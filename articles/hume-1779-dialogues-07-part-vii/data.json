@@ -10,5 +10,25 @@
     "year": "1779",
     "page": "129–143",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_7",
-    "summary": "Philo argues that the world resembles a plant or an animal more than a work of art, so it might have arisen by vegetation or generation rather than design. If the Brahmins say the world was spun by a great spider, he asks, what has Cleanthes to oppose them with but his own preference?"
+    "summary": "Philo argues that the world resembles a plant or an animal more than a work of art, so it might have arisen by vegetation or generation rather than design. If the Brahmins say the world was spun by a great spider, he asks, what has Cleanthes to oppose them with but his own preference?",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "sheds its feed",
+            "note": "A transcription error for *seed*: the 1779 printing has *ſeed*, with a long s."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Hesiod, and all the ancient Mythologists",
+            "note": "Hesiod's *Theogony* tells the origin of the world and the gods as a series of births."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "arose from an infinite spider",
+            "note": "The image of creation as a spider sending out its thread and drawing it back occurs in the Upanishads (*Muṇḍaka Upaniṣad*, i. 1. 7)."
+        }
+    ]
 }

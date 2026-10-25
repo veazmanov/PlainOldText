@@ -10,5 +10,67 @@
     "year": "1779",
     "page": "171–196",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_10",
-    "summary": "Demea and Philo agree on the misery and wickedness of human life, which poets and philosophers have always lamented. Cleanthes denies that misery outweighs happiness. Philo answers that even so, a mixture of good and evil can never prove an infinitely good and powerful creator."
+    "summary": "Demea and Philo agree on the misery and wickedness of human life, which poets and philosophers have always lamented. Cleanthes denies that misery outweighs happiness. Philo answers that even so, a mixture of good and evil can never prove an infinitely good and powerful creator.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "chymistry of botany",
+            "note": "A transcription error: the 1779 printing has *or*."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "feeling and exerience",
+            "note": "Read *experience*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Leibnitz has denied it",
+            "note": "Gottfried Wilhelm Leibniz (1646–1716), whose *Theodicy* (1710) argues that this is the best of all possible worlds."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "is perhaps the first",
+            "note": "Hume's note names Dr King: William King (1650–1729), Archbishop of Dublin, author of *De origine mali* (1702)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "down to Dr Young",
+            "note": "Edward Young (1683–1765), author of *Night Thoughts* (1742–45)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the great poet",
+            "note": "Milton, *Paradise Lost*, book xi, the vision of the lazar-house shown to Adam."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "could not give.",
+            "note": "Dryden, *Aureng-Zebe*, act iv."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Charles V.",
+            "note": "Charles V (1500–1558), Holy Roman Emperor, abdicated in 1555–56 in favour of his son Philip II and retired to the monastery of Yuste."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "he introduces Cato",
+            "note": "In Cicero's dialogue *Cato Maior de senectute* (*On Old Age*), Cato says that if a god offered to make him young again, he would refuse."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Epicurus's old questions are yet unanswered",
+            "note": "The dilemma is attributed to Epicurus by Lactantius, *De ira Dei*, 13."
+        }
+    ]
 }

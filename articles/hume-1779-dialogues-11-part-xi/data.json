@@ -10,5 +10,19 @@
     "year": "1779",
     "page": "197–226",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_11",
-    "summary": "Cleanthes proposes a finitely perfect Deity, limited by circumstances. Philo lists four circumstances behind the world's evils, none of which seems necessary, and concludes that the first cause is indifferent to good and evil. Demea, seeing where the argument is going, leaves."
+    "summary": "Cleanthes proposes a finitely perfect Deity, limited by circumstances. Philo lists four circumstances behind the world's evils, none of which seems necessary, and concludes that the first cause is indifferent to good and evil. Demea, seeing where the argument is going, leaves.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the Manichæan system",
+            "note": "The teaching of Mani (3rd century), which explains the world by two opposed principles, one good and one evil."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "burying Cæsar and his fortune",
+            "note": "Alluding to Caesar's crossing of the Adriatic in a storm, when he told the frightened boatman that he carried Caesar and his fortune (Plutarch, *Caesar*, 38)."
+        }
+    ]
 }

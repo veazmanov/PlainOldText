@@ -10,5 +10,49 @@
     "year": "1779",
     "page": "101–112",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_5",
-    "summary": "Philo presses the rule that like effects prove like causes. If the world is the work of a mind like ours, nothing proves that its maker is infinite, perfect or single: the world might be the botched first attempt of an infant deity, or the work of a committee of gods."
+    "summary": "Philo presses the rule that like effects prove like causes. If the world is the work of a mind like ours, nothing proves that its maker is infinite, perfect or single: the world might be the botched first attempt of an infant deity, or the work of a committee of gods.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "For if Lucretius",
+            "note": "Hume's note reads *Lib. xi. 1094*, but *De rerum natura* has only six books: the lines are in book ii."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Omnibus inque locis esse omni tempore præsto?",
+            "note": "'Who can rule the sum of the immeasurable, who can hold in his hand the strong reins of the deep, who can turn all the heavens together, warm the fruitful earths with heavenly fires, and be present in all places at all times?' (Lucretius, *De rerum natura*, ii)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "If Tully",
+            "note": "Cicero (Marcus Tullius Cicero). Hume's note cites *De natura deorum*, book i, where the Epicurean Velleius mocks the creator of Plato's *Timaeus*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "atque edificari",
+            "note": "A transcription error: the 1779 printing has *ædificari*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "terra potuerunt?",
+            "note": "'For with what eyes of the mind could your Plato have seen the building of so great a work, which he makes God put together and construct? What contrivance was there, what tools, what levers, what machines, what servants for so great a task? And how could air, fire, water and earth obey and submit to the architect's will?'"
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "the gods muft",
+            "note": "A transcription error for *must*: the 1779 printing has *muſt*, with a long s."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "says Milton, animate the world",
+            "note": "Milton, *Paradise Lost*, book viii: 'Which two great sexes animate the world'."
+        }
+    ]
 }

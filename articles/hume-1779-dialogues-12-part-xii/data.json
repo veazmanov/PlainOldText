@@ -10,5 +10,67 @@
     "year": "1779",
     "page": "227–264",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_12",
-    "summary": "Left alone with Cleanthes, Philo admits that the design of nature strikes every mind, and argues that the quarrel between theist and atheist is largely verbal. He condemns vulgar superstition and its harms to morality and society, and ends by recommending philosophical scepticism as the first step to being a believing Christian. Pamphilus judges that Cleanthes comes nearest the truth."
+    "summary": "Left alone with Cleanthes, Philo admits that the design of nature strikes every mind, and argues that the quarrel between theist and atheist is largely verbal. He condemns vulgar superstition and its harms to morality and society, and ends by recommending philosophical scepticism as the first step to being a believing Christian. Pamphilus judges that Cleanthes comes nearest the truth.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "I hear Galen reason",
+            "note": "Galen (c. 129–c. 216), the Greek physician. Hume's note cites his *On the Formation of the Foetus* (*De foetuum formatione*)."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "the prinple of Theism",
+            "note": "Read *principle*."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "Livy or Thucidydes",
+            "note": "Read *Thucydides*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "says Seneca",
+            "note": "Seneca, *Moral Letters to Lucilius*, xcv."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "is vulgar superstition be",
+            "note": "A transcription error: the 1779 printing has *if*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "Is the religious spirit be",
+            "note": "A transcription error: the 1779 printing has *If*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "I know, that Polybius",
+            "note": "Polybius, *Histories*, book vi, contrasts Greek officials, who cannot be trusted even with a talent, with Romans, whom their oath keeps honest."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "and Euripides",
+            "note": "Hume's note cites *Iphigenia in Tauris*, where King Thoas says that Greece knows nothing of good faith."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "it must be acknowedged",
+            "note": "Read *acknowledged*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "attention of Pamphilus",
+            "note": "A transcription error: the 1779 printing has a colon after *Pamphilus*."
+        }
+    ]
 }

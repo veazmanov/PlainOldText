@@ -10,5 +10,43 @@
     "year": "1779",
     "page": "85–100",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_4",
-    "summary": "Cleanthes says that those who call God's nature incomprehensible are no better than atheists. Philo replies that a divine mind full of ordered ideas needs explaining just as much as an ordered world, so explaining one by the other begins an endless regress."
+    "summary": "Cleanthes says that those who call God's nature incomprehensible are no better than atheists. Philo replies that a divine mind full of ordered ideas needs explaining just as much as an ordered world, so explaining one by the other begins an endless regress.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "all the found, orthodox divines",
+            "note": "A transcription error for *sound*: the 1779 printing has *ſound*, with a long s."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "the only found Theist",
+            "note": "A transcription error for *sound*: the 1779 printing has *ſound*, with a long s."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "the same perfon",
+            "note": "A transcription error for *person*: the 1779 printing has *perſon*, with a long s."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the Indian philosopher and his elephant",
+            "note": "The Indian holds that the world rests on an elephant and the elephant on a tortoise, but cannot say what the tortoise rests on. Locke tells the story in the *Essay concerning Human Understanding*, ii. 13. 19 and ii. 23. 2."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "and so one, without end",
+            "note": "Read *so on*."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "conscience must be be",
+            "note": "Read *must be*."
+        }
+    ]
 }

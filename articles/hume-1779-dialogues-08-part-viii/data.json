@@ -10,5 +10,73 @@
     "year": "1779",
     "page": "145–158",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_8",
-    "summary": "Philo revives the Epicurean hypothesis: matter in endless motion, given infinite time, might fall into the stable order we now see. Every religious system meets as great difficulties as this one, he concludes, so suspense of judgment is our only reasonable course."
+    "summary": "Philo revives the Epicurean hypothesis: matter in endless motion, given infinite time, might fall into the stable order we now see. Every religious system meets as great difficulties as this one, he concludes, so suspense of judgment is our only reasonable course.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the old Epicurean hypothesis",
+            "note": "Epicurus (341–270 BC) explained the world as the chance combination of atoms moving in the void."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "in comparison of dinite",
+            "note": "A transcription error: the 1779 printing has *finite*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "Is no such form",
+            "note": "A transcription error: the 1779 printing has *If*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "and is there be",
+            "note": "A transcription error: the 1779 printing has *if*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "and is it were not so",
+            "note": "A transcription error: the 1779 printing has *if*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "the actuating sorce",
+            "note": "A transcription error: the 1779 printing has *force*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "this adjustment, is attained",
+            "note": "A transcription error: the 1779 printing has *if*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "a plausible, is not",
+            "note": "A transcription error: the 1779 printing has *if*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "It is in vain, theresore",
+            "note": "A transcription error: the 1779 printing has *therefore*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "And is every attack",
+            "note": "A transcription error: the 1779 printing has *if*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "has himsels",
+            "note": "A transcription error for *himself*: the 1779 printing has *himſelf*, with a long s."
+        }
+    ]
 }

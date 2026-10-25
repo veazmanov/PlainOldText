@@ -10,5 +10,31 @@
     "year": "1779",
     "page": "5–11",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Prologue",
-    "summary": "Pamphilus explains to his friend Hermippus why the subject of natural religion suits the dialogue form: the being of a God is too obvious to dispute, but his nature is so obscure that reasonable men can only differ. He promises an exact account of the conversations he heard between Cleanthes, Philo and Demea."
+    "summary": "Pamphilus explains to his friend Hermippus why the subject of natural religion suits the dialogue form: the being of a God is too obvious to dispute, but his nature is so obscure that reasonable men can only differ. He promises an exact account of the conversations he heard between Cleanthes, Philo and Demea.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "my Hermippus",
+            "note": "The friend to whom Pamphilus writes; he takes no part in the conversations."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "accurate philosophical turn of Cleanthes",
+            "note": "Named after Cleanthes of Assos (c. 330–230 BC), who succeeded Zeno as head of the Stoic school. Here he argues from the design of the world."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "careless scepticism of Philo",
+            "note": "Probably named after Philo of Larissa (c. 159–84 BC), the last head of the sceptical Academy and a teacher of Cicero. Here he is the sceptic."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "inflexible orthodoxy of Demea",
+            "note": "The name of the stern, old-fashioned father in Terence's comedy *Adelphoe*. Here he defends orthodoxy and the argument *a priori*."
+        }
+    ]
 }

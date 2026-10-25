@@ -10,5 +10,37 @@
     "year": "1779",
     "page": "41–70",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_2",
-    "summary": "Demea holds that the nature of God is beyond human understanding. Cleanthes replies with the argument from design: the world is a great machine, so its author must resemble the mind of man. Philo attacks the analogy: we have seen houses built, but never worlds, and thought is only one small agitation of the brain."
+    "summary": "Demea holds that the nature of God is beyond human understanding. Cleanthes replies with the argument from design: the world is a great machine, so its author must resemble the mind of man. Philo attacks the analogy: we have seen houses built, but never worlds, and thought is only one small agitation of the brain.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "It is Father Malebranche",
+            "note": "Nicolas Malebranche (1638–1715), priest of the Oratory. Hume's note cites his *De la recherche de la vérité* (1674–75), book iii."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "as the Anthropomorphites asserted",
+            "note": "An early Christian sect who held that God has a human form."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the prudent reserve of Simonides",
+            "note": "The story is told by Cicero, *De natura deorum*, i. 60: asked by Hiero, tyrant of Syracuse, what God was, the poet Simonides kept doubling the time he needed, because the longer he thought, the more obscure the question seemed."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Galilæo's famous Dialogues concerning the system of the world",
+            "note": "Galileo Galilei, *Dialogo sopra i due massimi sistemi del mondo* (1632)."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "its convex figure, is natural darkness",
+            "note": "Read *its natural darkness*."
+        }
+    ]
 }

@@ -10,5 +10,37 @@
     "year": "1779",
     "page": "71–84",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_3",
-    "summary": "Cleanthes argues that a voice speaking from the clouds, or a library of living books, would point to a mind as plainly as the order of the world does. Demea objects that this makes God too like ourselves, and that the Deity's ways cannot be compared to ours."
+    "summary": "Cleanthes argues that a voice speaking from the clouds, or a library of living books, would point to a mind as plainly as the order of the world does. Demea objects that this makes God too like ourselves, and that the Deity's ways cannot be compared to ours.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "whistling of the winds, nor",
+            "note": "A transcription error: the 1779 printing has *not*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "particularly Plotinus",
+            "note": "Plotinus (c. 204–270), the founder of Neoplatonism, who held that the One, the first principle of all things, is beyond intellect and thought."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "is in favour design",
+            "note": "Read *in favour of design*."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "activity of a such a being",
+            "note": "Read *of such a being*."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "in any respect fimilar",
+            "note": "A transcription error for *similar*: the 1779 printing has *ſimilar*, with a long s."
+        }
+    ]
 }

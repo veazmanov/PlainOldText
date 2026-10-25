@@ -10,5 +10,25 @@
     "year": "1779",
     "page": "113–127",
     "source_url": "https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion/Part_6",
-    "summary": "Philo suggests the world is more like an animal than a machine, with God as its soul. Cleanthes answers that the world is young, as the recent invention of the arts shows; Philo replies that the arts have been lost and found again, and that matter may be eternal."
+    "summary": "Philo suggests the world is more like an animal than a machine, with God as its soul. Cleanthes answers that the world is young, as the recent invention of the arts shows; Philo replies that the arts have been lost and found again, and that matter may be eternal.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Lucullus was the first that brought cherry-trees",
+            "note": "Lucius Licinius Lucullus (c. 118–57 BC), the Roman general, is said by Pliny the Elder (*Natural History*, book xv) to have brought the cherry to Italy after his victory over Mithridates of Pontus."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "Europe and and that continent",
+            "note": "Read *and that continent*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "governed by 30,000 deities",
+            "note": "Hesiod, *Works and Days*, 252–253, where thrice ten thousand immortal guardians of mortal men watch over the earth."
+        }
+    ]
 }
