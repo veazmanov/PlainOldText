@@ -111,8 +111,64 @@ if (is_dir($articles_base)) {
             'printer'    => $json_data['printer'] ?? null,
             'volume'     => $json_data['volume'] ?? null,
             'issue'      => $json_data['issue'] ?? null,
+            // The key of the collection (in collections.json) this article is a part of
+            'collection' => $json_data['collection'] ?? null,
         ];
     }
+}
+
+// Collections: works in several parts (e.g. a book's chapters), shown as one catalogue card with a
+// contents page at /stable/<id>. collections.json holds each one's id, title and summary; the members
+// are the articles whose "collection" names it, in folder order. Keyed by collection key.
+$collections = [];
+// Each collection's permanent id => key. Ids come from the same pool as articles' (assign-ids.php).
+$collection_ids = [];
+
+$collections_file = $articles_base . '/collections.json';
+$collections_data = is_file($collections_file) ? json_decode(file_get_contents($collections_file), true) : [];
+foreach ($collections_data ?: [] as $key => $c) {
+    $id = strtolower(trim((string) ($c['id'] ?? '')));
+    if ($id === '' || isset($stable_ids[$id]) || isset($collection_ids[$id])) {
+        error_log("Plain Old Text: skipping collection '$key': missing or duplicate id (run scripts/assign-ids.php)");
+        continue;
+    }
+    $collection_ids[$id] = $key;
+    $collections[$key] = [
+        'key'     => $key,
+        'id'      => $id,
+        'title'   => $c['title'] ?? $key,
+        'summary' => $c['summary'] ?? '',
+        'members' => [],
+    ];
+}
+
+foreach ($metadata as $slug => $meta) {
+    $key = $meta['collection'];
+    if ($key === null) {
+        continue;
+    }
+    if (!isset($collections[$key])) {
+        error_log("Plain Old Text: article '$slug' names unknown collection '$key'; showing it on its own");
+        $metadata[$slug]['collection'] = null;
+        continue;
+    }
+    $collections[$key]['members'][] = $slug;
+}
+
+foreach ($collections as $key => $c) {
+    if (!$c['members']) {
+        unset($collections[$key], $collection_ids[$c['id']]);
+        continue;
+    }
+    // The byline, date and category are the first part's
+    $first = $metadata[$c['members'][0]];
+    $collections[$key] += [
+        'pub'       => $first['pub'],
+        'author'    => $first['author'],
+        'date'      => $first['date'],
+        'sort_date' => $first['sort_date'],
+        'category'  => $first['category'],
+    ];
 }
 
 // Tufte sidenote

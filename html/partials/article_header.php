@@ -1,8 +1,9 @@
 <?php // ./html/partials/article_header.php
 // The top of an article page: the title, a dateline (publication, date, page), the scans button and
-// edition switch, and a cog menu with the page tools in three groups: Source (source link), Text
-// (markdown, GitHub, corrections) and Reference (summary). A dagger after the title opens the citation beneath it
-// (cite.js). The scans open beside the text by default on wide screens (body.scans-auto); see article.js.
+// edition switch, and a cog menu with the page tools in two groups: Source (source link) and Text
+// (markdown, GitHub, corrections). A dagger after the title opens the citation beneath it, and "Summary" at the
+// end of the dateline opens the summary beneath that (cite.js). The scans open beside the text by default on wide
+// screens (body.scans-auto); see article.js.
 $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-expanded="false" aria-label="Cite this page" title="Cite this page">&dagger;</a>';
 ?>
 <div class="article-top">
@@ -47,18 +48,6 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
                     </details>
                 </li>
             </ul>
-
-            <?php if (!empty($summary)): ?>
-                <p class="menu-heading">Reference</p>
-                <ul>
-                    <li>
-                        <details class="menu-disclosure">
-                            <summary class="menu-item">Summary</summary>
-                            <p class="menu-reveal menu-summary"><?= htmlspecialchars($summary) ?></p>
-                        </details>
-                    </li>
-                </ul>
-            <?php endif; ?>
         </div>
     </details>
 </div>
@@ -69,12 +58,24 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
     <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
 </div>
 
-<?php // Dateline: the publication and date, under the title (styled like the catalogue cards) ?>
+<?php // Dateline: the publication and date, under the title (styled like the catalogue cards), and the summary toggle ?>
 <p class="dateline sans">
     <span class="dateline-pub"><?= htmlspecialchars($pub_name) ?></span>
     <span class="dateline-sep" aria-hidden="true">&middot;</span>
     <span><?= htmlspecialchars($date_str) ?><?php if (!empty($page_num)): ?>, p.&nbsp;<?= htmlspecialchars($page_num) ?><?php endif; ?></span>
+    <?php if (!empty($summary)): ?>
+        <span class="dateline-more"><span class="dateline-sep" aria-hidden="true">&middot;</span><a class="summary-toggle" href="#summary" aria-controls="summary" aria-expanded="false">Summary</a></span>
+    <?php endif; ?>
 </p>
+
+<?php if (!empty($collection)): ?>
+    <p class="collection-line sans">Part of <a href="/stable/<?= htmlspecialchars($collection['id']) ?>"><em><?= htmlspecialchars($collection['title']) ?></em></a></p>
+<?php endif; ?>
+
+<?php // The summary, opened by "Summary" in the dateline (shown by :target without JS) ?>
+<?php if (!empty($summary)): ?>
+    <p class="dateline-summary" id="summary"><?= htmlspecialchars($summary) ?></p>
+<?php endif; ?>
 
 <?php if ($has_scans): ?>
     <p class="article-actions sans">

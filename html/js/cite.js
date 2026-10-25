@@ -1,6 +1,7 @@
 // ./html/js/cite.js
-// The dagger after an article's title opens and closes the citation beneath it, without jumping to #cite.
-document.querySelectorAll('.cite-mark').forEach(function (mark) {
+// The dagger after an article's title opens and closes the citation beneath it, without jumping to #cite;
+// "Summary" in the dateline does the same for the summary.
+document.querySelectorAll('.cite-mark, .summary-toggle').forEach(function (mark) {
     var panel = document.getElementById(mark.getAttribute('aria-controls'));
     mark.addEventListener('click', function (event) {
         event.preventDefault();

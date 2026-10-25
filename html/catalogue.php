@@ -75,11 +75,12 @@ include __DIR__ . '/partials/head.php';
                         $article['date'],
                         $article['summary'] ?? '',
                         $article['excerpt'] ?? '',
+                        $article['search_extra'] ?? '',
                     ]);
                     $minutes = max(1, (int) round($article['words'] / 220));
                     $body = $article['excerpt'] ?: $article['summary'];
                 ?>
-                    <li class="<?= !empty($article['featured']) ? 'is-featured' : '' ?>"
+                    <li class="<?= !empty($article['featured']) ? 'is-featured' : '' ?><?= !empty($article['is_collection']) ? ' is-collection' : '' ?>"
                         data-search="<?= htmlspecialchars($search_text) ?>"
                         data-category="<?= htmlspecialchars($article['category']) ?>">
                         <div class="clip">
@@ -121,7 +122,9 @@ include __DIR__ . '/partials/head.php';
                             <?php endif; ?>
 
                             <p class="clip-foot sans">
-                                <?php if ($article['words'] > 0): ?>
+                                <?php if (!empty($article['is_collection'])): ?>
+                                    <span><?= $article['parts'] ?> parts &middot; <?= $minutes ?> min read</span>
+                                <?php elseif ($article['words'] > 0): ?>
                                     <span><?= $minutes ?> min read</span>
                                 <?php else: ?>
                                     <span class="pending-tag">Transcription pending</span>

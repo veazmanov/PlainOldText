@@ -30,6 +30,11 @@ A source with several transcriptions has one `.md` per edition instead of `main.
 - `scans` — page images on oldnews-photos.vjbe.net, written by `sync_scans.php`; or `scans_pdf`, the URL of a single PDF.
 - Optional: `featured` (highlighted in the catalogue) and `card_position` (the CSS `background-position` of the first scan on its catalogue card).
 - Citation fields: `author`, `place` (the city, for newspapers whose title doesn't name it), `full_title`, `translator` and `printer` for books, `volume` and `issue` for journals.
+- Optional: `collection` — the key of the collection the article is a part of (see Collections).
+
+## Collections
+
+A work in several parts, such as the chapters of a book, is a collection: each part is an ordinary article whose `data.json` has `"collection": "<key>"`, and `articles/collections.json` gives each key an `id`, a `title` and a `summary`. The catalogue shows a collection as one card, linking to its contents page at `/stable/<id>`; each part links to the contents and to the parts before and after it. Parts are in folder order, so number their folders (e.g. `hume-1779-dialogues-01-part-i`). The byline and date come from the first part. `php scripts/assign-ids.php` (with no arguments) gives new collections their ids, from the same pool as articles'.
 
 ## Workflow
 

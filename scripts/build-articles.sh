@@ -4,6 +4,7 @@
 # Converts every articles/<slug>/*.md to HTML with pandoc and copies the markdown and data.json alongside,
 # into oldnews-articles-only/ (gitignored), which html/data.php reads and ./deploy uploads.
 # A folder is one source; several .md files in it are editions of it (e.g. reading.md and diplomatic.md).
+# collections.json is copied too.
 
 cd "$(dirname "$0")/.." || exit 1
 
@@ -31,5 +32,8 @@ find "$SOURCE_DIR" -type f -name "*.md" | sort | while read -r input_file; do
         cp "$current_dir/data.json" "$output_dir/data.json"
     fi
 done
+
+# The collections (works in several parts) the articles belong to
+cp "$SOURCE_DIR/collections.json" "$TARGET_DIR/collections.json"
 
 echo "HTML conversion complete."

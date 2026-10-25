@@ -1,11 +1,26 @@
 <?php
 // ./scripts/assign-ids.php
 // Gives each articles/<slug>/data.json without an "id" a new random 5-character one, used in the
-// article's stable URL (/stable/<id>). IDs are permanent: existing ones are never changed.
+// article's stable URL (/stable/<id>), and likewise each collection in articles/collections.json.
+// IDs are permanent: existing ones are never changed.
 // Usage: php scripts/assign-ids.php [article-folder ...]   (no args = all articles)
 
 $articles_base = dirname(__DIR__) . '/articles';
 $alphabet = '0123456789abcdefghjkmnpqrstvwxyz';
+
+// A random id not yet in use, which is then marked as used.
+function new_id()
+{
+    global $alphabet, $used;
+    do {
+        $id = '';
+        for ($i = 0; $i < 5; $i++) {
+            $id .= $alphabet[random_int(0, strlen($alphabet) - 1)];
+        }
+    } while (isset($used[$id]));
+    $used[$id] = true;
+    return $id;
+}
 
 // Insert "id" as the first key in place so the rest of the file keeps its formatting.
 function write_id($json_file, $id)
@@ -28,8 +43,19 @@ function write_id($json_file, $id)
     file_put_contents($json_file, $text);
 }
 
-// Collect every id in use, across all articles, so new ones are unique.
+$collections_file = $articles_base . '/collections.json';
+$collections = is_file($collections_file) ? json_decode(file_get_contents($collections_file), true) : [];
+if (!is_array($collections)) {
+    throw new RuntimeException("Invalid JSON in $collections_file");
+}
+
+// Collect every id in use, across all articles and collections, so new ones are unique.
 $used = [];
+foreach ($collections as $c) {
+    if (($c['id'] ?? '') !== '') {
+        $used[$c['id']] = true;
+    }
+}
 foreach (glob($articles_base . '/*/data.json') as $json_file) {
     $data = json_decode(file_get_contents($json_file), true);
     if (!is_array($data)) {
@@ -57,13 +83,7 @@ foreach ($folders as $folder) {
         continue;
     }
 
-    do {
-        $id = '';
-        for ($i = 0; $i < 5; $i++) {
-            $id .= $alphabet[random_int(0, strlen($alphabet) - 1)];
-        }
-    } while (isset($used[$id]));
-    $used[$id] = true;
+    $id = new_id();
 
     if (array_key_exists('id', $data)) {
         // An empty "id": "" (as in data.example.json): fill it in rather than adding a second key
@@ -76,4 +96,20 @@ foreach ($folders as $folder) {
         write_id($json_file, $id);
     }
     echo "$folder: $id\n";
+}
+
+// Collections, when run on all articles
+if (count($argv) === 1) {
+    $changed = false;
+    foreach ($collections as $key => $c) {
+        if (($c['id'] ?? '') === '') {
+            $collections[$key] = ['id' => new_id()] + $c;
+            $changed = true;
+            echo "collection $key: {$collections[$key]['id']}\n";
+        }
+    }
+    if ($changed) {
+        file_put_contents($collections_file,
+            json_encode($collections, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n");
+    }
 }
