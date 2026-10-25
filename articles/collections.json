@@ -3,5 +3,10 @@
         "id": "y5qfr",
         "title": "Dialogues Concerning Natural Religion",
         "summary": "Hume's posthumous dialogue on what reason can tell us about God. Cleanthes argues from the design of the world to a divine mind like our own, Demea defends faith and the a priori proof, and the sceptic Philo picks both apart, ending on the problem of evil."
+    },
+    "hume-1777-enquiry": {
+        "id": "cn2ry",
+        "title": "An Enquiry Concerning Human Understanding",
+        "summary": "Hume's recasting of the first book of his Treatise: where our ideas come from, why our expectations from experience rest on custom rather than reason, what necessary connexion and liberty amount to, why testimony can never establish a miracle, and what a mitigated scepticism leaves us with."
     }
 }
