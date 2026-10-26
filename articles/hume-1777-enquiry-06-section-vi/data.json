@@ -9,5 +9,13 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section6",
-    "summary": "Where chances or causes are mixed, the mind leans towards the side with more instances, and the strength of our expectation follows the proportion of past experience."
+    "summary": "Where chances or causes are mixed, the mind leans towards the side with more instances, and the strength of our expectation follows the proportion of past experience.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "rhubarb always proved a purge",
+            "note": "Rhubarb root was a common laxative, or *purge*; opium was given as a *soporific*, to bring on sleep."
+        }
+    ]
 }

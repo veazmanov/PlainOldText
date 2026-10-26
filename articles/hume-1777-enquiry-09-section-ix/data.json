@@ -9,5 +9,13 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section9",
-    "summary": "Animals, like us, learn from experience and infer effects from causes. Since they plainly do it without reasoning, by custom, this confirms that our own inferences from experience rest on custom too."
+    "summary": "Animals, like us, learn from experience and infer effects from causes. Since they plainly do it without reasoning, by custom, this confirms that our own inferences from experience rest on custom too.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the circulation of the blood",
+            "note": "Demonstrated by William Harvey in *De motu cordis* (1628)."
+        }
+    ]
 }

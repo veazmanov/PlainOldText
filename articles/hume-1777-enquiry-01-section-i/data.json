@@ -9,5 +9,49 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section1",
-    "summary": "Moral philosophy can be easy and obvious, painting virtue to move us to act, or accurate and abstruse, seeking the principles of human nature. Hume defends the second: it lends exactness to the first and to every art, and only a careful study of the understanding can drive out the false metaphysics that shelters superstition."
+    "summary": "Moral philosophy can be easy and obvious, painting virtue to move us to act, or accurate and abstruse, seeking the principles of human nature. Hume defends the second: it lends exactness to the first and to every art, and only a careful study of the understanding can drive out the false metaphysics that shelters superstition.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Moral philosophy",
+            "note": "In Hume's usage, the study of human nature in general (the mind, the passions, morals and society), not ethics alone. *Moral* is opposed to *natural* philosophy, the study of the physical world."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Till a philosopher, at last, arose",
+            "note": "Isaac Newton (1642–1727), whose *Principia* (1687) derived the motions of the planets from the law of gravitation."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "this mental geography",
+            "note": "Hume's name for a map of the mind's faculties and operations, as distinct from an account of their causes."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "La Bruyere passes the seas",
+            "note": "Jean de La Bruyère (1645–1696), author of *Les Caractères* (1688), sketches of manners and character."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the glory of Malebranche",
+            "note": "Nicolas Malebranche (1638–1715), the French Cartesian philosopher, author of *De la recherche de la vérité* (1674–75)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "And Addison",
+            "note": "Joseph Addison (1672–1719), the essayist of *The Spectator*: Hume's example of the 'easy' philosopher, as Locke is of the abstruse one."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "when Locke shall be entirely forgotten",
+            "note": "John Locke (1632–1704), author of *An Essay concerning Human Understanding* (1690)."
+        }
+    ]
 }

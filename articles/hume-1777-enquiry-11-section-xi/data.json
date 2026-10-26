@@ -9,5 +9,31 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section11",
-    "summary": "In a dialogue with a friend who speaks for Epicurus, Hume argues that from the order of the world we can infer a cause only as great as the effect shows, and never a providence or a future state of rewards and punishments beyond what we already see."
+    "summary": "In a dialogue with a friend who speaks for Epicurus, Hume argues that from the order of the world we can infer a cause only as great as the effect shows, and never a providence or a future state of rewards and punishments beyond what we already see.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the banishment of Protagoras, and the death of Socrates",
+            "note": "Protagoras (c. 490–c. 420 BC), the sophist, was said to have been expelled from Athens for impiety; Socrates was condemned to death there in 399 BC."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Epicurus lived at Athens",
+            "note": "Epicurus (341–270 BC) founded his school, the Garden, at Athens in about 307 BC. Hume's notes in this passage cite Lucian and the historian Cassius Dio."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the wisest of all the Roman emperors",
+            "note": "Marcus Aurelius (emperor 161–180), who endowed chairs at Athens for each of the main schools of philosophy."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "I come hither, O ye Athenians",
+            "note": "The friend speaks as Epicurus, defending himself before the people of Athens."
+        }
+    ]
 }

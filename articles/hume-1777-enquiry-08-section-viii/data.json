@@ -9,5 +9,31 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section8",
-    "summary": "The dispute between liberty and necessity is merely verbal. All men have always believed in the regularity of human actions, which is all necessity amounts to, and liberty, properly understood as acting according to our will, is consistent with it and required by morality."
+    "summary": "The dispute between liberty and necessity is merely verbal. All men have always believed in the regularity of human actions, which is all necessity amounts to, and liberty, properly understood as acting according to our will, is consistent with it and required by morality.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the long disputed question concerning liberty and necessity",
+            "note": "Free will and determinism, in modern terms. Hume's claim that the two are compatible is an early statement of what is now called compatibilism."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "forms of goverment",
+            "note": "Probably a transcription error for *government*; check against Selby-Bigge's text."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "described by Polybius and Tacitus",
+            "note": "Polybius (c. 200–c. 118 BC), Greek historian of the rise of Rome; Tacitus (c. 56–c. 120), historian of the early Roman empire."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "The veracity of Quintus Curtius",
+            "note": "Quintus Curtius Rufus (1st century AD), author of a colourful Latin history of Alexander the Great."
+        }
+    ]
 }

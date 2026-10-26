@@ -9,5 +9,31 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section5",
-    "summary": "What leads us from past experience to expect the like in future is custom, or habit, the great guide of human life. Belief is a more vivid and steady conception of an idea, produced by custom, and the mind's connexions of ideas work in the same way."
+    "summary": "What leads us from past experience to expect the like in future is custom, or habit, the great guide of human life. Belief is a more vivid and steady conception of an idea, produced by custom, and the mind's connexions of ideas work in the same way.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "like that of Epictetus",
+            "note": "Epictetus (c. 50–c. 135), the Stoic philosopher, a freed slave whose teaching was written down by his pupil Arrian."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the Academic or Sceptical philosophy",
+            "note": "The philosophy of the New Academy, Plato's school in its sceptical phase under Arcesilaus and Carneades."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "for want of some immediate impression",
+            "note": "Hume's note quotes Cicero, *De finibus*, v. 2, where Piso, visiting the Academy at Athens, asks whether it is nature or some illusion that moves us more at the sight of places where famous men lived than at hearing of their deeds or reading their writings: here Plato comes to his mind, who first taught on this spot. (In the Latin, *quera* is a misprint for *quem*.)"
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "a kind of pre-established harmony",
+            "note": "A phrase borrowed from Leibniz, who used it for the harmony God set up between the mind and the body."
+        }
+    ]
 }

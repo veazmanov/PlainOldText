@@ -9,5 +9,43 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section4",
-    "summary": "Reasonings about matters of fact rest on cause and effect, and our knowledge of causes comes wholly from experience, not reason. But no argument shows that the future will resemble the past, so our conclusions from experience are not founded on reasoning at all."
+    "summary": "Reasonings about matters of fact rest on cause and effect, and our knowledge of causes comes wholly from experience, not reason. But no argument shows that the future will resemble the past, so our conclusions from experience are not founded on reasoning at all.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Matters of Fact",
+            "note": "This division of all knowledge into two kinds is often called 'Hume's fork'."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the truths demonstrated by Euclid",
+            "note": "Euclid's *Elements* (c. 300 BC), the classic model of demonstrative knowledge."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "but arises entirely from experience",
+            "note": "*A priori*: Latin, 'from what is prior'; by reason alone, independently of experience."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Adam, though his rational faculties",
+            "note": "That is, a man created with perfect reason but with no experience at all of the world."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the attraction of a loadstone",
+            "note": "A lodestone is naturally magnetised iron ore."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "What is the nature of all our reasonings concerning matter of fact?",
+            "note": "The question pursued from here to the end of the section, why experience of the past should tell us anything about the future, is now usually called the problem of induction."
+        }
+    ]
 }

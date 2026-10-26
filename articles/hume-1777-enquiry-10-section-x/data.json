@@ -9,5 +9,85 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section10",
-    "summary": "A wise man proportions his belief to the evidence. A miracle is a violation of the laws of nature, against which experience is as complete as it can be, so no testimony can establish one unless its falsehood would be more miraculous than the fact it relates; and no actual testimony has ever met that standard."
+    "summary": "A wise man proportions his belief to the evidence. A miracle is a violation of the laws of nature, against which experience is as complete as it can be, so no testimony can establish one unless its falsehood would be more miraculous than the fact it relates; and no actual testimony has ever met that standard.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Dr. Tillotson's writings",
+            "note": "John Tillotson (1630–1694), Archbishop of Canterbury; the argument is in his *Discourse against Transubstantiation* (1684). The *real presence*: the Catholic doctrine that the body and blood of Christ are really present in the bread and wine of the eucharist."
+        },
+        {
+            "edition": "main",
+            "type": "query",
+            "on": "from which contradition",
+            "note": "Probably a transcription error for *contradiction*; check against Selby-Bigge's text."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "were it told me by Cato",
+            "note": "Cato the Younger (95–46 BC), the Stoic opponent of Caesar, proverbial for his integrity. Hume's note cites Plutarch's *Life of Cato*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "The Indian prince",
+            "note": "Compare Locke's story of the King of Siam, who stopped believing the Dutch ambassador when told that in Holland water became hard enough in cold weather to walk on (*Essay concerning Human Understanding*, iv. 15. 5)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "that false prophet, Alexander",
+            "note": "Alexander of Abonoteichus (2nd century AD), who founded an oracle of the snake-god Glycon; Lucian exposes him in *Alexander the False Prophet*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Tacitus reports of Vespasian",
+            "note": "Tacitus, *Histories*, iv. 81, as Hume's note says. Vespasian was Roman emperor from 69 to 79."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "related by Cardinal de Retz",
+            "note": "Jean-François Paul de Gondi, Cardinal de Retz (1613–1679), French churchman and politician of the Fronde; the story is in his *Mémoires*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the tomb of Abbé Paris, the famous Jansenist",
+            "note": "François de Pâris (1690–1727), a Jansenist deacon. Cures were reported at his tomb in the cemetery of Saint-Médard in Paris from 1727 until the authorities closed it in 1732. The Jansenists were a rigorist movement within French Catholicism, opposed by the Jesuits. Hume's note refers to Louis-Basile Carré de Montgeron's *La Vérité des miracles* (1737)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Queen Elizabeth died",
+            "note": "Elizabeth I in fact died in March 1603; the date is part of Hume's hypothesis."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "avidum genus auricularum",
+            "note": "'Mankind, too greedy for tales told in the ear': Lucretius, *De rerum natura*, iv, as Hume's note says."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Mariana, Bede, or any monkish historian",
+            "note": "Juan de Mariana (1536–1624), Spanish Jesuit historian; Bede (c. 673–735), English monk, author of the *Ecclesiastical History of the English People*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Lord Bacon seems to have embraced",
+            "note": "Francis Bacon (1561–1626). Hume's note cites his *Novum Organum*, ii. 29."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Pentateuch",
+            "note": "The first five books of the Bible, then traditionally ascribed to Moses."
+        }
+    ]
 }

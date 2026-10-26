@@ -9,5 +9,25 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section2",
-    "summary": "All the contents of the mind are either impressions, the lively perceptions of sense and feeling, or ideas, their fainter copies. Every idea is copied from some impression, so the way to test a philosophical term is to ask from what impression its idea is derived."
+    "summary": "All the contents of the mind are either impressions, the lively perceptions of sense and feeling, or ideas, their fainter copies. Every idea is copied from some impression, so the way to test a philosophical term is to ask from what impression its idea is derived.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "And impressions are distinguished from ideas",
+            "note": "Hume's terms, from his *Treatise of Human Nature* (1739–40). Between them they cover what Locke had called *ideas*: any object of the mind in thinking."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "one particular shade of blue",
+            "note": "The 'missing shade of blue': Hume's own exception to his principle that every simple idea is copied from an impression."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "concerning their nature and reality.",
+            "note": "Hume's note takes up Locke's attack on innate ideas in book i of the *Essay concerning Human Understanding*."
+        }
+    ]
 }

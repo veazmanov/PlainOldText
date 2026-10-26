@@ -9,5 +9,13 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section3",
-    "summary": "Ideas are joined in the mind by only three principles of connexion: resemblance, contiguity in time or place, and cause or effect."
+    "summary": "Ideas are joined in the mind by only three principles of connexion: resemblance, contiguity in time or place, and cause or effect.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "a principle of connexion between the different thoughts",
+            "note": "In the editions before 1777 this section went on to a long discussion of how the association of ideas gives unity to epic poetry and drama, which Hume cut."
+        }
+    ]
 }

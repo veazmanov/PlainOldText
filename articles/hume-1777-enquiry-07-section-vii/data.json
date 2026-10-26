@@ -9,5 +9,37 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section7",
-    "summary": "We never perceive any power or necessary connexion between causes and effects, in bodies or in our own wills. The idea arises from the feeling of the mind's customary transition from one event to its usual attendant, and Hume offers two definitions of cause."
+    "summary": "We never perceive any power or necessary connexion between causes and effects, in bodies or in our own wills. The idea arises from the feeling of the mind's customary transition from one event to its usual attendant, and Hume offers two definitions of cause.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "a volition of the Supreme Being",
+            "note": "The doctrine now called occasionalism, held by Malebranche and other followers of Descartes: God is the only true cause, and created things are merely the occasions of his acting."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "some invisible intelligent principle",
+            "note": "Hume's note gives the Greek for 'a god from the machine', the crane that brought on a god to resolve the plot of a Greek play; in Latin, *deus ex machina*."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "the original of this idea.",
+            "note": "Hume's note refers to Locke's chapter 'Of Power', *Essay concerning Human Understanding*, ii. 21."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "our profound ignorance in both cases",
+            "note": "In his note Hume distinguishes Newton's own views from those of the followers who made God the only force in nature, and names Descartes, Malebranche, Locke, Clarke and Cudworth. *Vis inertiae*: the 'force of inertia' of the new, Newtonian physics."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "we may define a cause",
+            "note": "The first of Hume's two definitions of cause; the second follows a few lines below. The clause 'if the first object had not been, the second never had existed' is the starting point of David Lewis's counterfactual theory of causation ('Causation', 1973)."
+        }
+    ]
 }

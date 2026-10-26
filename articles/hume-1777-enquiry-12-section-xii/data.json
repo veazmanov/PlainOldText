@@ -9,5 +9,43 @@
     "place": "London",
     "year": "1777",
     "source_url": "https://www.gutenberg.org/cache/epub/9662/pg9662-images.html#section12",
-    "summary": "Hume rejects excessive Pyrrhonian scepticism as unliveable, and recommends a mitigated scepticism that confines enquiry to common life and experience. Books that contain neither abstract reasoning about quantity nor experimental reasoning about fact should be committed to the flames."
+    "summary": "Hume rejects excessive Pyrrhonian scepticism as unliveable, and recommends a mitigated scepticism that confines enquiry to common life and experience. Books that contain neither abstract reasoning about quantity nor experimental reasoning about fact should be committed to the flames.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "The Cartesian doubt",
+            "note": "The method of Descartes's *Meditations* (1641): doubt everything that can be doubted until something certain is found."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "or the excessive principles of scepticism",
+            "note": "*Pyrrhonism*: the radical scepticism of Pyrrho of Elis (c. 360–c. 270 BC), known chiefly through the writings of Sextus Empiricus."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "abstraction and general ideas.",
+            "note": "Hume's note names George Berkeley (1685–1753), whose argument against abstract ideas opens his *Principles of Human Knowledge* (1710)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "natural philosophy, physic, chemistry",
+            "note": "*Natural philosophy*: physics and the natural sciences; *physic*: medicine."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "of divinity or school metaphysics",
+            "note": "*Divinity*: theology. *School metaphysics*: the scholastic philosophy of the medieval and early modern universities."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Commit it then to the flames",
+            "note": "The logical positivists of the twentieth century took this passage as a forerunner of their own rejection of metaphysics."
+        }
+    ]
 }
