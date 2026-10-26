@@ -22,7 +22,7 @@ function apply_editor_notes($html, $notes, $edition)
     $n = 0;
     foreach ($notes as $note) {
         $anchor = notes_normalise(trim((string) ($note['on'] ?? '')))[0];
-        [$text, $map, $nodes] = notes_reader_text($root);
+        [$text, $map, $owner, $offsets, $text_nodes] = notes_reader_text($root);
         $count = $anchor === '' ? 0 : mb_substr_count($text, $anchor);
         if ($count !== 1) {
             error_log("Plain Old Text: note anchor \"{$note['on']}\" matches $count times; not shown");
@@ -31,7 +31,8 @@ function apply_editor_notes($html, $notes, $edition)
         // The anchor's last character, in its text node; the note goes after it, and after any punctuation that
         // follows in the same text node, as note markers do ("Hermippus,ᵃ" rather than "Hermippusᵃ,")
         $end = $map[mb_strpos($text, $anchor) + mb_strlen($anchor) - 1];
-        [$node, $offset] = $nodes[$end];
+        $node = $text_nodes[$owner[$end]];
+        $offset = $offsets[$end];
         $rest = mb_substr($node->data, $offset + 1);
         $offset += preg_match('/^[,.;:?!)\]’”\'"]+/u', $rest, $m) ? mb_strlen($m[0]) : 0;
         $after = $node->splitText($offset + 1);
@@ -46,17 +47,24 @@ function apply_editor_notes($html, $notes, $edition)
 }
 
 // The text a reader sees under $root, normalised, with for each of its characters the position of the raw
-// character it came from, and for each raw position its [text node, character offset].
+// character it came from, and for each raw position the index of its text node (in the list returned last; -1 for
+// a space between blocks) and its character offset there. Flat integer arrays, not a pair per character, to keep a
+// long article within PHP's memory limit.
 function notes_reader_text($root)
 {
     $raw = [];
-    $nodes = [];
-    $walk = function ($el) use (&$walk, &$raw, &$nodes) {
+    $owner = [];
+    $offsets = [];
+    $text_nodes = [];
+    $walk = function ($el) use (&$walk, &$raw, &$owner, &$offsets, &$text_nodes) {
         foreach ($el->childNodes as $child) {
             if ($child instanceof DOMText) {
+                $k = count($text_nodes);
+                $text_nodes[] = $child;
                 foreach (preg_split('//u', $child->data, -1, PREG_SPLIT_NO_EMPTY) as $i => $ch) {
                     $raw[] = $ch;
-                    $nodes[] = [$child, $i];
+                    $owner[] = $k;
+                    $offsets[] = $i;
                 }
             } elseif ($child instanceof DOMElement) {
                 $class = ' ' . $child->getAttribute('class') . ' ';
@@ -67,12 +75,14 @@ function notes_reader_text($root)
                 $block = !in_array($child->nodeName, ['em', 'strong', 'a', 'span', 'sup', 'sub', 'small', 'code', 'i', 'b'], true);
                 if ($block) {
                     $raw[] = ' ';
-                    $nodes[] = null;
+                    $owner[] = -1;
+                    $offsets[] = 0;
                 }
                 $walk($child);
                 if ($block) {
                     $raw[] = ' ';
-                    $nodes[] = null;
+                    $owner[] = -1;
+                    $offsets[] = 0;
                 }
             }
         }
@@ -80,7 +90,7 @@ function notes_reader_text($root)
     $walk($root);
 
     [$text, $map] = notes_normalise($raw);
-    return [$text, $map, $nodes];
+    return [$text, $map, $owner, $offsets, $text_nodes];
 }
 
 // Collapses whitespace and straightens curly quotes (pandoc makes them curly, data.json has them straight).
