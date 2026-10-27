@@ -222,7 +222,28 @@ function render_catalogue()
     include(__DIR__ . '/catalogue.php');
 }
 
-// A collection's contents page: its summary, then each part with its pages and summary.
+// HTML for a short string with Markdown *italics* and [links](url), escaped otherwise.
+function inline_markdown($s)
+{
+    $s = htmlspecialchars((string) $s);
+    $s = preg_replace('/\*([^*]+)\*/', '<em>$1</em>', $s);
+    return preg_replace('/\[([^\]]+)\]\((https?:[^)\s]+)\)/', '<a href="$2">$1</a>', $s);
+}
+
+// The note at the top of a collection's contents page: its source edition, the copy transcribed and why the
+// texts are in the public domain.
+function collection_source_note($c)
+{
+    $paras = '';
+    foreach (['source' => 'Source', 'transcribed_from' => 'Transcribed from', 'copyright' => 'Copyright'] as $field => $label) {
+        if (trim($c[$field]) !== '') {
+            $paras .= '<p><span class="sans">' . $label . ':</span> ' . inline_markdown($c[$field]) . '</p>';
+        }
+    }
+    return $paras ? '<div class="editorial-note">' . $paras . '</div>' : '';
+}
+
+// A collection's contents page: its source note, summary, then each part with its pages and summary.
 function render_collection($key)
 {
     global $metadata, $collections, $site_name, $site_url;
@@ -243,6 +264,7 @@ function render_collection($key)
     $content = '<h1>' . $h($c['title']) . '</h1>'
         . '<p class="dateline sans"><span class="dateline-pub">' . $h($c['author'] ?: $c['pub']) . '</span>'
         . '<span class="dateline-sep" aria-hidden="true">&middot;</span><span>' . $h($c['date']) . '</span></p>'
+        . collection_source_note($c)
         . ($c['summary'] ? '<p>' . $h($c['summary']) . '</p>' : '')
         . '<h2>Contents</h2><ol class="collection-contents">' . $items . '</ol>';
 

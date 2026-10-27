@@ -1,0 +1,29 @@
+{
+    "id": "s7cfd",
+    "title": "Einleitung",
+    "publication": "Nova Kepleriana 4",
+    "collection": "nova-kepleriana-4",
+    "category": "book-chapter",
+    "author": "Walther von Dyck",
+    "year": "1927",
+    "full_title": "Nova Kepleriana: Wieder aufgefundene Drucke und Handschriften von Johannes Kepler, 4: Die Keplerbriefe auf der Nationalbibliothek und auf der Sternwarte in Paris",
+    "place": "Munich",
+    "printer": "Bayerische Akademie der Wissenschaften",
+    "page": "5–12",
+    "source_url": "https://publikationen.badw.de/de/003071295",
+    "summary": "The history of Philipp Müller's correspondence, bought by Joseph-Nicolas Delisle in 1736, partly stolen from the Paris Observatory by Guglielmo Libri and bought back from the Ashburnham library in 1888, with a list of every letter in it and of which survive.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "89, 8. A. (Umschlag), 89, 9. B",
+            "note": "Read *89, 9. A.*: the Crüger letters' cover."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "eben der obige vom 1. Juli 1622 datierte",
+            "note": "The letter itself is dated *Idibus Iuliis*, the Ides of July: 15 July 1622."
+        }
+    ]
+}

@@ -2,11 +2,25 @@
     "hume-1779-dialogues": {
         "id": "y5qfr",
         "title": "Dialogues Concerning Natural Religion",
-        "summary": "Hume's posthumous dialogue on what reason can tell us about God. Cleanthes argues from the design of the world to a divine mind like our own, Demea defends faith and the a priori proof, and the sceptic Philo picks both apart, ending on the problem of evil."
+        "summary": "Hume's posthumous dialogue on what reason can tell us about God. Cleanthes argues from the design of the world to a divine mind like our own, Demea defends faith and the a priori proof, and the sceptic Philo picks both apart, ending on the problem of evil.",
+        "source": "Hume, David. *Dialogues Concerning Natural Religion*. 2nd ed. London, 1779.",
+        "transcribed_from": "the [Wikisource transcription](https://en.wikisource.org/wiki/Dialogues_Concerning_Natural_Religion) of the second edition.",
+        "copyright": "Hume’s text is in the public domain: he died in 1776, and the *Dialogues* were first published in 1779. The transcription is adapted from Wikisource, by Wikisource contributors, and is available under the [Creative Commons Attribution-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/)."
     },
     "hume-1777-enquiry": {
         "id": "cn2ry",
         "title": "An Enquiry Concerning Human Understanding",
-        "summary": "Hume's recasting of the first book of his Treatise: where our ideas come from, why our expectations from experience rest on custom rather than reason, what necessary connexion and liberty amount to, why testimony can never establish a miracle, and what a mitigated scepticism leaves us with."
+        "summary": "Hume's recasting of the first book of his Treatise: where our ideas come from, why our expectations from experience rest on custom rather than reason, what necessary connexion and liberty amount to, why testimony can never establish a miracle, and what a mitigated scepticism leaves us with.",
+        "source": "Hume, David. *Enquiries Concerning the Human Understanding and Concerning the Principles of Morals*. Edited by L. A. Selby-Bigge. 2nd ed. Oxford: Clarendon Press, 1902.",
+        "transcribed_from": "the [Project Gutenberg text](https://www.gutenberg.org/ebooks/9662) (eBook #9662).",
+        "copyright": "In the public domain. Hume died in 1776, and the *Enquiry* is given in the posthumous edition of 1777. Selby-Bigge’s 1902 edition is out of copyright too: he died in 1951, more than 70 years ago."
+    },
+    "nova-kepleriana-4": {
+        "id": "713cz",
+        "title": "Die Keplerbriefe auf der Nationalbibliothek und auf der Sternwarte in Paris",
+        "summary": "The Latin texts of Kepler’s letters to Johann Seussius and Philipp Müller (1622–1630) found in Paris by Walther von Dyck, with letters of Kepler’s son-in-law Jacob Bartsch and the Danzig astronomer Peter Crüger on the Rudolphine Tables, the Ephemerides, Kepler’s death and the fate of his papers, from Nova Kepleriana 4 (1927).",
+        "source": "Dyck, Walther von, and Max Caspar, eds. *Die Keplerbriefe auf der Nationalbibliothek und auf der Sternwarte in Paris*. Nova Kepleriana: Wieder aufgefundene Drucke und Handschriften von Johannes Kepler 4. Abhandlungen der Bayerischen Akademie der Wissenschaften, Mathematisch-naturwissenschaftliche Abteilung 31, no. 1. Munich: Verlag der Bayerischen Akademie der Wissenschaften, 1927.",
+        "transcribed_from": "a digital facsimile of the 1927 edition (ISBN 978-3-486-75614-2). The Bavarian Academy of Sciences also has it [online](https://publikationen.badw.de/de/003071295).",
+        "copyright": "Only public-domain texts from this edition are reproduced here: the letters of Kepler, Bartsch, Crüger and Müller (1620–1635), in the Latin of the 1927 edition, and Walther von Dyck’s preface and introduction (von Dyck died in 1934, more than 70 years ago). Max Caspar’s German translations and the editors’ notes and commentary are left out: Caspar died in 1956, so they remain in copyright until 1 January 2027."
     }
 }

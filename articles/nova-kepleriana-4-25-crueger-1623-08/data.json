@@ -1,0 +1,21 @@
+{
+    "id": "0jasa",
+    "title": "Crüger to Müller, August 1623",
+    "publication": "Nova Kepleriana 4",
+    "collection": "nova-kepleriana-4",
+    "category": "letter",
+    "author": "Peter Crüger",
+    "year": "1623",
+    "month": "8",
+    "page": "108",
+    "source_url": "https://publikationen.badw.de/de/003071295",
+    "summary": "Crüger thanks Müller for Kepler's latest writings, which, as an Italian said, are as marvellous as the man, and which carry him out of himself whenever he reads them.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "[Magini?, Galilei?]",
+            "note": "The 1927 editors' guess. Giovanni Antonio Magini of Bologna died in 1617."
+        }
+    ]
+}

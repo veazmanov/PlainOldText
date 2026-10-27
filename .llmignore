@@ -1,8 +1,31 @@
-
-
 TODO
 *.png
 text-mml-chtml.js
 about.md
 deploy
 html/style/tufte.css
+
+# Build output: copies of articles/ plus pandoc HTML
+
+oldnews-articles-only/
+
+# Article texts, which are large and not needed for code work
+articles/*/*.md
+articles/*/*.txt
+articles/*/*.html
+
+# Fonts and licences
+html/style/et-book/
+LICENSE
+articles/UNLICENSE
+
+# Images, PDFs and other binaries
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.pdf
+*.woff
+*.woff2
+*.ttf
+*.zip

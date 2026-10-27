@@ -1,0 +1,28 @@
+{
+    "id": "kk1cg",
+    "title": "Kepler to Seussius, 15 July 1622",
+    "publication": "Nova Kepleriana 4",
+    "collection": "nova-kepleriana-4",
+    "category": "letter",
+    "author": "Johannes Kepler",
+    "year": "1622",
+    "month": "7",
+    "day": "15",
+    "page": "27–29",
+    "source_url": "https://publikationen.badw.de/de/003071295",
+    "summary": "Kepler thanks Seussius for Philipp Müller's theses against the astrologer Paul Nagel, recalls his own pseudonymous attack on the end-of-the-world prophets and his quarrel with Robert Fludd, and comments on Müller's theses on the cross in Cygnus, the new star and Johann Arndt.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Idibus Iuliis 1622",
+            "note": "The Ides of July: 15 July 1622. Von Dyck's list of the collection gives 1 July."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Robertus de Fluctibus",
+            "note": "Robert Fludd, whose attack on the appendix to Kepler's *Harmonices mundi* (1619) Kepler answered in his *Pro suo opere Harmonices mundi apologia* (1622)."
+        }
+    ]
+}

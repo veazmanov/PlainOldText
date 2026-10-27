@@ -1,0 +1,22 @@
+{
+    "id": "68txp",
+    "title": "Kepler to Müller, 16/26 January 1630",
+    "publication": "Nova Kepleriana 4",
+    "collection": "nova-kepleriana-4",
+    "category": "letter",
+    "author": "Johannes Kepler",
+    "year": "1630",
+    "month": "1",
+    "day": "26",
+    "page": "72–73",
+    "source_url": "https://publikationen.badw.de/de/003071295",
+    "summary": "Kepler reports the arrival of paper from Prague, asks Müller to stop any further Leipzig paper beyond what is ordered, and says the printing of Terrentius's letter from China and of the first pages of the *Ephemerides* has begun.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Epistolam Chinensem",
+            "note": "The *Epistolium* of the Jesuit Johann Terrentius from China (1630), which Kepler printed at Sagan with his commentary."
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "cbvzd",
+    "title": "Bartsch's Open Letter to Kepler, 1628",
+    "publication": "Nova Kepleriana 4",
+    "collection": "nova-kepleriana-4",
+    "category": "letter",
+    "author": "Jacob Bartsch",
+    "year": "1628",
+    "page": "92–95",
+    "source_url": "https://publikationen.badw.de/de/003071295",
+    "summary": "Bartsch dedicates the first ephemeris computed from the *Rudolphine Tables* to the University of Strasbourg, and in an open letter tells Kepler how he came to compute it with the new logarithmic method, and of his plans for 'practical spheres' that would show the planetary motions to the eye.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "aliis aque",
+            "note": "Perhaps for *aliisque a*."
+        },
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "praecique",
+            "note": "Read *praecipue*."
+        }
+    ]
+}

@@ -135,11 +135,22 @@ foreach ($collections_data ?: [] as $key => $c) {
         continue;
     }
     $collection_ids[$id] = $key;
+    foreach (['source', 'copyright'] as $field) {
+        if (trim((string) ($c[$field] ?? '')) === '') {
+            error_log("Plain Old Text: collection '$key' has no \"$field\" in collections.json");
+        }
+    }
     $collections[$key] = [
         'key'     => $key,
         'id'      => $id,
         'title'   => $c['title'] ?? $key,
         'summary' => $c['summary'] ?? '',
+        // Shown in a note at the top of the contents page. "source": the Chicago bibliography entry of the
+        // original edition; "transcribed_from": the copy actually transcribed (optional); "copyright": why the
+        // texts are free to reproduce. *Italics* and [links](url) are allowed.
+        'source'           => $c['source'] ?? '',
+        'transcribed_from' => $c['transcribed_from'] ?? '',
+        'copyright'        => $c['copyright'] ?? '',
         'members' => [],
     ];
 }
