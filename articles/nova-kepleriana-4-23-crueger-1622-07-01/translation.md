@@ -1,0 +1,13 @@
+# Crüger to Müller, 1 July 1622
+
+::: {.editorial-note}
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors', and words in square brackets are theirs. Italics follow the editors' emphasis.
+:::
+
+… While Kepler labours to prove Copernicus's hypotheses by physical reasons, he brings in wonderful speculations that belong not so much to astronomy as to physics, such as those on the magnetic fibres of the planets, and others — ([margin:] “To keep the annual motion of the earth, he reforms almost the whole of philosophy and introduces a new one, and even invents new astronomical terms, for example *foci, sun-seeking and sun-fleeing fibres*, and so on; I say nothing of his *wonderful* computation of the prosthaphaereses *by the areas of triangles and circular sectors*. So it is no wonder if he also introduces new kinds of proportion and new ratios.”) These things are pleasing, to be sure, but very obscure, as is his account of the motion of the celestial librations, compared with the workings of a balance …
+
+What use is any of this to astronomy? Granted, with these speculations he may entice some to his celestial physics and to Copernican astronomy; but he will frighten many more away from it, especially once they see another man's work come out, restoring the whole of astronomy on Tycho's hypotheses. It came out this year, the fruit of the night-watches and labour of Christian Severin [Longomontanus], for ten years Tycho's companion in his observations, a man honourably mentioned both in the appendix to Tycho's *Progymnasmata* and in the preface to the book on the more recent phenomena of the world.
+
+I found much disagreement with Kepler there. And why should I not side with Severin rather than with Kepler? For Severin keeps solely to Tycho's observations, *while Kepler trims the observations themselves to fit his books on harmony, his Copernican astronomy and his celestial physics, when the observations ought rather to be the rule of astronomy* …
+
+As for Tycho's sizes of the planets, which Kepler has called into doubt, I say what I said before: I neither follow nor accept all that Kepler teaches in his celestial physics and in the *Epitome of Copernican Astronomy*; for by trimming, correcting and, I know not how, overturning Tycho's very observations (at which he was never present himself, and had he been, he would be no match for so many pairs of eyes), he does nothing but try to prove his Harmony of the World and Copernican astronomy perfect in every part. I shall see what Severin's *Astronomia Danica* has to teach me.

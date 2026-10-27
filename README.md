@@ -20,6 +20,8 @@ This repo holds both the transcriptions (`articles/`) and the PHP site that serv
 
 A source with several transcriptions has one `.md` per edition instead of `main.md`, e.g. `reading.md` and `diplomatic.md`. The reading edition is the default; others are at `?edition=<name>`.
 
+A source in another language can have an English translation as `translation.md` beside its transcription. It is not an edition: the article page offers "English translation", which shows it beside the text (`?translation=1`), paragraph by paragraph, so keep the transcription's paragraphing. Its title is dropped and its editorial note shown under the text's. Editor's notes on the translation have `"edition": "translation"`.
+
 `data.json` (see `articles/data.example.json`) has:
 
 - `id` — a permanent 5-character id. The article's canonical URL is `/stable/<id>`, with `/stable/<id>/scans` (scans open) and `/stable/<id>/markdown` (the plain-text source). Old `/<slug>` and `/photocopy/<slug>` URLs redirect there. Never edit an `id`, and never reuse one, even for a deleted article.

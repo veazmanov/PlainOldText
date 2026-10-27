@@ -11,5 +11,24 @@
     "page": "99–100",
     "source_url": "https://publikationen.badw.de/de/003071295",
     "summary": "Bartsch laments Kepler's death at Regensburg, 'the sun of all astronomers', and tells of a fruitless fortnight at Gitschin trying to get Wallenstein to pay Kepler's salary and keep the press going.",
-    "notes": []
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "marked with a black stone",
+            "note": "The Romans marked unlucky days with a black stone and lucky ones with a white."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "astronomical dream",
+            "note": "A play on Kepler's *Somnium*, his dream of a journey to the moon, which was then being printed."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "going to Gitschin",
+            "note": "Jičín in Bohemia, the seat of Kepler's patron Wallenstein, Duke of Friedland."
+        }
+    ]
 }

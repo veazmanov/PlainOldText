@@ -1,9 +1,12 @@
 <?php
 // ./html/layout.php
 $head_title = $title . ' | ' . $pub_name;
-// show-scans: opened at /stable/<id>/scans. scans-auto: the default, open beside the text on wide screens.
+// show-scans: opened at /stable/<id>/scans. scans-auto: the default, open beside the text on wide screens, except
+// beside a translation. show-translation: the translation beside the text (?translation=1).
 $body_class = isset($article_header_partial)
-    ? 'page-article' . (!empty($scans_open) ? ' show-scans' : (!empty($has_scans) ? ' scans-auto' : ''))
+    ? 'page-article'
+        . (!empty($scans_open) ? ' show-scans' : (!empty($has_scans) && empty($translation_shown) ? ' scans-auto' : ''))
+        . (!empty($translation_shown) ? ' show-translation' : '')
     : ($body_class ?? '');
 include __DIR__ . '/partials/head.php';
 ?>

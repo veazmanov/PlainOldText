@@ -17,6 +17,30 @@
             "type": "query",
             "on": "scripturam Cicero dictam",
             "note": "Kepler's marginal note here, on the weight of the Cicero type, has signs the 1927 printing shows unclearly: the fraction of a hundredweight is perhaps ½, and the accent signs and the two star signs in the German postscript are approximated."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the type called Cicero",
+            "note": "A size of type, about 12 point, named after early editions of Cicero printed in it."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "hired Bernegger",
+            "note": "Matthias Bernegger, professor at Strasbourg and Kepler's friend, in whose care Susanna was living there. Kepler writes *Pernegger*."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "33 imperials",
+            "note": "Imperial thalers (*imperiales*)."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the low Garamond body",
+            "note": "A smaller size of type, about 10 point, named after the French punchcutter Claude Garamond."
         }
     ]
 }

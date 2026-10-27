@@ -11,5 +11,18 @@
     "page": "78–79",
     "source_url": "https://publikationen.badw.de/de/003071295",
     "summary": "Kepler sends Friedrich Bartsch to see to the sale of the *Ephemerides* and defends giving Wallenstein his title as Duke of Mecklenburg in the dedication. His last letter to Müller; he died at Regensburg two months later.",
-    "notes": []
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "my patron's title",
+            "note": "Wallenstein, Kepler's patron, was invested by the Emperor with the duchy of Mecklenburg in 1629, after its dukes were deposed for siding with Denmark. The dedication of the *Ephemerides* calls him Duke of Mecklenburg."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the Emperor's son",
+            "note": "The see of Magdeburg was disputed: its chapter had chosen August, son of the Elector of Saxony, while the Emperor sought it, with Halberstadt, for his son Archduke Leopold Wilhelm. Kepler would give either claimant the title in use."
+        }
+    ]
 }

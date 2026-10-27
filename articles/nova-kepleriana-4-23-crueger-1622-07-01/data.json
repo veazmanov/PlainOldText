@@ -11,5 +11,24 @@
     "page": "107–108",
     "source_url": "https://publikationen.badw.de/de/003071295",
     "summary": "Crüger finds Kepler's physical astronomy pleasing but obscure, accuses him of bending Tycho's observations to fit his harmonies and Copernicanism, and turns hopefully to Longomontanus's newly published *Astronomia Danica*.",
-    "notes": []
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "prosthaphaereses",
+            "note": "The corrections added to or taken from a planet's mean motion to give its true place. Kepler found them from areas swept out, by what is now his second law."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "celestial librations",
+            "note": "Kepler's name for a planet's swinging nearer to and farther from the sun, which he compared with the arms of a balance (*Epitome*, book IV)."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the book on the more recent phenomena of the world",
+            "note": "Tycho's *De mundi aetherei recentioribus phaenomenis* (1588), on the comet of 1577."
+        }
+    ]
 }

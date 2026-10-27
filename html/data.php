@@ -29,12 +29,16 @@ $edition_labels = [
 ];
 
 // The built editions of an article, default first: [id => ['label', 'html', 'md']].
+// translation.md is an English translation shown beside the text (article_translation()), not an edition.
 function article_editions($uri)
 {
     global $articles_base, $edition_labels;
     $editions = [];
     foreach (glob($articles_base . '/' . $uri . '/*.html') as $html) {
         $id = basename($html, '.html');
+        if ($id === 'translation') {
+            continue;
+        }
         $md = substr($html, 0, -5) . '.md';
         $editions[$id] = [
             'label' => $edition_labels[$id] ?? ucfirst(str_replace(['-', '_'], ' ', $id)),
@@ -45,6 +49,18 @@ function article_editions($uri)
     $order = array_flip(array_keys($edition_labels));
     uksort($editions, fn($a, $b) => [$order[$a] ?? PHP_INT_MAX, $a] <=> [$order[$b] ?? PHP_INT_MAX, $b]);
     return $editions;
+}
+
+// The article's English translation (translation.md), ['html', 'md'], or null if it has none.
+function article_translation($uri)
+{
+    global $articles_base;
+    $html = $articles_base . '/' . $uri . '/translation.html';
+    if (!is_file($html)) {
+        return null;
+    }
+    $md = $articles_base . '/' . $uri . '/translation.md';
+    return ['html' => $html, 'md' => is_file($md) ? $md : null];
 }
 
 // One record per article folder that has a data.json, keyed by folder name (the slug).

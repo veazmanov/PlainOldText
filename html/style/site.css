@@ -1526,3 +1526,89 @@ body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
 
 .toc { list-style: none; padding-left: 0; font-size: 1.1rem; }
 .toc li { margin: 0.2rem 0; }
+/* ---- An English translation beside the text (?translation=1, body.show-translation): a row per paragraph, the
+        text left and the translation right on wide screens, the translation under the text on narrow ones ---- */
+:where(.page-article) .parallel-translation {
+    color: var(--ink-soft);
+    padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+}
+
+@media (min-width: 1000px) {
+    body:where(.page-article).show-translation:not(.show-scans) {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        padding: 0 2.5rem;
+    }
+
+    /* The header, the title block, the editorial notes and what follows the rows stay a centred 500px column */
+    body:where(.page-article).show-translation:not(.show-scans) > header {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body:where(.page-article).show-translation:not(.show-scans) article > section > :not(.parallel) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body:where(.page-article).show-translation:not(.show-scans) .translation-note,
+    body:where(.page-article).show-translation:not(.show-scans) .footnotes {
+        max-width: 500px;
+    }
+
+    body:where(.page-article).show-translation:not(.show-scans) .parallel-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 500px));
+        justify-content: center;
+        column-gap: 3rem;
+    }
+
+    body:where(.page-article).show-translation:not(.show-scans) .parallel-translation {
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+
+/* There's no margin for editor's notes beside two columns: a note opens under its line when its letter is clicked */
+body:where(.page-article).show-translation .sidenote {
+    display: none;
+}
+
+body:where(.page-article).show-translation .margin-toggle:checked + .sidenote {
+    display: block;
+    float: none;
+    clear: none;
+    position: static;
+    width: auto;
+    max-width: 500px;
+    min-width: 0;
+    margin: 0.5rem 0 0.75rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+body:where(.page-article).show-translation label.margin-toggle {
+    cursor: pointer;
+}
+
+/* ---- "with English translation" on a collection's contents page ---- */
+:where(.page-collection) .contents-entry {
+    text-align: left;
+}
+
+:where(.page-collection) .contents-translation {
+    margin-left: 0.5rem;
+    padding: 0 0.35rem;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+}
+
+:where(.page-collection) .contents-translation:hover {
+    color: var(--accent);
+}

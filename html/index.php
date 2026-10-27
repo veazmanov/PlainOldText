@@ -257,8 +257,10 @@ function render_collection($key)
     foreach ($c['members'] as $slug) {
         $part = $metadata[$slug];
         $items .= '<li><p class="contents-entry"><a href="/stable/' . $h($part['id']) . '">' . $h($part['title']) . '</a>'
-            . ($part['page'] ? ' <span class="contents-page sans">pp.&nbsp;' . $h($part['page']) . '</span>' : '') . '</p>'
-            . ($part['summary'] ? '<p class="contents-summary">' . $h($part['summary']) . '</p>' : '') . '</li>';
+            . ($part['page'] ? ' <span class="contents-page sans">pp.&nbsp;' . $h($part['page']) . '</span>' : '')
+            . (article_translation($slug) ? ' <a class="contents-translation sans" href="/stable/' . $h($part['id']) . '?translation=1">with English translation</a>' : '')
+            . '</p>'
+            . ($part['summary'] ? '<p class="contents-summary">' . inline_markdown($part['summary']) . '</p>' : '') . '</li>';
     }
 
     $content = '<h1>' . $h($c['title']) . '</h1>'
@@ -319,6 +321,11 @@ function render_article($uri, $scans_open = false)
     // Keep a non-default edition in the article's links (?edition=<id>)
     $edition_query = ($edition_id !== null && $edition_id !== array_key_first($editions))
         ? '?edition=' . rawurlencode($edition_id) : '';
+    // An English translation, shown beside the text at ?translation=1
+    $translation = article_translation($uri);
+    $translation_shown = $translation && $edition && !empty($_GET['translation']);
+    // The edition and translation, kept in the page's own links (the citation keeps only the edition)
+    $page_query = $edition_query . ($translation_shown ? ($edition_query ? '&' : '?') . 'translation=1' : '');
     $citation = chicago_citation($meta, $site_url . $slug_url . $edition_query);
     $markdown_url = ($edition && $edition['md']) ? $slug_url . '/markdown' . $edition_query : null;
     $github_url = "https://github.com/veazmanov/PlainOldText/blob/main/articles/" . rawurlencode($uri) . '/'
@@ -328,7 +335,10 @@ function render_article($uri, $scans_open = false)
     $pub_name = $meta['pub'];
     $date_str = $meta['date'];
     // "Original scans" goes to the scans view, or back to the text when the scans are open
-    $photo_link = ($scans_open ? $slug_url : $slug_url . '/scans') . $edition_query;
+    $photo_link = ($scans_open ? $slug_url : $slug_url . '/scans') . $page_query;
+    // "English translation" shows it, "Hide translation" goes back to the text alone
+    $translation_link = ($scans_open ? $slug_url . '/scans' : $slug_url)
+        . ($translation_shown ? $edition_query : $edition_query . ($edition_query ? '&' : '?') . 'translation=1');
     $page_num = $meta['page'];
     $source_url = $meta['source_url'];
     $article_header_partial = __DIR__ . '/partials/article_header.php';
@@ -361,12 +371,66 @@ function render_article($uri, $scans_open = false)
     if ($edition) {
         $content = apply_editor_notes($content, $meta['notes'], $edition_id);
     }
+    if ($translation_shown) {
+        $content = parallel_translation($content, file_get_contents($translation['html']), $meta['notes']);
+    }
 
     [$collection, $part_nav] = collection_nav($uri);
     $content .= $part_nav;
 
     include(__DIR__ . '/layout.php');
     exit();
+}
+
+// The text and its translation side by side: the editorial notes first, then a row per block (paragraph, heading,
+// list…) with the text's block beside the translation's, then both sets of footnotes. The translation gets its
+// editor's notes (edition "translation") and its ids prefixed with tr-, so they don't clash with the text's.
+function parallel_translation($html, $translation_html, $notes)
+{
+    $translation_html = apply_editor_notes($translation_html, $notes, 'translation');
+    $translation_html = preg_replace(['/(?<=\s)(id|for)="/', '/(?<=\s)href="#/'], ['$1="tr-', 'href="#tr-'], $translation_html);
+
+    $text = parallel_blocks($html, false);
+    $tr = parallel_blocks($translation_html, true);
+
+    $rows = '';
+    for ($i = 0, $n = max(count($text['blocks']), count($tr['blocks'])); $i < $n; $i++) {
+        $rows .= '<div class="parallel-row"><div class="parallel-text">' . ($text['blocks'][$i] ?? '') . '</div>'
+            . '<div class="parallel-translation" lang="en">' . ($tr['blocks'][$i] ?? '') . '</div></div>';
+    }
+
+    return $text['note']
+        . ($tr['note'] !== '' ? '<div class="translation-note" lang="en">' . $tr['note'] . '</div>' : '')
+        . '<div class="parallel">' . $rows . '</div>'
+        . $text['footnotes'] . $tr['footnotes'];
+}
+
+// An article's HTML split into its top-level blocks: ['note' => the editorial note, 'blocks' => [html…],
+// 'footnotes' => the footnotes section]. With $drop_title, its first h1–h3 (a translation's repeated title) is left out.
+function parallel_blocks($html, $drop_title)
+{
+    $doc = new DOMDocument();
+    libxml_use_internal_errors(true);
+    $doc->loadHTML('<?xml encoding="utf-8"?><div id="parallel-root">' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    libxml_clear_errors();
+
+    $out = ['note' => '', 'blocks' => [], 'footnotes' => ''];
+    foreach ($doc->getElementById('parallel-root')->childNodes as $child) {
+        if ($child instanceof DOMText && trim($child->data) === '') {
+            continue;
+        }
+        $class = $child instanceof DOMElement ? ' ' . $child->getAttribute('class') . ' ' : '';
+        if (str_contains($class, ' editorial-note ')) {
+            $out['note'] .= $doc->saveHTML($child);
+        } elseif ($child->nodeName === 'nav' || ($child->nodeName === 'section' && str_contains($class, ' footnotes '))) {
+            $out['footnotes'] .= $doc->saveHTML($child);
+        } elseif ($drop_title && preg_match('/^h[1-3]$/', $child->nodeName)) {
+            $drop_title = false;
+        } else {
+            $out['blocks'][] = $doc->saveHTML($child);
+        }
+    }
+    return $out;
 }
 
 function render_404()

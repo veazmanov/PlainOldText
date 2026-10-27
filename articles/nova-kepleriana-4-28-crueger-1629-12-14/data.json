@@ -17,6 +17,36 @@
             "type": "explanatory",
             "on": "Astronomia Danica",
             "note": "The *Astronomia Danica* (1622) of Christian Severin Longomontanus, Tycho Brahe's assistant, built on Tycho's geoheliocentric system."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the great orb (whether of the sun or of the earth)",
+            "note": "*Orbis magnus*, Copernicus's name for the earth's orbit. By adding “whether of the sun or of the earth” Crüger leaves open whether the sun goes round the earth, as for Tycho, or the earth round the sun."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "reflexions",
+            "note": "*Reflexiones*: a term of the Ptolemaic theory of planetary latitudes."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Epitome Astronomiae",
+            "note": "Kepler's *Epitome Astronomiae Copernicanae* (1617–1621), a textbook of Copernican astronomy in questions and answers, which set out his laws of planetary motion for all the planets."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "in confidence",
+            "note": "Literally “in your ear” (*in aurem*)."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "from technician into historian",
+            "note": "The Rudolphine Tables date the Creation, an epoch Kepler fixed partly from chronology rather than astronomy."
         }
     ]
 }

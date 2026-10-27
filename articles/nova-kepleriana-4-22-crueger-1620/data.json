@@ -9,5 +9,12 @@
     "page": "106–107",
     "source_url": "https://publikationen.badw.de/de/003071295",
     "summary": "Crüger rejects Kepler's theory of straight-line comet paths because it assumes the earth's annual motion, mocks the 'rabid leaps' it implies, and finds the *Astronomia nova* and *Harmonice mundi* hard to follow.",
-    "notes": []
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "a friend to you above all your friends",
+            "note": "An echo of the proverb *amicus Plato, sed magis amica veritas*: Plato is a friend, but truth a greater one."
+        }
+    ]
 }
