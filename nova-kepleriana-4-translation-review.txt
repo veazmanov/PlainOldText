@@ -1,0 +1,244 @@
+NOVA KEPLERIANA 4: WHAT A HUMAN STILL NEEDS TO CHECK
+=====================================================
+
+The English translations of all 34 texts in Nova Kepleriana 4
+(https://sources.vjbe.net/stable/713cz), their editor's notes, and the
+side-by-side translation view were all written by Claude (October 2026) and
+have not been reviewed by a person. This file lists what most needs checking.
+Each translation is articles/<slug>/translation.md; its notes are the entries
+with "edition": "translation" in that folder's data.json.
+
+Tick items off, or delete them, as they are done.
+
+
+1. GENERAL
+----------
+
+[ ] Read every translation against the Latin (and German) once. Nothing has
+    been checked by a Latinist.
+[ ] Each English paragraph must stay matched to its Latin paragraph: the page
+    pairs them by position. scripts/check-notes.php does not check this. After
+    any edit, open /stable/<id>?translation=1 and make sure the rows still line
+    up.
+[ ] Conventions to confirm or change:
+    - Words the 1927 editors restored from the copies (shown in [brackets] in
+      the Latin) are written out without brackets in the English.
+    - Folio marks such as (S. 92b) are left out of the English.
+    - [sign omitted], [cut out], [illegible], [gap], [!] and […] are kept.
+    - Delisle's French shelf labels (introduction) and Kepler's Latin title for
+      the fair catalogue (26 Aug 1630) are left untranslated.
+    - "Pernegger" is given as Bernegger in the English, with a note.
+    - Kepler's "concinnus" is "melodic" and "consonus" "consonant" (postscript
+      on Bartolus); his "sesquadrus" is rendered with the coinage "sesquadrate".
+
+
+2. THE SITE FEATURE
+-------------------
+
+[ ] Test the translation view on an iPhone in Safari (only Chrome has been
+    tried).
+[ ] Click a note letter in the translation column and check that the note
+    opens under its line. So far this has only been checked in the HTML.
+[ ] Untested, because no article yet has scans or several editions as well as
+    a translation:
+    - the "·" between "Original scans" and "English translation";
+    - the scans link and the edition-switch links keeping ?translation=1.
+[ ] Note letters run on across both columns (the Latin's "a", then the
+    translation's "b", "c"…). Decide whether that is acceptable.
+[ ] "English translation" is a plain underlined link, not a rounded button like
+    "Original scans". Decide whether to restyle it.
+
+
+3. UNCERTAIN READINGS, TEXT BY TEXT
+-----------------------------------
+
+Kepler to Seussius, 15 July 1622 (/stable/kk1cg), the hardest text
+[ ] "teque vicissim remuneror me, sed opus Argentina me petas a Perneggero
+    professore, sane quoque capitosum": read as a joke about an engraved
+    portrait of Kepler with too big a head, to be had from Bernegger at
+    Strasbourg, with Lansius's epigram beneath. Check, and check the note.
+[ ] "Omnia plena malis, FASTIque, audaxque CATHEDRA": translated literally.
+    What the capitals point at (titles? a chronogram?) is unknown.
+[ ] "ille Faulhaberi similis insecti, usitatae infoelicitatis Antagonista":
+    rendered "an insect of the same sort as Faulhaber, an adversary of the
+    usual misfortune". The sense is unclear.
+[ ] "Kanones pueriles": translated as a further anagram of Ioannes Keplerus
+    added as the title. The letters do match; check that this is the sense.
+[ ] "Thesi XXV … imaginem Crucis a me in Cygnum inductam" and the Tycho and
+    Cassiopeia sentence: translated without notes. They may deserve some.
+[ ] "Ambrosius Rhodius … in Ara et Thuribulo": no note. The reference is
+    unexplained.
+
+Kepler's postscript on Bartolus, 1622 (/stable/2wbpc)
+[ ] "pene summa et penima": rendered "voices near the top and near the
+    bottom".
+[ ] "Dassius": left as a name, unidentified.
+[ ] "stant post principia": rendered "stand in the second line", with a note on
+    the Roman battle order.
+
+Kepler to Müller, 17/27 October 1629 (/stable/pqxke)
+[ ] "Martis quippe alumnus et tantum non pullus": "a nursling of Mars, indeed
+    all but his chick".
+[ ] The paragraph on the "Danish calculation" (epicycle of Venus and Mercury,
+    equant point, secular equation) is technical. Check it against the
+    astronomy.
+
+Kepler to Müller, 13/23 November 1629 (/stable/j9ged)
+[ ] "neque illius ad Perneggerum, quibus de sua testaretur constantia, ad me
+    quoque fortasse non pervenissent": read as "nor would her letters … have
+    reached Bernegger, or perhaps me either".
+[ ] "receptis intercessoriis Principis, necdum resignatis": "not yet unsealed"
+    (could be "not yet answered").
+[ ] "differri inter praesens placitum, et incognitum necessarium" (footnote 3):
+    "between a present liking and an unknown duty".
+[ ] Footnote 2 ("Missis ad manus filiae meae dehortatoriis…"): who "he" is
+    (the suitor or Bernegger) is left ambiguous, as in the Latin.
+[ ] The German postscript and cover: "Kegel" is rendered "body" (of type),
+    "Garemond-Kegel" "Garamond body"; "Mr Avianus" is not identified.
+
+Kepler to Müller, 4 January 1630 (/stable/6nfh1)
+[ ] "In abweßen Herrn M. Wilhelm Aviano zu erbrechen": "In his absence to be
+    opened by Mr M. Wilhelm Avianus".
+
+Kepler to Müller, 16/26 January 1630 (/stable/68txp)
+[ ] "fide ea quam de te habent Grossiani, satagis": "you are hard pressed by
+    the trust the Grosses place in you". Who "Grossiani" are is not noted;
+    probably the Leipzig booksellers of the Grosse family.
+[ ] "si quatuor impressas in forma majori conjunctum sunt": garbled Latin,
+    rendered loosely.
+[ ] "jam enim alter illi currenti mensis ad finem venit": "the other half is
+    due to reach him at the end of this month".
+
+Kepler to Müller, 27 February 1630 (/stable/yv4q1)
+[ ] "Gratulor dolens de dolentibus, Germanus de alto Regum, nunc quidem etiam
+    Germano, sanguine": translated literally; the sense is unclear.
+[ ] "Eo qua licet; foelicior. non sanctior, qui qua libet": "I go where I may;
+    happier, not holier, is he who goes where he pleases".
+
+Kepler to Müller, 22 April 1630 (/stable/sj54x)
+[ ] "nec omnes suis rhabdis commode aptatae": "their rods". The meaning of
+    rhabdi in type-founding is uncertain.
+[ ] "quas non [sign omitted] sed demum exsculpsit primum ex chalybe": unclear.
+[ ] "dum [sign omitted] annus est": left as is.
+
+Kepler to Müller, 26 August 1630 (/stable/zq6m1)
+[ ] "pro pretio stato et ab aliis penso": "at the fixed price that others pay".
+
+Kepler to Müller, 2 September 1630 (/stable/kve91)
+[ ] "manente nobis titulo, restituta suis dominis provincia": "with the title
+    left to us and the province restored to its lords".
+[ ] "nunciosque rerum laetarum, si Lipsiae vili pretio prostant": read as a
+    joke ("if news of happy events is going cheap at Leipzig, send me some").
+
+Bartsch's open letter, 1628 (/stable/cbvzd)
+[ ] "Astro-poecilo-pyrgium" is left untranslated.
+[ ] The closing "qui plurimum et salvere et valere Te jubet / Jac. Bartschio
+    Authori" is read as the object of "favere" ("go on favouring … the one who
+    wishes you health … Jac. Bartsch, the Author").
+[ ] The long sentence on the "practical spheres" (instrumental equatoria) is
+    technical. Check the astronomical terms.
+
+Bartsch to Müller, 9/19 January 1630 (/stable/cha7k)
+[ ] "dominus parens" is read as Kepler (Bartsch's father-in-law to be), not
+    Bartsch's own father, with a note saying Bartsch's father had died in 1628.
+    Check both.
+[ ] "Princeps" is read as the Margrave of Baden; the note says Susanna had been
+    living at his court at Durlach. Check.
+
+Bartsch to Müller, 5 May 1631 (/stable/h4gas)
+[ ] "Dn. compater": "my son's godfather".
+[ ] "ex abrupto, me sine periculi metu me … expulerunt": rendered "suddenly,
+    when I feared no danger". The Latin may be corrupt (perhaps "non sine").
+[ ] "profiliolo": first translated "little son", corrected to "your little
+    godson" after Müller's letter of 8 May. Check this reading.
+[ ] "multos enim praeter opinionem ad ordinem sumtus": "far more than I
+    expected"; "ad ordinem" is not rendered.
+
+Müller to Bartsch, 8 May 1631 (/stable/fmr23)
+[ ] "gamelii": "the wedding poem". It is not known which poem is meant.
+[ ] "constituto a R. precio": left as "the price fixed by R.".
+[ ] "Domine conpater": "father of my godson".
+
+Bartsch to Müller, 19/29 June 1631 (/stable/6476h)
+[ ] The sentence on the logarithms ("Logarithmos indicis meos exactissimos
+    comprobat…") is rendered loosely.
+[ ] "Jam a me et mea, nostroque": "from me, my wife and our boy".
+
+Crüger to Müller, Easter Monday 1620 (/stable/c2nge)
+[ ] "titulum Cometae": "the title page of the Comet".
+[ ] "Theoremata Keppleri citata": "the theorems of Kepler cited above". The
+    extract doesn't show who cited them.
+
+Crüger to Müller, 1 July 1622 (/stable/chzxw)
+[ ] "Kepplerus ipsas observationes limitet ad libros suos Harmonicos…": "Kepler
+    trims the observations themselves to fit his books on harmony…".
+
+
+4. EDITOR'S NOTES WRITTEN FROM MEMORY
+-------------------------------------
+
+None of these has been checked against a source.
+
+Quotations and references
+[ ] Plautus, Asinaria 202 ("our hands always have eyes") - Crüger, Easter 1631.
+[ ] Plautus, Persa 41 (water from a pumice stone) - Müller, 8 May 1631.
+[ ] Ovid, Epistulae ex Ponto 3.4.79 - Müller, 8 May 1631.
+[ ] Horace, Ars poetica 343 ("he wins every vote") - Kepler to Seussius 1622.
+[ ] Horace, Ars poetica 365 ("read ten times over") - Crüger, 9 Aug 1622.
+[ ] Psalm 104:32 ("he toucheth the hills, and they smoke") - Kepler to
+    Seussius 1622.
+[ ] The story of Camarina - Kepler to Seussius 1622.
+[ ] "amicus Plato, sed magis amica veritas" - Crüger, Easter 1620.
+[ ] The Roman black and white stones for unlucky and lucky days - Bartsch,
+    3 Jan 1631.
+
+History and people
+[ ] Wallenstein invested with Mecklenburg in 1629 after its dukes were deposed
+    for siding with Denmark - Kepler, 2 Sept 1630.
+[ ] The disputed see of Magdeburg: August of Saxony against Archduke Leopold
+    Wilhelm - Kepler, 2 Sept 1630.
+[ ] Kepler in Württemberg 1620-21 defending his mother against witchcraft -
+    Kepler to Seussius 1622.
+[ ] Kepler died on 15 November 1630, "two days before this letter" - Bartsch,
+    7/17 Nov 1630.
+[ ] Bernhard Bischoff (1906-1991), later the leading palaeographer of his day
+    - preface.
+[ ] Kepler's letters fill vols. 13-18 of the Gesammelte Werke, begun in 1937 -
+    preface.
+[ ] Guglielmo Libri (1803-1869) - introduction.
+[ ] Matthias Bernegger, in whose care Susanna was living at Strasbourg -
+    Kepler, 13/23 Nov 1629.
+[ ] Benjamin Ursinus at Frankfurt an der Oder - Bartsch, 19/29 June 1631.
+[ ] Ludwig Kepler (1607-1663), physician at Königsberg, published the Somnium
+    in 1634 - Crüger, Easter 1635.
+[ ] Johann Arndt - Kepler to Seussius 1622.
+[ ] Julius Schiller's Coelum stellatum christianum (Augsburg, 1627), seen
+    through the press by Bartsch - Bartsch's open letter.
+[ ] Frederick Henry's capture of 's-Hertogenbosch, September 1629 - Kepler,
+    27 Feb 1630.
+[ ] The truce of Altmark, renewed at Stuhmsdorf in September 1635 - Crüger,
+    20/30 Sept 1634.
+[ ] The Emperor owed both Tycho's heirs and Kepler's - Bartsch, 5 May 1631.
+
+Books and printing
+[ ] Kepler's world map, engraved at Nuremberg, issued only after his death -
+    Kepler, 22 April 1630.
+[ ] Kepler's Sportula (1629), printed on his own press at Sagan - Bartsch,
+    29 July/8 Aug 1629.
+[ ] The Somnium "then being printed" in January 1631 - Bartsch, 3 Jan 1631.
+[ ] Cicero type about 12 point, Garamond about 10 point - Kepler, 13/23 Nov
+    1629.
+[ ] Tycho's De mundi aetherei recentioribus phaenomenis (1588) - Crüger,
+    1 July 1622.
+
+Astronomy
+[ ] Orbis magnus and Crüger's "whether of the sun or of the earth" - Crüger,
+    4/14 Dec 1629.
+[ ] Reflexiones as a term of the Ptolemaic theory of latitudes - Crüger,
+    4/14 Dec 1629.
+[ ] The Rudolphine Tables' date for the Creation - Crüger, 4/14 Dec 1629.
+[ ] The Epitome Astronomiae Copernicanae (1617-1621) - Crüger, 4/14 Dec 1629.
+[ ] Prosthaphaereses found from areas, by the second law - Crüger, 1 July 1622.
+[ ] Kepler's "librations" compared to a balance (Epitome, book IV) - Crüger,
+    1 July 1622.
+[ ] The semisextile (30°) and quincunx (150°) - postscript on Bartolus.
