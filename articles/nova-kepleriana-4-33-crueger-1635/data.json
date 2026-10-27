@@ -8,5 +8,13 @@
     "year": "1635",
     "page": "111–112",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Crüger reports a visit from Kepler's son Ludwig: the widow and children are stranded at Frankfurt, Kepler's papers are kept at Sagan, and the Emperor's debt might be used to win Tycho's observations for an edition at Danzig."
+    "summary": "Crüger reports a visit from Kepler's son Ludwig: the widow and children are stranded at Frankfurt, Kepler's papers are kept at Sagan, and the Emperor's debt might be used to win Tycho's observations for an edition at Danzig.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Ludwig Kepler",
+            "note": "Kepler's son by his first marriage (1607–1663), later a physician at Königsberg; he had published his father's *Somnium* in 1634."
+        }
+    ]
 }

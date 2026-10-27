@@ -9,5 +9,19 @@
     "month": "9",
     "page": "30–33",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Kepler asks the astrologer Abraham Bartolus, through Müller, on what grounds he takes harmonic intervals as effective aspects, and sets out his own method: aspects arise from the division of the circle by inscribed figures, and the harmonies of the monochord only derive from them."
+    "summary": "Kepler asks the astrologer Abraham Bartolus, through Müller, on what grounds he takes harmonic intervals as effective aspects, and sets out his own method: aspects arise from the division of the circle by inscribed figures, and the harmonies of the monochord only derive from them.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the semisextile and the quincunx",
+            "note": "Aspects of 30° and 150°, two of the new aspects Kepler added to Ptolemy's five."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "stand in the second line",
+            "note": "Literally “behind the *principes*”, the second line of a Roman battle order."
+        }
+    ]
 }

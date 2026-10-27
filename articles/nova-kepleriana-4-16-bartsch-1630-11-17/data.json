@@ -10,5 +10,13 @@
     "day": "17",
     "page": "98",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "With Kepler away at Regensburg, Bartsch plans small astronomical tables to make the *Rudolphine Tables* easier to use, wishing his father-in-law a safe return; Kepler had died two days before."
+    "summary": "With Kepler away at Regensburg, Bartsch plans small astronomical tables to make the *Rudolphine Tables* easier to use, wishing his father-in-law a safe return; Kepler had died two days before.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "safe and sound",
+            "note": "Kepler had died at Regensburg on 15 November 1630, two days before this letter."
+        }
+    ]
 }

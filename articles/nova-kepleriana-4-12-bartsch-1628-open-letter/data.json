@@ -21,6 +21,18 @@
             "type": "sic",
             "on": "praecique",
             "note": "Read *praecipue*."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Mathematician to three Emperors in turn",
+            "note": "Rudolf II, Matthias and Ferdinand II."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Schiller's posthumous Christian Uranography",
+            "note": "Julius Schiller's *Coelum stellatum christianum* (Augsburg, 1627), which renamed the constellations after Christian figures; Bartsch saw it through the press after Schiller's death."
         }
     ]
 }

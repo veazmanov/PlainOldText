@@ -10,5 +10,13 @@
     "day": "5",
     "page": "101–102",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Driven from Sagan by the war, Bartsch writes from Lauban about settling Kepler's estate, sends the *Somnium* and his own tables, discusses prices for the *Rudolphine Tables* and *Ephemerides*, and reports that he now has Tycho Brahe's observations."
+    "summary": "Driven from Sagan by the war, Bartsch writes from Lauban about settling Kepler's estate, sends the *Somnium* and his own tables, discusses prices for the *Rudolphine Tables* and *Ephemerides*, and reports that he now has Tycho Brahe's observations.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "both sets of heirs",
+            "note": "Tycho's heirs and Kepler's: the Emperor still owed both."
+        }
+    ]
 }

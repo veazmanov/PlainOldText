@@ -10,5 +10,13 @@
     "day": "3",
     "page": "105",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Setting out with Kepler's widow for Prague, Regensburg, Linz and Vienna, Bartsch leaves instructions for selling the tables, *Ephemerides* and *Somnium*."
+    "summary": "Setting out with Kepler's widow for Prague, Regensburg, Linz and Vienna, Bartsch leaves instructions for selling the tables, *Ephemerides* and *Somnium*.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the Prince's debts",
+            "note": "Wallenstein's arrears of Kepler's salary."
+        }
+    ]
 }

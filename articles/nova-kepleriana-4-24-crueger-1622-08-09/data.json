@@ -10,5 +10,19 @@
     "day": "9",
     "page": "107",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Having read the fourth book of Kepler's *Epitome* more than once, Crüger still cannot understand its proportions of the planetary orbs and bodies, and suspects Kepler of obscuring things on purpose."
+    "summary": "Having read the fourth book of Kepler's *Epitome* more than once, Crüger still cannot understand its proportions of the planetary orbs and bodies, and suspects Kepler of obscuring things on purpose.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the fourth book of Kepler's Astronomy",
+            "note": "Book IV of the *Epitome astronomiae Copernicanae* (1620), on celestial physics."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "says the Poet",
+            "note": "Horace, *Ars poetica* 365: *haec decies repetita placebit*."
+        }
+    ]
 }

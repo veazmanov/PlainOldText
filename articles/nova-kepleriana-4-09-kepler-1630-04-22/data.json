@@ -17,6 +17,24 @@
             "type": "explanatory",
             "on": "Plutarchi de facie Lunae",
             "note": "Kepler's Latin translation of Plutarch's *De facie in orbe lunae*, published with his *Somnium* in 1634."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the Lunar Astronomy",
+            "note": "The *Somnium*, Kepler's “lunar astronomy”, a dream of a journey to the moon, with his notes; it was published in 1634."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Plutarch's little book on the face of the Moon",
+            "note": "Kepler's Latin translation of Plutarch's *De facie in orbe lunae*, published with his *Somnium* in 1634."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "engraving the map",
+            "note": "The world map meant for the *Rudolphine Tables*, being engraved at Nuremberg; it was issued only after Kepler's death."
         }
     ]
 }

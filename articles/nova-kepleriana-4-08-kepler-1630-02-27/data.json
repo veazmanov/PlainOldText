@@ -17,6 +17,12 @@
             "type": "explanatory",
             "on": "victoria de Dumeto",
             "note": "Frederick Henry of Orange's capture of 's-Hertogenbosch (Bois-le-Duc) in September 1629; *dumetum*, a thicket, renders *bosch*."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "victory at Bois-le-Duc",
+            "note": "Frederick Henry of Orange's capture of 's-Hertogenbosch (Bois-le-Duc) from Spain in September 1629; Kepler's Latin, *de Dumeto*, “of the Thicket”, renders *bosch*."
         }
     ]
 }

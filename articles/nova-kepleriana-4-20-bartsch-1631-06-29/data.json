@@ -10,5 +10,19 @@
     "day": "29",
     "page": "104–105",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Bartsch, forced 'from the stars to the rakes', writes of Kepler's widow and children now at Lauban, his logarithmic tables, the price of the *Ephemerides*, and the poems on Kepler's death."
+    "summary": "Bartsch, forced 'from the stars to the rakes', writes of Kepler's widow and children now at Lauban, his logarithmic tables, the price of the *Ephemerides*, and the poems on Kepler's death.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "from the stars to the rakes",
+            "note": "Puns in the Latin: *a libris ad liberos*, from books to children; *ab astris ad rastra*, from the stars to the rakes."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Mr Ursinus",
+            "note": "Benjamin Ursinus, who had worked for Kepler at Prague and was now professor of mathematics at Frankfurt an der Oder."
+        }
+    ]
 }

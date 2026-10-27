@@ -10,5 +10,13 @@
     "day": "26",
     "page": "76–77",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Kepler sends the remaining years of the *Ephemerides*, to 1636, in two casks, with instructions for storing them at Frankfurt and for the entry in the fair catalogue."
+    "summary": "Kepler sends the remaining years of the *Ephemerides*, to 1636, in two casks, with instructions for storing them at Frankfurt and for the entry in the fair catalogue.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Absolutus Sagani in Silesia, anno 1630",
+            "note": "“One volume of the *Ephemerides* of Jo. Kepler (Imperial Mathematician) for twenty years, from 1617 to 1636. Completed at Sagan in Silesia, 1630.”"
+        }
+    ]
 }

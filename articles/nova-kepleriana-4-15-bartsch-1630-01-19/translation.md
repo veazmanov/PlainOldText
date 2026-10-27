@@ -1,0 +1,9 @@
+# Bartsch to Müller, 9/19 January 1630
+
+::: {.editorial-note}
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors', and [!] is their mark.
+:::
+
+… As for me and my situation, it stands very well as to my marriage. For the Prince, having received my lord father's letter, sent by his own messenger, has now released the maiden pledged to me, who is now living here in Bernegger's house, waiting with me, with great longing, for a second answer from home, from which something certain is to be settled about the place and time of the wedding. It stands very well, too, as to my mathematical studies. For I cannot hide from you that last year the Curators of the University, the Scholarchs, the Rector and their deputies gave me a definite hope of succeeding to the professorship of mathematics, and meanwhile allowed me to go back to my family and to enjoy my lord father's company for a time. Within a few days, by order of the Scholarchs, I shall be given a certificate under the University's public seal. Yet I am not so bound that, if God offers a better or more convenient place, I should be forced to give it up. There are indeed some here who think it wrong to prefer a stranger to a native; but the majority of votes decides. As to my medical studies, things are in doubt [!].
+
+I should have liked to celebrate the wedding without a degree; but at the urging and pressing exhortation of Mr Bernegger, the best of men and the best disposed towards me, I shall hardly be able to forgo it, for some private reasons, chiefly concerning the state of this city and university, and my bride. So, unless the answer we expect from home any day directs otherwise, we are working to have the act of graduation and the wedding held here about the end of February, which I shall announce more certainly in due time. …

@@ -10,5 +10,19 @@
     "day": "8",
     "page": "103–104",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Müller replies to Bartsch about the copies he has received and their prices, advises printing the second volume of the *Ephemerides* at home, sends a gift for Kepler's grandson, and quotes Crüger's excuse for writing no poem on Kepler's death."
+    "summary": "Müller replies to Bartsch about the copies he has received and their prices, advises printing the second volume of the *Ephemerides* at home, sends a gift for Kepler's grandson, and quotes Crüger's excuse for writing no poem on Kepler's death.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the will shall always be there",
+            "note": "After Ovid, *Epistulae ex Ponto* 3.4.79: “though the strength be lacking, the will is to be praised.”"
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "water from a pumice stone",
+            "note": "Proverbial since Plautus (*Persa* 41)."
+        }
+    ]
 }

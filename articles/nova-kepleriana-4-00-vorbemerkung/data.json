@@ -11,5 +11,19 @@
     "printer": "Bayerische Akademie der Wissenschaften",
     "page": "3–4",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Von Dyck explains how he found these letters of Kepler, Bartsch and Crüger in Paris at Easter 1914, why the edition was delayed by the war, and that Max Caspar shared the translation and notes; he calls for a complete edition of Kepler's correspondence."
+    "summary": "Von Dyck explains how he found these letters of Kepler, Bartsch and Crüger in Paris at Easter 1914, why the edition was delayed by the war, and that Max Caspar shared the translation and notes; he calls for a complete edition of Kepler's correspondence.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "a complete edition of the correspondence",
+            "note": "It came: Kepler's letters fill volumes 13–18 of the *Gesammelte Werke*, begun in 1937 by Caspar and von Dyck."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "his pupil B. Bischoff",
+            "note": "Bernhard Bischoff (1906–1991), later the leading palaeographer of his day."
+        }
+    ]
 }

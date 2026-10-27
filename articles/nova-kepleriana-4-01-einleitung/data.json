@@ -24,6 +24,24 @@
             "type": "explanatory",
             "on": "eben der obige vom 1. Juli 1622 datierte",
             "note": "The letter itself is dated *Idibus Iuliis*, the Ides of July: 15 July 1622."
+        },
+        {
+            "edition": "translation",
+            "type": "sic",
+            "on": "89, 8. A. (cover), 89, 9. B",
+            "note": "Read *89, 9. A.*: the Crüger letters' cover."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the letter B. 12 above, dated 1 July 1622",
+            "note": "The letter itself is dated *Idibus Iuliis*, the Ides of July: 15 July 1622."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "G. Libri",
+            "note": "Guglielmo Libri (1803–1869), mathematician and inspector of French libraries, who stole thousands of manuscripts from them."
         }
     ]
 }

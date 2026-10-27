@@ -17,6 +17,18 @@
             "type": "explanatory",
             "on": "Epistolam Chinensem",
             "note": "The *Epistolium* of the Jesuit Johann Terrentius from China (1630), which Kepler printed at Sagan with his commentary."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the Letter from China",
+            "note": "The *Epistolium* of the Jesuit Johann Terrentius from China (1630), which Kepler printed at Sagan with his commentary."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "I referred it to the General",
+            "note": "Wallenstein, generalissimo of the imperial armies and Kepler's patron."
         }
     ]
 }

@@ -10,5 +10,25 @@
     "day": "27",
     "page": "65–67",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Amid the ruin of the war, Kepler sends two journeymen to Leipzig to buy a press, have type cast and paper made for printing Tycho Brahe's observations, and asks Müller to advance money from his and Bartsch's funds; with a note on the Danish astronomy of Longomontanus."
+    "summary": "Amid the ruin of the war, Kepler sends two journeymen to Leipzig to buy a press, have type cast and paper made for printing Tycho Brahe's observations, and asks Müller to advance money from his and Bartsch's funds; with a note on the Danish astronomy of Longomontanus.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the thirty-six joachimstalers",
+            "note": "Thalers, named after the silver coins of Joachimsthal in Bohemia."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the Danish calculation",
+            "note": "The tables of Longomontanus's *Astronomia Danica* (1622)."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "my Patron's affairs",
+            "note": "Wallenstein, Duke of Friedland and Sagan, who paid for Kepler's press."
+        }
+    ]
 }

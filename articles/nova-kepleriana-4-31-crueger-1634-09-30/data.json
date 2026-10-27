@@ -10,5 +10,13 @@
     "day": "30",
     "page": "111",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Crüger cannot afford to buy the posthumous papers of Kepler and Bartsch from their widows himself, and the Danzig council is taken up with the Swedish truce."
+    "summary": "Crüger cannot afford to buy the posthumous papers of Kepler and Bartsch from their widows himself, and the Danzig council is taken up with the Swedish truce.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the truce is now drawing to its end",
+            "note": "The truce of Altmark (1629) between Sweden and Poland, due to expire in 1635; it was renewed at Stuhmsdorf in September 1635."
+        }
+    ]
 }

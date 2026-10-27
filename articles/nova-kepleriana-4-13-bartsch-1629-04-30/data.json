@@ -10,5 +10,13 @@
     "day": "30",
     "page": "97",
     "source_url": "https://publikationen.badw.de/de/003071295",
-    "summary": "Bartsch tells Müller he has agreed to compute ten years of ephemerides for Kepler, to be published at Frankfurt by Tampach, and that he and his brother work at the calculation night and day."
+    "summary": "Bartsch tells Müller he has agreed to compute ten years of ephemerides for Kepler, to be published at Frankfurt by Tampach, and that he and his brother work at the calculation night and day.",
+    "notes": [
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "published his reply",
+            "note": "Kepler's answer to Bartsch's open letter of 1628, printed at the front of the Sagan edition of Bartsch's *Ephemeris* (1629)."
+        }
+    ]
 }
