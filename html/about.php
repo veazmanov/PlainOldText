@@ -114,9 +114,24 @@
         <em>https://archive.spectator.co.uk/</em>
     </li>
 </ul>
-<p>Other plain-text archives:</p>
+<p>Projects similar in spirit:</p>
 <ul>
-    <li>The Internet Classics Archive:
+    <li>The Internet Classics Archive, Greek and Roman classics in plain text:
         <em>https://classics.mit.edu/</em>
+    </li>
+    <li>Internet Archive, a library of digitised books, media and web pages:
+        <em>https://archive.org/</em>
+    </li>
+    <li>Wikidata, a free and open knowledge base:
+        <em>https://www.wikidata.org/</em>
+    </li>
+    <li>IIIF, open standards for sharing scanned images between archives:
+        <em>https://iiif.io/</em>
+    </li>
+    <li>Alciato at Glasgow, Alciato’s <span style="font-style: normal">Emblemata</span> with transcriptions and translations:
+        <em>https://www.emblems.arts.gla.ac.uk/alciato/contents.php?id=A31a</em>
+    </li>
+    <li>Furnace and Fugue, a digital edition of Michael Maier’s <span style="font-style: normal">Atalanta fugiens</span> (1618):
+        <em>https://www.furnaceandfugue.org/atalanta-fugiens/</em>
     </li>
 </ul>

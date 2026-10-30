@@ -27,7 +27,7 @@ include __DIR__ . '/partials/head.php';
             <?= $content ?>
         </section>
     </article>
-    <?php include __DIR__ . '/partials/footer.php'; ?>
+    <script src="<?= asset('js/theme.js') ?>"></script>
 </body>
 
 </html>

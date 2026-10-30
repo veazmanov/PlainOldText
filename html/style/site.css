@@ -3,7 +3,7 @@
  *
  * Sections:
  *   0. Colours and themes     (all pages)
- *   1. Site header and footer (all pages)
+ *   1. Site header            (all pages)
  *   2. Catalogue              (body.page-catalogue)
  *   3. Article pages          (body.page-article)
  *
@@ -93,7 +93,7 @@ hr {
 
 
 /* ===================================================================
-   1. Site header and footer
+   1. Site header
    =================================================================== */
 
 /* ---- Masthead: the site name as a logo, on a double-ruled plaque ---- */
@@ -218,25 +218,6 @@ hr {
     }
 }
 
-.site-footer .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.footer-github {
-    margin-left: auto;
-    color: var(--ink-muted);
-    line-height: 0;
-    background: none;
-    text-shadow: none;
-}
-
-.footer-github:hover {
-    color: var(--ink);
-}
-
 /* ---- Light/dark toggle, the last item in the top nav (theme.js); it shows the theme it switches to ---- */
 .site-nav .site-nav-theme {
     display: flex;
@@ -285,12 +266,6 @@ hr {
     :root:not([data-theme="light"]) .theme-icon-dark {
         display: none;
     }
-}
-
-.site-footer .footer-credit {
-    margin-top: 0;
-    font-size: 0.9rem;
-    color: var(--ink-muted);
 }
 
 /* ---- Sidenote markers: an inline block, which would otherwise take its paragraph's first-line indent and

@@ -140,6 +140,6 @@ include __DIR__ . '/partials/head.php';
     </article>
 
     <script src="<?= asset('js/catalogue.js') ?>"></script>
-    <?php include __DIR__ . '/partials/footer.php'; ?>
+    <script src="<?= asset('js/theme.js') ?>"></script>
 </body>
 </html>
