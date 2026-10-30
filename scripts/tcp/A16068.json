@@ -1,0 +1,69 @@
+{
+    "tcp": "A16068",
+    "scan": {
+        "archive_id": "bim_early-english-books-1475-1640_the-secretes-of-the-reve_ruscelli-girolamo_1558",
+        "recto_leaf": [2, 12]
+    },
+    "note": "Text from the [Text Creation Partnership's keyboarded edition](https://github.com/textcreationpartnership/A16068) (EEBO-TCP A16068), converted with `scripts/tcp-to-articles.php`. Spelling, u/v and i/j as printed; long s printed as s; line-end hyphens rejoined; italics mark words set in roman or italic type within the black letter. • marks a letter and 〈◊〉 a word or more that TCP could not read. Each page begins at its folio number in square brackets, which links to that page of the [microfilm scan](https://archive.org/details/bim_early-english-books-1475-1640_the-secretes-of-the-reve_ruscelli-girolamo_1558) on the Internet Archive. Not yet checked against the scans.",
+    "data": {
+        "publication": "The Secretes of Alexis",
+        "collection": "alexis-1558-secretes",
+        "category": "book-chapter",
+        "author": "Alexis of Piemont",
+        "full_title": "The Secretes of the Reuerende Maister Alexis of Piemount",
+        "translator": "William Ward",
+        "place": "London",
+        "printer": "John Kingstone for Nicolas Inglande",
+        "year": "1558"
+    },
+    "articles": [
+        {
+            "slug": "alexis-1558-secretes-00-epistle",
+            "title": "The Epistle to the Earl of Bedford",
+            "divs": ["//t:div[@type='title_page']", "//t:div[@type='translator_to_the_reader']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558): the title page, and Ward's dedication to Francis Russell, second Earl of Bedford."
+        },
+        {
+            "slug": "alexis-1558-secretes-01-to-the-reader",
+            "title": "Don Alexis to the Reader",
+            "divs": ["//t:div[@type='author_to_the_reader']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558). The same preface, in the edition of 1595, is [Don Alexis unto the Reader](/stable/ph63y)."
+        },
+        {
+            "slug": "alexis-1558-secretes-02-book-1",
+            "title": "The First Book",
+            "divs": ["//t:div[@type='book'][@n='1']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558), book 1."
+        },
+        {
+            "slug": "alexis-1558-secretes-03-book-2",
+            "title": "The Second Book",
+            "divs": ["//t:div[@type='book'][@n='2']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558), book 2."
+        },
+        {
+            "slug": "alexis-1558-secretes-04-book-3",
+            "title": "The Third Book",
+            "divs": ["//t:div[@type='book'][@n='3']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558), book 3."
+        },
+        {
+            "slug": "alexis-1558-secretes-05-book-4",
+            "title": "The Fourth Book",
+            "divs": ["//t:div[@type='book'][@n='4']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558), book 4."
+        },
+        {
+            "slug": "alexis-1558-secretes-06-book-5",
+            "title": "The Fifth Book",
+            "divs": ["//t:div[@type='book'][@n='5']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558), book 5."
+        },
+        {
+            "slug": "alexis-1558-secretes-07-book-6",
+            "title": "The Sixth Book",
+            "divs": ["//t:div[@type='book'][@n='6']"],
+            "note": "From *The Secretes of the Reuerende Maister Alexis of Piemount*, part 1, trans. William Ward (London: John Kingstone for Nicolas Inglande, 1558), book 6."
+        }
+    ]
+}

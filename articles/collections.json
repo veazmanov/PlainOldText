@@ -22,5 +22,13 @@
         "source": "Dyck, Walther von, and Max Caspar, eds. *Die Keplerbriefe auf der Nationalbibliothek und auf der Sternwarte in Paris*. Nova Kepleriana: Wieder aufgefundene Drucke und Handschriften von Johannes Kepler 4. Abhandlungen der Bayerischen Akademie der Wissenschaften, Mathematisch-naturwissenschaftliche Abteilung 31, no. 1. Munich: Verlag der Bayerischen Akademie der Wissenschaften, 1927.",
         "transcribed_from": "a digital facsimile of the 1927 edition (ISBN 978-3-486-75614-2). The Bavarian Academy of Sciences also has it [online](https://publikationen.badw.de/de/003071295).",
         "copyright": "Only public-domain texts from this edition are reproduced here: the letters of Kepler, Bartsch, Crüger and Müller (1620–1635), in the Latin of the 1927 edition, and Walther von Dyck’s preface and introduction (von Dyck died in 1934, more than 70 years ago). Max Caspar’s German translations and the editors’ notes and commentary are left out: Caspar died in 1956, so they remain in copyright until 1 January 2027."
+    },
+    "alexis-1558-secretes": {
+        "id": "wg6j4",
+        "title": "The Secretes of Alexis of Piemount",
+        "summary": "The first part of the most popular book of secrets of the sixteenth century, in William Ward's first English translation: six books of remedies, perfumes, confections, cosmetics, colours and dyes, and the working of metals and counterfeit stones, gathered, so the aged Alexis claims, over a lifetime of travel and kept secret until remorse moved him to publish them.",
+        "source": "Alexis of Piemont. *The Secretes of the Reuerende Maister Alexis of Piemount*. Translated by William Ward. London: John Kingstone for Nicolas Inglande, 1558.",
+        "transcribed_from": "the [Text Creation Partnership’s keyboarded edition](https://github.com/textcreationpartnership/A16068) (EEBO-TCP A16068). Every page links to its image in the [Internet Archive’s scan](https://archive.org/details/bim_early-english-books-1475-1640_the-secretes-of-the-reve_ruscelli-girolamo_1558) of the 1558 edition.",
+        "copyright": "In the public domain: the book was printed in 1558. The TCP transcription is released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)."
     }
 }

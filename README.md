@@ -14,7 +14,7 @@ This repo holds both the transcriptions (`articles/`) and the PHP site that serv
 
 - `articles/<slug>/` — one folder per source, with the transcription as `main.md` and its metadata in `data.json`.
 - `html/` — the site. `index.php` is the front controller; `data.php` loads the articles and holds the site settings; `citation.php` builds citations; `card_scan.php` makes the catalogue-card images.
-- `scripts/` — `new-article.sh`, `assign-ids.php`, `build-articles.sh` and `sync_scans.php` (see Workflow).
+- `scripts/` — `new-article.sh`, `assign-ids.php`, `build-articles.sh`, `sync_scans.php` and `tcp-to-articles.php`, with its configs and TCP texts in `scripts/tcp/` (see Workflow).
 
 ## Articles
 
@@ -43,6 +43,7 @@ A work in several parts, such as the chapters of a book, is a collection: each p
 
 - `./scripts/new-article.sh` asks for the title, date and source, and creates `articles/<slug>/` with an `id`. After adding an article by hand, run `php scripts/assign-ids.php` to give it one; the site skips articles without an `id`.
 - After uploading scans to oldnews-photos.vjbe.net, run `php scripts/sync_scans.php [slug]` to record them in `data.json`.
+- `php scripts/tcp-to-articles.php scripts/tcp/<id>.json scripts/tcp/<id>.xml` turns an EEBO-TCP text (XML from [github.com/textcreationpartnership](https://github.com/textcreationpartnership)) into articles, one per division named in the config, each with a `diplomatic.md` whose page markers link to a scan on the Internet Archive. It writes `data.json` only for a new article, so rerunning it keeps your edits there; run `assign-ids.php` after. It reports folio numbers out of sequence and pages TCP's copy lacks.
 - `./scripts/build-articles.sh` converts the markdown to HTML with pandoc into `oldnews-articles-only/` (gitignored), which the site reads. Rebuild after changing an article.
 - `./dev` runs the site at <http://localhost:8001>.
 - `./deploy` builds the articles and uploads the site and the built articles. It relies on a separate `deploy` command on your `PATH`; scans are uploaded separately.

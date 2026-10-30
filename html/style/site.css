@@ -760,6 +760,18 @@ label.sidenote-number {
 :where(.page-article) h2 { font-size: 1.8rem; }
 :where(.page-article) h3 { font-size: 1.6rem; }
 
+/* A minor heading at the size of the text, such as the title of each recipe in a book of secrets */
+:where(.page-article) section>h4 {
+    max-width: 500px;
+    width: 100%;
+    margin: 2rem 0 0.8rem;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.25;
+    text-align: center;
+}
+
 :where(.page-article) p {
     max-width: 500px;
     width: 100%;
