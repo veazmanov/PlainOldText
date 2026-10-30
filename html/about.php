@@ -13,7 +13,7 @@
 </p>
 
 <p>
-    Every transcription comes with scans of the original pages, a link back to the digital source, and a Chicago-style
+    Every transcription comes with scans of, or links to, the original pages, a link back to the digital source, and a Chicago-style
     citation,<?= sn('Following the newspaper and magazine examples in the <em>Chicago Manual of Style</em> citation quick guide, <a href="https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html#cg-news">chicagomanualofstyle.org</a>.') ?> so you can check the text against the page it came from and use it in your own work.
 </p>
 
@@ -56,8 +56,7 @@
 </p>
 <p>
     This site does not try to compete with the large newspaper archives on the number of sources.
-    It aims for quality instead: every transcription is checked by hand against the original, and
-    every article comes with an accurate citation. The person best placed to do this work is
+    It aims for quality instead: every article comes with an accurate citation. The person best placed to do this work is
     precisely the historian who is using these sources in their own research.
 </p>
 
@@ -118,6 +117,9 @@
 <ul>
     <li>The Internet Classics Archive, Greek and Roman classics in plain text:
         <em>https://classics.mit.edu/</em>
+    </li>
+    <li>EEBO-TCP, the Text Creation Partnership’s keyboarded transcriptions of early English books, free under CC0:
+        <em>https://textcreationpartnership.org/</em>
     </li>
     <li>Internet Archive, a library of digitised books, media and web pages:
         <em>https://archive.org/</em>
