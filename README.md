@@ -46,5 +46,6 @@ A work in several parts, such as the chapters of a book, is a collection: each p
 - After uploading scans to oldnews-photos.vjbe.net, run `php scripts/sync_scans.php [slug]` to record them in `data.json`.
 - `php scripts/tcp-to-articles.php scripts/tcp/<id>.json scripts/tcp/<id>.xml` turns an EEBO-TCP text (XML from [github.com/textcreationpartnership](https://github.com/textcreationpartnership)) into articles, one per division named in the config, each with a `diplomatic.md` whose page markers link to a scan on the Internet Archive. It writes `data.json` only for a new article, so rerunning it keeps your edits there; run `assign-ids.php` after. It reports folio numbers out of sequence and pages TCP's copy lacks.
 - `./scripts/build-articles.sh` converts the markdown to HTML with pandoc into `oldnews-articles-only/` (gitignored), which the site reads. Rebuild after changing an article.
+- To show an article you have just edited as "Last edited" above the catalogue, set `$last_edited` in `html/data.php` to its `id` (or `null` for none).
 - `./dev` runs the site at <http://localhost:8001>.
 - `./deploy` builds the articles and uploads the site and the built articles. It relies on a separate `deploy` command on your `PATH`; scans are uploaded separately.

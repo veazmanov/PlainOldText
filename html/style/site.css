@@ -295,6 +295,46 @@ label.sidenote-number {
    2. Catalogue
    =================================================================== */
 
+/* ---- "Last edited": one recently edited article ($last_edited in data.php), above the cards ---- */
+:where(.page-catalogue) .last-edited {
+    margin: 0 12.5% 2.5rem 0;
+    padding: 0 0 0 1.25rem;
+    border-left: 3px solid var(--accent);
+}
+:where(.page-catalogue) .last-edited-byline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+}
+:where(.page-catalogue) .last-edited-label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+}
+:where(.page-catalogue) .last-edited-title {
+    margin: 0.35rem 0 0.4rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: 1.25;
+}
+:where(.page-catalogue) .last-edited-title a {
+    color: var(--ink);
+    text-decoration: none;
+}
+:where(.page-catalogue) .last-edited-title a:hover {
+    text-decoration: underline;
+}
+:where(.page-catalogue) .last-edited-summary {
+    margin: 0;
+    width: auto;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+}
+
 /* ---- Toolbar: a card holding search, the Filters toggle, its panel and the count ---- */
 :where(.page-catalogue) .catalogue-tools {
     margin: 0 12.5% 2.5rem 0;
@@ -789,6 +829,10 @@ label.sidenote-number {
     :where(.page-catalogue) .catalogue-tools {
         margin-right: 0;
         padding: 1rem 1rem 0.85rem;
+    }
+    :where(.page-catalogue) .last-edited {
+        margin-right: 0;
+        padding-left: 1rem;
     }
     :where(.page-catalogue) .filter-label {
         flex-basis: 100%;

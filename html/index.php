@@ -223,8 +223,9 @@ function get_article_preview($uri)
 
 function render_catalogue()
 {
-    global $site_name, $categories;
+    global $site_name, $categories, $last_edited, $stable_ids, $metadata;
     $links = get_compiled_links();
+    $last_edited_article = $metadata[$stable_ids[$last_edited] ?? ''] ?? null;
     $current_page = 'catalogue';
     include(__DIR__ . '/catalogue.php');
 }

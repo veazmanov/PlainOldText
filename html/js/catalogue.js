@@ -7,6 +7,7 @@
     var count = document.getElementById('result-count');
     var fullText = document.getElementById('full-text-link');
     var empty = document.getElementById('no-results');
+    var lastEdited = document.querySelector('.last-edited');
     var sortLinks = document.querySelectorAll('.sort-link');
     var categoryButtons = Array.prototype.slice.call(document.querySelectorAll('.category-filter button'));
     var filterToggle = document.getElementById('filter-toggle');
@@ -49,6 +50,8 @@
             ? shown + ' of ' + total + ' items'
             : total + ' items';
         empty.hidden = shown !== 0;
+        // "Last edited" is for browsing; it would sit between a search and its results
+        if (lastEdited) lastEdited.hidden = !!(terms.length || category);
         // The cards match titles and summaries; the full-text search (Enter) looks inside the texts
         fullText.hidden = !q;
         fullText.setAttribute('href', '/search' + (q ? '?q=' + encodeURIComponent(q) : ''));

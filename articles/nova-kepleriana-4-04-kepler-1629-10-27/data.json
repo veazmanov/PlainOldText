@@ -52,8 +52,20 @@
         {
             "edition": "translation",
             "type": "explanatory",
+            "on": "the one going to Sagan",
+            "note": "Now [Żagań](https://en.wikipedia.org/wiki/%C5%BBaga%C5%84), in western Poland."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
             "on": "the Danish calculation",
             "note": "The tables of Longomontanus's *Astronomia Danica* (1622)."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "The Danish Astronomy",
+            "note": "“The Danish Astronomy” is a book: the *Astronomia Danica* (1622) by Christen Sørensen Longomontanus, Tycho Brahe’s longest-serving assistant at Hven, later professor at Copenhagen."
         },
         {
             "edition": "translation",

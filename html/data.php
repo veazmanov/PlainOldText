@@ -4,6 +4,9 @@
 $site_name = "Plain Old Text";
 $site_url = "https://sources.vjbe.net";
 
+// The stable id of an article edited recently, shown as "Last edited" above the catalogue; null for none.
+$last_edited = 'pqxke';
+
 // URL for a file under html/, versioned by its modification time so browsers refetch it after a deploy.
 function asset($path)
 {

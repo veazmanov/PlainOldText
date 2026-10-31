@@ -70,6 +70,21 @@ include __DIR__ . '/partials/head.php';
             </form>
             <noscript><style>.catalogue-tools .filter-panel[hidden] { display: grid; } .filter-toggle { display: none; }</style></noscript>
 
+            <?php if ($last_edited_article): ?>
+                <aside class="last-edited" aria-labelledby="last-edited-label">
+                    <p class="last-edited-byline sans">
+                        <span id="last-edited-label" class="last-edited-label">Last edited</span>
+                        <span><?= htmlspecialchars($last_edited_article['pub']) ?> &middot; <?= htmlspecialchars($last_edited_article['date']) ?></span>
+                    </p>
+                    <h2 class="last-edited-title">
+                        <a href="/stable/<?= htmlspecialchars($last_edited_article['id']) ?>"><?= htmlspecialchars($last_edited_article['title']) ?></a>
+                    </h2>
+                    <?php if (!empty($last_edited_article['summary'])): ?>
+                        <p class="last-edited-summary"><?= htmlspecialchars($last_edited_article['summary']) ?></p>
+                    <?php endif; ?>
+                </aside>
+            <?php endif; ?>
+
             <ul class="clip-grid" id="clip-grid">
                 <?php foreach ($links as $article):
                     $search_text = implode(' ', [
