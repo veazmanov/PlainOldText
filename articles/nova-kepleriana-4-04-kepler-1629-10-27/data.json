@@ -17,13 +17,13 @@
             "edition": "translation",
             "type": "explanatory",
             "on": "a compositor",
-            "note": "The workman who sets the type, letter by letter, into pages."
+            "note": "Compositor (*collector*): the workman who sets the type, letter by letter, into pages."
         },
         {
             "edition": "translation",
             "type": "explanatory",
             "on": "a pressman",
-            "note": "The workman who inks the set type and pulls the sheets on the press."
+            "note": "Pressman (*impressor*): the workman who inks the set type and pulls the sheets on the press."
         },
         {
             "edition": "translation",
@@ -41,7 +41,13 @@
             "edition": "translation",
             "type": "explanatory",
             "on": "As for the type",
-            "note": "Kepler sends a compositor and a pressman to buy type, which must be cast by a typefounder."
+            "note": "Kepler sends a compositor and a pressman to buy type, which must be cast by a typefounder (*fusor*)."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "of a Leipzig printer",
+            "note": "Printer (*typographus*): the master of a printing house, who employed compositors and pressmen."
         },
         {
             "edition": "translation",
