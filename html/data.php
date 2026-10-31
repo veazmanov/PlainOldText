@@ -108,6 +108,8 @@ if (is_dir($articles_base)) {
             'date'       => $date_obj ? $date_obj->format($date_format) : 'Undated',
             'sort_date'  => $date_obj ? $date_obj->format('Y-m-d') : '0000-00-00',
             'summary'    => $json_data['summary'] ?? '',
+            // The language of the text, for an article with an English translation ("Original (Latin) text")
+            'language'   => $json_data['language'] ?? null,
             // true, or "true"; "false" as a string is not featured
             'featured'   => filter_var($json_data['featured'] ?? false, FILTER_VALIDATE_BOOLEAN),
             'source_url' => $json_data['source_url'] ?? null,

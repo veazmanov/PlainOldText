@@ -1,7 +1,7 @@
 # Crüger to Müller, 1 July 1622
 
 ::: {.editorial-note}
-English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors', and words in square brackets are theirs. Italics follow the editors' emphasis.
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding extract of the original; the omission marks (…) are the 1927 editors', and words in square brackets are theirs. Italics follow the editors' emphasis.
 :::
 
 … While Kepler labours to prove Copernicus's hypotheses by physical reasons, he brings in wonderful speculations that belong not so much to astronomy as to physics, such as those on the magnetic fibres of the planets, and others — ([margin:] “To keep the annual motion of the earth, he reforms almost the whole of philosophy and introduces a new one, and even invents new astronomical terms, for example *foci, sun-seeking and sun-fleeing fibres*, and so on; I say nothing of his *wonderful* computation of the prosthaphaereses *by the areas of triangles and circular sectors*. So it is no wonder if he also introduces new kinds of proportion and new ratios.”) These things are pleasing, to be sure, but very obscure, as is his account of the motion of the celestial librations, compared with the workings of a balance …

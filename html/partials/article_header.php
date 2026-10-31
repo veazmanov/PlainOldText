@@ -1,8 +1,8 @@
 <?php // ./html/partials/article_header.php
 // The top of an article page: the title, a dateline (publication, date, page), the scans button and
 // edition switch, and a cog menu with the page tools in two groups: Source (source link) and Text
-// (markdown, GitHub, corrections). Beside the scans button, "English translation" shows a translation beside the
-// text (?translation=1). A dagger after the title opens the citation beneath it, and "Summary" at the
+// (markdown, GitHub, corrections). An article with an English translation shows it instead of the text;
+// "Original (Latin) text", beside the scans button, puts the text beside it (?original=1). A dagger after the title opens the citation beneath it, and "Summary" at the
 // end of the dateline opens the summary beneath that (cite.js). The scans open beside the text by default on wide
 // screens (body.scans-auto); see article.js.
 $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-expanded="false" aria-label="Cite this page" title="Cite this page">&dagger;</a>';
@@ -86,7 +86,7 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
         <?php endif; ?>
         <?php if ($has_scans && $translation): ?>&middot;<?php endif; ?>
         <?php if ($translation): ?>
-            <a class="translation-toggle" href="<?= htmlspecialchars($translation_link) ?>"><?= $translation_shown ? 'Hide translation' : 'English translation' ?></a>
+            <a class="translation-toggle" href="<?= htmlspecialchars($translation_link) ?>"><?= $translation_shown ? 'Hide original' : ($meta['language'] ? 'Original (' . htmlspecialchars($meta['language']) . ') text' : 'Original text') ?></a>
         <?php endif; ?>
     </p>
 <?php endif; ?>
@@ -97,7 +97,7 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
             $url = ($scans_open ? $slug_url . '/scans' : $slug_url)
                 . ($id === array_key_first($editions) ? '' : '?edition=' . rawurlencode($id));
             if ($translation_shown) {
-                $url .= (str_contains($url, '?') ? '&' : '?') . 'translation=1';
+                $url .= (str_contains($url, '?') ? '&' : '?') . 'original=1';
             } ?>
             <?= $first ? '' : '&middot;' ?>
             <?php if ($ed === $edition): ?>

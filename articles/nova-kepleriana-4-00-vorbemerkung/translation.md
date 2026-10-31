@@ -1,7 +1,7 @@
 # Preface
 
 ::: {.editorial-note}
-English translation of Walther von Dyck's German preface, made for Plain Old Text. Each paragraph translates the one beside it. Italics follow von Dyck's spaced type, used for emphasis and for names.
+English translation of Walther von Dyck's German preface, made for Plain Old Text. Each paragraph translates the corresponding paragraph of the original. Italics follow von Dyck's spaced type, used for emphasis and for names.
 :::
 
 The publication of a series of printed works and manuscripts by Johannes Kepler, which I rediscovered in various places before the war, was interrupted by the war and has since been delayed by the duties of office. I had begun it then with the publication of two “*Prognostica*” for the years 1604 and 1624 found in the Munich State Library (these *Abhandlungen*, vol. XXV, 5), with the “*Confession of Faith*” of 1623 discovered at Wittenberg (*Abhandlungen*, vol. XXV, 9), and with a *correspondence between Kepler and Edmund Bruce* of 1603 (*Abhandlungen*, vol. XXVIII, 2), which is in the library of the British Museum in London.

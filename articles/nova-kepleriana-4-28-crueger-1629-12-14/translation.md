@@ -1,7 +1,7 @@
 # Crüger to Müller, 4/14 December 1629
 
 ::: {.editorial-note}
-English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors', and words in square brackets are theirs. Italics follow the editors' emphasis.
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding extract of the original; the omission marks (…) are the 1927 editors', and words in square brackets are theirs. Italics follow the editors' emphasis.
 :::
 
 Greetings. It is time, most famous and most excellent Sir, that I made up for my silence with a good long letter, if the matter allows. You have bound me to you by many kindnesses, by sharing many new things. I have nothing to offer in return but bare talk about our common studies, for in this corner of Europe the Muses, especially in these times, are not as fertile as in Germany, where they bring forth something new almost every day. I do what I can: I thank you warmly for sharing not only the writings published in print, but also Bartsch's letter to you. With your leave, I shall talk with you briefly here about all of these.

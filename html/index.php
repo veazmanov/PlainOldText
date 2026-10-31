@@ -265,7 +265,6 @@ function render_collection($key)
         $part = $metadata[$slug];
         $items .= '<li><p class="contents-entry"><a href="/stable/' . $h($part['id']) . '">' . $h($part['title']) . '</a>'
             . ($part['page'] ? ' <span class="contents-page sans">pp.&nbsp;' . $h($part['page']) . '</span>' : '')
-            . (article_translation($slug) ? ' <a class="contents-translation sans" href="/stable/' . $h($part['id']) . '?translation=1">with English translation</a>' : '')
             . '</p>'
             . ($part['summary'] ? '<p class="contents-summary">' . inline_markdown($part['summary']) . '</p>' : '') . '</li>';
     }
@@ -328,30 +327,36 @@ function render_article($uri, $scans_open = false)
     // Keep a non-default edition in the article's links (?edition=<id>)
     $edition_query = ($edition_id !== null && $edition_id !== array_key_first($editions))
         ? '?edition=' . rawurlencode($edition_id) : '';
-    // An English translation, shown beside the text at ?translation=1
+    // An English translation is shown instead of the text, which ?original=1 puts beside it
     $translation = article_translation($uri);
-    $translation_shown = $translation && $edition && !empty($_GET['translation']);
-    // The edition and translation, kept in the page's own links (the citation keeps only the edition)
-    $page_query = $edition_query . ($translation_shown ? ($edition_query ? '&' : '?') . 'translation=1' : '');
+    if ($translation && !empty($_GET['translation'])) {
+        // The old ?translation=1 showed the two side by side, as ?original=1 now does
+        header('Location: ' . ($scans_open ? $slug_url . '/scans' : $slug_url) . $edition_query . ($edition_query ? '&' : '?') . 'original=1', true, 301);
+        exit;
+    }
+    $translation_shown = $translation && $edition && !empty($_GET['original']);
+    $translation_only = $translation && $edition && !$translation_shown;
+    // The edition and original, kept in the page's own links (the citation keeps only the edition)
+    $page_query = $edition_query . ($translation_shown ? ($edition_query ? '&' : '?') . 'original=1' : '');
     $citation = chicago_citation($meta, $site_url . $slug_url . $edition_query);
     $markdown_url = ($edition && $edition['md']) ? $slug_url . '/markdown' . $edition_query : null;
     $github_url = "https://github.com/veazmanov/PlainOldText/blob/main/articles/" . rawurlencode($uri) . '/'
-        . rawurlencode($edition && $edition['md'] ? basename($edition['md']) : 'main.md');
+        . rawurlencode($translation_only ? 'translation.md' : ($edition && $edition['md'] ? basename($edition['md']) : 'main.md'));
     $summary = $meta['summary'];
     $title = $meta['title'];
     $pub_name = $meta['pub'];
     $date_str = $meta['date'];
     // "Original scans" goes to the scans view, or back to the text when the scans are open
     $photo_link = ($scans_open ? $slug_url : $slug_url . '/scans') . $page_query;
-    // "English translation" shows it, "Hide translation" goes back to the text alone
+    // "Original (Latin) text" puts it beside the translation, "Hide original" goes back to the translation alone
     $translation_link = ($scans_open ? $slug_url . '/scans' : $slug_url)
-        . ($translation_shown ? $edition_query : $edition_query . ($edition_query ? '&' : '?') . 'translation=1');
+        . ($translation_shown ? $edition_query : $edition_query . ($edition_query ? '&' : '?') . 'original=1');
     $page_num = $meta['page'];
     $source_url = $meta['source_url'];
     $article_header_partial = __DIR__ . '/partials/article_header.php';
 
     if ($edition) {
-        $content = file_get_contents($edition['html']);
+        $content = file_get_contents($translation_only ? $translation['html'] : $edition['html']);
     } else {
         $content = "
         <div style='padding: 1.5rem; border-radius: 4px;'>
@@ -376,10 +381,13 @@ function render_article($uri, $scans_open = false)
     }
 
     if ($edition) {
-        $content = apply_editor_notes($content, $meta['notes'], $edition_id);
+        $content = apply_editor_notes($content, $meta['notes'], $translation_only ? 'translation' : $edition_id);
     }
     if ($translation_shown) {
         $content = parallel_translation($content, file_get_contents($translation['html']), $meta['notes']);
+    } elseif ($translation_only) {
+        // The text's editorial note, which describes the source, goes before the translation's
+        $content = parallel_blocks(file_get_contents($edition['html']), false)['note'] . $content;
     }
 
     [$collection, $part_nav] = collection_nav($uri);

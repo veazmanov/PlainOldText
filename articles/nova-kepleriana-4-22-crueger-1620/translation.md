@@ -1,7 +1,7 @@
 # Crüger to Müller, Easter Monday 1620
 
 ::: {.editorial-note}
-English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding extract of the original; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
 :::
 
 Kepler's books arrived in good time, but I am still waiting for the title page of the *Comet* that you promised me. I am greatly and dutifully obliged to you.

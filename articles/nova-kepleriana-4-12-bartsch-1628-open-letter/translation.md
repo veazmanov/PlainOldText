@@ -1,7 +1,7 @@
 # Bartsch's Open Letter to Kepler, 1628
 
 ::: {.editorial-note}
-English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors', and […] marks a passage they summarised in German. Italics follow the editors' spaced type.
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding extract of the original; the omission marks (…) are the 1927 editors', and […] marks a passage they summarised in German. Italics follow the editors' spaced type.
 :::
 
 ## To the illustrious Academic University of Studies of Alsace at Strasbourg.

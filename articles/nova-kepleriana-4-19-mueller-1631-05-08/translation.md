@@ -1,7 +1,7 @@
 # Müller to Bartsch, 8 May 1631
 
 ::: {.editorial-note}
-English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding extract of the original; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
 :::
 
 Greetings and my services. Most famous and most excellent Sir, father of my godson and dear friend.

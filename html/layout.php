@@ -2,7 +2,7 @@
 // ./html/layout.php
 $head_title = $title . ' | ' . $pub_name;
 // show-scans: opened at /stable/<id>/scans. scans-auto: the default, open beside the text on wide screens, except
-// beside a translation. show-translation: the translation beside the text (?translation=1).
+// beside a translation. show-translation: the text beside its translation (?original=1).
 $body_class = isset($article_header_partial)
     ? 'page-article'
         . (!empty($scans_open) ? ' show-scans' : (!empty($has_scans) && empty($translation_shown) ? ' scans-auto' : ''))

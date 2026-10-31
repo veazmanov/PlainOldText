@@ -1,7 +1,7 @@
 # Kepler to Seussius, 15 July 1622
 
 ::: {.editorial-note}
-English translation of the letter as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the one beside it. Words the editors restored from the copy, and the abbreviations they expanded, are given without brackets, and their folio mark is left out. Kepler's marginal notes are translated in parentheses after [margin:], as in the Latin.
+English translation of the letter as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding paragraph of the original. Words the editors restored from the copy, and the abbreviations they expanded, are given without brackets, and their folio mark is left out. Kepler's marginal notes are translated in parentheses after [margin:], as in the Latin.
 :::
 
 Many greetings.

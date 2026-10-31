@@ -1,7 +1,7 @@
 # Kepler to Müller, postscript on Bartolus, 1622
 
 ::: {.editorial-note}
-English translation of the postscript as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the one beside it. Words the editors restored from the copy are given without brackets. Kepler's *concinnus* is translated “melodic” and *consonus* “consonant”.
+English translation of the postscript as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding paragraph of the original. Words the editors restored from the copy are given without brackets. Kepler's *concinnus* is translated “melodic” and *consonus* “consonant”.
 :::
 
 Postscript.

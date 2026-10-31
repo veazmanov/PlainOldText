@@ -1,7 +1,7 @@
 # Kepler to Müller, 16/26 January 1630
 
 ::: {.editorial-note}
-English translation of the letter as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the one beside it; [gap] marks a gap in the 1927 text.
+English translation of the letter as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding paragraph of the original; [gap] marks a gap in the 1927 text.
 :::
 
 Many greetings.

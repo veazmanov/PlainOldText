@@ -17,6 +17,7 @@ function search_norm(string $word): string
     $w = preg_replace('/[^a-z0-9]/', '', $w);
     $w = strtr($w, 'vjy', 'uii');
     $w = preg_replace('/(.)\1+/', '$1', $w);
+    $w = preg_replace('/gue(s?)$/', 'ge$1', $w); // plague, plage; tongue, tonge
     return strlen($w) > 3 ? preg_replace('/e$/', '', $w) : $w;
 }
 
@@ -202,7 +203,7 @@ function search_snippet(array $hit, int $before = 14, int $after = 26): string
     return $out . ($end < strlen($text) ? ' …' : '');
 }
 
-// A link to a passage: the article (its edition, or its translation beside it), scrolled to a run of words around
+// A link to a passage: the article (its edition, or the text beside its translation), scrolled to a run of words around
 // the first match by a text fragment, which browsers that don't support it ignore
 function search_link(array $result, array $hit): string
 {
@@ -212,8 +213,8 @@ function search_link(array $result, array $hit): string
     if ($result['edition'] !== null) {
         $query['edition'] = $result['edition'];
     }
-    if ($result['translation']) {
-        $query['translation'] = '1';
+    if (!$result['translation'] && article_translation($result['slug'])) {
+        $query['original'] = '1'; // the translation is shown by default; this puts the text beside it
     }
     $url .= $query ? '?' . http_build_query($query) : '';
 
@@ -301,7 +302,8 @@ function render_search()
                     $context = array_filter([
                         $collection ? $collection['title'] : $meta['pub'],
                         $meta['date'],
-                        $r['translation'] ? 'English translation' : null,
+                        !$r['translation'] && article_translation($r['slug'])
+                            ? ($meta['language'] ? 'Original (' . $meta['language'] . ') text' : 'Original text') : null,
                         $r['edition'] !== null ? (article_editions($r['slug'])[$r['edition']]['label'] ?? null) : null,
                     ]); ?>
                     <li>

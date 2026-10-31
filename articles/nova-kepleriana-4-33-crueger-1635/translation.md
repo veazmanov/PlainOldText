@@ -1,7 +1,7 @@
 # Crüger to Müller, Easter Tuesday 1635
 
 ::: {.editorial-note}
-English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding extract of the original; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
 :::
 
 Last winter Ludwig Kepler, son of our great Kepler, a candidate in medicine, came here with the King of England's envoy, and spent time with me familiarly on several occasions, but afterwards went on into Ducal Prussia. He told me how things stood with his stepmother and the other children: that they had reached Frankfurt (on the Main) in the greatest danger, and had been left there since December (about the time the English envoy passed through), with little money; that he had been forced to share with his stepmother what he had brought together, and is now in need of money himself.

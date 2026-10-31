@@ -1,7 +1,7 @@
 # Kepler to Müller, 13/23 November 1629
 
 ::: {.editorial-note}
-English translation of the letter as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the one beside it, including Kepler's German postscript and the directions on the cover; his marginal notes are translated as footnotes.
+English translation of the letter as printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding paragraph of the original, including Kepler's German postscript and the directions on the cover; his marginal notes are translated as footnotes.
 :::
 
 Many greetings.

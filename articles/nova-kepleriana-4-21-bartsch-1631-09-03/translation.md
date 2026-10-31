@@ -1,7 +1,7 @@
 # Bartsch to Müller, 3 September 1631
 
 ::: {.editorial-note}
-English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the extract beside it; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
+English translation of the Latin extracts printed in *Nova Kepleriana* 4 (1927), made for Plain Old Text. Each paragraph translates the corresponding extract of the original; the omission marks (…) are the 1927 editors'. Italics follow the editors' emphasis.
 :::
 
 … Now I write only this: today I set out on the journey with my mother-in-law; God grant it a happier star and a happier outcome than my father-in-law's. We mean to go by way of Prague, because of the Prince's debts; to Regensburg, because of the business of the inheritance; and to Linz and Vienna, for many things to be settled, God willing.

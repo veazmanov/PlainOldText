@@ -1657,22 +1657,7 @@ body:where(.page-article).show-translation label.margin-toggle {
     cursor: pointer;
 }
 
-/* ---- "with English translation" on a collection's contents page ---- */
+/* ---- A collection's contents page ---- */
 :where(.page-collection) .contents-entry {
     text-align: left;
-}
-
-:where(.page-collection) .contents-translation {
-    margin-left: 0.5rem;
-    padding: 0 0.35rem;
-    font-size: 0.75rem;
-    color: var(--ink-muted);
-    text-decoration: none;
-    white-space: nowrap;
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-}
-
-:where(.page-collection) .contents-translation:hover {
-    color: var(--accent);
 }

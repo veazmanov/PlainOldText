@@ -20,7 +20,7 @@ This repo holds both the transcriptions (`articles/`) and the PHP site that serv
 
 A source with several transcriptions has one `.md` per edition instead of `main.md`, e.g. `reading.md` and `diplomatic.md`. The reading edition is the default; others are at `?edition=<name>`.
 
-A source in another language can have an English translation as `translation.md` beside its transcription. It is not an edition: the article page offers "English translation", which shows it beside the text (`?translation=1`), paragraph by paragraph, so keep the transcription's paragraphing. Its title is dropped and its editorial note shown under the text's. Editor's notes on the translation have `"edition": "translation"`.
+A source in another language can have an English translation as `translation.md` beside its transcription. It is not an edition: the article page shows the translation instead of the text, under the text's editorial note, and "Original (Latin) text" puts the text beside it (`?original=1`), paragraph by paragraph, so keep the transcription's paragraphing; the language comes from `language` in `data.json`. There the translation's title is dropped and its editorial note shown under the text's. Editor's notes on the translation have `"edition": "translation"`.
 
 `data.json` (see `articles/data.example.json`) has:
 
@@ -32,6 +32,7 @@ A source in another language can have an English translation as `translation.md`
 - `scans` — page images on oldnews-photos.vjbe.net, written by `sync_scans.php`; or `scans_pdf`, the URL of a single PDF.
 - Optional: `featured` (highlighted in the catalogue) and `card_position` (the CSS `background-position` of the first scan on its catalogue card).
 - Citation fields: `author`, `place` (the city, for newspapers whose title doesn't name it), `full_title`, `translator` and `printer` for books, `volume` and `issue` for journals.
+- Optional: `language` — the language of the text, e.g. `Latin`, for an article with an English translation.
 - Optional: `collection` — the key of the collection the article is a part of (see Collections).
 - Optional: `notes` — editor's notes, shown as lettered sidenotes (a, b, c…) beside the text. Each has `edition` (the `.md` file name without extension), `type` (`explanatory`, `sic` for a misprint kept in the text, or `query` for a likely transcription error), `on` (the exact phrase the note follows, which must occur once in the text as a reader sees it) and `note` (Markdown *italics* allowed). `php scripts/check-notes.php` checks every anchor.
 
