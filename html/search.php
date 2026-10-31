@@ -48,7 +48,7 @@ function search_plain(string $md): string
 }
 
 // The searchable passages of one built .md file, each with the id of the heading it falls under (the ids pandoc
-// gave the headings, read from the built HTML in order): [['text', 'words' => normalised words, 'heading', 'anchor']]
+// gave the headings, read from the built HTML in order): [['text', 'norms' => its normalised words, space-separated, 'heading', 'anchor']]
 function search_passages(string $md_file): array
 {
     $html_file = substr($md_file, 0, -3) . '.html';
@@ -84,12 +84,12 @@ function search_passages(string $md_file): array
         if ($text === '') {
             continue;
         }
-        $words = search_words($text);
+        // The normalised words as one string, word for word with search_words($text): arrays of every word would
+        // take far more memory, and the words are only needed again for the passages that match
         $passages[] = [
             'is_heading' => (bool) preg_match('/^#+\s/', $block),
             'text'    => $text,
-            'words'   => $words,
-            'norms'   => array_map(fn($w) => search_norm($w[0]), $words),
+            'norms'   => implode(' ', array_map(fn($w) => search_norm($w[0]), search_words($text))),
             'heading' => $heading,
             'anchor'  => $anchor,
         ];
@@ -156,16 +156,23 @@ function search_run(array $terms): array
     foreach (search_corpus() as $doc) {
         $hits = [];
         foreach ($doc['passages'] as $p) {
+            // Every term starts a word somewhere in the passage, or it can't match
+            foreach ($terms as $term) {
+                if (!str_contains(' ' . $p['norms'], ' ' . $term)) {
+                    continue 2;
+                }
+            }
+            $norms = explode(' ', $p['norms']);
             $matched = [];
             foreach ($terms as $term) {
-                $found = array_keys(array_filter($p['norms'], fn($n) => search_hit($n, $term)));
+                $found = array_keys(array_filter($norms, fn($n) => search_hit($n, $term)));
                 if (!$found) {
                     continue 2;
                 }
                 $matched = array_merge($matched, $found);
             }
             sort($matched);
-            $hits[] = $p + ['matched' => array_values(array_unique($matched))];
+            $hits[] = $p + ['words' => search_words($p['text']), 'matched' => array_values(array_unique($matched))];
         }
         if ($hits) {
             // A matching heading, such as a recipe's title, before the passages that only mention the words
