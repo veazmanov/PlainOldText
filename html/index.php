@@ -5,6 +5,7 @@ require_once('citation.php');
 require_once('card_scan.php');
 require_once('notes.php');
 require_once('search.php');
+require_once('commentary.php');
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -30,6 +31,16 @@ if ($clean_uri === "catalogue") {
 // 2a. Full-text search (search.php)
 if ($clean_uri === "search") {
     render_search();
+    exit;
+}
+
+// 2b. Commentary on the articles (commentary.php)
+if ($clean_uri === "commentary") {
+    render_commentary_list();
+    exit;
+}
+if (preg_match('#^commentary/([0-9a-hjkmnp-tv-z]{5})$#i', $clean_uri, $m)) {
+    render_commentary(strtolower($m[1]));
     exit;
 }
 
@@ -352,6 +363,9 @@ function render_article($uri, $scans_open = false)
     // "Original (Latin) text" puts it beside the translation, "Hide original" goes back to the translation alone
     $translation_link = ($scans_open ? $slug_url . '/scans' : $slug_url)
         . ($translation_shown ? $edition_query : $edition_query . ($edition_query ? '&' : '?') . 'original=1');
+    // Commentary on this article: a link to it, or to the list when there is more than one
+    $commentary = commentary_on($meta['id']);
+    $commentary_link = count($commentary) === 1 ? '/commentary/' . array_key_first($commentary) : '/commentary';
     $page_num = $meta['page'];
     $source_url = $meta['source_url'];
     $article_header_partial = __DIR__ . '/partials/article_header.php';

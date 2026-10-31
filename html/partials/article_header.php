@@ -4,7 +4,7 @@
 // (markdown, GitHub, corrections). An article with an English translation shows it instead of the text;
 // "Original (Latin) text", beside the scans button, puts the text beside it (?original=1). A dagger after the title opens the citation beneath it, and "Summary" at the
 // end of the dateline opens the summary beneath that (cite.js). The scans open beside the text by default on wide
-// screens (body.scans-auto); see article.js.
+// screens (body.scans-auto); see article.js. "Commentary" links to the commentary on the article (commentary.php).
 $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-expanded="false" aria-label="Cite this page" title="Cite this page">&dagger;</a>';
 ?>
 <div class="article-top">
@@ -78,7 +78,7 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
     <p class="dateline-summary" id="summary"><?= htmlspecialchars($summary) ?></p>
 <?php endif; ?>
 
-<?php if ($has_scans || $translation): ?>
+<?php if ($has_scans || $translation || $commentary): ?>
     <p class="article-actions sans">
         <?php if ($has_scans): ?>
             <a class="scans-toggle" href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
@@ -87,6 +87,10 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
         <?php if ($has_scans && $translation): ?>&middot;<?php endif; ?>
         <?php if ($translation): ?>
             <a class="translation-toggle" href="<?= htmlspecialchars($translation_link) ?>"><?= $translation_shown ? 'Hide original' : ($meta['language'] ? 'Original (' . htmlspecialchars($meta['language']) . ') text' : 'Original text') ?></a>
+        <?php endif; ?>
+        <?php if ($commentary): ?>
+            <?php if ($has_scans || $translation): ?>&middot; <?php endif; ?>
+            <a class="commentary-link" href="<?= htmlspecialchars($commentary_link) ?>">Commentary<?= count($commentary) > 1 ? ' (' . count($commentary) . ')' : '' ?></a>
         <?php endif; ?>
     </p>
 <?php endif; ?>

@@ -3,9 +3,11 @@
 // Gives each articles/<slug>/data.json without an "id" a new random 5-character one, used in the
 // article's stable URL (/stable/<id>), and likewise each collection in articles/collections.json.
 // IDs are permanent: existing ones are never changed.
-// Usage: php scripts/assign-ids.php [article-folder ...]   (no args = all articles)
+// So does each commentary/<name>.md without an "id:" in its front matter (/commentary/<id>).
+// Usage: php scripts/assign-ids.php [article-folder ...]   (no args = all articles and commentary)
 
 $articles_base = dirname(__DIR__) . '/articles';
+$commentary_base = dirname(__DIR__) . '/commentary';
 $alphabet = '0123456789abcdefghjkmnpqrstvwxyz';
 
 // A random id not yet in use, which is then marked as used.
@@ -67,6 +69,21 @@ foreach (glob($articles_base . '/*/data.json') as $json_file) {
     }
 }
 
+// A commentary's id, from the "id:" line of its front matter: the id, '' if it has none, or null if it has no front matter
+function commentary_id($text)
+{
+    if (!preg_match('/^---\n(.*?)\n---\n/s', $text, $m)) {
+        return null;
+    }
+    return preg_match('/^id:[ \t]*(\S*)[ \t]*$/m', $m[1], $i) ? trim($i[1], '"\'') : '';
+}
+foreach (glob($commentary_base . '/*.md') as $md_file) {
+    $id = commentary_id(file_get_contents($md_file));
+    if ($id !== null && $id !== '') {
+        $used[$id] = true;
+    }
+}
+
 $folders = array_slice($argv, 1) ?: array_map('basename', glob($articles_base . '/*', GLOB_ONLYDIR));
 foreach ($folders as $folder) {
     $json_file = $articles_base . '/' . $folder . '/data.json';
@@ -112,4 +129,26 @@ if (count($argv) === 1) {
         file_put_contents($collections_file,
             json_encode($collections, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n");
     }
+}
+
+// Commentary: put the id first in the front matter, or fill in an empty "id:"
+foreach (array_slice($argv, 1) ? [] : glob($commentary_base . '/*.md') as $md_file) {
+    $text = file_get_contents($md_file);
+    $old = commentary_id($text);
+    if ($old === null) {
+        fwrite(STDERR, "skip " . basename($md_file) . ": no front matter\n");
+        continue;
+    }
+    if ($old !== '') {
+        continue;
+    }
+    $id = new_id();
+    $text = preg_match('/^id:.*$/m', $text)
+        ? preg_replace('/^id:.*$/m', 'id: ' . $id, $text, 1)
+        : preg_replace('/^---\n/', "---\nid: $id\n", $text, 1);
+    if (commentary_id($text) !== $id) {
+        throw new RuntimeException("Refusing to write a broken front matter to $md_file");
+    }
+    file_put_contents($md_file, $text);
+    echo 'commentary/' . basename($md_file) . ": $id\n";
 }

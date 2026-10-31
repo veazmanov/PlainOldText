@@ -1717,3 +1717,58 @@ body:where(.page-article).show-translation label.margin-toggle {
 :where(.page-collection) .contents-entry {
     text-align: left;
 }
+
+/* ---- Commentary: an essay on one or more articles (commentary.php) ---- */
+:where(.page-commentary) p.commentary-kind {
+    max-width: 500px;
+    margin: 0 0 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+:where(.page-commentary) p.commentary-kind a {
+    color: var(--ink-muted);
+    text-decoration: none;
+}
+
+:where(.page-commentary) h1 {
+    max-width: 500px;
+    text-align: center;
+}
+
+:where(.page-commentary) p.commentary-about {
+    max-width: 500px;
+    margin: -0.75rem 0 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+}
+
+:where(.page-commentary) .commentary-draft {
+    color: var(--accent);
+}
+
+:where(.page-commentary) ul.commentary-list {
+    padding: 0;
+    list-style: none;
+}
+
+:where(.page-commentary) ul.commentary-list li {
+    margin-bottom: 2rem;
+}
+
+:where(.page-commentary) p.commentary-entry {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+}
+
+:where(.page-commentary) ul.commentary-list p.commentary-about {
+    margin-top: -0.75rem;
+}
+
+:where(.page-commentary) p.commentary-source {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}
