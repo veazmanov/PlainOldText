@@ -16,6 +16,12 @@
         {
             "edition": "translation",
             "type": "explanatory",
+            "on": "oppression at home",
+            "note": "The Thirty Years’ War (1618–1648), then in its twelfth year. Silesia, where Sagan lies, had been crossed by Mansfeld’s and Danish troops in 1626–27 until Wallenstein, the imperial general and Kepler’s patron, drove them out."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
             "on": "a compositor",
             "note": "Compositor (*collector*): the workman who sets the type, letter by letter, into pages."
         },
@@ -28,8 +34,26 @@
         {
             "edition": "translation",
             "type": "explanatory",
+            "on": "to buy a press",
+            "note": "Press (*praelum*, also spelled *prelum*): from *premere*, “to press”; originally a wine or olive press, taken over for the printing press."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
             "on": "a press at Leipzig",
             "note": "See the [map of the cities mentioned in this correspondence](https://drive.vjbe.net/2026-10-31-kepler.webp)."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "type cast",
+            "note": "Type (*typus*, here the plural *typi*): the individual metal letters, from Greek *týpos*, “impression.” They had to be cast by a typefounder (*fusor*, from *fundere*, “to pour, cast”), so the young men were to place an order (*locare*) rather than cast it themselves."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "paper made",
+            "note": "Paper (*papyrus*): in classical Latin “papyrus,” but used by early modern writers for ordinary paper, alongside *charta*."
         },
         {
             "edition": "translation",
@@ -41,7 +65,7 @@
             "edition": "translation",
             "type": "explanatory",
             "on": "As for the type",
-            "note": "Kepler sends a compositor and a pressman to buy type, which must be cast by a typefounder (*fusor*)."
+            "note": "Kepler sends a compositor and a pressman to buy type."
         },
         {
             "edition": "translation",
