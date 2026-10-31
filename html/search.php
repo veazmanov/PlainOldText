@@ -117,12 +117,13 @@ function search_corpus(): array
         }
     }
 
-    // Rebuilt when a text or this file changes
+    // Rebuilt when a text or this file changes. The stamp is in the file name, so a stale cache is never loaded
     $stamp = md5(filemtime(__FILE__) . '|' . implode('|', array_map(fn($f) => $f[3] . ':' . filemtime($f[3]), $files)));
-    $cache = sys_get_temp_dir() . '/plainoldtext-search-' . md5($articles_base) . '.ser';
+    $prefix = sys_get_temp_dir() . '/plainoldtext-search-' . md5($articles_base);
+    $cache = $prefix . '-' . $stamp . '.ser';
     $cached = is_file($cache) ? @unserialize(file_get_contents($cache)) : null;
-    if (is_array($cached) && ($cached['stamp'] ?? '') === $stamp) {
-        return $cached['corpus'];
+    if (is_array($cached)) {
+        return $cached;
     }
 
     $corpus = [];
@@ -130,7 +131,10 @@ function search_corpus(): array
         $corpus[] = ['slug' => $slug, 'edition' => $edition, 'translation' => $translation,
             'passages' => search_passages($md)];
     }
-    @file_put_contents($cache, serialize(['stamp' => $stamp, 'corpus' => $corpus]), LOCK_EX);
+    foreach (glob($prefix . '*.ser') as $old) {
+        @unlink($old);
+    }
+    @file_put_contents($cache, serialize($corpus), LOCK_EX);
     return $corpus;
 }
 
