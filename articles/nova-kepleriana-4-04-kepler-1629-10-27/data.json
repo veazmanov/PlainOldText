@@ -71,7 +71,7 @@
             "edition": "translation",
             "type": "explanatory",
             "on": "of a Leipzig printer",
-            "note": "Printer (*typographus*): the master of a printing house, who employed compositors and pressmen. Celebrated master printers included Aldus Manutius, Robert Estienne, Oporinus and Plantin (Eisenstein, 1980, p. 691)."
+            "note": "Printer (*typographus*): the master of a printing house, who employed compositors and pressmen. Celebrated master printers included Regiomontanus, Aldus Manutius, Robert Estienne, Oporinus and Plantin (Eisenstein, 1980, p. 691; Eisenstein, 2002)."
         },
         {
             "edition": "translation",
@@ -99,6 +99,7 @@
         }
     ],
     "references": [
-        "Eisenstein, Elizabeth L. *The Printing Press as an Agent of Change: Communications and Cultural Transformations in Early Modern Europe*. Vol. 2. 1980."
+        "Eisenstein, Elizabeth L. *The Printing Press as an Agent of Change: Communications and Cultural Transformations in Early Modern Europe*. Vol. 2. 1980.",
+        "Eisenstein, Elizabeth L. “An Unacknowledged Revolution Revisited.” *The American Historical Review* 107, no. 1 (2002): 87–105. [https://doi.org/10.1086/ahr/107.1.87](https://doi.org/10.1086/ahr/107.1.87)."
     ]
 }
