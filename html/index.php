@@ -391,6 +391,10 @@ function render_article($uri, $scans_open = false)
         $content = parallel_blocks(file_get_contents($edition['html']), false)['note'] . $content;
     }
 
+    if ($edition) {
+        $content .= editor_references($meta['references']);
+    }
+
     [$collection, $part_nav] = collection_nav($uri);
     $content .= $part_nav;
 

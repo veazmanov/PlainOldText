@@ -139,3 +139,16 @@ function notes_sidenote($doc, $note, $n)
     $fragment->appendXML($markup);
     return $fragment;
 }
+
+// The works the editor's notes cite ("references" in data.json), as a list after the text.
+function editor_references($references)
+{
+    if (!$references) {
+        return '';
+    }
+    $items = '';
+    foreach ($references as $reference) {
+        $items .= '<li>' . inline_markdown($reference) . '</li>';
+    }
+    return '<section class="editor-references"><h2>References</h2><ul>' . $items . '</ul></section>';
+}

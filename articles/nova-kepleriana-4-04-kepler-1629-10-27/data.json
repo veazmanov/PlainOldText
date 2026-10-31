@@ -47,7 +47,7 @@
             "edition": "translation",
             "type": "explanatory",
             "on": "of a Leipzig printer",
-            "note": "Printer (*typographus*): the master of a printing house, who employed compositors and pressmen. Celebrated master printers included Aldus Manutius, Robert Estienne, Oporinus and Plantin (Eisenstein, 1979, p. 691)."
+            "note": "Printer (*typographus*): the master of a printing house, who employed compositors and pressmen. Celebrated master printers included Aldus Manutius, Robert Estienne, Oporinus and Plantin (Eisenstein, 1980, p. 691)."
         },
         {
             "edition": "translation",
@@ -73,5 +73,8 @@
             "on": "my Patron's affairs",
             "note": "Wallenstein, Duke of Friedland and Sagan, who paid for Kepler's press."
         }
+    ],
+    "references": [
+        "Eisenstein, Elizabeth L. *The Printing Press as an Agent of Change: Communications and Cultural Transformations in Early Modern Europe*. Vol. 2. 1980."
     ]
 }

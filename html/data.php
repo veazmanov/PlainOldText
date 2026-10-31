@@ -136,6 +136,8 @@ if (is_dir($articles_base)) {
             'collection' => $json_data['collection'] ?? null,
             // Editor's notes, shown as lettered sidenotes (see notes.php)
             'notes'      => $json_data['notes'] ?? [],
+            // The works the editor's notes cite, listed after the text (see notes.php)
+            'references' => $json_data['references'] ?? [],
         ];
     }
 }

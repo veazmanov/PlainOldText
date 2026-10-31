@@ -35,6 +35,7 @@ A source in another language can have an English translation as `translation.md`
 - Optional: `language` — the language of the text, e.g. `Latin`, for an article with an English translation.
 - Optional: `collection` — the key of the collection the article is a part of (see Collections).
 - Optional: `notes` — editor's notes, shown as lettered sidenotes (a, b, c…) beside the text. Each has `edition` (the `.md` file name without extension), `type` (`explanatory`, `sic` for a misprint kept in the text, or `query` for a likely transcription error), `on` (the exact phrase the note follows, which must occur once in the text as a reader sees it) and `note` (Markdown *italics* and `[links](https://…)` allowed). `php scripts/check-notes.php` checks every anchor.
+- Optional: `references` — the works the editor's notes cite, e.g. "(Eisenstein, 1980, p. 691)", as a list of Chicago-style bibliography entries (Markdown *italics* and links allowed), shown under the text as References.
 
 ## Collections
 

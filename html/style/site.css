@@ -1323,6 +1323,18 @@ body:where(.page-article) > article {
     counter-increment: editor-note-counter;
 }
 
+/* The works the editor's notes cite, after the text: a hanging indent, no bullets */
+:where(.page-article) .editor-references ul {
+    list-style: none;
+    padding-left: 0;
+}
+:where(.page-article) .editor-references li {
+    padding-left: 2rem;
+    text-indent: -2rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
 /* An author's footnote marker straight after a note's letter */
 :where(.page-article) .editor-note + .footnote-ref {
     margin-left: 0.15rem;
