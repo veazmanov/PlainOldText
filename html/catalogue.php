@@ -21,7 +21,8 @@ include __DIR__ . '/partials/head.php';
         <section>
             <?php // Filters start collapsed unless one is active, so a filtered link shows why ?>
             <?php $filters_open = $category !== '' || $sort === 'oldest'; ?>
-            <form class="sans catalogue-tools" role="search" action="/catalogue" method="get" onsubmit="return false;">
+            <?php // Typing filters the cards; Enter searches the full text (search.php) ?>
+            <form class="sans catalogue-tools" role="search" action="/search" method="get">
                 <div class="tools-row">
                     <div class="search-field">
                         <label for="catalogue-search">Search the archive</label>
@@ -61,8 +62,10 @@ include __DIR__ . '/partials/head.php';
                     </div>
                 </div>
 
-                <p class="result-count" id="result-count" aria-live="polite">
-                    <?= number_format(count($links)) ?> items
+                <p class="result-count">
+                    <span id="result-count" aria-live="polite"><?= number_format(count($links)) ?> items</span>
+                    <a class="full-text-link" id="full-text-link" href="/search<?= $query !== '' ? '?q=' . rawurlencode($query) : '' ?>"
+                        <?= $query === '' ? 'hidden' : '' ?>>&middot; Search the full text &rarr;</a>
                 </p>
             </form>
             <noscript><style>.catalogue-tools .filter-panel[hidden] { display: grid; } .filter-toggle { display: none; }</style></noscript>
@@ -135,7 +138,7 @@ include __DIR__ . '/partials/head.php';
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <p class="no-results" id="no-results" hidden>No items match.</p>
+            <p class="no-results" id="no-results" hidden>No titles or summaries match. Press Enter to search the full text.</p>
         </section>
     </article>
 

@@ -4,6 +4,7 @@ require_once('data.php');
 require_once('citation.php');
 require_once('card_scan.php');
 require_once('notes.php');
+require_once('search.php');
 
 $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -23,6 +24,12 @@ if ($clean_uri === "" || $clean_uri === "index.php") {
 // 2. Catalogue Page Route
 if ($clean_uri === "catalogue") {
     render_catalogue();
+    exit;
+}
+
+// 2a. Full-text search (search.php)
+if ($clean_uri === "search") {
+    render_search();
     exit;
 }
 

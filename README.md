@@ -13,7 +13,7 @@ This repo holds both the transcriptions (`articles/`) and the PHP site that serv
 ## Layout
 
 - `articles/<slug>/` — one folder per source, with the transcription as `main.md` and its metadata in `data.json`.
-- `html/` — the site. `index.php` is the front controller; `data.php` loads the articles and holds the site settings; `citation.php` builds citations; `card_scan.php` makes the catalogue-card images.
+- `html/` — the site. `index.php` is the front controller; `data.php` loads the articles and holds the site settings; `citation.php` builds citations; `search.php` is the full-text search at `/search`; `card_scan.php` makes the catalogue-card images.
 - `scripts/` — `new-article.sh`, `assign-ids.php`, `build-articles.sh`, `sync_scans.php` and `tcp-to-articles.php`, with its configs and TCP texts in `scripts/tcp/` (see Workflow).
 
 ## Articles

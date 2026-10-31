@@ -398,6 +398,10 @@ label.sidenote-number {
 :where(.page-catalogue) .filter-toggle[aria-expanded="true"]::after {
     transform: translateY(0.1em) rotate(-135deg);
 }
+/* The full-text search's submit button: the toggle's look, without its chevron */
+:where(.page-search) .search-submit::after {
+    content: none;
+}
 :where(.page-catalogue) .filter-badge {
     min-width: 1.3em;
     padding: 0 0.3em;
@@ -698,6 +702,79 @@ label.sidenote-number {
     text-align: center;
     font-style: italic;
     color: var(--ink-muted);
+}
+
+/* "Search the full text →" beside the count, once something is typed */
+:where(.page-catalogue) .full-text-link {
+    margin-left: 0.25em;
+    color: inherit;
+}
+
+/* ---- Full-text search results (search.php): one entry per text, with its matching passages ---- */
+:where(.page-search) section > ol.search-results {
+    width: auto;
+    margin: 0 12.5% 0 0;
+    padding: 0;
+    list-style: none;
+}
+:where(.page-search) .search-results > li {
+    margin: 0 0 2.25rem;
+    padding: 0 0 1.75rem;
+    border-bottom: 1px solid var(--rule);
+}
+:where(.page-search) .search-byline {
+    margin: 0 0 0.3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+:where(.page-search) .search-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.6rem;
+    font-style: normal;
+}
+:where(.page-search) .search-title a {
+    color: var(--ink);
+    text-decoration: none;
+}
+:where(.page-search) .search-snippet {
+    width: auto;
+    margin: 0 0 0.9rem;
+    font-size: 1.15rem;
+    line-height: 1.45;
+}
+:where(.page-search) .search-snippet a {
+    color: var(--ink-soft);
+    text-decoration: none;
+}
+:where(.page-search) .search-snippet a:hover {
+    color: var(--ink);
+}
+:where(.page-search) .search-heading {
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+}
+:where(.page-search) .search-snippet mark {
+    padding: 0 0.1em;
+    background: var(--panel-hover);
+    color: var(--ink);
+    border-bottom: 2px solid var(--accent);
+}
+:where(.page-search) .search-more summary {
+    width: fit-content;
+    margin: 0 0 0.9rem;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    :where(.page-search) section > ol.search-results {
+        margin-right: 0;
+    }
 }
 
 @media (max-width: 760px) {

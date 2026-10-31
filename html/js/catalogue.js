@@ -1,9 +1,11 @@
 // ./html/js/catalogue.js
 // Catalogue search, the Filters toggle, category filter and sort links; keeps the query and category in the URL.
+// Enter submits the search to the full-text search (/search).
 (function () {
     var input = document.getElementById('catalogue-search');
     var items = Array.prototype.slice.call(document.querySelectorAll('#clip-grid > li'));
     var count = document.getElementById('result-count');
+    var fullText = document.getElementById('full-text-link');
     var empty = document.getElementById('no-results');
     var sortLinks = document.querySelectorAll('.sort-link');
     var categoryButtons = Array.prototype.slice.call(document.querySelectorAll('.category-filter button'));
@@ -47,6 +49,9 @@
             ? shown + ' of ' + total + ' items'
             : total + ' items';
         empty.hidden = shown !== 0;
+        // The cards match titles and summaries; the full-text search (Enter) looks inside the texts
+        fullText.hidden = !q;
+        fullText.setAttribute('href', '/search' + (q ? '?q=' + encodeURIComponent(q) : ''));
 
         // Keep the query and category in the URL and across sort changes
         var params = new URLSearchParams(location.search);
