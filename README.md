@@ -34,7 +34,7 @@ A source in another language can have an English translation as `translation.md`
 - Citation fields: `author`, `place` (the city, for newspapers whose title doesn't name it), `full_title`, `translator` and `printer` for books, `volume` and `issue` for journals.
 - Optional: `language` — the language of the text, e.g. `Latin`, for an article with an English translation.
 - Optional: `collection` — the key of the collection the article is a part of (see Collections).
-- Optional: `notes` — editor's notes, shown as lettered sidenotes (a, b, c…) beside the text. Each has `edition` (the `.md` file name without extension), `type` (`explanatory`, `sic` for a misprint kept in the text, or `query` for a likely transcription error), `on` (the exact phrase the note follows, which must occur once in the text as a reader sees it) and `note` (Markdown *italics* allowed). `php scripts/check-notes.php` checks every anchor.
+- Optional: `notes` — editor's notes, shown as lettered sidenotes (a, b, c…) beside the text. Each has `edition` (the `.md` file name without extension), `type` (`explanatory`, `sic` for a misprint kept in the text, or `query` for a likely transcription error), `on` (the exact phrase the note follows, which must occur once in the text as a reader sees it) and `note` (Markdown *italics* and `[links](https://…)` allowed). `php scripts/check-notes.php` checks every anchor.
 
 ## Collections
 

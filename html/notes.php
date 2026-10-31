@@ -125,8 +125,9 @@ function notes_sidenote($doc, $note, $n)
 {
     $type = in_array($note['type'] ?? '', ['explanatory', 'sic', 'query'], true) ? $note['type'] : 'explanatory';
     $id = 'en-' . $n;
-    // Inline Markdown in the note: *italics*
+    // Inline Markdown in the note: *italics* and [links](https://…)
     $body = preg_replace('/\*([^*]+)\*/', '<em>$1</em>', htmlspecialchars((string) $note['note'], ENT_QUOTES));
+    $body = preg_replace('/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/', '<a href="$2">$1</a>', $body);
     if ($type === 'sic') {
         $body = '<em>Sic.</em> ' . $body;
     }
