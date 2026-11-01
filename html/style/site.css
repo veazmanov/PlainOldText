@@ -288,7 +288,7 @@ hr {
     }
 }
 
-/* ---- The date a page was printed (topnav.php), under the masthead ---- */
+/* ---- The date a page was printed and its URL (topnav.php), under the masthead ---- */
 .print-stamp {
     display: none;
 }
@@ -300,6 +300,7 @@ hr {
         font-size: 0.85rem;
         font-style: italic;
         color: var(--ink-muted);
+        overflow-wrap: anywhere;
     }
 }
 

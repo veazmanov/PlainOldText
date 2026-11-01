@@ -4,9 +4,10 @@
         <span class="site-logo-name"><?= htmlspecialchars($site_name) ?><span class="site-logo-mark" aria-hidden="true">&dagger;</span></span>
     </a>
     <p class="site-masthead-note"><span aria-hidden="true">&dagger;</span> plainoldtext.vjbe.net</p>
-    <?php // Shown only in print: the day the page was printed, filled in as the print dialog opens ?>
+    <?php // Shown only in print: the day the page was printed and where from (an article's stable URL, from its
+    // canonical tag), filled in as the print dialog opens ?>
     <p class="print-stamp" id="print-stamp"></p>
-    <script>addEventListener('beforeprint', function () { document.getElementById('print-stamp').textContent = 'Printed ' + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); });</script>
+    <script>addEventListener('beforeprint', function () { var c = document.querySelector('link[rel="canonical"]'); document.getElementById('print-stamp').textContent = 'Printed ' + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + ' from ' + (c ? c.href : location.href); });</script>
 </div>
 
 <nav class="site-nav" aria-label="Primary">
