@@ -30,9 +30,10 @@ function chicago_citation($meta, $url)
             if ($meta['translator']) {
                 $book .= ', trans. ' . $h($meta['translator']);
             }
+            // A later edition is cited by its own imprint: (New York: Collier, 1902)
             $imprint = implode(', ', array_filter([
                 implode(': ', array_filter([$h($meta['place'] ?? ''), $h($meta['printer'] ?? '')])),
-                $date,
+                !empty($meta['edition_year']) ? $h($meta['edition_year']) : $date,
             ]));
             $parts[] = $book . ($imprint ? ' (' . $imprint . ')' : '') . $page . ',';
             break;

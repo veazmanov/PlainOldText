@@ -32,7 +32,7 @@ A source in another language can have an English translation as `translation.md`
 - `year`, `month`, `day` — a full date, or just `year` (e.g. for a book).
 - `scans` — page images on oldnews-photos.vjbe.net, written by `sync_scans.php`; or `scans_pdf`, the URL of a single PDF.
 - Optional: `featured` (highlighted in the catalogue) and `card_position` (the CSS `background-position` of the first scan on its catalogue card).
-- Citation fields: `author`, `place` (the city, for newspapers whose title doesn't name it), `full_title`, `translator` and `printer` for books, `volume` and `issue` for journals.
+- Citation fields: `author`, `place` (the city, for newspapers whose title doesn't name it), `full_title`, `translator` and `printer` for books, `volume` and `issue` for journals. A book transcribed from a later edition keeps its original `year` (shown under the title and used to sort the catalogue) and gives the edition's in `edition_year`, which the citation uses with the edition's `place` and `printer`.
 - Optional: `language` — the language of the text, e.g. `Latin`, for an article with an English translation.
 - Optional: `source` — where the text comes from (the manuscript, where it was first printed), and `transcribed_from` — the copy transcribed, e.g. "the page images of the 1927 printing." Both are shown at the top of the editorial note, before the `::: {.editorial-note}` block of the `.md`, which then needs only the transcription's conventions. Markdown *italics* and links allowed.
 - Optional: `collection` — the key of the collection the article is a part of (see Collections).

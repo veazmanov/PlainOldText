@@ -134,6 +134,8 @@ if (is_dir($articles_base)) {
             'full_title' => $json_data['full_title'] ?? null,
             'translator' => $json_data['translator'] ?? null,
             'printer'    => $json_data['printer'] ?? null,
+            // The year of the edition transcribed, when it differs from "year" (the original publication)
+            'edition_year' => $json_data['edition_year'] ?? null,
             'volume'     => $json_data['volume'] ?? null,
             'issue'      => $json_data['issue'] ?? null,
             // The key of the collection (in collections.json) this article is a part of
