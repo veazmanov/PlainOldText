@@ -1,9 +1,7 @@
 # Kepler's Postscript on Bartolus, September 1622
 
 ::: {.editorial-note}
-From the postscript to Johannes Kepler's letter to Philipp Müller written at Linz after 3 September 1622, in which Kepler questions the astrologer Abraham Bartolus about his use of harmonic intervals as astrological aspects. The letter itself survives at Pulkovo and was printed by Hanschius (*Epistolae*, 1718); the separate postscript is in the Bibliothèque nationale, Paris (Nouv. acq. lat. 1635, fol. 104), with a copy at fols. 105–108. First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 30–33.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German translation and notes are left out. Words in square brackets inside words or phrases were cut out of the original with the library stamps and filled in by the editors from the copy. The aspect symbols are given with their standard Unicode forms where they have one (☌ conjunction, ⚺ semisextile, ⚹ sextile, □ square, △ trine, ⚼ sesquiquadrate, ☍ opposition); Kepler's signs for the quintile (72°) and biquintile (144°), which have none, are given as Q and bQ. The fractions 1/10 and 3/10 are of the circle (36° and 108°). The second table is printed in 1927 with the aspects as columns; here they are rows.
+Only the Latin is given; the editors' German translation and notes are left out. Words in square brackets inside words or phrases were cut out of the original with the library stamps and filled in by the editors from the copy. The aspect symbols are given with their standard Unicode forms where they have one (☌ conjunction, ⚺ semisextile, ⚹ sextile, □ square, △ trine, ⚼ sesquiquadrate, ☍ opposition); Kepler's signs for the quintile (72°) and biquintile (144°), which have none, are given as Q and bQ. The fractions 1/10 and 3/10 are of the circle (36° and 108°). The second table is printed in 1927 with the aspects as columns; here they are rows.
 :::
 
 Post scripta.

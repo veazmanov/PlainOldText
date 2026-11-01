@@ -1,9 +1,7 @@
 # Müller to Bartsch, 8 May 1631
 
 ::: {.editorial-note}
-From Philipp Müller's reply to Jacob Bartsch, written at Leipzig on 8 May 1631: on the tables and copies Bartsch had sent, the second volume of the *Ephemerides*, a christening gift for Kepler's grandson, and the funeral poems for Kepler, with a passage quoted from a letter of Peter Crüger. The letter is among the Kepler manuscripts at the Pulkovo Observatory (vol. XI), where von Dyck found it. Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 103–104.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
+Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
 :::
 
 Salutem et off. Clarissime et Excell. vir, Domine conpater et amice dilecte.

@@ -1,9 +1,7 @@
 # Kepler to Müller, 26 August 1630
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller written at Sagan on 26 August 1630, sending the last years of his *Ephemerides* (to 1636) in casks to Leipzig, with instructions for their sale at the Frankfurt fair. The original is in the Bibliothèque nationale, Paris (Nouv. acq. lat. 1635, fols. 100–101; 89, 8. H. 21), with a copy in the Bibliothèque de l'Observatoire. First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 76–77.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out. [struck out:] and [in another hand:] translate the editors' German notes *gestrichen* and *von anderer Hand*.
+Only the letter is given; the editors' German summary and notes are left out. [struck out:] and [in another hand:] translate the editors' German notes *gestrichen* and *von anderer Hand*.
 :::
 
 S. P. D.

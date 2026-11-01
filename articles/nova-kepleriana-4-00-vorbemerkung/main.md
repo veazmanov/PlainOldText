@@ -1,9 +1,7 @@
 # Vorbemerkung
 
 ::: {.editorial-note}
-Walther von Dyck's preface to *Nova Kepleriana* 4: *Die Keplerbriefe auf der Nationalbibliothek und auf der Sternwarte in Paris*, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 3–4. Von Dyck (1856–1934), professor of mathematics at the Technische Hochschule in Munich, had found the letters in Paris at Easter 1914; the volume was presented to the Academy on 15 May 1926.
-
-Transcribed from the page images of the 1927 printing. Spaced type, used for emphasis and for names, is given in italics; line-end hyphens are rejoined.
+Spaced type, used for emphasis and for names, is given in italics; line-end hyphens are rejoined.
 :::
 
 Die Herausgabe einer Reihe von Drucken und Handschriften von Johannes Kepler, die ich vor dem Kriege an verschiedenen Orten wieder aufgefunden habe, ist durch den Krieg unterbrochen und weiterhin durch Amtsobliegenheiten verzögert worden. Ich hatte sie damals mit der Veröffentlichung zweier auf der Münchner Staatsbibliothek aufgefundener „*Prognostica*" der Jahre 1604 und 1624 (diese Abhandlungen Band XXV, 5), mit dem in Wittenberg entdeckten „*Glaubensbekenntnis*" aus dem Jahre 1623 (Abhandlungen Band XXV, 9) und mit einem *Briefwechsel Keplers mit Edmund Bruce* von 1603 (Abhandlungen Band XXVIII, 2), der sich in der Bibliothek des Britischen Museums in London befindet, begonnen.

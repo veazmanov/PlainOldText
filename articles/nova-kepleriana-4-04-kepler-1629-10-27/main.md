@@ -1,9 +1,7 @@
 # Kepler to Müller, 17/27 October 1629
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller, professor of mathematics at Leipzig, written at Sagan on 17/27 October 1629, about setting up a press for the edition of Tycho Brahe's observations. The original is lost; the copy is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9 (89); 89, 8. K). First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 65–67.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out. Square brackets are the editors'. ♀ ☿ are the signs for Venus and Mercury, ♄ ♃ for Saturn and Jupiter, ☉ for the sun.
+Only the letter is given; the editors' German summary and notes are left out. Square brackets are the editors'. ♀ ☿ are the signs for Venus and Mercury, ♄ ♃ for Saturn and Jupiter, ☉ for the sun.
 :::
 
 S. P. D.

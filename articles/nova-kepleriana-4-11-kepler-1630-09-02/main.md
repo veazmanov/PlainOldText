@@ -1,9 +1,7 @@
 # Kepler to Müller, 2 September 1630
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller written at Lauban on 2 September 1630, sent with Friedrich Bartsch to see to the sale of the *Ephemerides*, and defending the title he had given Wallenstein, as Duke of Mecklenburg, in their dedication. It is the last of Kepler's letters to Müller in the collection; Kepler died at Regensburg two months later. The original is lost; the copy is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9 (89); 89, 8. L). First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 78–79.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out.
+Only the letter is given; the editors' German summary and notes are left out.
 :::
 
 S. P. D.

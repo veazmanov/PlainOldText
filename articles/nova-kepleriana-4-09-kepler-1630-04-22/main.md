@@ -1,9 +1,7 @@
 # Kepler to Müller, 22 April 1630
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller written at Sagan on 22 April 1630, on his return from Wallenstein at Gitschin, sending 600 copies of the *Ephemerides* for 1630–1633, with notes on type and astronomical signs, and asking Müller to urge Jacob Bartsch and his wife Susanna to come to the christening of Kepler's newborn daughter. The original is lost; the copy is in the Bibliothèque nationale, Paris (Nouv. acq. lat. 1635, fol. 99; 89, 8. P). First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 74–76.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out. [sign omitted] marks a gap in the copy where, the editors explain, the lost original had an astronomical sign that the copyist left out; [cut out] marks a place cut out of the manuscript; other words in square brackets are the editors' restorations. Fractional dates (14/24, old and new style) are written with a slash.
+Only the letter is given; the editors' German summary and notes are left out. [sign omitted] marks a gap in the copy where, the editors explain, the lost original had an astronomical sign that the copyist left out; [cut out] marks a place cut out of the manuscript; other words in square brackets are the editors' restorations. Fractional dates (14/24, old and new style) are written with a slash.
 :::
 
 S. P. D.

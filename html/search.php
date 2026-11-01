@@ -214,7 +214,7 @@ function search_snippet(array $hit, int $before = 14, int $after = 26): string
     return $out . ($end < strlen($text) ? ' …' : '');
 }
 
-// A link to a passage: the article (its edition, or the text beside its translation), scrolled to a run of words around
+// A link to a passage: the article (its edition, or the text instead of its translation), scrolled to a run of words around
 // the first match by a text fragment, which browsers that don't support it ignore
 function search_link(array $result, array $hit): string
 {
@@ -225,7 +225,7 @@ function search_link(array $result, array $hit): string
         $query['edition'] = $result['edition'];
     }
     if (!$result['translation'] && article_translation($result['slug'])) {
-        $query['original'] = '1'; // the translation is shown by default; this puts the text beside it
+        $query['view'] = 'original'; // the translation is shown by default; this shows the text instead
     }
     $url .= $query ? '?' . http_build_query($query) : '';
 

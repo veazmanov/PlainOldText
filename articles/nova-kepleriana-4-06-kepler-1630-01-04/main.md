@@ -1,9 +1,7 @@
 # Kepler to Müller, 4 January 1630
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller written at Sagan on 4 January 1630, about the type and paper ordered at Leipzig for printing Tycho Brahe's observations, and the money held for him and Jacob Bartsch. The original is lost; the copy is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9 (89); 89, 8. M). First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 70–71.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out. Kepler's marginal note, which the 1927 edition prints as a footnote, is given as a footnote. Fractional dates (7/17, old and new style) are written with a slash.
+Only the letter is given; the editors' German summary and notes are left out. Kepler's marginal note, which the 1927 edition prints as a footnote, is given as a footnote. Fractional dates (7/17, old and new style) are written with a slash.
 :::
 
 S. P. et foelicissimi\

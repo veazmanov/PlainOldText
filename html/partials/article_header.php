@@ -1,8 +1,9 @@
 <?php // ./html/partials/article_header.php
 // The top of an article page: the title, a dateline (publication, date, page), the scans button and
 // edition switch, and a cog menu with the page tools in two groups: Source (source link) and Text
-// (markdown, GitHub, corrections). An article with an English translation shows it instead of the text;
-// "Original (Latin) text", beside the scans button, puts the text beside it (?original=1). A dagger after the title opens the citation beneath it, and "Summary" at the
+// (markdown, GitHub, corrections). An article with an English translation shows it instead of the text; a switch
+// under the scans button shows the text alone (?view=original) or the two side by side (?view=both). A dagger after
+// the title opens the citation beneath it, and "Summary" at the
 // end of the dateline opens the summary beneath that (cite.js). The scans open beside the text by default on wide
 // screens (body.scans-auto); see article.js. "Commentary" links to the commentary on the article (commentary.php).
 $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-expanded="false" aria-label="Cite this page" title="Cite this page">&dagger;</a>';
@@ -78,20 +79,29 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
     <p class="dateline-summary" id="summary"><?= htmlspecialchars($summary) ?></p>
 <?php endif; ?>
 
-<?php if ($has_scans || $translation || $commentary): ?>
+<?php if ($has_scans || $commentary): ?>
     <p class="article-actions sans">
         <?php if ($has_scans): ?>
             <a class="scans-toggle" href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
                 aria-controls="scan-panel" aria-expanded="<?= $scans_open ? 'true' : 'false' ?>"><?= $scans_open ? 'Hide scans' : 'Original scans' ?></a>
         <?php endif; ?>
-        <?php if ($has_scans && $translation): ?>&middot;<?php endif; ?>
-        <?php if ($translation): ?>
-            <a class="translation-toggle" href="<?= htmlspecialchars($translation_link) ?>"><?= $translation_shown ? 'Hide original' : ($meta['language'] ? 'Original (' . htmlspecialchars($meta['language']) . ') text' : 'Original text') ?></a>
-        <?php endif; ?>
         <?php if ($commentary): ?>
-            <?php if ($has_scans || $translation): ?>&middot; <?php endif; ?>
+            <?php if ($has_scans): ?>&middot; <?php endif; ?>
             <a class="commentary-link" href="<?= htmlspecialchars($commentary_link) ?>">Commentary<?= count($commentary) > 1 ? ' (' . count($commentary) . ')' : '' ?></a>
         <?php endif; ?>
+    </p>
+<?php endif; ?>
+
+<?php if ($view_links): ?>
+    <p class="edition-switch view-switch sans">
+        <?php $first = true; foreach ($view_links as $v => $link): ?>
+            <?= $first ? '' : '&middot;' ?>
+            <?php if ($v === $view): ?>
+                <strong aria-current="page"><?= htmlspecialchars($link['label']) ?></strong>
+            <?php else: ?>
+                <a href="<?= htmlspecialchars($link['url']) ?>"><?= htmlspecialchars($link['label']) ?></a>
+            <?php endif; ?>
+        <?php $first = false; endforeach; ?>
     </p>
 <?php endif; ?>
 
@@ -100,8 +110,8 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
         <?php $first = true; foreach ($editions as $id => $ed):
             $url = ($scans_open ? $slug_url . '/scans' : $slug_url)
                 . ($id === array_key_first($editions) ? '' : '?edition=' . rawurlencode($id));
-            if ($translation_shown) {
-                $url .= (str_contains($url, '?') ? '&' : '?') . 'original=1';
+            if ($view === 'original' || $view === 'both') {
+                $url .= (str_contains($url, '?') ? '&' : '?') . 'view=' . $view;
             } ?>
             <?= $first ? '' : '&middot;' ?>
             <?php if ($ed === $edition): ?>

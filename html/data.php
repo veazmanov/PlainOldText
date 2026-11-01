@@ -116,6 +116,10 @@ if (is_dir($articles_base)) {
             // true, or "true"; "false" as a string is not featured
             'featured'   => filter_var($json_data['featured'] ?? false, FILTER_VALIDATE_BOOLEAN),
             'source_url' => $json_data['source_url'] ?? null,
+            // Shown at the top of the article's editorial note: where the text comes from (the manuscript, the
+            // edition), and the copy transcribed (left out beside a translation alone)
+            'source'     => $json_data['source'] ?? '',
+            'transcribed_from' => $json_data['transcribed_from'] ?? '',
             'page'       => $json_data['page'] ?? null,
             'scans'      => $json_data['scans'] ?? [],
             'scans_pdf'  => $json_data['scans_pdf'] ?? null,

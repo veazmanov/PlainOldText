@@ -1,9 +1,7 @@
 # Bartsch's Open Letter to Kepler, 1628
 
 ::: {.editorial-note}
-From the front matter of Jacob Bartsch's *Motuum Coelestium Ephemeris Nova Tychonico-Kepleriana … ad Annum MDCXXIX ex Tabulis Rudolphinis … supputata* (Leipzig, 1629), the first ephemeris computed from Kepler's *Rudolphine Tables*: its dedication to the University of Strasbourg, dated 1 September 1628, and Bartsch's open letter to Kepler that follows it. Kepler's reply, dated 6 November 1629, appeared in the third part of his own *Ephemerides*. Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 92–95.
-
-Transcribed from the page images of the 1927 printing, not from the 1629 edition. Only the Latin is given; the editors' German introduction and notes are left out. The 1927 edition prints only extracts, and the omission marks (…) are the editors'; where they summarise a left-out passage in German, this is marked […]. Spaced type is given in italics.
+Only the Latin is given; the editors' German introduction and notes are left out. The 1927 edition prints only extracts, and the omission marks (…) are the editors'; where they summarise a left-out passage in German, this is marked […]. Spaced type is given in italics.
 :::
 
 ## Ad illustrem Alsatiae Studiorum Universitatem Academicam Straßburgum.

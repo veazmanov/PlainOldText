@@ -1646,7 +1646,7 @@ body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
 
 .toc { list-style: none; padding-left: 0; font-size: 1.1rem; }
 .toc li { margin: 0.2rem 0; }
-/* ---- An English translation beside the text (?translation=1, body.show-translation): a row per paragraph, the
+/* ---- An English translation beside the text (?view=both, body.show-translation): a row per paragraph, the
         text left and the translation right on wide screens, the translation under the text on narrow ones ---- */
 :where(.page-article) .parallel-translation {
     color: var(--ink-soft);
@@ -1673,7 +1673,6 @@ body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
         margin-right: auto;
     }
 
-    body:where(.page-article).show-translation:not(.show-scans) .translation-note,
     body:where(.page-article).show-translation:not(.show-scans) .footnotes {
         max-width: 500px;
     }

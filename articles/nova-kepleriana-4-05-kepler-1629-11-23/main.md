@@ -1,9 +1,7 @@
 # Kepler to Müller, 13/23 November 1629
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller written at Sagan on 13/23 November 1629, about type and paper for his press, and about the courtship of his daughter Susanna by Jacob Bartsch and a rival suitor. The original is lost; the copy is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9 (89); 89, 8. L). First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 67–70.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out. Kepler's marginal notes, which the 1927 edition prints as footnotes, are given as footnotes. Fractional dates (13/23, old and new style) are written with a slash.
+Only the letter is given; the editors' German summary and notes are left out. Kepler's marginal notes, which the 1927 edition prints as footnotes, are given as footnotes. Fractional dates (13/23, old and new style) are written with a slash.
 :::
 
 S. P. D.

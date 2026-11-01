@@ -1,9 +1,7 @@
 # Bartsch to Müller, 5 May 1631
 
 ::: {.editorial-note}
-From Jacob Bartsch's letter to Philipp Müller written at Lauban on 5 May 1631, after the Swedish advance had driven him from Sagan: on settling Kepler's estate, sending copies of the *Somnium*, his own tables and the *Rudolphine Tables*, their prices, and Tycho Brahe's observations, now in his hands. The original is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9; 89, 10. G. 8). Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 101–102.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics. Square brackets are the editors'.
+Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics. Square brackets are the editors'.
 :::
 
 Sal. plur. et off. perpet.

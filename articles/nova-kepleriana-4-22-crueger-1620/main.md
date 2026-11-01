@@ -1,9 +1,7 @@
 # Crüger to Müller, Easter Monday 1620
 
 ::: {.editorial-note}
-From Peter Crüger's letter to Philipp Müller of Easter Monday 1620, written at Danzig after he had received Kepler's three books on comets (Augsburg, 1619). He rejects Kepler's straight-line paths for comets, because they assume the earth's annual motion, and finds the *Astronomia nova* and the *Harmonice mundi* hard going. The original is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9; 89, 9. B. 24). Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 106–107.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German commentary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
+Only the Latin is given; the editors' German commentary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
 :::
 
 Libri Keppleriani in tempore advenerunt, sed tamen adhuc titulum Cometae abs te promissum expecto. Magnas et officiosas habeo gratias.

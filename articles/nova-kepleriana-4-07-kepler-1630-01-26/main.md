@@ -1,9 +1,7 @@
 # Kepler to Müller, 16/26 January 1630
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller written at Sagan on 16/26 January 1630, about paper for his press, the printing of the Jesuit Terrentius's letter from China with his commentary, and the start of work on the *Ephemerides*. The original is lost; the copy is in the Bibliothèque nationale, Paris (Nouv. acq. lat. 1635, fol. 96; 89, 8. N). First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 72–73.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out. [gap] marks a gap in the copy, where the editors think the name of the paper has dropped out. Fractional dates (7/17, old and new style) are written with a slash.
+Only the letter is given; the editors' German summary and notes are left out. [gap] marks a gap in the copy, where the editors think the name of the paper has dropped out. Fractional dates (7/17, old and new style) are written with a slash.
 :::
 
 S. P. D.

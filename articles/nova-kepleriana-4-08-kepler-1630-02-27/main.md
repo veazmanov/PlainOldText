@@ -1,9 +1,7 @@
 # Kepler to Müller, 27 February 1630
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Philipp Müller written at Sagan on 27 February 1630, about sending type and copies of the *Epistolium* from China, with a sharp remark on the war in Germany. The original is in the Bibliothèque nationale, Paris (Nouv. acq. lat. 1635, fol. 98; 89, 8. F. 19), with a copy at fol. 97. First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 73–74.
-
-Transcribed from the page images of the 1927 printing. Only the letter is given; the editors' German summary and notes are left out. Words in square brackets were cut out of the original and filled in by the editors from the copy.
+Only the letter is given; the editors' German summary and notes are left out. Words in square brackets were cut out of the original and filled in by the editors from the copy.
 :::
 
 S. P. D.

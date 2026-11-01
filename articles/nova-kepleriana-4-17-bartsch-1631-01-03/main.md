@@ -1,9 +1,7 @@
 # Bartsch to Müller, 3 January 1631
 
 ::: {.editorial-note}
-From Jacob Bartsch's letter to Philipp Müller written at Sagan on 3 January 1631, after the news of Kepler's death at Regensburg, and after a fruitless journey to Wallenstein at Gitschin to secure support for Kepler's widow and children and the press. The original is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9; 89, 10. F. 7). Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 99–100.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
+Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
 :::
 
 Sal. plur. et off. cum felicissimo hujus anni auspicio.

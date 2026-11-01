@@ -1,9 +1,7 @@
 # Crüger to Müller, 4/14 December 1629
 
 ::: {.editorial-note}
-From Peter Crüger's letter to Philipp Müller of 4/14 December 1629, written after he had received Kepler's *Rudolphine Tables*. The original is in the Bibliothèque de l'Observatoire, Paris (Delisle collection, 89, 9. N. 35). Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 109–110.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German commentary and notes are left out. The 1927 edition prints only the passages in which Crüger weighs the merits of the tables. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics. Square brackets are the editors': [illegible] stands for a word they could not read, and [sol et luna] is their gloss.
+Only the Latin is given; the editors' German commentary and notes are left out. The 1927 edition prints only the passages in which Crüger weighs the merits of the tables. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics. Square brackets are the editors': [illegible] stands for a word they could not read, and [sol et luna] is their gloss.
 :::
 
 S. P. Tempus est, Cl^me^ et Excell^me^ Vir, ut silentium compensem epistola bene longa, si tulerit materia. Multis me Tibi devinxisti meritis, multis communicatis novalibus. Quid contra praestem, non habeo praeter nuda de communibus studiis colloquia; nec enim in hoc Europae angulo Musae, praesertim hisce temporibus, adeo faecundantur atque in Germania, ubi quotidie fere novi quid pariunt. Quod possum, ingentes ago gratias pro communicatis non tantum typo vulgatis scriptis, sed etiam pro communicata Bartschii ad Te epistola. De quibus omnibus, quod spero Tibi non fore molestum, paucis tecum hic colloquar.

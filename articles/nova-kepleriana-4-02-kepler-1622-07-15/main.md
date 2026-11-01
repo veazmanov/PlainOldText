@@ -1,9 +1,7 @@
 # Kepler to Seussius, 15 July 1622
 
 ::: {.editorial-note}
-From Johannes Kepler's letter to Johann Seussius, ecclesiastical secretary to the Elector of Saxony, written (probably at Linz) on 15 July 1622 in reply to Philipp Müller's attack on the astrologer Paul Nagel, which Seussius had sent him. The original is in the Bibliothèque nationale, Paris (Nouv. acq. lat. 1635, fols. 92–93), with a copy at fols. 94–95. First printed in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 27–29.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German translation and notes are left out. Square brackets are the editors'. In the original letters, strips were cut out to remove the stamps of the Dépôt de la Marine, and the editors filled the gaps from the copy; those words are in square brackets inside words or phrases, e.g. mi[hi incommodum ab]. They also expanded abbreviations in brackets, e.g. S[alutem], and marked the start of fol. 92b with (S. 92^b^). Kepler's marginal notes are given in parentheses after [margin:], where the editors put them.
+Only the Latin is given; the editors' German translation and notes are left out. Square brackets are the editors'. In the original letters, strips were cut out to remove the stamps of the Dépôt de la Marine, and the editors filled the gaps from the copy; those words are in square brackets inside words or phrases, e.g. mi[hi incommodum ab]. They also expanded abbreviations in brackets, e.g. S[alutem], and marked the start of fol. 92b with (S. 92^b^). Kepler's marginal notes are given in parentheses after [margin:], where the editors put them.
 :::
 
 S[alutem] P[lurimam] D[ico].

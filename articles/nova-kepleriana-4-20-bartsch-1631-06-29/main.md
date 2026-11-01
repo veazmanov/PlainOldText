@@ -1,9 +1,7 @@
 # Bartsch to Müller, 19/29 June 1631
 
 ::: {.editorial-note}
-From Jacob Bartsch's letter to Philipp Müller written at Lauban on 19/29 June 1631, after Kepler's widow and children had moved there from Sagan: on the journey still to be made to Regensburg, Linz and Vienna, his logarithmic tables, the price of the *Ephemerides*, Müller's gift to his son, and the funeral poems for Kepler. The original is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9; 89, 10. H. 9). Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 104–105.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
+Only the Latin is given; the editors' German summary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
 :::
 
 Sal. plur. et off. perpet. etc.

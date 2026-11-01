@@ -1,9 +1,7 @@
 # Crüger to Müller, Easter Tuesday 1635
 
 ::: {.editorial-note}
-From Peter Crüger's letter to Philipp Müller of Easter Tuesday 1635, written at Danzig, reporting what Kepler's son Ludwig, passing through Danzig with the English ambassador, had told him of his stepmother and her children, of his father's papers, and of Tycho's observations. The original is in the Bibliothèque de l'Observatoire, Paris (B, 1, 9; 89, 9. Cc. 49). Printed in extracts in *Nova Kepleriana* 4, ed. Walther von Dyck and Max Caspar, Abhandlungen der Bayerischen Akademie der Wissenschaften, Math.-naturw. Abteilung 31, no. 1 (Munich, 1927), 111–112.
-
-Transcribed from the page images of the 1927 printing. Only the Latin is given; the editors' German commentary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
+Only the Latin is given; the editors' German commentary and notes are left out. The 1927 edition prints only extracts. Each paragraph below is one of its extracts, and the omission marks (…) are the editors'. Spaced type, which the editors used for emphasis, is given in italics.
 :::
 
 Cum legato Regis Angliae praeterita hyeme huc venit Ludovicus Kepplerus, magni nostri filius, Medicinae candidatus, mecum aliquoties familiariter versatus, postea autem in Borussiam Ducalem digressus. Is mihi retulit statum novercae cum reliquis liberis, ut scilicet summo cum periculo Francofurtum (ad Moenum) venerint, ibique ab eo mense Decembri (quo circiter tempore Legatus Anglicus illac pertransierat) relictos, non admodum nummatos; coactum ipsum sua, quae comportaverat, novercae communicare, nunc se ipsum aeris egere.

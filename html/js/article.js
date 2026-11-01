@@ -25,7 +25,7 @@
         } catch (e) {}
     }
 
-    // Reflect the state in the button, the URL (unless opened by default) and the edition and translation links
+    // Reflect the state in the button, the URL (unless opened by default) and the edition and view links
     function show(open, byDefault) {
         body.classList.remove('scans-auto');
         body.classList.toggle('show-scans', open);
@@ -34,7 +34,7 @@
         toggle.setAttribute('href', (open ? textUrl : textUrl + '/scans') + location.search);
         var path = open && !byDefault ? textUrl + '/scans' : textUrl;
         history.replaceState(null, '', path + location.search + location.hash);
-        document.querySelectorAll('.edition-switch a, .translation-toggle').forEach(function (a) {
+        document.querySelectorAll('.edition-switch a').forEach(function (a) {
             var url = new URL(a.href);
             url.pathname = path;
             a.href = url.toString();
