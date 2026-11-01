@@ -288,6 +288,21 @@ hr {
     }
 }
 
+/* ---- The date a page was printed (topnav.php), under the masthead ---- */
+.print-stamp {
+    display: none;
+}
+
+@media print {
+    .print-stamp:not(:empty) {
+        display: block;
+        margin: 0.4rem 0 0;
+        font-size: 0.85rem;
+        font-style: italic;
+        color: var(--ink-muted);
+    }
+}
+
 /* ---- Sidenote markers: an inline block, which would otherwise take its paragraph's first-line indent and
         leave a gap before the number ---- */
 label.sidenote-number {
