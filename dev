@@ -1,3 +1,16 @@
 #!/bin/bash
 
-php -S localhost:8002 -t html html/index.php
+port=8003
+while lsof -iTCP:"$port" -sTCP:LISTEN -n -P >/dev/null 2>&1; do
+	port=$((port + 1))
+done
+
+# Open the page once the server is listening
+(
+	until lsof -iTCP:"$port" -sTCP:LISTEN -n -P >/dev/null 2>&1; do
+		sleep 0.1
+	done
+	open "http://localhost:$port/"
+) &
+
+php -S localhost:"$port" -t html html/index.php
