@@ -1177,23 +1177,7 @@ body:where(.page-article) > article {
     text-shadow: none;
 }
 
-/* ---- Citation: a dagger after the title opens it beneath the title (cite.js; :target without JS) ---- */
-:where(.page-article) .cite-mark {
-    margin-left: 0.12em;
-    font-size: 0.55em;
-    vertical-align: super;
-    line-height: 0;
-    color: var(--accent);
-    text-decoration: none;
-    background: none;
-    text-shadow: none;
-}
-
-:where(.page-article) .cite-mark:hover,
-:where(.page-article) .cite-mark[aria-expanded="true"] {
-    color: var(--ink);
-}
-
+/* ---- Citation: "Cite this page" in the cog menu opens it beneath the title (cite.js; :target without JS) ---- */
 :where(.page-article) .title-citation:not(.open):not(:target) {
     display: none;
 }
@@ -1216,10 +1200,6 @@ body:where(.page-article) > article {
     hyphens: none;
     font-size: inherit;
     line-height: inherit;
-}
-
-:where(.page-article) .title-citation-mark {
-    color: var(--accent);
 }
 
 :where(.page-article) .title-citation a {

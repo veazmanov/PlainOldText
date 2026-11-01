@@ -1,15 +1,14 @@
 <?php // ./html/partials/article_header.php
 // The top of an article page: the title, a dateline (publication, date, page), the scans button and
-// edition switch, and a cog menu with the page tools in two groups: Source (source link) and Text
+// edition switch, and a cog menu with the page tools in two groups: Source (citation, source link) and Text
 // (markdown, GitHub, corrections). An article with an English translation shows it instead of the text; a switch
-// under the scans button shows the text alone (?view=original) or the two side by side (?view=both). A dagger after
-// the title opens the citation beneath it, and "Summary" at the
+// under the scans button shows the text alone (?view=original) or the two side by side (?view=both). "Cite this page"
+// in the cog menu opens the citation beneath the title, and "Summary" at the
 // end of the dateline opens the summary beneath that (cite.js). The scans open beside the text by default on wide
 // screens (body.scans-auto); see article.js. "Commentary" links to the commentary on the article (commentary.php).
-$cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-expanded="false" aria-label="Cite this page" title="Cite this page">&dagger;</a>';
 ?>
 <div class="article-top">
-    <?= preg_replace('/(<\/h[1-3]>)$/i', $cite_mark . '$1', trim($article_title_html)) ?>
+    <?= trim($article_title_html) ?>
 
     <details class="page-tools sans" id="page-tools">
         <summary class="page-tools-button" aria-label="Page tools" title="Page tools">
@@ -19,9 +18,12 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
             </svg>
         </summary>
         <div class="page-tools-menu">
-            <?php if (!empty($source_url)): ?>
-                <p class="menu-heading">Source</p>
-                <ul>
+            <p class="menu-heading">Source</p>
+            <ul>
+                <li>
+                    <a class="menu-item cite-toggle" href="#cite" aria-controls="cite" aria-expanded="false">Cite this page</a>
+                </li>
+                <?php if (!empty($source_url)): ?>
                     <li>
                         <details class="menu-disclosure">
                             <summary class="menu-item">Go to source</summary>
@@ -30,8 +32,8 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
                             </p>
                         </details>
                     </li>
-                </ul>
-            <?php endif; ?>
+                <?php endif; ?>
+            </ul>
 
             <p class="menu-heading">Text</p>
             <ul>
@@ -54,9 +56,9 @@ $cite_mark = '<a class="cite-mark sans" href="#cite" aria-controls="cite" aria-e
     </details>
 </div>
 
-<?php // The citation, opened by the dagger after the title (shown by :target without JS) ?>
+<?php // The citation, opened by "Cite this page" in the cog menu (shown by :target without JS) ?>
 <div class="title-citation sans" id="cite">
-    <p><span class="title-citation-mark" aria-hidden="true">&dagger;</span> <span id="citation"><?= $citation ?></span></p>
+    <p id="citation"><?= $citation ?></p>
     <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
 </div>
 

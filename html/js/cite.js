@@ -1,13 +1,16 @@
 // ./html/js/cite.js
-// The dagger after an article's title opens and closes the citation beneath it, without jumping to #cite;
+// "Cite this page" in the cog menu opens and closes the citation beneath the title, without jumping to #cite;
 // "Summary" in the dateline does the same for the summary.
-document.querySelectorAll('.cite-mark, .summary-toggle').forEach(function (mark) {
+document.querySelectorAll('.cite-toggle, .summary-toggle').forEach(function (mark) {
     var panel = document.getElementById(mark.getAttribute('aria-controls'));
     mark.addEventListener('click', function (event) {
         event.preventDefault();
         var open = !panel.classList.contains('open');
         panel.classList.toggle('open', open);
         mark.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (mark.classList.contains('cite-toggle')) {
+            mark.textContent = open ? 'Hide citation' : 'Cite this page';
+        }
     });
 });
 
