@@ -13,7 +13,7 @@
                 <a href="/<?= $slug ?>"<?= $current_page === $slug ? ' aria-current="page"' : '' ?>><?= $label ?></a>
             </li>
         <?php endforeach; ?>
-        <?php // Light/dark toggle (theme.js), shown once the script runs ?>
+        <?php // Light/dark toggle (theme.js), shown once the script runs; CSS pins it to the corner of the window ?>
         <li class="site-nav-theme" id="theme-toggle-item" hidden>
             <button type="button" class="theme-toggle" id="theme-toggle">
                 <svg class="theme-icon-dark" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">

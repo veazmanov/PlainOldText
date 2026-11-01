@@ -1,7 +1,7 @@
 // ./html/js/theme.js
-// The light/dark toggle at the end of the top nav. The page follows the system setting until the reader picks the other theme,
-// which is kept in <html data-theme> and localStorage (read back in head.php); picking the system's own theme
-// again forgets the choice, so the page follows the system once more.
+// The light/dark toggle, pinned to the bottom-left corner of the window. The page follows the system setting until the reader picks a theme,
+// which is then kept in <html data-theme>, a cookie for the whole of vjbe.net (so both of the site's domains share it)
+// and localStorage, and read back in head.php before the page draws.
 (function () {
     var button = document.getElementById('theme-toggle');
     var root = document.documentElement;
@@ -17,19 +17,18 @@
         button.title = 'Switch to ' + next + ' mode';
     }
 
+    function remember(theme) {
+        var domain = /(^|\.)vjbe\.net$/.test(location.hostname) ? '; domain=vjbe.net' : '';
+        document.cookie = 'pot-theme=' + theme + '; path=/; max-age=31536000; SameSite=Lax' + domain;
+        try {
+            localStorage.setItem('pot-theme', theme);
+        } catch (e) {}
+    }
+
     button.addEventListener('click', function () {
         var next = current() === 'dark' ? 'light' : 'dark';
-        try {
-            if (next === (system.matches ? 'dark' : 'light')) {
-                delete root.dataset.theme;
-                localStorage.removeItem('pot-theme');
-            } else {
-                root.dataset.theme = next;
-                localStorage.setItem('pot-theme', next);
-            }
-        } catch (e) {
-            root.dataset.theme = next;
-        }
+        root.dataset.theme = next;
+        remember(next);
         label();
     });
 
