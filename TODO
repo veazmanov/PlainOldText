@@ -26,3 +26,33 @@
 - [ ] rebrand - Victor Azmanov's personal library
 - [ ] make the dark mode toggle visible (sticky) at all times
 - [ ] publish Kepler's *Admonitio ad astronomos rerumque coelestium studiosos* (1629), his pamphlet predicting the transits of Mercury and Venus in 1631. None of the Nova Kepleriana 4 letters mentions it.
+
+# TODO: copyright and provenance
+
+## Source editions
+- [ ] For every text, record the exact edition it was transcribed from (not just the original work) in the collection's Chicago reference
+- [ ] Novum Organum (n1fx2): confirm which English translation was used. Spedding/Ellis/Heath (1858) is fine; Urbach & Gibson (1994) or Jardine & Silverthorne (2000) would be in copyright
+- [ ] Hume, Enquiry (cn2ry) and Dialogues (y5qfr): confirm the copy-text is a pre-1950s printing, not a modern critical edition
+- [ ] Alexis, "Don Alexis unto the Reader" (ph63y): the spelling is modernised. Note who modernised it (me, or a named modern edition) and switch to an old printing if needed
+- [ ] Nova Kepleriana 4 (713cz): add the public-domain rationale (von Dyck d. 1934, so free in the EU since 2005; Kepler's letters long free)
+
+## Public-domain rationale
+- [ ] Add a fixed "why this is public domain" field to every collection (author's death date, or anonymous publication more than 70 years ago)
+- [ ] Rewrite the About page answer to "Is this copyright infringement?": every text is in the public domain, and each collection states its source edition and why
+
+## Scans
+- [ ] Audit every hosted scan and note where it came from
+- [ ] Remove any images downloaded from the British Newspaper Archive, Gale or the Spectator Archive (their terms forbid redistribution); link to their page instead
+- [ ] Prefer scans from sources that allow reuse: Delpher, Gallica, Internet Archive, Google Books, Wikimedia Commons, or my own photos of physical copies
+- [ ] Store each scan's source and licence in data.json
+
+## Licence for my own work
+- [ ] Add a site licence: transcriptions and metadata CC0; translations, summaries and editorial notes CC BY 4.0
+- [ ] Show the licence in the footer and in the repository (LICENSE file)
+- [ ] For texts started from Wikisource: keep the credit, and check that the CC BY-SA share-alike terms are met (or that the text was re-checked against the scan)
+
+## In-copyright cards (if added)
+- [ ] Mark the card clearly as "in copyright, not transcribed"
+- [ ] Include only bibliographic metadata, a summary in my own words, at most one or two sentences of quotation, and a link to where the work can be obtained
+- [ ] Give each quote a reason to be there (a note on what it shows, or the essay it was used in), name the author and source, and quote it unchanged
+- [ ] No cover images
