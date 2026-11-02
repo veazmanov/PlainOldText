@@ -234,9 +234,16 @@ function get_article_preview($uri)
 
 function render_catalogue()
 {
-    global $site_name, $categories, $last_edited, $stable_ids, $metadata;
+    global $site_name, $categories, $last_edited, $newly_added, $stable_ids, $metadata, $collection_ids, $collections;
     $links = get_compiled_links();
-    $last_edited_article = $metadata[$stable_ids[$last_edited] ?? ''] ?? null;
+    // Articles or collections shown above the cards, by label
+    $spotlight = [];
+    foreach (['Newly added' => $newly_added, 'Last edited' => $last_edited] as $label => $id) {
+        $item = $metadata[$stable_ids[$id] ?? ''] ?? $collections[$collection_ids[$id] ?? ''] ?? null;
+        if ($item) {
+            $spotlight[$label] = $item;
+        }
+    }
     $current_page = 'catalogue';
     include(__DIR__ . '/catalogue.php');
 }

@@ -331,13 +331,13 @@ label.sidenote-number {
    2. Catalogue
    =================================================================== */
 
-/* ---- "Last edited": one recently edited article ($last_edited in data.php), above the cards ---- */
-:where(.page-catalogue) .last-edited {
-    margin: 0 12.5% 2.5rem 0;
+/* ---- "Newly added" and "Last edited" ($newly_added and $last_edited in data.php), above the cards ---- */
+:where(.page-catalogue) .spotlight {
+    margin: 0 12.5% 2rem 0;
     padding: 0 0 0 1.25rem;
     border-left: 3px solid var(--accent);
 }
-:where(.page-catalogue) .last-edited-byline {
+:where(.page-catalogue) .spotlight-byline {
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem 1rem;
@@ -345,25 +345,25 @@ label.sidenote-number {
     font-size: 0.8rem;
     color: var(--ink-muted);
 }
-:where(.page-catalogue) .last-edited-label {
+:where(.page-catalogue) .spotlight-label {
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--accent);
 }
-:where(.page-catalogue) .last-edited-title {
+:where(.page-catalogue) .spotlight-title {
     margin: 0.35rem 0 0.4rem;
     font-size: 1.6rem;
     font-style: normal;
     line-height: 1.25;
 }
-:where(.page-catalogue) .last-edited-title a {
+:where(.page-catalogue) .spotlight-title a {
     color: var(--ink);
     text-decoration: none;
 }
-:where(.page-catalogue) .last-edited-title a:hover {
+:where(.page-catalogue) .spotlight-title a:hover {
     text-decoration: underline;
 }
-:where(.page-catalogue) .last-edited-summary {
+:where(.page-catalogue) .spotlight-summary {
     margin: 0;
     width: auto;
     font-size: 1.05rem;
@@ -866,7 +866,7 @@ label.sidenote-number {
         margin-right: 0;
         padding: 1rem 1rem 0.85rem;
     }
-    :where(.page-catalogue) .last-edited {
+    :where(.page-catalogue) .spotlight {
         margin-right: 0;
         padding-left: 1rem;
     }

@@ -70,20 +70,22 @@ include __DIR__ . '/partials/head.php';
             </form>
             <noscript><style>.catalogue-tools .filter-panel[hidden] { display: grid; } .filter-toggle { display: none; }</style></noscript>
 
-            <?php if ($last_edited_article): ?>
-                <aside class="last-edited" aria-labelledby="last-edited-label">
-                    <p class="last-edited-byline sans">
-                        <span id="last-edited-label" class="last-edited-label">Last edited</span>
-                        <span><?= htmlspecialchars($last_edited_article['pub']) ?> &middot; <?= htmlspecialchars($last_edited_article['date']) ?></span>
+            <?php foreach ($spotlight as $label => $item):
+                $label_id = 'spotlight-' . preg_replace('/\W+/', '-', strtolower($label)); ?>
+                <aside class="spotlight" aria-labelledby="<?= $label_id ?>">
+                    <p class="spotlight-byline sans">
+                        <span id="<?= $label_id ?>" class="spotlight-label"><?= htmlspecialchars($label) ?></span>
+                        <?php // A collection's byline names the author, as on its card ?>
+                        <span><?= htmlspecialchars(isset($item['members']) ? ($item['author'] ?: $item['pub']) : $item['pub']) ?> &middot; <?= htmlspecialchars($item['date']) ?></span>
                     </p>
-                    <h2 class="last-edited-title">
-                        <a href="/stable/<?= htmlspecialchars($last_edited_article['id']) ?>"><?= htmlspecialchars($last_edited_article['title']) ?></a>
+                    <h2 class="spotlight-title">
+                        <a href="/stable/<?= htmlspecialchars($item['id']) ?>"><?= htmlspecialchars($item['title']) ?></a>
                     </h2>
-                    <?php if (!empty($last_edited_article['summary'])): ?>
-                        <p class="last-edited-summary"><?= htmlspecialchars($last_edited_article['summary']) ?></p>
+                    <?php if (!empty($item['summary'])): ?>
+                        <p class="spotlight-summary"><?= htmlspecialchars($item['summary']) ?></p>
                     <?php endif; ?>
                 </aside>
-            <?php endif; ?>
+            <?php endforeach; ?>
 
             <ul class="clip-grid" id="clip-grid">
                 <?php foreach ($links as $article):
