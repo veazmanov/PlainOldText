@@ -34,9 +34,10 @@
     "bacon-1620-novum-organum": {
         "id": "n1fx2",
         "title": "Novum Organum",
+        "subtitle": "or, True Suggestions for the Interpretation of Nature",
         "summary": "Bacon's new instrument for the sciences, in two books of aphorisms. The first clears the ground: the idols that beset the mind, the faults of the received philosophy, and the grounds for hope in a new method. The second sets out that method, a true induction rising by degrees from tables of instances to the forms of things, worked through on the nature of heat, with the twenty-seven kinds of prerogative instances.",
         "source": "Bacon, Francis. *Novum Organum*. Edited by Joseph Devey. New York: P. F. Collier & Son, 1902. First published in Latin, London, 1620.",
-        "transcribed_from": "the [Project Gutenberg text](https://www.gutenberg.org/ebooks/45988) (eBook #45988), by Jana Srna, Marie Bartolo, Bryan Ness and the Online Distributed Proofreading Team.",
+        "transcribed_from": "the [Project Gutenberg text](https://www.gutenberg.org/ebooks/45988) (eBook #45988), by Jana Srna, Marie Bartolo, Bryan Ness and the Online Distributed Proofreading Team. Roman numerals replaced with Arabic numerals.",
         "copyright": "In the public domain. Bacon died in 1626, and Joseph Devey, the editor, in 1897; this printing was published in the United States in 1902. The Gutenberg text is in the public domain in the USA."
     }
 }
