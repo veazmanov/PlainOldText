@@ -80,20 +80,20 @@ function commentary_about_links(array $c): string
     return implode('; ', $links);
 }
 
-// The byline: the author, the date, and whether it is a draft
-function commentary_byline(array $c): string
+// The dateline: the author, the date, and whether it is a draft
+function commentary_dateline(array $c): string
 {
-    return implode(' <span class="dateline-sep" aria-hidden="true">&middot;</span> ', array_filter([
-        $c['author'] ? htmlspecialchars($c['author']) : null,
-        $c['date'] !== '' ? htmlspecialchars(commentary_date($c['date'])) : null,
+    return dateline([
+        $c['author'] ? h($c['author']) : null,
+        $c['date'] !== '' ? h(commentary_date($c['date'])) : null,
         $c['draft'] ? '<span class="commentary-draft">Draft (local only)</span>' : null,
-    ]));
+    ]);
 }
 
 // /commentary/<id>
 function render_commentary(string $id)
 {
-    global $site_name;
+    global $site_name, $site_url, $github_repo;
     $c = commentary_all()[$id] ?? null;
     if ($c === null) {
         http_response_code(404);
@@ -103,13 +103,15 @@ function render_commentary(string $id)
     $title = strip_tags($c['title']);
     $pub_name = $site_name;
     $body_class = 'page-article page-commentary';
-    $github_url = 'https://github.com/veazmanov/PlainOldText/blob/main/commentary/' . rawurlencode($c['name']) . '.md';
     $content = '<p class="commentary-kind sans"><a href="/commentary">Commentary</a></p>'
-        . '<h1>' . $c['title'] . '</h1>'
-        . '<p class="dateline sans">' . commentary_byline($c) . '</p>'
-        . ($c['about'] ? '<p class="commentary-about sans">On ' . commentary_about_links($c) . '</p>' : '')
-        . file_get_contents($c['html'])
-        . '<p class="commentary-source sans"><a href="' . htmlspecialchars($github_url) . '">View on GitHub</a></p>';
+        . info_panel([
+            'title'      => '<h1>' . $c['title'] . '</h1>',
+            'dateline'   => commentary_dateline($c),
+            'context'    => $c['about'] ? '<p class="commentary-about sans">On ' . commentary_about_links($c) . '</p>' : null,
+            'citation'   => chicago_commentary_citation($c, $site_url . '/commentary/' . $c['id']),
+            'github_url' => $github_repo . '/blob/main/commentary/' . rawurlencode($c['name']) . '.md',
+        ])
+        . file_get_contents($c['html']);
     include(__DIR__ . '/layout.php');
 }
 
@@ -123,7 +125,7 @@ function render_commentary_list()
     $items = '';
     foreach (commentary_all() as $c) {
         $items .= '<li><p class="commentary-entry"><a href="/commentary/' . htmlspecialchars($c['id']) . '">' . $c['title'] . '</a></p>'
-            . '<p class="dateline sans">' . commentary_byline($c) . '</p>'
+            . commentary_dateline($c)
             . ($c['about'] ? '<p class="commentary-about sans">On ' . commentary_about_links($c) . '</p>' : '') . '</li>';
     }
     $content = '<h1>Commentary</h1>'

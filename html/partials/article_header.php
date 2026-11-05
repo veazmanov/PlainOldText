@@ -1,85 +1,11 @@
 <?php // ./html/partials/article_header.php
-// The top of an article page: the title, a dateline (publication, date, page), the scans button and
-// edition switch, and a cog menu with the page tools in two groups: Source (citation, source link) and Text
-// (markdown, GitHub, corrections). An article with an English translation shows it instead of the text; a switch
-// under the scans button shows the text alone (?view=original) or the two side by side (?view=both). "Cite this page"
-// in the cog menu opens the citation beneath the title, and "Summary" at the
-// end of the dateline opens the summary beneath that (cite.js). The scans open beside the text by default on wide
-// screens (body.scans-auto); see article.js. "Commentary" links to the commentary on the article (commentary.php).
+// The top of an article page: the title, dateline and the panel behind the "i" ($info_panel, from info_panel() in
+// index.php), then the scans button and edition switch. An article with an English translation shows it instead of
+// the text; a switch under the scans button shows the text alone (?view=original) or the two side by side
+// (?view=both). The scans open beside the text by default on wide screens (body.scans-auto); see article.js.
+// "Commentary" links to the commentary on the article (commentary.php).
 ?>
-<div class="article-top">
-    <?= trim($article_title_html) ?>
-
-    <details class="page-tools sans" id="page-tools">
-        <summary class="page-tools-button" aria-label="Page tools" title="Page tools">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-                <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"
-                    d="M10.3 2.5h3.4l.5 2.6a7.6 7.6 0 0 1 1.9 1.1l2.5-.9 1.7 2.9-2 1.7a7.6 7.6 0 0 1 0 2.2l2 1.7-1.7 2.9-2.5-.9a7.6 7.6 0 0 1-1.9 1.1l-.5 2.6h-3.4l-.5-2.6a7.6 7.6 0 0 1-1.9-1.1l-2.5.9-1.7-2.9 2-1.7a7.6 7.6 0 0 1 0-2.2l-2-1.7 1.7-2.9 2.5.9a7.6 7.6 0 0 1 1.9-1.1z"/>
-            </svg>
-        </summary>
-        <div class="page-tools-menu">
-            <p class="menu-heading">Source</p>
-            <ul>
-                <li>
-                    <a class="menu-item cite-toggle" href="#cite" aria-controls="cite" aria-expanded="false">Cite this page</a>
-                </li>
-                <?php if (!empty($source_url)): ?>
-                    <li>
-                        <details class="menu-disclosure">
-                            <summary class="menu-item">Go to source</summary>
-                            <p class="menu-reveal">
-                                <a class="source-link" href="<?= htmlspecialchars($source_url) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($source_url) ?></a>
-                            </p>
-                        </details>
-                    </li>
-                <?php endif; ?>
-            </ul>
-
-            <p class="menu-heading">Text</p>
-            <ul>
-                <?php if (!empty($markdown_url)): ?>
-                    <li>
-                        <a class="menu-item" href="<?= htmlspecialchars($markdown_url) ?>">View as markdown</a>
-                    </li>
-                <?php endif; ?>
-                <li>
-                    <a class="menu-item" href="<?= htmlspecialchars($github_url) ?>" target="_blank" rel="noopener">View on GitHub</a>
-                </li>
-                <li>
-                    <details class="menu-disclosure">
-                        <summary class="menu-item">Submit a correction</summary>
-                        <p class="menu-reveal">Email your correction to <a href="mailto:plainoldtext@vjbe.net">plainoldtext@vjbe.net</a>.</p>
-                    </details>
-                </li>
-            </ul>
-        </div>
-    </details>
-</div>
-
-<?php // The citation, opened by "Cite this page" in the cog menu (shown by :target without JS) ?>
-<div class="title-citation sans" id="cite">
-    <p id="citation"><?= $citation ?></p>
-    <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
-</div>
-
-<?php // Dateline: the publication and date, under the title (styled like the catalogue cards), and the summary toggle ?>
-<p class="dateline sans">
-    <span class="dateline-pub"><?= htmlspecialchars($pub_name) ?></span>
-    <span class="dateline-sep" aria-hidden="true">&middot;</span>
-    <span><?= htmlspecialchars($date_str) ?><?php if (!empty($page_num)): ?>, p.&nbsp;<?= htmlspecialchars($page_num) ?><?php endif; ?></span>
-    <?php if (!empty($summary)): ?>
-        <span class="dateline-more"><span class="dateline-sep" aria-hidden="true">&middot;</span><a class="summary-toggle" href="#summary" aria-controls="summary" aria-expanded="false">Summary</a></span>
-    <?php endif; ?>
-</p>
-
-<?php if (!empty($collection)): ?>
-    <p class="collection-line sans">Part of <a href="/stable/<?= htmlspecialchars($collection['id']) ?>"><em><?= htmlspecialchars($collection['title']) ?></em></a></p>
-<?php endif; ?>
-
-<?php // The summary, opened by "Summary" in the dateline (shown by :target without JS) ?>
-<?php if (!empty($summary)): ?>
-    <p class="dateline-summary" id="summary"><?= htmlspecialchars($summary) ?></p>
-<?php endif; ?>
+<?= $info_panel ?>
 
 <?php if ($has_scans || $commentary): ?>
     <p class="article-actions sans">
@@ -125,8 +51,6 @@
     </p>
 <?php endif; ?>
 
-<script src="<?= asset('js/cite.js') ?>"></script>
-<script src="<?= asset('js/page-tools.js') ?>"></script>
 
 <?php if ($has_scans): ?>
     <?php // Shown by CSS when the body has show-scans (opened) or scans-auto (the default, wide screens only) ?>

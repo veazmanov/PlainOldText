@@ -3,11 +3,19 @@
 
 $site_name = "Plain Old Text";
 $site_url = "https://sources.vjbe.net";
+// The repository with the texts and the site, for "View on GitHub" links
+$github_repo = "https://github.com/veazmanov/PlainOldText";
 
 // The stable id of an article edited recently, shown as "Last edited" above the catalogue; null for none.
 $last_edited = 'pqxke';
 // The stable id of an article or collection added recently, shown as "Newly added" above the catalogue; null for none.
 $newly_added = 'n1fx2';
+
+// Escapes text for HTML
+function h($s)
+{
+    return htmlspecialchars((string) $s);
+}
 
 // URL for a file under html/, versioned by its modification time so browsers refetch it after a deploy.
 function asset($path)
@@ -125,6 +133,8 @@ if (is_dir($articles_base)) {
             'page'       => $json_data['page'] ?? null,
             'scans'      => $json_data['scans'] ?? [],
             'scans_pdf'  => $json_data['scans_pdf'] ?? null,
+            // A map of the places in the text (an image URL), shown by the map icon under the "i" (info_panel.php)
+            'map'        => $json_data['map'] ?? null,
             // Which part of the first scan the catalogue card shows (a CSS background-position)
             'card_position' => $json_data['card_position'] ?? null,
             // For the citation (see citation.php)
@@ -175,6 +185,8 @@ foreach ($collections_data ?: [] as $key => $c) {
         'key'     => $key,
         'id'      => $id,
         'title'   => $c['title'] ?? $key,
+        // Optional, shown under the title on the contents page (e.g. the work's alternative title)
+        'subtitle' => $c['subtitle'] ?? '',
         'summary' => $c['summary'] ?? '',
         // Shown in a note at the top of the contents page. "source": the Chicago bibliography entry of the
         // original edition; "transcribed_from": the copy actually transcribed (optional); "copyright": why the
@@ -182,6 +194,9 @@ foreach ($collections_data ?: [] as $key => $c) {
         'source'           => $c['source'] ?? '',
         'transcribed_from' => $c['transcribed_from'] ?? '',
         'copyright'        => $c['copyright'] ?? '',
+        // A map of the places in the collection (an image URL), shown on its contents page and on parts without
+        // a map of their own
+        'map'     => $c['map'] ?? '',
         'members' => [],
     ];
 }
@@ -213,6 +228,12 @@ foreach ($collections as $key => $c) {
         'sort_date' => $first['sort_date'],
         'category'  => $first['category'],
     ];
+}
+
+// After a summary in data.json or collections.json, which are generated, not written by an editor
+function summary_note()
+{
+    return ' <span class="summary-note sans">[This is an automatically generated summary]</span>';
 }
 
 // Tufte sidenote

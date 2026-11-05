@@ -5,55 +5,83 @@
 
 function chicago_citation($meta, $url)
 {
-    $h = fn($s) => htmlspecialchars($s, ENT_QUOTES);
-
     // "Headline," — a title's final period is dropped, its double quotes become single,
     // and no comma follows a title ending in ? or !
     $title = rtrim(trim($meta['title']), '.');
     $title = strtr($title, ['“' => '‘', '”' => '’', '"' => '\'']);
-    $headline = '“' . $h($title) . (preg_match('/[?!]$/', $title) ? '”' : ',”');
+    $headline = '“' . h($title) . (preg_match('/[?!]$/', $title) ? '”' : ',”');
 
     // A newspaper or journal title drops a leading "The"; the site name keeps it
-    $periodical = '<em>' . $h(preg_replace('/^The\s+/i', '', $meta['pub'])) . '</em>';
+    $periodical = '<em>' . h(preg_replace('/^The\s+/i', '', $meta['pub'])) . '</em>';
     $date = chicago_date($meta);
-    $page = $meta['page'] ? ', ' . $h($meta['page']) : '';
+    $page = $meta['page'] ? ', ' . h($meta['page']) : '';
 
     $parts = [];
     if ($meta['author']) {
-        $parts[] = $h($meta['author']) . ',';
+        $parts[] = h($meta['author']) . ',';
     }
     $parts[] = $headline;
 
     switch ($meta['category']) {
         case 'book-chapter':
-            $book = 'in <em>' . $h($meta['full_title'] ?: $meta['pub']) . '</em>';
+            $book = 'in <em>' . h($meta['full_title'] ?: $meta['pub']) . '</em>';
             if ($meta['translator']) {
-                $book .= ', trans. ' . $h($meta['translator']);
+                $book .= ', trans. ' . h($meta['translator']);
             }
-            // A later edition is cited by its own imprint: (New York: Collier, 1902)
-            $imprint = implode(', ', array_filter([
-                implode(': ', array_filter([$h($meta['place'] ?? ''), $h($meta['printer'] ?? '')])),
-                !empty($meta['edition_year']) ? $h($meta['edition_year']) : $date,
-            ]));
+            $imprint = chicago_imprint($meta);
             $parts[] = $book . ($imprint ? ' (' . $imprint . ')' : '') . $page . ',';
             break;
 
         case 'journal':
             if ($meta['volume']) {
-                $parts[] = $periodical . ' ' . $h($meta['volume'])
-                    . ($meta['issue'] ? ', no. ' . $h($meta['issue']) : '')
-                    . ' (' . $date . ')' . ($meta['page'] ? ': ' . $h($meta['page']) : '') . ',';
+                $parts[] = $periodical . ' ' . h($meta['volume'])
+                    . ($meta['issue'] ? ', no. ' . h($meta['issue']) : '')
+                    . ' (' . $date . ')' . ($meta['page'] ? ': ' . h($meta['page']) : '') . ',';
             } else {
                 $parts[] = $periodical . ', ' . $date . $page . ',';
             }
             break;
 
         default: // newspaper, letter
-            $parts[] = $periodical . ($meta['place'] ? ' (' . $h($meta['place']) . ')' : '') . ', ' . $date . $page . ',';
+            $parts[] = $periodical . ($meta['place'] ? ' (' . h($meta['place']) . ')' : '') . ', ' . $date . $page . ',';
     }
 
-    $parts[] = 'transcribed in Plain Old Text, ' . $h($url) . '.';
+    $parts[] = 'transcribed in Plain Old Text, ' . h($url) . '.';
     return implode(' ', $parts);
+}
+
+// A whole book (a collection's contents page), from its first part's data.json:
+// Francis Bacon, <em>Novum Organum</em> (New York: P. F. Collier &amp; Son, 1902), transcribed in Plain Old Text, <url>.
+function chicago_book_citation($meta, $title, $url)
+{
+    $book = '<em>' . h($meta['full_title'] ?: $title) . '</em>';
+    if ($meta['translator']) {
+        $book .= ', trans. ' . h($meta['translator']);
+    }
+    $imprint = chicago_imprint($meta);
+    return ($meta['author'] ? h($meta['author']) . ', ' : '')
+        . $book . ($imprint ? ' (' . $imprint . ')' : '') . ', transcribed in Plain Old Text, ' . h($url) . '.';
+}
+
+// A commentary, cited like a blog post: Victor Elgersma, “Kepler's Press,” <em>Plain Old Text</em>, October 31, 2026,
+// <url>. Its title is HTML already.
+function chicago_commentary_citation($c, $url)
+{
+    global $site_name;
+    $date = DateTime::createFromFormat('!Y-m-d', $c['date']);
+    return ($c['author'] ? h($c['author']) . ', ' : '')
+        . '“' . $c['title'] . ',” <em>' . h($site_name) . '</em>, '
+        . ($date ? $date->format('F j, Y') . ', ' : '')
+        . h($url) . '.';
+}
+
+// A book's imprint; a later edition is cited by its own: New York: Collier, 1902
+function chicago_imprint($meta)
+{
+    return implode(', ', array_filter([
+        implode(': ', array_filter([h($meta['place'] ?? ''), h($meta['printer'] ?? '')])),
+        !empty($meta['edition_year']) ? h($meta['edition_year']) : chicago_date($meta),
+    ]));
 }
 
 // "May 28, 1887", or just the year

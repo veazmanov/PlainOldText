@@ -1,7 +1,7 @@
-// ./html/js/cite.js
-// "Cite this page" in the cog menu opens and closes the citation beneath the title, without jumping to #cite;
-// "Summary" in the dateline does the same for the summary.
-document.querySelectorAll('.cite-toggle, .summary-toggle').forEach(function (mark) {
+// ./html/js/toggles.js
+// The "i" beside an article's title opens and closes the panel about the text, without jumping to #info; "Cite this
+// page" in the panel does the same for the citation.
+document.querySelectorAll('.info-toggle, .cite-toggle').forEach(function (mark) {
     var panel = document.getElementById(mark.getAttribute('aria-controls'));
     mark.addEventListener('click', function (event) {
         event.preventDefault();

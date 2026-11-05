@@ -16,15 +16,16 @@ if (php_sapi_name() === 'cli-server' && $request_uri !== '/' && is_file(__DIR__ 
 $clean_uri = ltrim($request_uri, '/');
 $clean_uri = str_replace(['../', '..\\'], '', $clean_uri);
 
-// 1. Default Route (Redirect to Catalogue)
+// 1. Home page: the catalogue
 if ($clean_uri === "" || $clean_uri === "index.php") {
-    header("Location: /catalogue");
+    render_catalogue();
     exit;
 }
 
-// 2. Catalogue Page Route
+// 2. The catalogue's old address, kept for existing links
 if ($clean_uri === "catalogue") {
-    render_catalogue();
+    $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+    header("Location: /" . ($query ? "?$query" : ""), true, 301);
     exit;
 }
 
@@ -256,31 +257,39 @@ function inline_markdown($s)
     return preg_replace('/\[([^\]]+)\]\((https?:[^)\s]+)\)/', '<a href="$2">$1</a>', $s);
 }
 
-// Labelled paragraphs ("Source: …") for the fields of $record that $labels names and that aren't empty.
-function source_note_paragraphs($record, $labels)
+// The note about where a text comes from, in the panel behind the "i": labelled paragraphs ("Source: …") for those
+// of $fields that $record has. "source": the original edition; "transcribed_from": the copy actually transcribed;
+// "copyright": why the text is free to reproduce (data.json, collections.json).
+function source_note($record, $fields = ['source', 'transcribed_from', 'copyright'])
 {
+    $labels = ['source' => 'Source', 'transcribed_from' => 'Transcribed from', 'copyright' => 'Copyright'];
     $paras = '';
-    foreach ($labels as $field => $label) {
+    foreach ($fields as $field) {
         if (trim((string) ($record[$field] ?? '')) !== '') {
-            $paras .= '<p><span class="sans">' . $label . ':</span> ' . inline_markdown($record[$field]) . '</p>';
+            $paras .= '<p><span class="sans">' . $labels[$field] . ':</span> ' . inline_markdown($record[$field]) . '</p>';
         }
     }
     return $paras;
 }
 
-// The note at the top of a collection's contents page: its source edition, the copy transcribed and why the
-// texts are in the public domain.
-function collection_source_note($c)
+// The dateline under a title: its parts (HTML), separated by middots
+function dateline($parts)
 {
-    $paras = source_note_paragraphs($c, ['source' => 'Source', 'transcribed_from' => 'Transcribed from', 'copyright' => 'Copyright']);
-    return $paras ? '<div class="editorial-note">' . $paras . '</div>' : '';
+    return '<p class="dateline sans">'
+        . implode(' <span class="dateline-sep" aria-hidden="true">&middot;</span> ', array_filter($parts))
+        . '</p>';
 }
 
-// The start of an article's note: where the text comes from and, with $transcription, the copy transcribed
-// ("source" and "transcribed_from" in data.json).
-function article_source_note($meta, $transcription)
+// The top of a page about a text (partials/info_panel.php): the title with the "i" beside it, then the dateline, then
+// the panel the "i" opens. $info: "title" and "dateline" (HTML), and any of "context" (HTML: a line under the dateline,
+// such as the collection), "summary", "source_note" (HTML), "citation" (HTML), "source_url", "markdown_url",
+// "github_url" and "map_url" (a map icon under the "i").
+function info_panel($info)
 {
-    return source_note_paragraphs($meta, ['source' => 'Source'] + ($transcription ? ['transcribed_from' => 'Transcribed from'] : []));
+    $info += array_fill_keys(['context', 'summary', 'source_note', 'citation', 'source_url', 'markdown_url', 'github_url', 'map_url'], null);
+    ob_start();
+    include __DIR__ . '/partials/info_panel.php';
+    return ob_get_clean();
 }
 
 // A built article's editorial note (::: {.editorial-note} in its .md) and the rest of it: [the note's inner HTML,
@@ -293,31 +302,35 @@ function split_editorial_note($html)
     return [trim($m[1][0]), substr_replace($html, '', $m[0][1], strlen($m[0][0]))];
 }
 
-// A collection's contents page: its source note, summary, then each part with its pages and summary.
+// A collection's contents page: its title, then each part with its pages and summary. Its source edition, the copy
+// transcribed, why the texts are in the public domain and its citation are behind the "i" beside the title.
 function render_collection($key)
 {
-    global $metadata, $collections, $site_name, $site_url;
+    global $metadata, $collections, $site_name, $site_url, $github_repo;
     $c = $collections[$key];
     $title = $c['title'];
     $pub_name = $site_name;
     $body_class = 'page-article page-collection';
-    $h = fn($s) => htmlspecialchars((string) $s);
 
     $items = '';
     foreach ($c['members'] as $slug) {
         $part = $metadata[$slug];
-        $items .= '<li><p class="contents-entry"><a href="/stable/' . $h($part['id']) . '">' . $h($part['title']) . '</a>'
-            . ($part['page'] ? ' <span class="contents-page sans">pp.&nbsp;' . $h($part['page']) . '</span>' : '')
+        $items .= '<li><p class="contents-entry"><a href="/stable/' . h($part['id']) . '">' . h($part['title']) . '</a>'
+            . ($part['page'] ? ' <span class="contents-page sans">pp.&nbsp;' . h($part['page']) . '</span>' : '')
             . '</p>'
-            . ($part['summary'] ? '<p class="contents-summary">' . inline_markdown($part['summary']) . '</p>' : '') . '</li>';
+            . ($part['summary'] ? '<p class="contents-summary">' . inline_markdown($part['summary']) . summary_note() . '</p>' : '') . '</li>';
     }
 
-    $content = '<h1>' . $h($c['title']) . '</h1>'
-        . '<p class="dateline sans"><span class="dateline-pub">' . $h($c['author'] ?: $c['pub']) . '</span>'
-        . '<span class="dateline-sep" aria-hidden="true">&middot;</span><span>' . $h($c['date']) . '</span></p>'
-        . collection_source_note($c)
-        . ($c['summary'] ? '<p>' . $h($c['summary']) . '</p>' : '')
-        . '<h2>Contents</h2><ol class="collection-contents">' . $items . '</ol>';
+    $content = info_panel([
+        'title'       => '<h1>' . h($c['title']) . '</h1>'
+            . ($c['subtitle'] ? '<p class="subtitle">' . h($c['subtitle']) . '</p>' : ''),
+        'dateline'    => dateline(['<span class="dateline-pub">' . h($c['author'] ?: $c['pub']) . '</span>', '<span>' . h($c['date']) . '</span>']),
+        'summary'     => $c['summary'],
+        'source_note' => source_note($c),
+        'citation'    => chicago_book_citation($metadata[$c['members'][0]], $c['title'], $site_url . '/stable/' . $c['id']),
+        'github_url'  => $github_repo . '/blob/main/articles/collections.json',
+        'map_url'     => $c['map'],
+    ]) . '<h2>Contents</h2><ol class="collection-contents">' . $items . '</ol>';
 
     include(__DIR__ . '/layout.php');
 }
@@ -331,22 +344,21 @@ function collection_nav($uri)
         return [null, ''];
     }
     $c = $collections[$key];
-    $h = fn($s) => htmlspecialchars((string) $s);
     $i = array_search($uri, $c['members'], true);
     $prev = $c['members'][$i - 1] ?? null;
     $next = $c['members'][$i + 1] ?? null;
 
-    $nav = '<nav class="part-nav sans" aria-label="' . $h($c['title']) . '">'
-        . '<span class="part-prev">' . ($prev ? '<a rel="prev" href="/stable/' . $h($metadata[$prev]['id']) . '">&larr; ' . $h($metadata[$prev]['title']) . '</a>' : '') . '</span>'
-        . '<a class="part-contents" href="/stable/' . $h($c['id']) . '">Contents</a>'
-        . '<span class="part-next">' . ($next ? '<a rel="next" href="/stable/' . $h($metadata[$next]['id']) . '">' . $h($metadata[$next]['title']) . ' &rarr;</a>' : '') . '</span>'
+    $nav = '<nav class="part-nav sans" aria-label="' . h($c['title']) . '">'
+        . '<span class="part-prev">' . ($prev ? '<a rel="prev" href="/stable/' . h($metadata[$prev]['id']) . '">&larr; ' . h($metadata[$prev]['title']) . '</a>' : '') . '</span>'
+        . '<a class="part-contents" href="/stable/' . h($c['id']) . '">Contents</a>'
+        . '<span class="part-next">' . ($next ? '<a rel="next" href="/stable/' . h($metadata[$next]['id']) . '">' . h($metadata[$next]['title']) . ' &rarr;</a>' : '') . '</span>'
         . '</nav>';
     return [$c, $nav];
 }
 
 function render_article($uri, $scans_open = false)
 {
-    global $metadata, $articles_base, $site_name, $site_url;
+    global $metadata, $articles_base, $site_name, $site_url, $github_repo;
     $meta = $metadata[$uri];
     // The article's stable URL, which its citation, links and canonical tag use
     $slug_url = '/stable/' . $meta['id'];
@@ -388,14 +400,8 @@ function render_article($uri, $scans_open = false)
     $view_query = fn($v) => $edition_query . ($v === 'original' || $v === 'both' ? ($edition_query ? '&' : '?') . 'view=' . $v : '');
     // The edition and view, kept in the page's own links
     $page_query = $view_query($view);
-    $citation = chicago_citation($meta, $site_url . $slug_url . $edition_query);
-    $markdown_url = ($edition && $edition['md']) ? $slug_url . '/markdown' . $edition_query : null;
-    $github_url = "https://github.com/veazmanov/PlainOldText/blob/main/articles/" . rawurlencode($uri) . '/'
-        . rawurlencode($translation_only ? 'translation.md' : ($edition && $edition['md'] ? basename($edition['md']) : 'main.md'));
-    $summary = $meta['summary'];
     $title = $meta['title'];
     $pub_name = $meta['pub'];
-    $date_str = $meta['date'];
     // "Original scans" goes to the scans view, or back to the text when the scans are open
     $photo_link = ($scans_open ? $slug_url : $slug_url . '/scans') . $page_query;
     // The view switch: the translation, the text (labelled with its language) or both
@@ -408,8 +414,6 @@ function render_article($uri, $scans_open = false)
     // Commentary on this article: a link to it, or to the list when there is more than one
     $commentary = commentary_on($meta['id']);
     $commentary_link = count($commentary) === 1 ? '/commentary/' . array_key_first($commentary) : '/commentary';
-    $page_num = $meta['page'];
-    $source_url = $meta['source_url'];
     $article_header_partial = __DIR__ . '/partials/article_header.php';
 
     if ($edition) {
@@ -424,7 +428,7 @@ function render_article($uri, $scans_open = false)
         </div>";
     }
 
-    // Lift the article's first heading out so it renders above the source panel.
+    // Lift the article's first heading out to be the page's title, with the "i" beside it.
     $article_title_html = null;
     if ($edition && preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $content, $m, PREG_OFFSET_CAPTURE)) {
         $before = trim(strip_tags(substr($content, 0, $m[0][1])));
@@ -434,21 +438,22 @@ function render_article($uri, $scans_open = false)
         }
     }
     if ($article_title_html === null) {
-        $article_title_html = '<h1>' . htmlspecialchars($title) . '</h1>';
+        $article_title_html = '<h1>' . h($title) . '</h1>';
     }
 
+    $source_note = '';
+
     if ($edition) {
-        // One note at the top: the source (from data.json), then how the text was transcribed and the editorial
+        // One note: the source (from data.json), then how the text was transcribed and the editorial
         // notes of the files shown. The translation alone leaves out the text's, which are about the transcription.
         [$file_note, $content] = split_editorial_note($content);
-        $note = article_source_note($meta, !$translation_only) . $file_note;
+        $source_note = source_note($meta, $translation_only ? ['source'] : ['source', 'transcribed_from']) . $file_note;
         $content = apply_editor_notes($content, $meta['notes'], $translation_only ? 'translation' : $edition_id);
         if ($translation_shown) {
             [$translation_note, $translation_html] = split_editorial_note(file_get_contents($translation['html']));
-            $note .= $translation_note;
+            $source_note .= $translation_note;
             $content = parallel_translation($content, $translation_html, $meta['notes']);
         }
-        $content = ($note !== '' ? '<div class="editorial-note">' . $note . '</div>' : '') . $content;
     }
 
     if ($edition) {
@@ -457,6 +462,26 @@ function render_article($uri, $scans_open = false)
 
     [$collection, $part_nav] = collection_nav($uri);
     $content .= $part_nav;
+
+    // The title and what is behind the "i" beside it, at the top of article_header.php
+    $info_panel = info_panel([
+        'title'        => $article_title_html,
+        'dateline'     => dateline([
+            '<span class="dateline-pub">' . h($meta['pub']) . '</span>',
+            '<span>' . h($meta['date']) . ($meta['page'] ? ', p.&nbsp;' . h($meta['page']) : '') . '</span>',
+        ]),
+        'context'      => $collection
+            ? '<p class="collection-line sans">Part of <a href="/stable/' . h($collection['id']) . '"><em>' . h($collection['title']) . '</em></a></p>'
+            : null,
+        'summary'      => $meta['summary'],
+        'source_note'  => $source_note,
+        'citation'     => chicago_citation($meta, $site_url . $slug_url . $edition_query),
+        'source_url'   => $meta['source_url'],
+        'markdown_url' => ($edition && $edition['md']) ? $slug_url . '/markdown' . $edition_query : null,
+        'github_url'   => $github_repo . '/blob/main/articles/' . rawurlencode($uri) . '/'
+            . rawurlencode($translation_only ? 'translation.md' : ($edition && $edition['md'] ? basename($edition['md']) : 'main.md')),
+        'map_url'      => $meta['map'] ?: ($collection['map'] ?? null),
+    ]);
 
     include(__DIR__ . '/layout.php');
     exit();

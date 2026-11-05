@@ -82,7 +82,7 @@ include __DIR__ . '/partials/head.php';
                         <a href="/stable/<?= htmlspecialchars($item['id']) ?>"><?= htmlspecialchars($item['title']) ?></a>
                     </h2>
                     <?php if (!empty($item['summary'])): ?>
-                        <p class="spotlight-summary"><?= htmlspecialchars($item['summary']) ?></p>
+                        <p class="spotlight-summary"><?= htmlspecialchars($item['summary']) ?><?= summary_note() ?></p>
                     <?php endif; ?>
                 </aside>
             <?php endforeach; ?>

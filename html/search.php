@@ -296,7 +296,7 @@ function render_search()
                     <p class="result-count">
                         <?= $total ? number_format($total) . ' passage' . ($total === 1 ? '' : 's') . ' in '
                             . count($results) . ' text' . (count($results) === 1 ? '' : 's') : 'No passages match' ?>
-                        &middot; <a href="/catalogue?q=<?= rawurlencode($q) ?>">Search titles and summaries instead</a>
+                        &middot; <a href="/?q=<?= rawurlencode($q) ?>">Search titles and summaries instead</a>
                     </p>
                 <?php endif; ?>
             </form>

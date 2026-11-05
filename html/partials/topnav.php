@@ -1,6 +1,6 @@
 <?php $current_page = $current_page ?? ''; ?>
 <div class="site-masthead">
-    <a class="site-logo" href="/catalogue">
+    <a class="site-logo" href="/">
         <span class="site-logo-name"><?= htmlspecialchars($site_name) ?><span class="site-logo-mark" aria-hidden="true">&dagger;</span></span>
     </a>
     <p class="site-masthead-note"><span aria-hidden="true">&dagger;</span> plainoldtext.vjbe.net</p>
@@ -14,7 +14,7 @@
     <ul>
         <?php foreach (['catalogue' => 'Catalogue', 'about' => 'About', 'contribute' => 'Contribute'] as $slug => $label): ?>
             <li>
-                <a href="/<?= $slug ?>"<?= $current_page === $slug ? ' aria-current="page"' : '' ?>><?= $label ?></a>
+                <a href="/<?= $slug === 'catalogue' ? '' : $slug ?>"<?= $current_page === $slug ? ' aria-current="page"' : '' ?>><?= $label ?></a>
             </li>
         <?php endforeach; ?>
         <?php // Light/dark toggle (theme.js), shown once the script runs; CSS pins it to the corner of the window ?>

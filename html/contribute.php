@@ -19,7 +19,7 @@
 <p>
     Spotted a typo, a misread word or a wrong date in one of the existing texts? Corrections are just as
     welcome, however small. Send an email, or if you're comfortable with Git, open a pull request on
-    <a href="https://github.com/veazmanov/PlainOldText">GitHub</a>.
+    <a href="<?= h($github_repo) ?>">GitHub</a>.
 </p>
 
 <p>
