@@ -1,16 +1,21 @@
 #!/bin/bash
 
-port=8003
-while lsof -iTCP:"$port" -sTCP:LISTEN -n -P >/dev/null 2>&1; do
-	port=$((port + 1))
-done
+# Serves the site on a fixed port, which Caddy (/opt/homebrew/etc/Caddyfile) proxies as http://lib.localhost
+port=4321
+url="http://lib.localhost/"
+
+if lsof -iTCP:"$port" -sTCP:LISTEN -n -P >/dev/null 2>&1; then
+	echo "Port $port is already in use (another ./dev?); stop it first." >&2
+	exit 1
+fi
 
 # Open the page once the server is listening
 (
 	until lsof -iTCP:"$port" -sTCP:LISTEN -n -P >/dev/null 2>&1; do
 		sleep 0.1
 	done
-	open "http://localhost:$port/"
+	open "$url"
 ) &
 
-php -S localhost:"$port" -t html html/index.php
+# 127.0.0.1, not localhost, which PHP binds to ::1 only and Caddy wouldn't reach
+php -S 127.0.0.1:"$port" -t html html/index.php
