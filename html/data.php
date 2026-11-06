@@ -9,7 +9,7 @@ $github_repo = "https://github.com/veazmanov/PlainOldText";
 // The stable id of an article edited recently, shown as "Last edited" above the catalogue; null for none.
 $last_edited = 'pqxke';
 // The stable id of an article or collection added recently, shown as "Newly added" above the catalogue; null for none.
-$newly_added = 'n1fx2';
+$newly_added = 'jf1n1';
 
 // Escapes text for HTML
 function h($s)
