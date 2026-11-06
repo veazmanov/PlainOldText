@@ -1,0 +1,32 @@
+{
+    "id": "rx0mr",
+    "title": "Address to the Reader, with the Calculations",
+    "publication": "Admonitio ad astronomos",
+    "collection": "kepler-1630-admonitio",
+    "category": "book-chapter",
+    "language": "Latin",
+    "author": "Jacob Bartsch",
+    "full_title": "Admonitio ad astronomos, rerumque coelestium studiosos, de raris mirisque anni 1631 phaenomenis, Veneris puta et Mercurii in Solem incursu",
+    "place": "Frankfurt",
+    "printer": "Godefrid Tampach",
+    "year": "1630",
+    "page": "6–8",
+    "source_url": "https://archive.org/details/den-kbd-pil-20002499-001/mode/2up",
+    "source": "Jacob Bartsch's address to the reader, with the motions of the Sun, Venus and Mercury from Kepler's Ephemeris and his own calculation of the two conjunctions from the *Rudolphine Tables*, added for the second printing of Kepler's *Admonitio* (Frankfurt: Godefrid Tampach, 1630).",
+    "transcribed_from": "the page images of the copy in the Royal Library, Copenhagen (KB 52,94).",
+    "summary": "Bartsch offers the reprinted Admonition as a forerunner of the Ephemerides. So that readers can test the calculation, he adds tables of the Sun, Venus and Mercury for the days around each conjunction, and works out both conjunctions from the Rudolphine Tables for the time of Uraniborg.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "14 gr. 48 min. 54 sec. Scorp.",
+            "note": "So printed; the Sun's true place above, which this should repeat, is 14 gr. 48 min. 14 sec."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Mean longitude from the moved equinox: 2 signs",
+            "note": "*Longitud. med. ab Æquin. mot.*: the abbreviation *mot.* is ambiguous, and is taken here as *moto*, “moved”; the two planets' lines differ in this from the Sun's."
+        }
+    ]
+}

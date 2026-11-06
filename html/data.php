@@ -194,6 +194,8 @@ foreach ($collections_data ?: [] as $key => $c) {
         'source'           => $c['source'] ?? '',
         'transcribed_from' => $c['transcribed_from'] ?? '',
         'copyright'        => $c['copyright'] ?? '',
+        // Optional, for a collection whose first part isn't by its main author: the byline and the citation's author
+        'main_author' => $c['author'] ?? null,
         // A map of the places in the collection (an image URL), shown on its contents page and on parts without
         // a map of their own
         'map'     => $c['map'] ?? '',
@@ -223,7 +225,7 @@ foreach ($collections as $key => $c) {
     $first = $metadata[$c['members'][0]];
     $collections[$key] += [
         'pub'       => $first['pub'],
-        'author'    => $first['author'],
+        'author'    => $c['main_author'] ?: $first['author'],
         'date'      => $first['date'],
         'sort_date' => $first['sort_date'],
         'category'  => $first['category'],

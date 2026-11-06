@@ -1,0 +1,26 @@
+{
+    "id": "rf6rz",
+    "title": "Title Page and Letters to Philipp Müller",
+    "publication": "Admonitio ad astronomos",
+    "collection": "kepler-1630-admonitio",
+    "category": "book-chapter",
+    "language": "Latin",
+    "author": "Jacob Bartsch",
+    "full_title": "Admonitio ad astronomos, rerumque coelestium studiosos, de raris mirisque anni 1631 phaenomenis, Veneris puta et Mercurii in Solem incursu",
+    "place": "Frankfurt",
+    "printer": "Godefrid Tampach",
+    "year": "1630",
+    "page": "1–5",
+    "source_url": "https://archive.org/details/den-kbd-pil-20002499-001/mode/2up",
+    "source": "The title page of the second printing of Kepler's *Admonitio* (Frankfurt: Godefrid Tampach, 1630), with Jacob Bartsch's new letter to Philipp Müller, professor of mathematics at Leipzig, written at the Frankfurt spring fair of 1630, and the dedication to Müller from the first printing (Leipzig, 1629), dated 5/15 October 1629.",
+    "transcribed_from": "the page images of the copy in the Royal Library, Copenhagen (KB 52,94).",
+    "summary": "Bartsch, now Kepler's son-in-law and a doctor of medicine, sends the reprinted Admonition to Müller from Frankfurt on his way home from Strasbourg. The earlier dedication, written in Müller's house at Leipzig, explains why he took a piece from the coming Ephemerides to give those far away notice of a new and wonderful event in the heavens.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "sic",
+            "on": "(siquidem recusas aliam, non modò Tibi meum, sed Astronomis quoque",
+            "note": "The parenthesis is opened but never closed in the 1630 printing."
+        }
+    ]
+}
