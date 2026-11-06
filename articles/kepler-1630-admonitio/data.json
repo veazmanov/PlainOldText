@@ -48,6 +48,12 @@
         {
             "edition": "translation",
             "type": "explanatory",
+            "on": "Belgian Tube",
+            "note": "The telescope, first made in the Netherlands (*Belgium* then meant the whole of the Low Countries): Hans Lipperhey of Middelburg applied for a patent on one in October 1608. Galileo built his own the next year and turned it on the sky."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
             "on": "Johannes Remus Quietanus",
             "note": "Johannes Remus Quietanus (Johann Ruderauf), physician and astronomer, who corresponded with both Kepler and Galileo."
         },
