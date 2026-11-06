@@ -1,7 +1,7 @@
 <?php
 // ./html/citation.php
 // Chicago-style footnote citations (notes and bibliography, 17th ed.) built from an article's data.json,
-// ending with where it was transcribed. Returns HTML; titles of publications are in <em>.
+// ending with where it is available online. Returns HTML; titles of publications are in <em>.
 
 function chicago_citation($meta, $url)
 {
@@ -46,12 +46,12 @@ function chicago_citation($meta, $url)
             $parts[] = $periodical . ($meta['place'] ? ' (' . h($meta['place']) . ')' : '') . ', ' . $date . $page . ',';
     }
 
-    $parts[] = 'transcribed in Plain Old Text, ' . h($url) . '.';
+    $parts[] = 'available online, ' . h($url) . '.';
     return implode(' ', $parts);
 }
 
 // A whole book (a collection's contents page), from its first part's data.json:
-// Francis Bacon, <em>Novum Organum</em> (New York: P. F. Collier &amp; Son, 1902), transcribed in Plain Old Text, <url>.
+// Francis Bacon, <em>Novum Organum</em> (New York: P. F. Collier &amp; Son, 1902), available online, <url>.
 function chicago_book_citation($meta, $title, $url)
 {
     $book = '<em>' . h($meta['full_title'] ?: $title) . '</em>';
@@ -60,7 +60,7 @@ function chicago_book_citation($meta, $title, $url)
     }
     $imprint = chicago_imprint($meta);
     return ($meta['author'] ? h($meta['author']) . ', ' : '')
-        . $book . ($imprint ? ' (' . $imprint . ')' : '') . ', transcribed in Plain Old Text, ' . h($url) . '.';
+        . $book . ($imprint ? ' (' . $imprint . ')' : '') . ', available online, ' . h($url) . '.';
 }
 
 // A commentary, cited like a blog post: Victor Elgersma, “Kepler's Press,” <em>Plain Old Text</em>, October 31, 2026,
