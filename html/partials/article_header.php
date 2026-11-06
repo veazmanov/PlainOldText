@@ -31,6 +31,9 @@
             <?php endif; ?>
         <?php $first = false; endforeach; ?>
     </p>
+    <?php if ($view !== 'original'): ?>
+        <p class="translation-note sans"><?= htmlspecialchars(translation_note($meta['language'])) ?></p>
+    <?php endif; ?>
 <?php endif; ?>
 
 <?php if (count($editions) > 1): ?>

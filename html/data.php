@@ -236,6 +236,14 @@ function summary_note()
     return ' <span class="summary-note sans">[This is an automatically generated summary]</span>';
 }
 
+// The notice shown with every English translation, naming who hasn't checked it by the language of the text
+function translation_note($language)
+{
+    $checkers = ['Latin' => 'a Latinist', 'German' => 'a Germanist'];
+    $checker = $checkers[$language] ?? 'a specialist';
+    return "This English translation was machine translated and has not been checked by $checker.";
+}
+
 // Tufte sidenote
 
 function sn($html)
