@@ -2,7 +2,7 @@
 // ./html/data.php
 
 $site_name = "Plain Old Text";
-$site_url = "https://sources.vjbe.net";
+$site_url = "https://lib.vjbe.net";
 // The repository with the texts and the site, for "View on GitHub" links
 $github_repo = "https://github.com/veazmanov/PlainOldText";
 
