@@ -25,7 +25,7 @@
 - [ ] make printing a first class citizen
 - [ ] rebrand - Victor Azmanov's personal library
 - [ ] make the dark mode toggle visible (sticky) at all times
-- [ ] publish Kepler's *Admonitio ad astronomos rerumque coelestium studiosos* (1629), his pamphlet predicting the transits of Mercury and Venus in 1631. None of the Nova Kepleriana 4 letters mentions it.
+- [x] publish Kepler's *Admonitio ad astronomos rerumque coelestium studiosos* (1629), his pamphlet predicting the transits of Mercury and Venus in 1631. None of the Nova Kepleriana 4 letters mentions it.
 
 # TODO: copyright and provenance
 
