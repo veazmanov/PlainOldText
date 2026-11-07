@@ -196,6 +196,8 @@ foreach ($collections_data ?: [] as $key => $c) {
         'copyright'        => $c['copyright'] ?? '',
         // Optional, for a collection whose first part isn't by its main author: the byline and the citation's author
         'main_author' => $c['author'] ?? null,
+        // True when that author edited the book rather than wrote it, cited as "Jacob Bartsch, ed., <em>…</em>"
+        'author_is_editor' => $c['author_is_editor'] ?? false,
         // Where the whole book was found, for its citation; its parts' source_url may point into it
         'source_url'  => $c['source_url'] ?? null,
         // A map of the places in the collection (an image URL), shown on its contents page and on parts without

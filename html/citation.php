@@ -60,7 +60,7 @@ function chicago_book_citation($meta, $title, $url)
         $book .= ', trans. ' . h($meta['translator']);
     }
     $imprint = chicago_imprint($meta);
-    return ($meta['author'] ? h($meta['author']) . ', ' : '')
+    return ($meta['author'] ? h($meta['author']) . (!empty($meta['author_is_editor']) ? ', ed.' : '') . ', ' : '')
         . $book . ($imprint ? ' (' . $imprint . ')' : '') . ', ' . citation_links($meta, $url);
 }
 

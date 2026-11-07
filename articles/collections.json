@@ -50,9 +50,10 @@
         "source_url": "https://archive.org/details/den-kbd-pil-20002499-001/mode/2up",
         "title": "Admonitio ad astronomos",
         "subtitle": "On the rare and wonderful phenomena of the year 1631",
-        "author": "Johannes Kepler",
+        "author": "Jacob Bartsch",
+        "author_is_editor": true,
         "summary": "Kepler's notice that Venus and Mercury would both cross the face of the Sun in 1631, with his call to astronomers everywhere to watch for them, excerpted from his Ephemeris and published by his son-in-law Jacob Bartsch, whose letters to Philipp Müller, address to the reader and calculations surround it in this second printing.",
-        "source": "Kepler, Johannes. *Admonitio ad astronomos, rerumque coelestium studiosos, de raris mirisque anni 1631 phaenomenis, Veneris puta et Mercurii in Solem incursu*. Edited by Jacob Bartsch. Frankfurt: Godefrid Tampach, 1630. First published at Leipzig, 1629.",
+        "source": "Bartsch, Jacob, ed. *Admonitio ad astronomos, rerumque coelestium studiosos, de raris mirisque anni 1631 phaenomenis, Veneris puta et Mercurii in Solem incursu*, by Johannes Kepler. Frankfurt: Godefrid Tampach, 1630. First published at Leipzig, 1629.",
         "transcribed_from": "the [page images](https://archive.org/details/den-kbd-pil-20002499-001/mode/2up) of the copy in the Royal Library, Copenhagen (KB 52,94).",
         "copyright": "In the public domain. Kepler died in 1630 and Bartsch in 1633."
     }
