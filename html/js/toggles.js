@@ -1,6 +1,6 @@
 // ./html/js/toggles.js
-// The "i" beside an article's title opens and closes the panel about the text, without jumping to #info; "Cite this
-// page" in the panel does the same for the citation.
+// The "i" beside an article's title opens and closes the panel about the text, without jumping to #info; the quotation
+// mark under it does the same for the citation.
 document.querySelectorAll('.info-toggle, .cite-toggle').forEach(function (mark) {
     var panel = document.getElementById(mark.getAttribute('aria-controls'));
     mark.addEventListener('click', function (event) {
@@ -8,9 +8,6 @@ document.querySelectorAll('.info-toggle, .cite-toggle').forEach(function (mark) 
         var open = !panel.classList.contains('open');
         panel.classList.toggle('open', open);
         mark.setAttribute('aria-expanded', open ? 'true' : 'false');
-        if (mark.classList.contains('cite-toggle')) {
-            mark.textContent = open ? 'Hide citation' : 'Cite this page';
-        }
     });
 });
 

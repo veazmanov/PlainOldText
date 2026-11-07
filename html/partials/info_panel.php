@@ -1,11 +1,11 @@
 <?php // ./html/partials/info_panel.php
 // The top of a page about a text, rendered by info_panel() in index.php from $info: the title, with an "i" beside it
-// (and a map icon under that, when there is a map), then the dateline and a line of context, such as the collection,
-// a click away. The "i" opens a panel about the text: the summary and source note, then the page tools in two groups:
-// Source (citation, source link) and Text (markdown, GitHub, corrections). Kept out of the way so that the eye goes
-// from the title to the text. toggles.js opens the panel and the citation; without JS, :target does.
+// (then a quotation mark, which opens the citation, and a map icon, when there is a map), then the dateline and a line
+// of context, such as the collection, a click away. The "i" opens a panel about the text: the summary and source note,
+// then the page tools in two groups: Source (source link) and Text (markdown, GitHub, corrections). Kept out of the way
+// so that the eye goes from the title to the text. toggles.js opens the panel and the citation; without JS, :target does.
 ?>
-<div class="article-top<?= $info['map_url'] ? ' has-map' : '' ?>">
+<div class="article-top" style="--title-icons: <?= 1 + (bool) $info['citation'] + (bool) $info['map_url'] ?>">
     <?= trim($info['title']) ?>
 
     <p class="title-icons sans">
@@ -16,6 +16,16 @@
                 <circle cx="12" cy="7.5" r="1.15" fill="currentColor"/>
             </svg>
         </a>
+        <?php if ($info['citation']): ?>
+            <a class="title-icon cite-toggle" href="#cite" aria-controls="cite" aria-expanded="false" aria-label="Cite this page" title="Cite this page">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                    <circle cx="8.3" cy="9.4" r="2.35" fill="currentColor"/>
+                    <path d="M10.55 9.6c0 3.1-1.5 5.4-4.2 6.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <circle cx="15.9" cy="9.4" r="2.35" fill="currentColor"/>
+                    <path d="M18.15 9.6c0 3.1-1.5 5.4-4.2 6.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+            </a>
+        <?php endif; ?>
         <?php if ($info['map_url']): ?>
             <a class="title-icon" href="<?= h($info['map_url']) ?>" target="_blank" rel="noopener" aria-label="Map" title="Map">
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
@@ -31,6 +41,13 @@
 
 <?= $info['context'] ?>
 
+<?php if ($info['citation']): ?>
+    <div class="title-citation" id="cite">
+        <p id="citation"><?= $info['citation'] ?></p>
+        <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
+    </div>
+<?php endif; ?>
+
 <div class="info-panel" id="info">
     <?php if ($info['summary']): ?>
         <p class="info-summary"><?= h($info['summary']) ?><?= summary_note() ?></p>
@@ -41,28 +58,17 @@
     <?php endif; ?>
 
     <div class="info-tools sans">
-        <?php if ($info['citation'] || $info['source_url']): ?>
+        <?php if ($info['source_url']): ?>
             <p class="info-tools-heading">Source</p>
             <ul>
-                <?php if ($info['citation']): ?>
-                    <li>
-                        <a class="info-tool cite-toggle" href="#cite" aria-controls="cite" aria-expanded="false">Cite this page</a>
-                        <div class="title-citation" id="cite">
-                            <p id="citation"><?= $info['citation'] ?></p>
-                            <button type="button" class="cite-copy" data-target="citation" hidden>Copy</button>
-                        </div>
-                    </li>
-                <?php endif; ?>
-                <?php if ($info['source_url']): ?>
-                    <li>
-                        <details class="info-disclosure">
-                            <summary class="info-tool">Go to source</summary>
-                            <p class="info-reveal">
-                                <a class="source-link" href="<?= h($info['source_url']) ?>" target="_blank" rel="noopener"><?= h($info['source_url']) ?></a>
-                            </p>
-                        </details>
-                    </li>
-                <?php endif; ?>
+                <li>
+                    <details class="info-disclosure">
+                        <summary class="info-tool">Go to source</summary>
+                        <p class="info-reveal">
+                            <a class="source-link" href="<?= h($info['source_url']) ?>" target="_blank" rel="noopener"><?= h($info['source_url']) ?></a>
+                        </p>
+                    </details>
+                </li>
             </ul>
         <?php endif; ?>
 

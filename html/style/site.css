@@ -1075,9 +1075,10 @@ body:where(.page-article) > article {
     color: var(--ink-muted);
 }
 
-/* The "i", which opens the panel about the text, and the map under it (info_panel.php) */
-:where(.page-article) .article-top.has-map {
-    min-height: 4.75rem;
+/* The "i", which opens the panel about the text, and under it the quotation mark (the citation) and the map
+   (info_panel.php). The title is at least as tall as the column of them, --title-icons long. */
+:where(.page-article) .article-top {
+    min-height: calc(var(--title-icons, 1) * 2.5rem - 0.25rem);
 }
 
 :where(.page-article) p.title-icons {
@@ -1106,7 +1107,7 @@ body:where(.page-article) > article {
 }
 
 :where(.page-article) .title-icon:hover,
-:where(.page-article) .info-toggle[aria-expanded="true"] {
+:where(.page-article) .title-icon[aria-expanded="true"] {
     color: var(--ink);
     background: var(--panel);
     border-color: var(--panel-edge);
@@ -1291,16 +1292,18 @@ body:where(.page-article) > article {
     text-shadow: none;
 }
 
-/* ---- Citation: "Cite this page" in the panel opens it beneath (toggles.js; :target without JS) ---- */
+/* ---- Citation: the quotation mark beside the title opens it under the dateline (toggles.js; :target without JS) ---- */
 :where(.page-article) .title-citation:not(.open):not(:target) {
     display: none;
 }
 
 :where(.page-article) .title-citation {
-    margin: 0 1rem 0.5rem;
+    max-width: 500px;
+    margin: 0 0 1.5rem;
     padding: 0.7rem 0.9rem 0.6rem;
-    background: var(--paper);
+    background: var(--panel);
     border: 1px solid var(--panel-edge);
+    border-radius: 6px;
     font-size: 0.85rem;
     line-height: 1.5;
 }
@@ -1328,7 +1331,7 @@ body:where(.page-article) > article {
     font: inherit;
     font-size: 0.8rem;
     color: var(--ink);
-    background: var(--panel);
+    background: var(--paper);
     border: 1px solid var(--panel-edge);
     border-radius: 999px;
     padding: 0.15rem 0.8rem;
@@ -1832,7 +1835,7 @@ body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
     font: inherit;
     font-size: 0.8rem;
     color: var(--ink);
-    background: var(--panel);
+    background: var(--paper);
     border: 1px solid var(--panel-edge);
     border-radius: 999px;
     padding: 0.15rem 0.8rem;
