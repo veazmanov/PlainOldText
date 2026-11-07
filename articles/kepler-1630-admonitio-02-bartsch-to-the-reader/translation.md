@@ -4,7 +4,7 @@
 English translation of the 1630 printing, made for Plain Old Text. Each paragraph translates the corresponding paragraph of the original. In the tables, positions are in degrees, minutes and seconds, and latitudes are south, north or ascending as marked. In the calculations, figures such as 5. 9. 4. 5. are signs, degrees, minutes and seconds; the technical terms follow the *Rudolphine Tables*.
 :::
 
-## To the kind Reader, greetings from Jac. Bartsch, D., lover of mathematics
+## []{.page n=6}To the kind Reader, greetings from Jac. Bartsch, D., lover of mathematics
 
 Here you have, diligent Watcher of the Stars and Measurer of the Heavens, the useful and pleasant Admonition of the famous Lord Kepler, my revered father-in-law, on the rare phenomenon of Venus and Mercury, which together make the year 1631 famous, and which rouses your industry: reprinted with his consent, now on my journey, as a forerunner of our twenty-year Ephemerides, and shared with you once more for the sake of the public astronomical good. To it, in order better to test the reliability of our calculation, I wished and was bound to prefix not only the motions of the two planets for some neighbouring days, from his long-finished Ephemeris, but also the calculation itself, the Tychonic-Keplerian one from the Rudolphine Tables, which I worked out by force of the precepts for the middle of each conjunction, in Uraniborg time. Meanwhile, kind reader, use and enjoy this pledge of the first volume of our Ephemerides, soon to appear from our Silesia; favour our efforts, and farewell.
 
@@ -30,7 +30,7 @@ Here you have, diligent Watcher of the Stars and Measurer of the Heavens, the us
 | 8 | 15. 45. 30 | 13. 35 | *Ascending* | 0. 26 |
 | 9 | 16. 46. 2 | 12. 15 | | 0. 44 |
 
-## Calculation of the Sun and Venus
+## []{.page n=7}Calculation of the Sun and Venus
 
 for the Time of the conjunction, which, taken as equal or mean, is 9 hours 41 minutes after noon on 6 December new style, 26 November old style, of the current year 1631. Completed time: 1630 [years], to 25 October old style.
 
@@ -67,7 +67,7 @@ for the Time of the conjunction, which, taken as equal or mean, is 9 hours 41 mi
 *So the true latitude of Venus, north:* 11 *minutes* 19 *seconds.*\
 *The longitude is the same as the Sun's, namely* 14 *degrees* 34 *minutes* 50 *seconds of Sagittarius.*
 
-## Calculation of the Sun and Mercury
+## []{.page n=8}Calculation of the Sun and Mercury
 
 for the Time of the conjunction, which, taken as equal or mean, is 1 hour 17 minutes 30 seconds after noon on 7 November new style, 28 October old style, of the current year 1631. Completed time: 1630 [years], to 27 September old style.
 

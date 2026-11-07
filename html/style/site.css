@@ -1743,6 +1743,208 @@ body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
     }
 }
 
+/* ---- "Show Latin" and "Cite" beside a paragraph (paragraph_tools()), which open under it: in the left margin on wide
+        screens, in a row under the paragraph on narrow ones. A checkbox and label each, like the sidenotes ---- */
+:where(.page-article) .para {
+    position: relative;
+    max-width: 500px;
+}
+
+:where(.page-article) .para-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+:where(.page-article) label.para-tool {
+    cursor: pointer;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: var(--ink-muted);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+:where(.page-article) label.para-tool:hover,
+:where(.page-article) .para-toggle:checked + label.para-tool {
+    color: var(--ink);
+}
+
+:where(.page-article) .para-toggle:focus-visible + label.para-tool {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+:where(.page-article) .para-toggle:checked + label .tool-show,
+:where(.page-article) .para-toggle:not(:checked) + label .tool-hide {
+    display: none;
+}
+
+:where(.page-article) .original-text,
+:where(.page-article) .para-cite {
+    display: none;
+    margin: 0 0 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+    color: var(--ink-soft);
+}
+
+:where(.page-article) .toggle-original:checked ~ .original-text,
+:where(.page-article) .toggle-cite:checked ~ .para-cite {
+    display: block;
+}
+
+/* The article's paragraphs have a fixed width, which would run past the indent */
+:where(.page-article) .original-text > * {
+    width: auto;
+    max-width: 100%;
+}
+
+:where(.page-article) .original-footnotes {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+    font-size: 0.85em;
+}
+
+:where(.page-article) .para-cite {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+:where(.page-article) .para-cite p {
+    width: auto;
+    margin: 0;
+    text-align: left;
+    text-indent: 0;
+    hyphens: none;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+:where(.page-article) .para-cite .cite-copy {
+    display: block;
+    margin: 0.5rem 0 0 auto;
+    font: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 999px;
+    padding: 0.15rem 0.8rem;
+    cursor: pointer;
+}
+
+:where(.page-article) .para-cite .cite-copy[hidden] {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    :where(.page-article) label.para-tool {
+        position: absolute;
+        top: 0.25rem;
+        right: calc(100% + 2.75rem);
+    }
+
+    :where(.page-article) label.para-tool ~ label.para-tool {
+        top: 1.6rem;
+    }
+}
+
+@media (max-width: 999.98px) {
+    :where(.page-article) .para {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1rem;
+    }
+
+    :where(.page-article) .para > * {
+        flex: 0 0 100%;
+    }
+
+    /* A flex item's margins don't collapse */
+    :where(.page-article) .para > :is(p, blockquote) {
+        margin-top: 0;
+        margin-bottom: 0.4rem;
+    }
+
+    :where(.page-article) .para > label.para-tool {
+        flex: 0 0 auto;
+        order: 1;
+        margin: 0 0 1rem;
+    }
+
+    :where(.page-article) .para > .para-toggle {
+        flex: none;
+    }
+
+    :where(.page-article) .para > .original-text,
+    :where(.page-article) .para > .para-cite {
+        order: 2;
+    }
+}
+
+/* ---- The source's page numbers ([]{.page n=10} in the Markdown): a small bar where the page turns and the number in
+        the left margin on wide screens, the number in brackets in the text on narrow ones. A number the source doesn't print
+        is in brackets either way (.unprinted) ---- */
+:where(.page-article) .page::after {
+    content: "|";
+    margin-right: 0.15em;
+    color: var(--ink-muted);
+    font-style: normal;
+}
+
+/* Nothing to divide at the start of a heading or the title page */
+:where(.page-article) :is(h2, h3) .page::after,
+:where(.page-article) .page.unprinted::after {
+    content: none;
+}
+
+:where(.page-article) .page::before {
+    content: "p." attr(data-n);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.72rem;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    color: var(--ink-muted);
+}
+
+:where(.page-article) .page.unprinted::before {
+    content: "[p." attr(data-n) "]";
+}
+
+@media (min-width: 1000px) {
+    :where(.page-article) section > p,
+    :where(.page-article) section > h2,
+    :where(.page-article) section > h3,
+    :where(.page-article) .parallel-text,
+    :where(.page-article) .parallel-translation {
+        position: relative;
+    }
+
+    :where(.page-article) .page::before {
+        position: absolute;
+        right: calc(100% + 0.75rem);
+        margin-top: 0.3em;
+    }
+}
+
+@media (max-width: 999.98px) {
+    :where(.page-article) .page::before {
+        content: "[p." attr(data-n) "]";
+        margin-right: 0.15em;
+    }
+
+    :where(.page-article) .page::after {
+        content: none;
+    }
+}
+
 /* There's no margin for editor's notes beside two columns: a note opens under its line when its letter is clicked */
 body:where(.page-article).show-translation .sidenote {
     display: none;

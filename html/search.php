@@ -31,6 +31,9 @@ function search_words(string $text): array
 // A Markdown passage as a reader sees it: no footnotes, link targets, escapes or emphasis marks
 function search_plain(string $md): string
 {
+    // Page markers []{.page n=10}
+    $md = preg_replace('/\[\]\{\.page[^}]*\}/', '', $md);
+
     // Footnotes ^[…], which may hold brackets of their own
     while (($i = strpos($md, '^[')) !== false) {
         for ($j = $i + 2, $depth = 1; $j < strlen($md) && $depth; $j++) {

@@ -382,7 +382,8 @@ function render_article($uri, $scans_open = false)
     // Keep a non-default edition in the article's links (?edition=<id>)
     $edition_query = ($edition_id !== null && $edition_id !== array_key_first($editions))
         ? '?edition=' . rawurlencode($edition_id) : '';
-    // An English translation is shown instead of the text by default; ?view=original shows the text alone and
+    // An English translation is shown instead of the text by default, with the text under each paragraph on request
+    // (paragraph_tools()); ?view=original shows the text alone and
     // ?view=both the two side by side
     $translation = article_translation($uri);
     if ($translation && (!empty($_GET['translation']) || !empty($_GET['original']))) {
@@ -430,12 +431,8 @@ function render_article($uri, $scans_open = false)
 
     // Lift the article's first heading out to be the page's title, with the "i" beside it.
     $article_title_html = null;
-    if ($edition && preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $content, $m, PREG_OFFSET_CAPTURE)) {
-        $before = trim(strip_tags(substr($content, 0, $m[0][1])));
-        if ($before === '') {
-            $article_title_html = $m[0][0];
-            $content = substr($content, $m[0][1] + strlen($m[0][0]));
-        }
+    if ($edition) {
+        [$article_title_html, $content] = lift_article_title($content);
     }
     if ($article_title_html === null) {
         $article_title_html = '<h1>' . h($title) . '</h1>';
@@ -453,6 +450,13 @@ function render_article($uri, $scans_open = false)
             [$translation_note, $translation_html] = split_editorial_note(file_get_contents($translation['html']));
             $source_note .= $translation_note;
             $content = parallel_translation($content, $translation_html, $meta['notes']);
+        } elseif ($translation_only) {
+            [, $original_html] = lift_article_title(file_get_contents($edition['html']));
+            [, $original_html] = split_editorial_note($original_html);
+            $original_html = prefix_ids(apply_editor_notes($original_html, $meta['notes'], $edition_id), 'or-');
+            $content = paragraph_tools($content, $original_html, $meta, $site_url . $slug_url . $edition_query);
+        } elseif ($view === 'original') {
+            $content = paragraph_tools($content, null, $meta, $site_url . $slug_url . $edition_query);
         }
     }
 
@@ -487,25 +491,126 @@ function render_article($uri, $scans_open = false)
     exit();
 }
 
+// An article's first heading, lifted out to be the page's title: [the heading or null, the rest]
+function lift_article_title($html)
+{
+    if (preg_match('/<h([1-3])\b[^>]*>.*?<\/h\1>/is', $html, $m, PREG_OFFSET_CAPTURE)
+        && trim(strip_tags(substr($html, 0, $m[0][1]))) === '') {
+        return [$m[0][0], substr($html, $m[0][1] + strlen($m[0][0]))];
+    }
+    return [null, $html];
+}
+
 // The text and its translation side by side, without their editorial notes (see split_editorial_note): a row per
 // block (paragraph, heading, list…) with the text's block beside the translation's, then both sets of footnotes. The translation gets its
 // editor's notes (edition "translation") and its ids prefixed with tr-, so they don't clash with the text's.
 function parallel_translation($html, $translation_html, $notes)
 {
     $translation_html = apply_editor_notes($translation_html, $notes, 'translation');
-    $translation_html = preg_replace(['/(?<=\s)(id|for)="/', '/(?<=\s)href="#/'], ['$1="tr-', 'href="#tr-'], $translation_html);
+    $translation_html = prefix_ids($translation_html, 'tr-');
 
     $text = parallel_blocks($html, false);
     $tr = parallel_blocks($translation_html, true);
 
     $rows = '';
     for ($i = 0, $n = max(count($text['blocks']), count($tr['blocks'])); $i < $n; $i++) {
-        $rows .= '<div class="parallel-row"><div class="parallel-text">' . ($text['blocks'][$i] ?? '') . '</div>'
+        $rows .= '<div class="parallel-row" id="p' . ($i + 1) . '"><div class="parallel-text">' . ($text['blocks'][$i] ?? '') . '</div>'
             . '<div class="parallel-translation" lang="en">' . ($tr['blocks'][$i] ?? '') . '</div></div>';
     }
 
     return '<div class="parallel">' . $rows . '</div>'
         . $text['footnotes'] . $tr['footnotes'];
+}
+
+// A single column of the text or translation, with "Latine" ("Show German" and so on in another language) and "Cite" beside each paragraph, in the left margin on
+// wide screens; both open under the paragraph. $original_html is the text the translation is paired with by position, as in
+// parallel_translation(), with its ids prefixed with or-, and null when the text is what's shown. Its footnotes go with the
+// paragraph that cites them, as its footnotes section isn't shown. If the two don't have the same number of blocks, the
+// translation is shown without these rather than beside the wrong paragraphs. A paragraph is cited at its own pages (see
+// block_pages()), with a link to #p<its position>, which the side-by-side rows have too.
+function paragraph_tools($html, $original_html, $meta, $url)
+{
+    $tr = parallel_blocks($html, false);
+    $text = $original_html === null ? $tr : parallel_blocks($original_html, false);
+    if (count($tr['blocks']) !== count($text['blocks'])) {
+        error_log('Plain Old Text: translation has ' . count($tr['blocks']) . ' blocks, its text ' . count($text['blocks']) . '; not pairing them');
+        return $html;
+    }
+
+    preg_match_all('#<li\b[^>]*\bid="or-fn(\d+)".*?</li>#s', $text['footnotes'], $m);
+    $footnotes = array_combine($m[1], $m[0]);
+
+    $language = h($meta['language'] ?: 'original');
+    $lang = ['Latin' => 'la', 'German' => 'de'][$meta['language']] ?? null;
+    $page = null;
+    $out = '';
+    foreach ($tr['blocks'] as $i => $block) {
+        $n = $i + 1;
+        $original = $text['blocks'][$i];
+        $block_page = block_pages($original, $page);
+        $refs = [];
+        if ($original_html !== null) {
+            preg_match_all('/href="#or-fn(\d+)"/', $original, $m);
+            $refs = $m[1];
+        }
+        // Not on a heading, table, or short or line-broken block such as an address, unless a footnote would otherwise be lost
+        $reader_text = trim(strip_tags(preg_replace('#<span class="sidenote.*?</span>#s', '', $original)));
+        $paragraph = preg_match('/^<(p|blockquote)\b/', $original) && !str_contains($original, '<br')
+            && count(preg_split('/\s+/u', $reader_text)) >= 12;
+        if (!$paragraph && !$refs) {
+            $out .= $block;
+            continue;
+        }
+
+        $tools = '';
+        $panels = '';
+        if ($original_html !== null) {
+            $original_notes = '';
+            foreach ($refs as $ref) {
+                if (isset($footnotes[$ref])) {
+                    $original_notes .= preg_replace('/^<li\b/', '<li value="' . $ref . '"', $footnotes[$ref]);
+                }
+            }
+            // Latin is offered in Latin; the word stays and darkens while the text is open
+            $show = $meta['language'] === 'Latin' ? 'Latine' : 'Show ' . $language;
+            $hide = $meta['language'] === 'Latin' ? 'Latine' : 'Hide ' . $language;
+            $tools .= '<input type="checkbox" id="original-' . $n . '" class="para-toggle toggle-original"/>'
+                . '<label for="original-' . $n . '" class="para-tool sans"><span class="tool-show">' . $show
+                . '</span><span class="tool-hide">' . $hide . '</span></label>';
+            $panels .= '<div class="original-text"' . ($lang ? ' lang="' . $lang . '"' : '') . '>' . $original
+                . ($original_notes ? '<ol class="original-footnotes">' . $original_notes . '</ol>' : '') . '</div>';
+        }
+        if ($paragraph) {
+            $cited = $block_page === null ? $meta : ['page' => $block_page] + $meta;
+            $tools .= '<input type="checkbox" id="cite-' . $n . '" class="para-toggle toggle-cite"/>'
+                . '<label for="cite-' . $n . '" class="para-tool sans">Cite</label>';
+            $panels .= '<div class="para-cite sans"><p id="citation-' . $n . '">' . chicago_citation($cited, $url . '#p' . $n) . '</p>'
+                . '<button type="button" class="cite-copy" data-target="citation-' . $n . '" hidden>Copy</button></div>';
+        }
+        $out .= '<div class="para" id="p' . $n . '">' . $tools . $block . $panels . '</div>';
+    }
+    return $out . $tr['footnotes'];
+}
+
+// The pages a block of the text is on, from the page markers ([]{.page n=10}, <span class="page" data-n="10">) in it and
+// before it, "10" or "10–11", or null in a text without them. $page is the page the block starts on, then the one it ends on.
+function block_pages($block, &$page)
+{
+    preg_match_all('/<span class="page[^"]*" data-n="([^"]+)"/', $block, $m);
+    if (!$m[1]) {
+        return $page;
+    }
+    // Only tags before the first marker: the block starts on that page
+    $starts_there = trim(strip_tags(substr($block, 0, strpos($block, '<span class="page')))) === '';
+    $first = $starts_there || $page === null ? $m[1][0] : $page;
+    $page = end($m[1]);
+    return $first === $page ? $first : $first . '–' . $page;
+}
+
+// A prefix on an article's ids and the links to them, for showing a second text on the page
+function prefix_ids($html, $prefix)
+{
+    return preg_replace(['/(?<=\s)(id|for)="/', '/(?<=\s)href="#/'], ['$1="' . $prefix, 'href="#' . $prefix], $html);
 }
 
 // An article's HTML split into its top-level blocks: ['blocks' => [html…],

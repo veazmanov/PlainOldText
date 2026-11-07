@@ -1,7 +1,7 @@
 <?php
 // ./scripts/check-notes.php
 // Checks the "notes" in each articles/<slug>/data.json: every note's anchor ("on") must match its edition's
-// text exactly once. The text is compared as a reader sees it: without the editorial note, Markdown
+// text exactly once. The text is compared as a reader sees it: without the editorial note, page markers, Markdown
 // emphasis (* and _), footnotes (^[...], [^n] and their definitions) and backslash escapes, with whitespace
 // collapsed. Prints a line per note and exits 1 if any anchor matches 0 or more than 1 times.
 // Usage: php scripts/check-notes.php [article-folder ...]   (no args = all articles)
@@ -21,6 +21,9 @@ function reader_text($markdown)
     $text = preg_replace('/\[\^[^\]]+\]/', '', $text);
     // Inline notes ^[...], which may contain brackets of their own
     $text = preg_replace('/\^(\[(?:[^\[\]]++|(?1))*\])/', '', $text);
+
+    // Page markers
+    $text = preg_replace('/\[\]\{\.page[^}]*\}/', '', $text);
 
     // Backslash escapes, then emphasis
     $text = preg_replace('/\\\\(.)/s', '$1', $text);

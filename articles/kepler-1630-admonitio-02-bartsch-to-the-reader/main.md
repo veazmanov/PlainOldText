@@ -4,7 +4,7 @@
 Spelling, accents and italics as printed, including *v* for *u* in *qv* and the *ę* for *æ*. Long s is given as s, ligatures other than *æ* and *œ* are resolved, and the abbreviation *q;* is written out as *que*. Line-end hyphens are rejoined; page breaks, signatures and catchwords are not marked. Words in small capitals, and those following a large initial, are given in ordinary type.
 :::
 
-## Lectori benevolo S. P. D. Jac. Bartsch. D. Philomathemat.
+## []{.page n=6}Lectori benevolo S. P. D. Jac. Bartsch. D. Philomathemat.
 
 Habes hîc, Astrorum Spectator, Cœlorum Metator Studiose, utilem & jucundam Cl. Dn. Kepleri, Soceri venerandi, Admonitionem, de raro Veneris & Mercurij phænomeno, Annum M.DC.XXXI. conjunctim nobilitante, tuamque industriã excitante: quam consensu ipsius, in itinere nunc meo, denuò excusam, Ephemeridum nostrarum vicennalium prodromi loco, tecum publici Astronomici boni causâ iterum communico. Eidem ad majorem calculi nostri fidem explorandam, non tantùm ex Ephemeride suâ dudum absolutâ, binorum Planetarum motus ad aliquot dies vicinos: sed & ipsum calculum, ex Tabulis Rudolphinis Tychonico-Keplerianum, quem ad medium conjunctionis utriusque tempus Uraniburgicum, præceptorum vigore, inquisivi, præmittere volui, debui. Quo interim primi Ephemeridum nostrarum Tomi, è Silesiâ nostrâ quamprimùm prodituri, pignore, benevolus utere, fruere, nostrisque conatibus fave ac vale.
 
@@ -30,7 +30,7 @@ Habes hîc, Astrorum Spectator, Cœlorum Metator Studiose, utilem & jucundam Cl.
 | 8 | 15. 45. 30 | 13. 35 | *Asc.* | 0. 26 |
 | 9 | 16. 46. 2 | 12. 15 | | 0. 44 |
 
-## Calculus Solis et Veneris
+## []{.page n=7}Calculus Solis et Veneris
 
 ad Tempus conjunctionis, quod æquale seu medium Hor. 9. Min. 41. post merid. 6. Decemb. nov. 26. Novemb. vet. styl. Anni curr. 1631. Temp. complet. 1630. Octobr. 25. vet.
 
@@ -67,7 +67,7 @@ ad Tempus conjunctionis, quod æquale seu medium Hor. 9. Min. 41. post merid. 6.
 *Ergo Latitudo Veneris vera Sept.* 11 *min.* 19 *sec.*\
 *Longitudo verò eadem cum Sole, scil.* 14 *gr.* 34 *min.* 50 *sec. Sagittarij.*
 
-## Calculus Solis et Mercurii
+## []{.page n=8}Calculus Solis et Mercurii
 
 ad Tempus conjunctionis, quod æquale seu medium Hor. 1. Min. 17. Sec. 30. post merid. 7. Novemb. nov. 28. Octobr. vet. styl. Anni curr. 1631. Temp. complet. 1630. Septembr. 27. vet.
 
