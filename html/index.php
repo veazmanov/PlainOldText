@@ -327,7 +327,7 @@ function render_collection($key)
         'dateline'    => dateline(['<span class="dateline-pub">' . h($c['author'] ?: $c['pub']) . '</span>', '<span>' . h($c['date']) . '</span>']),
         'summary'     => $c['summary'],
         'source_note' => source_note($c),
-        'citation'    => chicago_book_citation(['author' => $c['author']] + $metadata[$c['members'][0]], $c['title'], $site_url . '/stable/' . $c['id']),
+        'citation'    => chicago_book_citation(['author' => $c['author'], 'source_url' => $c['source_url'] ?: $metadata[$c['members'][0]]['source_url']] + $metadata[$c['members'][0]], $c['title'], $site_url . '/stable/' . $c['id']),
         'github_url'  => $github_repo . '/blob/main/articles/collections.json',
         'map_url'     => $c['map'],
     ]) . '<h2>Contents</h2><ol class="collection-contents">' . $items . '</ol>';

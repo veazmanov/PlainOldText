@@ -1,7 +1,8 @@
 <?php
 // ./html/citation.php
 // Chicago-style footnote citations (notes and bibliography, 17th ed.) built from an article's data.json,
-// ending with where it is available online. Returns HTML; titles of publications are in <em>.
+// ending with two links: where the text was found ("source_url") and its permalink here. Returns HTML; titles of
+// publications are in <em>.
 
 function chicago_citation($meta, $url)
 {
@@ -46,12 +47,12 @@ function chicago_citation($meta, $url)
             $parts[] = $periodical . ($meta['place'] ? ' (' . h($meta['place']) . ')' : '') . ', ' . $date . $page . ',';
     }
 
-    $parts[] = 'available online, ' . h($url) . '.';
+    $parts[] = citation_links($meta, $url);
     return implode(' ', $parts);
 }
 
 // A whole book (a collection's contents page), from its first part's data.json:
-// Francis Bacon, <em>Novum Organum</em> (New York: P. F. Collier &amp; Son, 1902), available online, <url>.
+// Francis Bacon, <em>Novum Organum</em> (New York: P. F. Collier &amp; Son, 1902), <source url>; available online, <url>.
 function chicago_book_citation($meta, $title, $url)
 {
     $book = '<em>' . h($meta['full_title'] ?: $title) . '</em>';
@@ -60,7 +61,14 @@ function chicago_book_citation($meta, $title, $url)
     }
     $imprint = chicago_imprint($meta);
     return ($meta['author'] ? h($meta['author']) . ', ' : '')
-        . $book . ($imprint ? ' (' . $imprint . ')' : '') . ', available online, ' . h($url) . '.';
+        . $book . ($imprint ? ' (' . $imprint . ')' : '') . ', ' . citation_links($meta, $url);
+}
+
+// The end of a citation: where the text was found, off-site, then its permalink here:
+// https://archive.org/details/…; available online, https://lib.vjbe.net/stable/d89xb.
+function citation_links($meta, $url)
+{
+    return (!empty($meta['source_url']) ? h($meta['source_url']) . '; ' : '') . 'available online, ' . h($url) . '.';
 }
 
 // A commentary, cited like a blog post: Victor Elgersma, “Kepler's Press,” <em>Plain Old Text</em>, October 31, 2026,
