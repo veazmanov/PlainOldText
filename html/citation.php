@@ -52,7 +52,7 @@ function chicago_citation($meta, $url)
 }
 
 // A whole book (a collection's contents page), from its first part's data.json:
-// Francis Bacon, <em>Novum Organum</em> (New York: P. F. Collier &amp; Son, 1902), <source url>; available online, <url>.
+// Francis Bacon, <em>Novum Organum</em> (New York: P. F. Collier &amp; Son, 1902), available online <source url>; <url>.
 function chicago_book_citation($meta, $title, $url)
 {
     $book = '<em>' . h($meta['full_title'] ?: $title) . '</em>';
@@ -65,10 +65,10 @@ function chicago_book_citation($meta, $title, $url)
 }
 
 // The end of a citation: where the text was found, off-site, then its permalink here:
-// https://archive.org/details/…; available online, https://lib.vjbe.net/stable/d89xb.
+// available online https://archive.org/details/…; https://lib.vjbe.net/stable/d89xb.
 function citation_links($meta, $url)
 {
-    return (!empty($meta['source_url']) ? h($meta['source_url']) . '; ' : '') . 'available online, ' . h($url) . '.';
+    return 'available online ' . (!empty($meta['source_url']) ? h($meta['source_url']) . '; ' : '') . h($url) . '.';
 }
 
 // A commentary, cited like a blog post: Victor Elgersma, “Kepler's Press,” <em>Plain Old Text</em>, October 31, 2026,

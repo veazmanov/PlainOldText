@@ -259,10 +259,12 @@ function inline_markdown($s)
 
 // The note about where a text comes from, in the panel behind the "i": labelled paragraphs ("Source: …") for those
 // of $fields that $record has. "source": the original edition; "transcribed_from": the copy actually transcribed;
-// "copyright": why the text is free to reproduce (data.json, collections.json).
+// "copyright": why the text is free to reproduce (data.json, collections.json); "method": how a collection's
+// parts were ordered and dated; "date_note": how a letter's sort date was arrived at; "date_to_check": what is unsure.
 function source_note($record, $fields = ['source', 'transcribed_from', 'copyright'])
 {
-    $labels = ['source' => 'Source', 'transcribed_from' => 'Transcribed from', 'copyright' => 'Copyright'];
+    $labels = ['source' => 'Source', 'transcribed_from' => 'Transcribed from', 'copyright' => 'Copyright',
+        'method' => 'Method', 'date_note' => 'Method', 'date_to_check' => 'To check'];
     $paras = '';
     foreach ($fields as $field) {
         if (trim((string) ($record[$field] ?? '')) !== '') {
@@ -303,7 +305,8 @@ function split_editorial_note($html)
 }
 
 // A collection's contents page: its title, then each part with its pages and summary. Its source edition, the copy
-// transcribed, why the texts are in the public domain and its citation are behind the "i" beside the title.
+// transcribed, why the texts are in the public domain and its citation are behind the "i" beside the title. A
+// collection in date order lists the edition's own order at ?order=edition.
 function render_collection($key)
 {
     global $metadata, $collections, $site_name, $site_url, $github_repo;
@@ -312,12 +315,21 @@ function render_collection($key)
     $pub_name = $site_name;
     $body_class = 'page-article page-collection';
 
+    $by_edition = $c['order'] === 'date' && ($_GET['order'] ?? '') === 'edition';
+    $order_switch = $c['order'] === 'date'
+        ? '<p class="contents-order sans">' . ($by_edition
+            ? '<a href="/stable/' . h($c['id']) . '">By date</a> &middot; <span aria-current="true">Edition order</span>'
+            : '<span aria-current="true">By date</span> &middot; <a href="/stable/' . h($c['id']) . '?order=edition">Edition order</a>')
+            . '</p>'
+        : '';
+
     $items = '';
-    foreach ($c['members'] as $slug) {
+    foreach ($by_edition ? $c['edition_members'] : $c['members'] as $slug) {
         $part = $metadata[$slug];
         $items .= '<li><p class="contents-entry"><a href="/stable/' . h($part['id']) . '">' . h($part['title']) . '</a>'
-            . ($part['page'] ? ' <span class="contents-page sans">pp.&nbsp;' . h($part['page']) . '</span>' : '')
+            . (!$c['short_title'] && $part['page'] ? ' <span class="contents-page sans">pp.&nbsp;' . h($part['page']) . '</span>' : '')
             . '</p>'
+            . ($c['short_title'] ? contents_reference($c, $part) : '')
             . ($part['summary'] ? '<p class="contents-summary">' . inline_markdown($part['summary']) . summary_note() . '</p>' : '') . '</li>';
     }
 
@@ -326,13 +338,41 @@ function render_collection($key)
             . ($c['subtitle'] ? '<p class="subtitle">' . h($c['subtitle']) . '</p>' : ''),
         'dateline'    => dateline(['<span class="dateline-pub">' . h($c['author'] ?: $c['pub']) . '</span>', '<span>' . h($c['date']) . '</span>']),
         'summary'     => $c['summary'],
-        'source_note' => source_note($c),
+        'source_note' => source_note($c, ['source', 'transcribed_from', 'copyright', 'method']) . date_checks($c),
         'citation'    => chicago_book_citation(['author' => $c['author'], 'author_is_editor' => $c['author_is_editor'], 'source_url' => $c['source_url'] ?: $metadata[$c['members'][0]]['source_url']] + $metadata[$c['members'][0]], $c['title'], $site_url . '/stable/' . $c['id']),
         'github_url'  => $github_repo . '/blob/main/articles/collections.json',
         'map_url'     => $c['map'],
-    ]) . '<h2>Contents</h2><ol class="collection-contents">' . $items . '</ol>';
+    ]) . '<h2>Contents</h2>' . $order_switch . '<ol class="collection-contents">' . $items . '</ol>';
 
     include(__DIR__ . '/layout.php');
+}
+
+// In a collection's panel: the letters whose dates are still to be checked, each with its question
+function date_checks($c)
+{
+    global $metadata;
+    $items = '';
+    foreach ($c['members'] as $slug) {
+        $part = $metadata[$slug];
+        if ($part['date_to_check']) {
+            $items .= '<li><a href="/stable/' . h($part['id']) . '">' . h($part['title']) . '</a>: ' . h($part['date_to_check']) . '</li>';
+        }
+    }
+    return $items ? '<p><span class="sans">To check:</span></p><ul class="date-checks">' . $items . '</ul>' : '';
+}
+
+// Under a part on its collection's contents: a letter's writer and addressee, then where it is in the edition, so
+// that a citation of the printed page can be followed: Bartsch → Müller · NK 4, p. 97
+function contents_reference($c, $part)
+{
+    $surname = fn($name) => preg_replace('/^.*\s/', '', trim($name));
+    $page = $part['page'] ? $c['short_title'] . ', ' . (preg_match('/[–,-]/u', $part['page']) ? 'pp.' : 'p.') . '&nbsp;' . h($part['page']) : '';
+    return '<p class="contents-reference sans">'
+        . implode(' &middot; ', array_filter([
+            $part['recipient'] && $part['author'] ? h($surname($part['author'])) . ' &rarr; ' . h($surname($part['recipient'])) : '',
+            $page,
+        ]))
+        . '</p>';
 }
 
 // "Part of <collection>" under an article's dateline, and links to the previous and next parts after its text.
@@ -444,7 +484,7 @@ function render_article($uri, $scans_open = false)
         // One note: the source (from data.json), then how the text was transcribed and the editorial
         // notes of the files shown. The translation alone leaves out the text's, which are about the transcription.
         [$file_note, $content] = split_editorial_note($content);
-        $source_note = source_note($meta, $translation_only ? ['source'] : ['source', 'transcribed_from']) . $file_note;
+        $source_note = source_note($meta, $translation_only ? ['source', 'date_note', 'date_to_check'] : ['source', 'transcribed_from', 'date_note', 'date_to_check']) . $file_note;
         $content = apply_editor_notes($content, $meta['notes'], $translation_only ? 'translation' : $edition_id);
         if ($translation_shown) {
             [$translation_note, $translation_html] = split_editorial_note(file_get_contents($translation['html']));

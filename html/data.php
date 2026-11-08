@@ -152,6 +152,15 @@ if (is_dir($articles_base)) {
             'issue'      => $json_data['issue'] ?? null,
             // The key of the collection (in collections.json) this article is a part of
             'collection' => $json_data['collection'] ?? null,
+            // A letter's addressee, shown with its writer on its collection's contents ("Bartsch → Müller")
+            'recipient'  => $json_data['recipient'] ?? null,
+            // The date as the letter gives it ("17/27 October 1629"), its new-style date as an ISO date, or just a
+            // month or year ("1628"), which orders a collection by date, and how that date was arrived at
+            'date_written' => $json_data['date_written'] ?? null,
+            'date_sort'  => $json_data['date_sort'] ?? null,
+            'date_note'  => $json_data['date_note'] ?? '',
+            // What remains to be checked about that date against the edition's notes
+            'date_to_check' => $json_data['date_to_check'] ?? '',
             // Editor's notes, shown as lettered sidenotes (see notes.php)
             'notes'      => $json_data['notes'] ?? [],
             // The works the editor's notes cite, listed after the text (see notes.php)
@@ -194,6 +203,13 @@ foreach ($collections_data ?: [] as $key => $c) {
         'source'           => $c['source'] ?? '',
         'transcribed_from' => $c['transcribed_from'] ?? '',
         'copyright'        => $c['copyright'] ?? '',
+        // How the parts were ordered and dated, when "order" is "date" (see below)
+        'method'           => $c['method'] ?? '',
+        // "date": the letters in date order (their date_sort), after the parts without one (a preface); the
+        // edition's own order, the folders', is kept as edition_members and linked from the contents
+        'order'       => $c['order'] ?? null,
+        // How a citation names the edition, before a part's page: "NK 4, p. 97"
+        'short_title' => $c['short_title'] ?? null,
         // Optional, for a collection whose first part isn't by its main author: the byline and the citation's author
         'main_author' => $c['author'] ?? null,
         // True when that author edited the book rather than wrote it, cited as "Jacob Bartsch, ed., <em>…</em>"
@@ -225,6 +241,27 @@ foreach ($collections as $key => $c) {
         unset($collections[$key], $collection_ids[$c['id']]);
         continue;
     }
+    $c['edition_members'] = $c['members'];
+    if ($c['order'] === 'date') {
+        // Parts without a sort date that aren't letters (a preface) first, then the letters by date, then any
+        // undated letters; each in edition order where they tie
+        $rank = function ($slug) use ($metadata) {
+            $m = $metadata[$slug];
+            if ($m['date_sort']) {
+                return [1, $m['date_sort']];
+            }
+            return [$m['category'] === 'letter' ? 2 : 0, ''];
+        };
+        $edition = array_flip($c['members']);
+        usort($c['members'], function ($a, $b) use ($rank, $edition) {
+            [$ra, $da] = $rank($a);
+            [$rb, $db] = $rank($b);
+            // Dates as strings: "1628" (a year alone) before "1628-04-16"
+            return [$ra, strcmp($da, $db), $edition[$a]] <=> [$rb, 0, $edition[$b]];
+        });
+        $collections[$key]['members'] = $c['members'];
+    }
+    $collections[$key]['edition_members'] = $c['edition_members'];
     // The byline, date and category are the first part's
     $first = $metadata[$c['members'][0]];
     $collections[$key] += [
