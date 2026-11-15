@@ -1,0 +1,62 @@
+{
+    "id": "qtnvp",
+    "title": "Title Page and Dedication",
+    "publication": "Nova stereometria doliorum vinariorum",
+    "collection": "kepler-1615-stereometria",
+    "category": "book-chapter",
+    "language": "Latin",
+    "author": "Johannes Kepler",
+    "full_title": "Nova stereometria doliorum vinariorum, inprimis Austriaci, figurae omnium aptissimae; et usus in eo virgae cubicae compendiosissimus et plane singularis. Accessit stereometriae Archimedeae supplementum",
+    "place": "Linz",
+    "printer": "Johannes Planck",
+    "year": "1615",
+    "page": "1–8",
+    "source_url": "https://doi.org/10.3931/e-rara-11051",
+    "source": "The title page of the first edition of Kepler's *Nova stereometria doliorum vinariorum* (Linz: Johannes Planck, at the author's expense, 1615), and his dedication to Maximilian of Liechtenstein and Helmhard Jörger, dated at Linz, 17 December 1613.",
+    "transcribed_from": "the [page images](https://doi.org/10.3931/e-rara-11051) of the copy in the ETH-Bibliothek, Zürich (Rar 356: 1 q), on e-rara.",
+    "summary": "Kepler tells how, a newly married man laying in wine at Linz in the autumn of 1613, he watched the seller gauge every cask with a single slanting rod, whatever its shape, and set out to find whether the method had any geometrical foundation. He offers the result as a New Year's gift to two Austrian noblemen with large vineyards.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "novam nuptam domum",
+            "note": "Kepler married Susanna Reuttinger, his second wife, at Eferding on 30 October 1613."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "I had brought a new bride home",
+            "note": "Kepler married Susanna Reuttinger, his second wife, at Eferding on 30 October 1613."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "VVodderbornius Scotus",
+            "note": "John Wedderburn (1583–1651), a Scottish physician and mathematician who had studied under Galileo at Padua and in 1610 defended the *Sidereus nuncius* against Martin Horky."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "Dr John Wedderburn the Scot",
+            "note": "John Wedderburn (1583–1651), a Scottish physician and mathematician who had studied under Galileo at Padua and in 1610 defended the *Sidereus nuncius* against Martin Horky."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "XVI. Cal. Ian.",
+            "note": "17 December."
+        },
+        {
+            "edition": "translation",
+            "type": "explanatory",
+            "on": "the 16th day before the Kalends of January",
+            "note": "17 December."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "strenam GG. VV.",
+            "note": "*Generositates Vestrae*, \"Your Lordships\". The phrase occurs again in the closing salutation."
+        }
+    ]
+}

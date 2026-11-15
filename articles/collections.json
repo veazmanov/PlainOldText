@@ -59,5 +59,16 @@
         "source": "Bartsch, Jacob, ed. *Admonitio ad astronomos, rerumque coelestium studiosos, de raris mirisque anni 1631 phaenomenis, Veneris puta et Mercurii in Solem incursu*, by Johannes Kepler. Frankfurt: Godefrid Tampach, 1630. First published at Leipzig, 1629.",
         "transcribed_from": "the [page images](https://archive.org/details/den-kbd-pil-20002499-001/mode/2up) of the copy in the Royal Library, Copenhagen (KB 52,94).",
         "copyright": "In the public domain. Kepler died in 1630 and Bartsch in 1633."
+    },
+    "kepler-1615-stereometria": {
+        "id": "bgryn",
+        "source_url": "https://doi.org/10.3931/e-rara-11051",
+        "title": "Nova stereometria doliorum vinariorum",
+        "subtitle": "A new solid geometry of wine barrels",
+        "author": "Johannes Kepler",
+        "summary": "Kepler's treatise on gauging wine casks, prompted by watching a wine seller at Linz measure every barrel with one slanting rod. He works out the volumes of barrels and other solids of revolution by cutting them into very many thin slices, and asks why the Austrian barrel's shape suits the gauger's rod so well.",
+        "source": "Kepler, Johannes. *Nova stereometria doliorum vinariorum, inprimis Austriaci, figurae omnium aptissimae; et usus in eo virgae cubicae compendiosissimus et plane singularis. Accessit stereometriae Archimedeae supplementum*. Linz: Johannes Planck, 1615.",
+        "transcribed_from": "the [page images](https://doi.org/10.3931/e-rara-11051) of the copy in the ETH-Bibliothek, Zürich (Rar 356: 1 q), on e-rara.",
+        "copyright": "In the public domain. Kepler died in 1630; the scan carries the Public Domain Mark."
     }
 }
