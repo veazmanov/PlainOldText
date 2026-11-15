@@ -1655,6 +1655,31 @@ body:where(.page-article):not(.show-scans):not(.scans-auto) .scan-panel {
     outline-offset: 2px;
 }
 
+/* ---- "Hide marginalia" (toggles.js): page numbers, the paragraph tools and what they open, and sidenotes. Important
+        because the rules that open a sidenote or a paragraph's panel are more specific ---- */
+:where(.page-article) .marginalia-toggle {
+    padding: 0;
+    font: inherit;
+    color: var(--ink-muted);
+    text-decoration: underline;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+:where(.page-article) .marginalia-toggle:hover {
+    color: var(--ink);
+}
+
+:where(.page-article) .marginalia-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+html[data-marginalia="off"] .page-article :is(span.page, .sidenote, .marginnote, .margin-toggle, .para-toggle, .para-tool, .original-text, .para-cite) {
+    display: none !important;
+}
+
 /* ---- Editions (e.g. reading and diplomatic) of one source ---- */
 :where(.page-article) p.edition-switch {
     max-width: 500px;

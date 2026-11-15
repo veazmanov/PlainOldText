@@ -15,6 +15,8 @@ $body_class = $body_class ?? '';
     <?php // A theme chosen with the nav toggle (theme.js), applied before the page draws so it doesn't flash. The cookie
     // is shared by plainoldtext.vjbe.net and sources.vjbe.net; localStorage holds choices made before it existed. ?>
     <script>try { var t = (document.cookie.match(/(?:^|; )pot-theme=(light|dark)/) || [])[1] || localStorage.getItem('pot-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <?php // Marginalia a reader has hidden (toggles.js), likewise before the page draws ?>
+    <script>try { if (localStorage.getItem('pot-marginalia') === 'off') document.documentElement.dataset.marginalia = 'off'; } catch (e) {}</script>
     <?php if (!empty($canonical_url)): ?>
         <link rel="canonical" href="<?= htmlspecialchars($canonical_url) ?>">
     <?php endif; ?>

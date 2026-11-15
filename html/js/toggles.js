@@ -48,3 +48,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// "Hide marginalia": clears the margins of page numbers, paragraph tools and sidenotes, and remembers it for the next
+// page (read back in head.php before the page draws).
+document.addEventListener('DOMContentLoaded', function () {
+    var button = document.getElementById('marginalia-toggle');
+    if (!button) {
+        return;
+    }
+    var root = document.documentElement;
+
+    function label() {
+        button.textContent = root.dataset.marginalia === 'off' ? 'Show marginalia' : 'Hide marginalia';
+    }
+
+    button.addEventListener('click', function () {
+        if (root.dataset.marginalia === 'off') {
+            delete root.dataset.marginalia;
+        } else {
+            root.dataset.marginalia = 'off';
+        }
+        try {
+            if (root.dataset.marginalia === 'off') {
+                localStorage.setItem('pot-marginalia', 'off');
+            } else {
+                localStorage.removeItem('pot-marginalia');
+            }
+        } catch (e) {}
+        label();
+    });
+
+    label();
+    document.getElementById('marginalia-item').hidden = false;
+});

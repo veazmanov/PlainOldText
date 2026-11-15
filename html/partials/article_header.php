@@ -3,11 +3,13 @@
 // index.php), then the scans button and edition switch. An article with an English translation shows it instead of
 // the text; a switch under the scans button shows the text alone (?view=original) or the two side by side
 // (?view=both). The scans open beside the text by default on wide screens (body.scans-auto); see article.js.
-// "Commentary" links to the commentary on the article (commentary.php).
+// "Commentary" links to the commentary on the article (commentary.php). "Hide marginalia" clears the margins of page
+// numbers, the paragraph tools and sidenotes (toggles.js), and is only shown where there are some and scripts run.
+$has_marginalia = preg_match('/class="(?:[^"]*\s)?(?:page|sidenote|marginnote|para-tool)[\s"]/', $content);
 ?>
 <?= $info_panel ?>
 
-<?php if ($has_scans || $commentary): ?>
+<?php if ($has_scans || $commentary || $has_marginalia): ?>
     <p class="article-actions sans">
         <?php if ($has_scans): ?>
             <a class="scans-toggle" href="<?= htmlspecialchars($photo_link) ?>" id="scans-toggle"
@@ -16,6 +18,12 @@
         <?php if ($commentary): ?>
             <?php if ($has_scans): ?>&middot; <?php endif; ?>
             <a class="commentary-link" href="<?= htmlspecialchars($commentary_link) ?>">Commentary<?= count($commentary) > 1 ? ' (' . count($commentary) . ')' : '' ?></a>
+        <?php endif; ?>
+        <?php if ($has_marginalia): ?>
+            <span id="marginalia-item" hidden>
+                <?php if ($has_scans || $commentary): ?>&middot; <?php endif; ?>
+                <button type="button" class="marginalia-toggle" id="marginalia-toggle">Hide marginalia</button>
+            </span>
         <?php endif; ?>
     </p>
 <?php endif; ?>

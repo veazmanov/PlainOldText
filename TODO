@@ -1,32 +1,20 @@
-- [ ] put "die keplerbriefe" in chronological order, but keep paage numbers so referencing is easy. - add in the info that I have reordered them to be chronological, which makes way more sense (what were they smoking????)
-- [x] consider linking to wikidata, iiif and the MIT open text archive in the footer as (project similar in spirit)
-- [ ] find a good way to display editorial comments / clarificatory comments
-- [ ] perhaps get AI to generate some useful clarificatory comments for an educated 21st century audience. 
+- [ ] transcribe Nova Kepleriana 1-3 and check for instances of a scientific party?
+- [ ] sometimes line heights are a bit messed up by the chicago-style notes. Either make all line heights a big bigger, or make the little superscripts smaller
+- [ ] allow people to comment (just leave an email address). Comments have to be pre-approved by me. Users can leave anonymous comments or a comment connected to an email address [no name]. 
+- [ ] locally comments immediately end up in as comments.json. In prod they end up being emailed to me. 
 - [ ] see if I can store some session data regarding how far someone is in a text? 
 - [ ] consider republishing this https://en.wikisource.org/wiki/Philosophical_Essays_Concerning_Human_Understanding
 - [ ] register @plainoldtext.vjbe.net for an isolated email address? 
 - [ ] add a little sticky menu item like this https://wiki.php.net/
+- [ ] take the styling for this site as a submodule / fork of tufte - just check with the legalities of things
 - [ ] find the screenshots for https://plainoldtext.vjbe.net/stable/fvds4
-- [x] should say "View on Github", not Edit on Github
-- [x] make contribute page more friendly
-- [x] make plainoldtext and sources actually be aliases as opposed to redirects
 - [ ] make the text file and the screenshots be a bit closer together
 - [ ] make everything actually a .txt file (not .md)
-- [x] add dark mode
-- [ ] add comment section 
 - [ ] is it best to have a one paragraph per line or an actually accurately flowed text - i.e the plain text version should have the exact same line breaks as the text it is transcribing. This will make copy-checking much easier. - check whether default is wrong flow. 
-- [ ] consider a .md and a .txt version
-- [ ] un-re-flow all the articles - i.e keep the same line spacing as in the original
-- [ ] add to the about page that I was partly inspired by https://classics.mit.edu/Browse/browse-Aristotle.html
-- [ ] or, alternatively: create a separate step to add the sidenotes (i.e manage the sidenotes separately in a JSON array with the words that the sidenote should appear after and the sidenote itself). This should be a compilation step in the digital humanities pipeline, not here, but here there will be a little switch that allows users to turn sidenotes on and off. a
-- [ ] add a proper sql based viewcounter. 
-- [ ] convert all images to WEBP to make it easier
-- [ ] add "see also" to https://www.victorianweb.org/philosophy/thought1.html
+- [ ] un-re-flow all the newspaper articles - makes it easier to view them side by side. 
 - [ ] from 1 Jan 2027: add page scans to the Nova Kepleriana 4 letters (https://sources.vjbe.net/stable/713cz). Max Caspar (d. 1956) is still in copyright in the EU/UK until then, and his German translations and notes share pages with the Latin. Take the images from a source whose licence allows it (check publikationen.badw.de rather than the bought De Gruyter facsimile). Could also put Caspar's German translations alongside then.
-- [ ] make printing a first class citizen
 - [ ] rebrand - Victor Azmanov's personal library
 - [ ] make the dark mode toggle visible (sticky) at all times
-- [x] publish Kepler's *Admonitio ad astronomos rerumque coelestium studiosos* (1629), his pamphlet predicting the transits of Mercury and Venus in 1631. None of the Nova Kepleriana 4 letters mentions it.
 
 # TODO: copyright and provenance
 
