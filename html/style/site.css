@@ -1386,7 +1386,7 @@ body:where(.page-article) > article {
 /* ---- Editor's notes (notes.php): Tufte sidenotes, lettered a, b, c… so they don't look like the
         author's own numbered footnotes ---- */
 :where(.page-article) > article {
-    counter-reset: editor-note-counter;
+    counter-reset: editor-note-counter translation-note-counter;
 }
 
 :where(.page-article) label.editor-note-number {
@@ -2180,4 +2180,18 @@ body.figures-folded p.figure.figure-open img {
 
 body:where(.page-article).show-translation .parallel-translation p.figure {
     display: none;
+}
+
+/* Side by side (?view=both), the translation's notes are lettered on their own, so a note in the English has the same
+   letter as its counterpart in the text beside it */
+body:where(.page-article).show-translation .parallel-translation label.editor-note-number {
+    counter-increment: translation-note-counter;
+}
+
+body:where(.page-article).show-translation .parallel-translation label.editor-note-number::after {
+    content: counter(translation-note-counter, lower-alpha);
+}
+
+body:where(.page-article).show-translation .parallel-translation .editor-note::before {
+    content: counter(translation-note-counter, lower-alpha) "\00a0\00a0";
 }
