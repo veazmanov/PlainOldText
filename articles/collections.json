@@ -70,5 +70,16 @@
         "source": "Kepler, Johannes. *Nova stereometria doliorum vinariorum, inprimis Austriaci, figurae omnium aptissimae; et usus in eo virgae cubicae compendiosissimus et plane singularis. Accessit stereometriae Archimedeae supplementum*. Linz: Johannes Planck, 1615.",
         "transcribed_from": "the [page images](https://doi.org/10.3931/e-rara-11051) of the copy in the ETH-Bibliothek, Zürich (Rar 356: 1 q), on e-rara.",
         "copyright": "In the public domain. Kepler died in 1630; the scan carries the Public Domain Mark."
+    },
+    "huygens-1690-pesanteur": {
+        "id": "c1mef",
+        "source_url": "https://archive.org/details/bub_gb_X9PKaZlChggC",
+        "title": "Discours de la cause de la pesanteur",
+        "subtitle": "Discourse on the cause of gravity",
+        "author": "Christiaan Huygens",
+        "summary": "Huygens's mechanical explanation of gravity, by the centrifugal force of a fluid matter circling the Earth, with an Addition answering Newton's Principia. So far transcribed in part: the passages on what counts as an intelligible cause, and on Newton's attraction.",
+        "source": "Huygens, Christiaan. *Discours de la cause de la pesanteur*. In *Traité de la lumière*, by Christiaan Huygens. Leiden: Pierre vander Aa, 1690.",
+        "transcribed_from": "the [page images](https://archive.org/details/bub_gb_X9PKaZlChggC) of a copy digitised by Google Books, on the Internet Archive.",
+        "copyright": "In the public domain. Huygens died in 1695; the scan carries the Public Domain Mark."
     }
 }
