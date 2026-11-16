@@ -2195,3 +2195,36 @@ body:where(.page-article).show-translation .parallel-translation label.editor-no
 body:where(.page-article).show-translation .parallel-translation .editor-note::before {
     content: counter(translation-note-counter, lower-alpha) "\00a0\00a0";
 }
+
+/* ---- A photograph of a printed table with its transcription (::: {.figure-pair} in the Markdown): the photograph
+        directly above the table, in the text column (the margin to the right is the diagrams' panel) ---- */
+:where(.page-article) .figure-pair {
+    max-width: 500px;
+    margin: 1.4rem 0;
+}
+
+:where(.page-article) .figure-pair > p:first-child {
+    margin: 0 0 0.75rem;
+    text-indent: 0;
+}
+
+:where(.page-article) .figure-pair img {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    filter: var(--scan-dim);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+:where(.page-article) .figure-pair table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    margin-top: 0;
+}
+
+/* Side by side with the translation, the photograph is shown once, beside the original */
+body:where(.page-article).show-translation .parallel-translation .figure-pair > p:first-child {
+    display: none;
+}

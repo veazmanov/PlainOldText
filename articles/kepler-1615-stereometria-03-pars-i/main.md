@@ -45,11 +45,16 @@ Divisa igitur BC bifariam in H, fiat ABHD parallelogrammum, vt DH secet AC in I.
 
 Cum igitur diameter GB ponatur esse partium 7, quadratum diametri erit 49. Et cum harum partium 22 sint in circumferentia, sc: in BC, dimidia BH habebit earum 11, paulo minus, vt supra. Duc 11 in semidiametrum 3 semis, sc: in AB: fiet Rectangulum AH 38 semis.
 
+::: {.figure-pair}
+![](/img/stereometria/p12-table.webp){alt="Photograph of the printed table, page 12"}
+
 | Qualium ergò Quadratum diametri | Talium Area circuli inscripti |
 |---:|:---|
 | ht. 49. — | ht. 38 semis. |
 | bis 98. — | — 77. |
 | Divisi per 7. faciunt 14. — | — 11. Quod erat demonstrandum. |
+
+:::
 
 ### Corollarium. I.
 
@@ -95,6 +100,9 @@ Si Columna recta parallelarum Basium cum Pyramide, si Cylinder cum Cono eandem b
 
 Nam omnis Columna, vt hic quinquangularis BI, bases ABCDE & FGHIK parallelas habens, & BAF, AEK cæterosque angulos rectos, solvitur in sua Pentaedra seu Prismata, vt hic quinquangularis in tria GHF, FHK, KHI, Trinis parallelogrammis & binis triangulis oppositis clausa.
 
+::: {.figure-pair}
+![](/img/stereometria/p14-table.webp){alt="Photograph of the printed table, page 14"}
+
 | | Primi | Secundi | Tertij. |
 |:--|:-:|:-:|:-:|
 | Triangula | GHF | FHK | KHI |
@@ -102,6 +110,8 @@ Nam omnis Columna, vt hic quinquangularis BI, bases ABCDE & FGHIK parallelas hab
 | Parallelogramma. | GHCB | HCAF | KECH |
 | | HCAF | FAEK | HCDI |
 | | FABG | KECH | IDEK |
+
+:::
 
 Pentaedron vero in tria Tetraedra solvitur, quorum bina semper, quæ vnum Planum Parallelogrammum ex æquo dividunt, æquealta sunt
 
@@ -205,10 +215,15 @@ Cylinder enim KLN eadem basi & altitudine, est triplum coni sui NGI, vel vt 3. a
 
 #### Summa præmissorum.
 
+::: {.figure-pair}
+![](/img/stereometria/p21-table.webp){alt="Photograph of the printed table, page 21"}
+
 | Conus Cylindri NGY. KLYN | Sphæra Cylindri PGOB KLYN | Cylinder KLYN | Cubus STVX Cylindrum stringens in KN, CM, LY, & DE. |
 |:--|:-:|:-:|:--|
 | Est vt 11. — | 22 — | 33 — | 42 Sphæram vero in |
 | Vel vt 1 — | 2 — | 3 — | 4 minus G. O. B. P. Q. R. |
+
+:::
 
 ### Corollarium.
 
@@ -341,6 +356,9 @@ Hinc facile habetur proportio Trunci conici ad Cylindros, Trunco inscriptum & ci
 Sint diametri 3. 5. Differentia 2. quæ non communicat cum ternario\
 Ergo substitue triplos 9. 15 Differentia 6. Quia eadem manet proportio.
 
+::: {.figure-pair}
+![](/img/stereometria/p29-table1.webp){alt="Photograph of the printed table, page 29"}
+
 | Ergo diameter minor | Duo media Arithmetica | Diameter maior | |
 |:-:|:-:|:-:|:--|
 | 9. | 11. 13. | 15 | Cyl. minor 81 |
@@ -349,12 +367,18 @@ Ergo substitue triplos 9. 15 Differentia 6. Quia eadem manet proportio.
 | Pro Cylindro inscripto | Pro tunica — Pro residuo Limbi | Pro Cylindro circumscripto. | Residuum limbi 78 |
 | | | | Cyl. maior 225. |
 
+:::
+
+::: {.figure-pair}
+![](/img/stereometria/p29-table2.webp){alt="Photograph of the printed table, page 29"}
+
 | Aliud Exemplum | | | |
 |:-:|:-:|:-:|:-:|
 | Dia- | | | metri |
 | 5. | 7. | 9. | 11 |
 | 5. | 6. | | |
 | Cyl. 25. | Tun. 42 — | Truncus. 67 | |
+
 
 | Aliud exemplum | | | |
 |:-:|:-:|:-:|:-:|
@@ -363,9 +387,14 @@ Ergo substitue triplos 9. 15 Differentia 6. Quia eadem manet proportio.
 | 19 | 3 | | |
 | Cyl. 361. | Tun. 60 — | Truncus 421 | |
 
+:::
+
 Vel quod eodem recidit,
 
 Multiplica diametros inter se, multiplica etiam differentiam in sui partem tertiam, & adde factos; provenit Truncus in ea dimensione, vt cujuslibet diametri quadratum valet suum Cylindrum. En superiora tria Exempla
+
+::: {.figure-pair}
+![](/img/stereometria/p29-table3.webp){alt="Photograph of the printed table, page 29"}
 
 | | | |
 |:-:|:-:|:-:|
@@ -374,6 +403,8 @@ Multiplica diametros inter se, multiplica etiam differentiam in sui partem terti
 | 135 · 12 · 81 Cyl. | 55 · 12 · 25 Cyl. | 418 · 3 · 361 Cyl. |
 | 12 · minor | 12 · minor | 3 · minor. |
 | 147 Truncus | 67. Truncus | 421. Truncus. |
+
+:::
 
 ### Corollarium II.
 

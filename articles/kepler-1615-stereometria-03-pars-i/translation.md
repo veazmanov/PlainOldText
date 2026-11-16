@@ -45,11 +45,16 @@ Then, BC being bisected at H, let the parallelogram ABHD be made, so that DH cut
 
 Since, then, the diameter GB is supposed to be 7 parts, the square of the diameter will be 49. And since there are 22 of these parts in the circumference, that is, in BC, its half BH will have 11 of them, a little less, as above. Multiply 11 by the radius 3½, that is, by AB: the rectangle AH will be 38½.
 
+::: {.figure-pair}
+![](/img/stereometria/p12-table.webp){alt="Photograph of the printed table, page 12"}
+
 | Of such parts, then, as the square on the diameter | The area of the inscribed circle has |
 |---:|:---|
 | has 49 — | 38½. |
 | twice, 98 — | — 77. |
 | Divided by 7 they make 14 — | — 11. Which was to be proved. |
+
+:::
 
 ### Corollary I.
 
@@ -95,6 +100,9 @@ If a right column with parallel bases and a pyramid, or a cylinder and a cone, h
 
 For every column, such as this pentagonal one BI, with parallel bases ABCDE and FGHIK and right angles BAF, AEK and the rest, can be resolved into its pentahedra or prisms: this pentagonal one into three, GHF, FHK, KHI, each enclosed by three parallelograms and two opposite triangles.
 
+::: {.figure-pair}
+![](/img/stereometria/p14-table.webp){alt="Photograph of the printed table, page 14"}
+
 | | First | Second | Third |
 |:--|:-:|:-:|:-:|
 | Triangles | GHF | FHK | KHI |
@@ -102,6 +110,8 @@ For every column, such as this pentagonal one BI, with parallel bases ABCDE and 
 | Parallelograms | GHCB | HCAF | KECH |
 | | HCAF | FAEK | HCDI |
 | | FABG | KECH | IDEK |
+
+:::
 
 And a pentahedron is resolved into three tetrahedra, of which any two that divide one parallelogram face equally are of equal height.
 
@@ -205,10 +215,15 @@ For the cylinder KLN with the same base and height is three times its cone NGI, 
 
 #### Summary of the foregoing.
 
+::: {.figure-pair}
+![](/img/stereometria/p21-table.webp){alt="Photograph of the printed table, page 21"}
+
 | The cone of the cylinder NGY. KLYN | The sphere of the cylinder PGOB KLYN | The cylinder KLYN | The cube STVX, enclosing the cylinder at KN, CM, LY and DE, |
 |:--|:-:|:-:|:--|
 | Are as 11 — | 22 — | 33 — | 42 and the sphere at |
 | Or as 1 — | 2 — | 3 — | 4 less G, O, B, P, Q, R. |
+
+:::
 
 ### Corollary.
 
@@ -341,6 +356,9 @@ From this the ratio of a conical frustum to the cylinders inscribed in and circu
 Let the diameters be 3 and 5. The difference is 2, which has no common factor with 3.\
 So substitute their triples, 9 and 15, difference 6, since the ratio stays the same.
 
+::: {.figure-pair}
+![](/img/stereometria/p29-table1.webp){alt="Photograph of the printed table, page 29"}
+
 | So the lesser diameter | Two arithmetic means | Greater diameter | |
 |:-:|:-:|:-:|:--|
 | 9. | 11. 13. | 15 | Lesser cyl. 81 |
@@ -349,12 +367,18 @@ So substitute their triples, 9 and 15, difference 6, since the ratio stays the s
 | For the inscribed cylinder | For the coat — For the rest of the rim | For the circumscribed cylinder | Rest of the rim 78 |
 | | | | Greater cyl. 225. |
 
+:::
+
+::: {.figure-pair}
+![](/img/stereometria/p29-table2.webp){alt="Photograph of the printed table, page 29"}
+
 | Another example | | | |
 |:-:|:-:|:-:|:-:|
 | Dia- | | | meters |
 | 5. | 7. | 9. | 11 |
 | 5. | 6. | | |
 | Cyl. 25. | Coat 42 — | Frustum 67 | |
+
 
 | Another example | | | |
 |:-:|:-:|:-:|:-:|
@@ -363,9 +387,14 @@ So substitute their triples, 9 and 15, difference 6, since the ratio stays the s
 | 19 | 3 | | |
 | Cyl. 361. | Coat 60 — | Frustum 421 | |
 
+:::
+
 Or, what comes to the same,
 
 Multiply the diameters together, multiply also the difference by its own third part, and add the products: the frustum results, in that measure in which the square of either diameter is worth its cylinder. Here are the three examples above.
+
+::: {.figure-pair}
+![](/img/stereometria/p29-table3.webp){alt="Photograph of the printed table, page 29"}
 
 | | | |
 |:-:|:-:|:-:|
@@ -374,6 +403,8 @@ Multiply the diameters together, multiply also the difference by its own third p
 | 135 · 12 · 81 cyl. | 55 · 12 · 25 cyl. | 418 · 3 · 361 cyl. |
 | 12 · lesser | 12 · lesser | 3 · lesser |
 | 147 frustum | 67 frustum | 421 frustum |
+
+:::
 
 ### Corollary II.
 

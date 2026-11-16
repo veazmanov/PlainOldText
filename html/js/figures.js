@@ -4,11 +4,11 @@
 // in view while the text about it is read; each diagram takes over from the one before once its place in the text
 // scrolls up past the middle of the window, and in the text it leaves a small marker. Where there is no room, or the
 // scans or the side-by-side translation fill the page, diagrams stay in the text; on phones each is folded behind a
-// button that shows it.
+// button that shows it. Photographs of printed tables (in a .figure-pair beside their transcription) are left alone.
 (function () {
     var figures = Array.prototype.filter.call(
         document.querySelectorAll('article > section:not(.article-head) p > img:only-child'),
-        function (img) { return !img.closest('.scan-panel') && img.parentNode.textContent.trim() === ''; }
+        function (img) { return !img.closest('.scan-panel, .figure-pair') && img.parentNode.textContent.trim() === ''; }
     ).map(function (img) { return img.parentNode; });
     if (!figures.length) return;
 

@@ -76,6 +76,9 @@ But since multiplying sines is tedious, take a shorter process: let the diagonal
 
 In this way, if there be
 
+::: {.figure-pair}
+![](/img/stereometria/p66-table.webp){alt="Photograph of the printed table, page 66"}
+
 | Height | Diameter of the base | The body of the column will be |
 |:-:|:-:|:-:|
 | 1 | 20 − | 399 |
@@ -100,6 +103,8 @@ In this way, if there be
 | 18 | 8 + | 1368 |
 | 19 | 6 + | 741 |
 | 20 | 0. | 0 |
+
+:::
 
 But in the first process I noted where the increases of the quotients, that is, of the bodies, first stopped, and from that limit decreased again; and I noted those sines. When I looked at them again after a night between, it appeared that G, the point of the circumference at which the greatest body ended, joined to A and C, gives GA, the side of the cube inscribed in the sphere AIC, and GC, the diagonal of a face of the cube, or the side of the tetrahedron in the same sphere. This, then, will be proved in the following theorems. And note that these theorems give
 
@@ -201,6 +206,9 @@ If the squares of the cylinder's height and base are given, with the diameter of
 
 Example.
 
+::: {.figure-pair}
+![](/img/stereometria/p75-table.webp){alt="Photograph of the printed table, page 75"}
+
 | | | |
 |:--|--:|:--|
 | Let the square of AG be 2000, and the square of GC also | 2000 | 167 — quotient |
@@ -211,14 +219,21 @@ Example.
 | Square of AC | 20000 | 120. TC |
 | | | 213 + sum, AV |
 
+:::
+
 ### Corollary II.
 
 But if, conversely, only the ratio of the square of the height to the square of the base diameter is given, and both diameters of the frustum's bases, the diameter of the cylinder's base is found thus. Add the numbers by which the ratio of the squares is expressed, and multiplying the difference of the frustum's diameters by the number of the greater square, divide the product by the sum of both numbers, and multiply the quotient by the frustum's lesser diameter: the square of the diameter of the cylinder's base will result.
+
+::: {.figure-pair}
+![](/img/stereometria/p76-table1.webp){alt="Photograph of the printed table, page 76"}
 
 | | | |
 |:--|:--|:--|
 | []{.page .unprinted n=76}Let CG be to GA as 3 to 2,<br>the squares as 9 to 4.<br>Let CT be 130, TA 156, difference 26. | Product 234.<br>Sum 13. | 18 quotient<br>130 CT. |
 | Product 234 | | Product 2340, square of CG. |
+
+:::
 
 Or, what is the same, multiply the number of the greater square by the lesser diameter, and make as the sum of the squares to the difference of the frustum's diameters, so the product to a fourth, which will be the square of CG.
 
@@ -226,11 +241,16 @@ Or, what is the same, multiply the number of the greater square by the lesser di
 
 If the square of AG is to the square of AC as 1 to 2, DV is the greater of the two arithmetic means between TC and AV. Hence a shorter practice.
 
+::: {.figure-pair}
+![](/img/stereometria/p76-table2.webp){alt="Photograph of the printed table, page 76"}
+
 | Dia- | | | meters. |
 |:-:|:-:|:-:|:-:|
 | 19. | 20. | 21. | 22. |
 | | | 19. | |
 | | | 399. square of GC. | |
+
+:::
 
 ### Corollary IV.
 
@@ -260,6 +280,9 @@ But let the ratio of the squares be not as 7 to 4 but as 9 to 4, that is, of the
 
 In the conjugation of equality there arises a beautiful series of ratios between the squares of the heights, namely this.
 
+::: {.figure-pair}
+![](/img/stereometria/p78-table.webp){alt="Photograph of the printed table, page 78"}
+
 | []{.page .unprinted n=78}If TC is to AV | The square of GA will be to the square of TR | In the double conjugation, such: TC. AV | sq. GA | sq. TR | First increase | Second |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | as 1 to 2 | as 1 to 2 | 1. 2. | as 3 | diff. 7. 10 | | |
@@ -271,6 +294,8 @@ In the conjugation of equality there arises a beautiful series of ratios between
 | 7. 8 | 13. 13 | 7. 8 | 291. | 31. 322. | 82 | 12 |
 | 8. 9 | 15. 16 | 8. 9 | 381. | 35. 416. | 94 | 12 |
 | 9. 10 | 17. 18. | 9. 10 | 483 | 39. 522. | 106 | 12 |
+
+:::
 
 Because the points D and R here coincide. Something of the kind occurs in every conjugation.
 
@@ -294,6 +319,9 @@ Multiplying 741 by 780, and the difference 39 by its third part 13, and adding t
 
 In the conjugation of double ratio, both of the two arithmetic means serve the calculation: the lesser for the body of the coat, the greater for the square of GC and the body of the conjugate cylinder.
 
+::: {.figure-pair}
+![](/img/stereometria/p79-tables.webp){alt="Photograph of the printed table, page 79"}
+
 | Examples. Difference. | Dia- | | | meters, |
 |:-:|:-:|:-:|:-:|:-:|
 | 3 | 19. | 20. | 21. | 22. |
@@ -303,6 +331,7 @@ In the conjugation of double ratio, both of the two arithmetic means serve the c
 | | 1444. | 421. | † 1596. | |
 | | 9. | 421. | in least terms by 7. | |
 | | \* 1435. | 177241. | † 228. \* 205 | |
+
 
 | In this conjugation, then, and with the ratio of diameters | | the cylinder is found | the frustum |
 |:-:|:-:|:-:|:-:|
@@ -318,6 +347,8 @@ In the conjugation of double ratio, both of the two arithmetic means serve the c
 | etc. | | | |
 | 19. | 20. | 3363 | 3362 + |
 
+:::
+
 Multiplying 177241 by 205 and dividing the product by 228, 158362 results, whose root, 398 +, at last shows the body of the frustum in that proportion in which the conjugate cylinder is worth 399.
 
 ### []{.page .unprinted n=80}Corollary III.
@@ -325,6 +356,9 @@ Multiplying 177241 by 205 and dividing the product by 228, 158362 results, whose
 In the figure of the ratio of equality, that is, when the height equals the diameter of the base, there are useful first the lesser of the two arithmetic means, for the coat, and then the single arithmetic mean, for the diameter GC.
 
 Example
+
+::: {.figure-pair}
+![](/img/stereometria/p80-tables.webp){alt="Photograph of the printed table, page 80"}
 
 | Diff. | Dia- | One | mean | — two | — meters. |
 |:-:|:-:|:-:|:-:|:-:|:-:|
@@ -335,6 +369,7 @@ Example
 | 4 | 9. | 1444. | — | | |
 | 9 | 1435. | 1684. | — | | |
 | In least terms 35. | — — — — | 38. by the common divisor 41. | | | |
+
 
 | In this way, in the ratio | | the cylinder is found | the frustum |
 |:-:|:-:|:-:|:-:|
@@ -349,6 +384,8 @@ Example
 | 9. | 10. | 3078. | 3160 + |
 | etc. | | | |
 | Finally 19 | 20 | 13328. | 13468 + |
+
+:::
 
 The coat is 240, the inscribed cylinder 1444, and so the frustum 1684, the square of which number, 2 835 856, multiplied by 33, and the product divided by 38, gives 2611972, and from this the root 1616 + for the body of the frustum, of parts of which the body of the conjugate cylinder is 1558: the excess is less than a fifty-second part.
 
@@ -366,11 +403,16 @@ Let there be any conjugation, whose ratio is CG to GA. I say that there is a fru
 
 A cylinder equal to a frustum of equal height has a base made up of a third each of the frustum's two bases and of their mean proportional.
 
+::: {.figure-pair}
+![](/img/stereometria/p81-table.webp){alt="Photograph of the printed table, page 81"}
+
 | | | |
 |:--|:--|:--|
 | 3. 5. | 15. twice 30. | |
 | 3. 5. | Diff. 2. 2. | 4 |
 | 9. 25. — 34. | | 34 |
+
+:::
 
 For the rectangle under the frustum's diameters is equal to the square of the mean proportional between the diameters, by Euclid VI, 17; and two such rectangles, together with the square of the difference, make the two squares of the two diameters under which the rectangles are contained, by Euclid II, 7. Three rectangles, then, together with the square of the difference, are equal to three squares, of the two diameters of the bases and of the mean proportional. So one rectangle, with a third of the square of the difference, equals a third of the sum of the proportional squares, and so a third of each of them together. And as the rectangle with the said third is to the squares of the frustum's bases, so is the body of the frustum to the bodies of the cylinders of equal height on the frustum's bases, by XVII of the first part. So also as the said three thirds are to the squares of the bases, so is []{.page .unprinted n=82}the body of the frustum (and so also of the cylinder equal to the frustum) to the bodies of the cylinders of equal height on the frustum's bases. And since the bases of such cylinders are as their bodies, so too will the base of the cylinder equal to the frustum be to the frustum's two bases; so it will be made up of a third each of them and of the mean proportional.
 
@@ -534,16 +576,24 @@ The terms by which the three ratios are expressed being rightly set out, multipl
 
 Let CIA be the conjugation of equality, and CGA the conjugation of the ratio √2 : 1 of the lines, 2 : 1 of the squares. In the corollary to Theorem III, then, the ratio of CIA to CGA is as 2828 to 3080, or 101 to 110. And in Corollary I to Theorem IX, when the ratio of the diameters is that of 1 to 2, the frustum is to the first cylinder CIA as 60 to 54, that is, as 10 to 9. In the other corollary, when the ratio of the diameters is the same, 1 to 2, the second cylinder CFA is to the frustum as 15 to 11+. So
 
+::: {.figure-pair}
+![](/img/stereometria/p97-table1.webp){alt="Photograph of the printed table, page 97"}
+
 | Frustum. | Cylinders. | Frustum. | | |
 |:-:|:-:|:-:|:--|:--|
 | 10 — 9. | | 15 — 11+ | Antecedent terms 10. 101. 15. product 15150 | Frustum CFA |
 | | 101 — 110 | | consequents 9. 110. 11+ product 10890+ | Fr. CTA |
+
+:::
 
 In least terms, as 505 to 363+, so is the frustum CFA to the frustum CTA.
 
 ### Corollary II.
 
 In the conjugations of equality and of the ratio 2 : 1 of the squares, or √2 : 1 of the lines, the ratio of the bodies through the different ratios of the diameters is this.
+
+::: {.figure-pair}
+![](/img/stereometria/p97-table2.webp){alt="Photograph of the printed table, page 97"}
 
 | In the ratio of diameters | The frustum of equality |
 |:-:|:--|
@@ -556,6 +606,8 @@ In the conjugations of equality and of the ratio 2 : 1 of the squares, or √2 :
 | 7. 8 | falls short by a 20th part |
 | 8. 9 | falls short by an 18th part |
 | 9. 10. | falls short by a 17th part |
+
+:::
 
 From there it falls short continually more, until the cylinder, the beginning of all the cones, falls short by an eleventh part.
 

@@ -88,6 +88,9 @@ Denique si tibi cognitus est numerus mensurarum, quas capit dolium totum, eum mu
 
 Cùm autem & hîc & supra sæpius usu veniat, ut quærenda sint segmenta circulorum, per sinus versos dimidiorum arcuum, quæ res molestias magnas creat; ut hac te molestia ex parte liberarem, tabellam hic confeci, quæ singulis centesimis partibus sinus versi seu sagittæ, à summo versus centrum, assignat quantitatem areæ segmenti in ea proportione, ut circuli illius totius area valet partes 15710: nec enim aptior numerus mihi exivit, utenti facili & expedita via computationis: nec nunc vacat, hunc numerum cum rotundo aliquo permutare.
 
+::: {.figure-pair}
+![](/img/stereometria/p111-table.webp){alt="Photograph of the printed table, page 111"}
+
 | | 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 |
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
 | 0. | 0 | 294 | 818 | 1478 | 2237 | 3072 | 3964 | 4900 | 5868 | 6856 | 7855 |
@@ -100,6 +103,8 @@ Cùm autem & hîc & supra sæpius usu veniat, ut quærenda sint segmenta circulo
 | 7. | 173 | 644 | 1269 | 2001 | 2815 | 3691 | 4616 | 5575 | 6558 | 7555 | |
 | 8. | 211 | 701 | 1337 | 2079 | 2900 | 3782 | 4710 | 5673 | 6658 | 7655 | |
 | 9. | 252 | 759 | 1407 | 2158 | 2985 | 3873 | 4805 | 5770 | 6757 | 7755 | |
+
+:::
 
 Vsus tabellæ: segmenti sagittam seu sinum versum, seu quod est loco eius (ut in Ventre, altitudinem vacui, in orbe ligneo, altitudinem extantis partis supra liquorem) duabus Cyphris auctum, divide per semidiametrum circuli, cuius est segmentum: quod prodit, eius denarios quære in fronte, digitos in margine, & area communis exhibebit aream segmenti, qualium area totius illius circuli valet 15710; quæ si valeret minus aut plus, reductione aliqua opus esset ad communem dimensionem.
 

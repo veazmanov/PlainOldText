@@ -88,6 +88,9 @@ Finally, if you know the number of measures the whole barrel holds, multiply it 
 
 And since both here and above it often happens that segments of circles must be found from the versed sines of the half arcs, which causes great trouble, I have made a small table here, to free you in part from this trouble, which assigns to each hundredth part of the versed sine or sagitta, from the top towards the centre, the quantity of the area of the segment in the proportion in which the area of the whole circle is worth 15710 parts: for no more suitable number came out for me, using an easy and quick way of computation; nor have I time now to exchange this number for some round one.
 
+::: {.figure-pair}
+![](/img/stereometria/p111-table.webp){alt="Photograph of the printed table, page 111"}
+
 | | 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 |
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
 | 0. | 0 | 294 | 818 | 1478 | 2237 | 3072 | 3964 | 4900 | 5868 | 6856 | 7855 |
@@ -100,6 +103,8 @@ And since both here and above it often happens that segments of circles must be 
 | 7. | 173 | 644 | 1269 | 2001 | 2815 | 3691 | 4616 | 5575 | 6558 | 7555 | |
 | 8. | 211 | 701 | 1337 | 2079 | 2900 | 3782 | 4710 | 5673 | 6658 | 7655 | |
 | 9. | 252 | 759 | 1407 | 2158 | 2985 | 3873 | 4805 | 5770 | 6757 | 7755 | |
+
+:::
 
 Use of the table: increase the sagitta or versed sine of the segment, or what stands in its place (as in the belly the height of the empty part, and in the wooden head the height of the part standing out above the liquid), by two zeros and divide by the radius of the circle whose segment it is: of what results, look for the tens along the top and the units in the margin, and the common cell will show the area of the segment, of parts of which the area of that whole circle is worth 15710; and if it were worth less or more, some reduction to a common measure would be needed.
 

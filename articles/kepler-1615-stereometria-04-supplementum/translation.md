@@ -186,17 +186,27 @@ The two pentahedra or prisms BGVXOK and KOPDBC are therefore of equal height, be
 
 []{.page .unprinted n=48}By what has so far been proved,
 
+::: {.figure-pair}
+![](/img/stereometria/p48-table1.webp){alt="Photograph of the printed table, page 48"}
+
 | For the coat | For the cylinder |
 |:-:|:-:|
 | KOP is multiplied<br>Or equivalently half PO, or PO itself | KOXV is multiplied<br>Or OX, or its double ON |
 | By a third of PA and two thirds of OC<br>Equivalently, by a third of PM and two thirds of ON<br>Equivalently, by the whole PM and two ON | By half OC<br>By half ON, that is, by OX<br>By ON, NX, that is, three OX |
 
+:::
+
 So, the terms being exchanged, there is multiplied
+
+::: {.figure-pair}
+![](/img/stereometria/p48-table2.webp){alt="Photograph of the printed table, page 48"}
 
 | | |
 |:-:|:-:|
 | PO, or its double PO, NM, that is, the difference of the diameters KL, PM. | ON, NX, or its double, which is three times ON, the lesser diameter. |
 | By the whole PM and two ON | By ON, the lesser diameter: which was to be proved. |
+
+:::
 
 The most convenient shortcut that results from this proof, take from Theorems XVI and XVII, and credit it to this supplement, of which it is a singular ornament.
 
@@ -226,11 +236,16 @@ For comparison's sake I should like to compute also the body, not of the lemon, 
 
 But according to Theorem XVII and its proof given in the last addendum: since the cylinder FHCG has been found to be 3290 etc., its half is 1645 47949 79673. And let AC be known as 22 (in its own measure) and PO or HF as 19, whose double is 38, and with AC, 22, added, the sum is 60; and let the difference of the diameters be 3; then multiplying 3 by 60 creates the rectangle 180, representing the coat; and the square of 19, the lesser diameter HF, is 361, three times which, 1083, represents the cylinder inscribed in the frustum. As 1083 to 180, then, so the cylinder 1545 etc. to the coat. Or more briefly, by the shortcut of the corollary to XVII, we shall proceed thus.
 
+::: {.figure-pair}
+![](/img/stereometria/p50-table.webp){alt="Photograph of the printed table, page 50"}
+
 | Dia- 19. 20. 21. 22. meters. | Or thus |
 |:-:|:-:|
 | 19. 3. | 19 · 3<br>22 · 3 |
 | 361. 60. | 418 · 9<br>3 |
 | 421. | 421 |
+
+:::
 
 As 361, then, to 421, so the cylinder found, 1645 etc., to 273 4868971691; and above, the cylinder being taken from the frustum, this body was 273 48641 09622. The tiny difference is made by the sines, which we used not wholly exact.
 

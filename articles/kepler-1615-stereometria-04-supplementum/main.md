@@ -186,17 +186,27 @@ Duo igitur Pentaedra seu Prismata, BGVXOK & KOPDBC sunt æquealta, quippe sub pa
 
 []{.page .unprinted n=48}Per demonstrata hactenus,
 
+::: {.figure-pair}
+![](/img/stereometria/p48-table1.webp){alt="Photograph of the printed table, page 48"}
+
 | Pro Tunica | Pro Cylindro |
 |:-:|:-:|
 | Ducitur KOP<br>Per æquipollentiam dimidia PO vel ipsa PO | Ducitur KOXV<br>vel OX, vel ejus dupla ON |
 | In trientem PA, & Bessem OC<br>Per æquipollentiam, In trientem PM & Bessem ON<br>Per æquipollentiam, In totam PM, & duas ON | In semissem OC<br>In semissem ON, hoc est, in OX<br>In ON, NX. tres scilicet OX. |
 
+:::
+
 Ducitur ergo permutatis terminis
+
+::: {.figure-pair}
+![](/img/stereometria/p48-table2.webp){alt="Photograph of the printed table, page 48"}
 
 | | |
 |:-:|:-:|
 | PO, vel ejus duplum PO, NM hoc est differentia diametrorum KL, PM. | ON, NX, vel ejus duplum, quod est triplum ipsius ON diametri minoris. |
 | In totam PM & duas ON | In ON diametrum minorem: quod erat demonstrandum. |
+
+:::
 
 Compendium quod ex hac demonstratione resultat opportunissimum, pete ex Th. XVI. XVII. & huic supplemento imputa, cuius est ornamentum singulare.
 
@@ -226,11 +236,16 @@ Lubet comparationis causa computare etiam corpus, non Citrij, sed compositum ex 
 
 At secundum Th. XVII. ejusque demonstrationem in proximo Episagmate præmissam; Cùm sit inventus Cylinder FHCG 3290 etc, quare dimidium ejus 1645 47949 79673: sciatur verò AC 22 (in sua propria mensura) & PO, vel HF 19, cujus duplum 38, & additâ AC 22. summa fiat 60, & differentia diametrorum sit 3, ductis ergo 3 in 60, creatur rectangulum 180, repræsentans Tunicam: quadratum verò 19 minoris diametri HF, id est quadratum de 19, est 361, cujus triplum 1083 repræsentat Cylindrum Trunco inscriptum. Vt ergo 1083 ad 180 sic Cylinder 1545 etc: ad Tunicam. Vel brevius, secundum compendium corollarij ad XVII. sic agemus.
 
+::: {.figure-pair}
+![](/img/stereometria/p50-table.webp){alt="Photograph of the printed table, page 50"}
+
 | Dia- 19. 20. 21. 22. metri. | Vel sic |
 |:-:|:-:|
 | 19. 3. | 19 · 3<br>22 · 3 |
 | 361. 60. | 418 · 9<br>3 |
 | 421. | 421 |
+
+:::
 
 Vt igitur 361 ad 421, sic Cylinder inventus 1645 etc: ad 273 4868971691: supra verò, Cylindro ablato à trunco, erat hoc corpus 273 48641 09622: differentiam minutulam faciunt sinus quibus non penitus exactis usi sumus.
 

@@ -76,6 +76,9 @@ Cùm autem sit tædiosa multiplicatio sinuum, accipe processum breviorem: sit di
 
 Hoc pacto si fuerit
 
+::: {.figure-pair}
+![](/img/stereometria/p66-table.webp){alt="Photograph of the printed table, page 66"}
+
 | Altitudo | Basis diameter | Erit corpus columnæ |
 |:-:|:-:|:-:|
 | 1 | 20 − | 399 |
@@ -100,6 +103,8 @@ Hoc pacto si fuerit
 | 18 | 8 + | 1368 |
 | 19 | 6 + | 741 |
 | 20 | 0. | 0 |
+
+:::
 
 Sed in priori processu attendi, ubi primùm consisterent quotientum, seu corporum, incrementa; ab eoque termino iterum decrescerent; illos igitur sinus notavi. Quos cùm interpositâ vna nocte repeterem sub aspectum; apparavit, G punctum circumferentiæ, apud quod maximum corpus terminabatur, connexum cum AC, præbere GA, latus cubi in Sphæram AIC inscripti, & GC, diagonium plani cubici, seu latus Tetraedri in eadem. Id igitur sequentibus Theorematibus demonstrabitur. Et nota quod hisce Theorematibus tradatur
 
@@ -201,6 +206,9 @@ Si dantur quadrata altitudinis & basis Cylindri, cum diametro basis minoris in T
 
 Exemplum.
 
+::: {.figure-pair}
+![](/img/stereometria/p75-table.webp){alt="Photograph of the printed table, page 75"}
+
 | | | |
 |:--|--:|:--|
 | Sit quadratum AG. 2000. quadratum GC etiam | 2000 | 167 — Quotiens |
@@ -211,14 +219,21 @@ Exemplum.
 | quadratum AC | 20000 | 120. TC |
 | | | 213 + composita, AV |
 
+:::
+
 ### Corollarium II.
 
 Si verò econtrà datur solùm proportio quadrati altitudinis ad quadratum basis diametri, & diameter utraque basium Trunci; Diameter Basis Cylindri sic invenitur. Adde numeros, quibus expressa est quadratorum proportio, & multiplicatâ differentiâ diametrorum trunci, in numerum quadrati maioris, factum divide per summam utriusque Numeri, quotientem multiplica in minorem Trunci diametrum, proveniet quadratum diametri in base Cylindri.
+
+::: {.figure-pair}
+![](/img/stereometria/p76-table1.webp){alt="Photograph of the printed table, page 76"}
 
 | | | |
 |:--|:--|:--|
 | []{.page .unprinted n=76}Sit CG ad GA ut 3. ad 2.<br>quadrata ut 9. ad 4.<br>Sit CT. 130, TA 156 differentia 26. | Factus 234.<br>Summa 13. | 18 Quotiens<br>130 CT. |
 | Factus 234 | | Factus 2340. qdm CG. |
+
+:::
 
 Vel quod idem est, numerum quadrati maioris multiplica in diametrum minorem, & fac, ut summam quadratorum ad differentiam diametrorum trunci, sic factum ad quartum, qui erit quadratum CG.
 
@@ -226,11 +241,16 @@ Vel quod idem est, numerum quadrati maioris multiplica in diametrum minorem, & f
 
 Si quadratum AG, ad quadratum AC, est ut 1. ad 2. DV est duarum medietatum arithmeticarum inter TC, AV maior; Hinc Praxis brevior.
 
+::: {.figure-pair}
+![](/img/stereometria/p76-table2.webp){alt="Photograph of the printed table, page 76"}
+
 | Dia- | | | metri. |
 |:-:|:-:|:-:|:-:|
 | 19. | 20. | 21. | 22. |
 | | | 19. | |
 | | | 399. quadratum GC. | |
+
+:::
 
 ### Corollarium IV.
 
@@ -260,6 +280,9 @@ Sit autem proportio quadratorum, non ut 7. ad 4., sed ut 9 ad 4. ipsarum sc. lin
 
 In conjugatione æqualitatis pulchra existit series proportionum inter quadrata altitudinum; talis nempe.
 
+::: {.figure-pair}
+![](/img/stereometria/p78-table.webp){alt="Photograph of the printed table, page 78"}
+
 | []{.page .unprinted n=78}Si fuerit TC ad AV | Erit qdm GA ad q. TR | In conjugatione dupla talis. TC. AV | qdm GA | qdm TR | Increm: 1ma | 2da |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | ut 1. ad 2 | ut 1. ad 2 | 1. 2. | ut 3 | d. ff 7. 10 | | |
@@ -271,6 +294,8 @@ In conjugatione æqualitatis pulchra existit series proportionum inter quadrata 
 | 7. 8 | 13. 13 | 7. 8 | 291. | 31. 322. | 82 | 12 |
 | 8. 9 | 15. 16 | 8. 9 | 381. | 35. 416. | 94 | 12 |
 | 9. 10 | 17. 18. | 9. 10 | 483 | 39. 522. | 106 | 12 |
+
+:::
 
 Quia puncta D, R hîc coëunt. Tale quid occurrit in unaqualibet Conjugatione
 
@@ -294,6 +319,9 @@ Ducto autem 741 in 780, & differentiâ 39 in partem tertiam 13, factisque additi
 
 In coniugatione duplæ proportionis, duarum medietatum arithmeticarum utraque servit calculo, minor pro Tunicæ corpore, maior pro quadrato GC, & corpore cylindri coniugati.
 
+::: {.figure-pair}
+![](/img/stereometria/p79-tables.webp){alt="Photograph of the printed table, page 79"}
+
 | Exempla Differentia. | Dia- | | | metri, |
 |:-:|:-:|:-:|:-:|:-:|
 | 3 | 19. | 20. | 21. | 22. |
@@ -303,6 +331,7 @@ In coniugatione duplæ proportionis, duarum medietatum arithmeticarum utraque se
 | | 1444. | 421. | † 1596. | |
 | | 9. | 421. | in minimis per 7. | |
 | | \* 1435. | 177241. | † 228. \* 205 | |
+
 
 | In hac ergo conjugatione & Proportione Diametrorum | | reperitur Cylinder, | Truncus |
 |:-:|:-:|:-:|:-:|
@@ -318,6 +347,8 @@ In coniugatione duplæ proportionis, duarum medietatum arithmeticarum utraque se
 | &c. | | | |
 | 19. | 20. | 3363 | 3362 + |
 
+:::
+
 Multiplicato 177241 per 205, facto diviso per 228, provenit 158362 cuius, radix 398 + denique arguit corpus Trunci in ea proportione, ut Cylinder conjugatus Valet 399.
 
 ### []{.page .unprinted n=80}Corollarium III.
@@ -325,6 +356,9 @@ Multiplicato 177241 per 205, facto diviso per 228, provenit 158362 cuius, radix 
 In figuratione proportionis æqualitatis, seu cum altitudo æquat diametrum basis, utiles sunt, primò duarum medietatum arithmeticarum minor pro Tunica, deinde vnica medietas arithmetica pro diametro GC.
 
 Exemplum
+
+::: {.figure-pair}
+![](/img/stereometria/p80-tables.webp){alt="Photograph of the printed table, page 80"}
 
 | Diff. | Dia- | Medi- | Unum | — a duo | — metri. |
 |:-:|:-:|:-:|:-:|:-:|:-:|
@@ -335,6 +369,7 @@ Exemplum
 | 4 | 9. | 1444. | — | | |
 | 9 | 1435. | 1684. | — | | |
 | In minimis 35. | — — — — | 38. per cōm. divisorem 41. | | | |
+
 
 | Hoc pacto in proportione | | Reperitur Cylin: | Truncus |
 |:-:|:-:|:-:|:-:|
@@ -349,6 +384,8 @@ Exemplum
 | 9. | 10. | 3078. | 3160 + |
 | &c. | | | |
 | Deniq; 19 | 20 | 13328. | 13468 + |
+
+:::
 
 Tunica est 240. inscriptus Cylinder 1444. Truncus ergo 1684, cuius numeri quadratum 2 835 856 multiplicatum in 33, & factus divisus per 38. prodit 2611972, & hinc radix 1616 + pro corpore. Trunci, qualium corpus Cylindri conjugati est 1558. pars minor centesimâ secundâ in excessu est.
 
@@ -366,11 +403,16 @@ Sit coniugatio quæcunque, cuius proportio CG ad GA: dico dari truncum, ut CTA, 
 
 Cylinder æqualis Trunco æquealto, basin habet compositam ex duarum basium Trunci & earum medij proportionalis Trientibus singulis.
 
+::: {.figure-pair}
+![](/img/stereometria/p81-table.webp){alt="Photograph of the printed table, page 81"}
+
 | | | |
 |:--|:--|:--|
 | 3. 5. | 15. bis 30. | |
 | 3. 5. | Diff. 2. 2. | 4 |
 | 9. 25. — 34. | | 34 |
+
+:::
 
 Nam rectangulum sub diametris Trunci, est æquale quadrato mediæ proportionalis inter diametros, per 17. VI. Eucl. & duo talia rectangula, vnâ cum quadrato differentiæ, constituunt duo quadrata duarum diametrorum, sub quibus rectangula continentur per 7. II. Eucl. Tria ergo rectangula, vna cum quadrato differentiæ, sunt æqualia tribus quadratis, & duarum diametrorum in basibus, & mediæ proportionalis. Rectangulum igitur unum, cum triente quadrati differentiæ, æquat tertiam partem summæ quadratorum proportionalium, & sic iunctos singulos singulorum Trientes. Vt vero rectangulū, cum triente dicto, ad quadrata basium trunci, sic corpus trunci ad corpora Cylindrorum æquealtorū, super trunci basibus, per XVII. p. imæ. Quare etiam ut tres dicti trientes, ad quadrata basium, sic []{.page .unprinted n=82}corpus trunci (& sic etiam cylindri trunco æqualis) ad corpora Cylindrorum super trunci basibus æquealtorum. Cùm autem talium bases ipsæ, sint ut corpora; etiam sic erit basis cylindri, trunco æqualis, ad bases duas trunci: itaque constabit ex earum & mediæ proportionalis trientibus singulis.
 
@@ -534,16 +576,24 @@ Ritè collocatis terminis, quibus exprimuntur proportiones tres, multiplica tres
 
 Sit CIA conjugatio æqualitatis, CGA conjugatio proportionis semiduplæ linearum, duplæ quadratorum. Est igitur in Corollario Th. III. proportio CIA ad CGA ut 2828 ad 3080. vel 101 ad 110. In Corollario verò I ad Th. IX. cum est proportio diametrorum, quæ 1 ad 2: Truncus est ad cylindrorum priorem CIA ut 60 ad 54, hoc est ut 10. ad 9. In Corollario altero, cum est eadem proportio diametrorum quæ 1. ad 2., cylinder posterior CFA est ad Truncum ut 15 ad 11+, Ergò
 
+::: {.figure-pair}
+![](/img/stereometria/p97-table1.webp){alt="Photograph of the printed table, page 97"}
+
 | Truncus. | Cylindri. | Trunc^o^. | | |
 |:-:|:-:|:-:|:--|:--|
 | 10.— 9. | | 15 — 11+ | Termini Antec. 10. 101. 15. factus 15150 | Truncus CFA |
 | | 101 — 110 | | conseq. 9. 110. 11+ fact^o^ 10890+ | Tr. CTA; |
+
+:::
 
 In minimis, ut 505 ad 363+ sic Truncus CFA ad Tr. CTA.
 
 ### Corollarium II.
 
 In conjugationibus Æqualitatis & duplæ quadratorum vel semiduplæ linearum proportionis, ratio corporum per diversas diametrorum proportiones est ista.
+
+::: {.figure-pair}
+![](/img/stereometria/p97-table2.webp){alt="Photograph of the printed table, page 97"}
 
 | In Proportione diametrorum | Truncus æqualitatis |
 |:-:|:--|
@@ -556,6 +606,8 @@ In conjugationibus Æqualitatis & duplæ quadratorum vel semiduplæ linearum pro
 | 7. 8 | deficit parte 20ma |
 | 8. 9 | deficit parte 18va |
 | 9. 10. | deficit parte 17ma |
+
+:::
 
 Exinde continuè plus deficit, usque dum cylinder, conorum omnium principium, deficiat parte vndecima.
 
