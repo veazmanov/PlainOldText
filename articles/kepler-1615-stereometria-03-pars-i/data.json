@@ -1,0 +1,18 @@
+{
+    "id": "e3k13",
+    "title": "Part I: The Solid Geometry of Regular Curved Figures",
+    "publication": "Nova stereometria doliorum vinariorum",
+    "collection": "kepler-1615-stereometria",
+    "category": "book-chapter",
+    "language": "Latin",
+    "author": "Johannes Kepler",
+    "full_title": "Nova stereometria doliorum vinariorum, inprimis Austriaci, figurae omnium aptissimae; et usus in eo virgae cubicae compendiosissimus et plane singularis. Accessit stereometriae Archimedeae supplementum",
+    "place": "Linz",
+    "printer": "Johannes Planck",
+    "year": "1615",
+    "page": "10–31",
+    "source_url": "https://doi.org/10.3931/e-rara-11051",
+    "source": "The first part of Kepler's *Nova stereometria doliorum vinariorum* (Linz: Johannes Planck, at the author's expense, 1615), with Kepler's address to his patrons dated 15 July 1615 at its end.",
+    "transcribed_from": "the [page images](https://doi.org/10.3931/e-rara-11051) of the copy in the ETH-Bibliothek, Zürich (Rar 356: 1 q), on e-rara.",
+    "summary": "Kepler restates Archimedes on the circle, cone, cylinder and sphere, proving his results by cutting figures into infinitely many thin triangles, cones and slices, and adds rules of his own for the conical frustum. He ends with an address to his patrons on the book's long delay at an Augsburg printer."
+}

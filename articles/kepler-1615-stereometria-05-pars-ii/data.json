@@ -1,0 +1,18 @@
+{
+    "id": "rdfmf",
+    "title": "Part II: The Solid Geometry of the Austrian Barrel in Particular",
+    "publication": "Nova stereometria doliorum vinariorum",
+    "collection": "kepler-1615-stereometria",
+    "category": "book-chapter",
+    "language": "Latin",
+    "author": "Johannes Kepler",
+    "full_title": "Nova stereometria doliorum vinariorum, inprimis Austriaci, figurae omnium aptissimae; et usus in eo virgae cubicae compendiosissimus et plane singularis. Accessit stereometriae Archimedeae supplementum",
+    "place": "Linz",
+    "printer": "Johannes Planck",
+    "year": "1615",
+    "page": "61–100",
+    "source_url": "https://doi.org/10.3931/e-rara-11051",
+    "source": "The second part of Kepler's *Nova stereometria doliorum vinariorum* (Linz: Johannes Planck, at the author's expense, 1615).",
+    "transcribed_from": "the [page images](https://doi.org/10.3931/e-rara-11051) of the copy in the ETH-Bibliothek, Zürich (Rar 356: 1 q), on e-rara.",
+    "summary": "Kepler shows that of all cylinders with the same diagonal the largest has its diameter to its height as the side of a tetrahedron to the side of a cube, that the Austrian coopers' rule comes close to it, and that near this maximum small departures in shape barely change the volume, which is why the gauger's single slanting rod can be trusted for Austrian barrels."
+}
