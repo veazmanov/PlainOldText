@@ -83,3 +83,6 @@ $has_marginalia = preg_match('/class="(?:[^"]*\s)?(?:page|sidenote|marginnote|pa
 
     <script src="<?= asset('js/article.js') ?>"></script>
 <?php endif; ?>
+
+<?php // Diagrams beside the text on wide screens, folded on phones; does nothing on an article without any ?>
+<script src="<?= asset('js/figures.js') ?>" defer></script>

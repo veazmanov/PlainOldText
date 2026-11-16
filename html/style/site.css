@@ -2082,3 +2082,102 @@ body:where(.page-article).show-translation label.margin-toggle {
     margin-top: -0.75rem;
 }
 
+
+/* ---- Diagrams (figures.js): a paragraph holding only an image. In the text by default; on wide screens with room
+        beside the text (body.figures-docked) the one for the passage being read is shown in a panel fixed to the
+        right of the text, and in the text each leaves a marker; on phones (body.figures-folded) each is folded
+        behind a button ---- */
+:where(.page-article) p.figure img {
+    display: block;
+    filter: var(--scan-dim);
+}
+
+:where(.page-article) .figure-marker,
+:where(.page-article) .figure-toggle,
+.figure-dock {
+    display: none;
+}
+
+body.figures-docked p.figure img {
+    display: none;
+}
+
+body.figures-docked .figure-marker {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    border-left: 2px solid var(--rule);
+    padding-left: 0.6rem;
+}
+
+body.figures-docked p.figure.figure-current .figure-marker {
+    color: var(--accent);
+    border-left-color: var(--accent);
+}
+
+body.figures-docked .figure-dock {
+    display: block;
+    position: fixed;
+    top: 2rem;
+    left: var(--figure-dock-left);
+    width: var(--figure-dock-width);
+    max-height: calc(100vh - 4rem);
+    margin: 0;
+    z-index: 5;
+    transition: opacity 0.2s;
+}
+
+body.figures-docked .figure-dock.figure-dock-empty {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.figure-dock img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 7rem);
+    width: auto;
+    height: auto;
+    filter: var(--scan-dim);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+.figure-dock-label {
+    width: auto;
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: var(--ink-muted);
+}
+
+body.figures-folded .figure-toggle {
+    display: inline-block;
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+}
+
+body.figures-folded p.figure:not(.figure-open) img {
+    display: none;
+}
+
+body.figures-folded p.figure.figure-open img {
+    margin-top: 0.75rem;
+}
+:where(.page-article) p.figure { text-indent: 0; }
+
+/* In the text, no taller than the window (the fold-out Schema XVIII is very tall); beside the Latin in the
+   side-by-side view, once only, in the Latin column */
+:where(.page-article) p.figure img {
+    max-height: 90vh;
+    width: auto;
+}
+
+body:where(.page-article).show-translation .parallel-translation p.figure {
+    display: none;
+}
