@@ -15,7 +15,8 @@ function commentary_all(): array
     if ($all !== null) {
         return $all;
     }
-    $local = php_sapi_name() === 'cli-server';
+    // php -S (./dev), or Caddy at lib.localhost, which sets LIB_LOCAL
+    $local = php_sapi_name() === 'cli-server' || !empty($_SERVER['LIB_LOCAL']);
     $all = [];
     foreach (glob($articles_base . '/_commentary/*.json') as $json) {
         $c = json_decode(file_get_contents($json), true);
