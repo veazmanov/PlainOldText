@@ -140,23 +140,6 @@ hr {
     border-color: var(--accent);
 }
 
-/* Dagger after the name, glossed by the address beneath the plaque like a footnote */
-.site-logo-mark {
-    margin-left: 0.08em;
-    font-size: 0.5em;
-    vertical-align: super;
-    line-height: 0;
-    letter-spacing: 0;
-}
-
-.site-masthead-note {
-    margin: 0.6rem 0 0;
-    font-size: 0.95rem;
-    font-style: italic;
-    letter-spacing: 0.03em;
-    color: var(--ink-muted);
-}
-
 /* ---- Primary nav: a centred band between hairline rules ---- */
 .site-nav {
     margin: 1.5rem 12.5% 0 0;
@@ -1011,11 +994,6 @@ body:where(.page-article) .site-logo-name::before {
 
 body:where(.page-article) .site-logo-name::after {
     content: none;
-}
-
-body:where(.page-article) .site-logo-mark,
-body:where(.page-article) .site-masthead-note {
-    display: none;
 }
 
 body:where(.page-article) .site-logo:hover .site-logo-name,

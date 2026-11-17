@@ -1,9 +1,8 @@
 <?php $current_page = $current_page ?? ''; ?>
 <div class="site-masthead">
     <a class="site-logo" href="/">
-        <span class="site-logo-name"><?= htmlspecialchars($site_name) ?><span class="site-logo-mark" aria-hidden="true">&dagger;</span></span>
+        <span class="site-logo-name"><?= htmlspecialchars($site_name) ?></span>
     </a>
-    <p class="site-masthead-note"><span aria-hidden="true">&dagger;</span> plainoldtext.vjbe.net</p>
     <?php // Shown only in print: the day the page was printed and where from (an article's stable URL, from its
     // canonical tag), filled in as the print dialog opens ?>
     <p class="print-stamp" id="print-stamp"></p>
