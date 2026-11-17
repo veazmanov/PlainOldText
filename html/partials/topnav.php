@@ -1,5 +1,6 @@
 <?php $current_page = $current_page ?? ''; ?>
 <div class="site-masthead">
+    <p class="site-masthead-owner">Victor Azmanov&rsquo;s</p>
     <a class="site-logo" href="/">
         <span class="site-logo-name"><?= htmlspecialchars($site_name) ?></span>
     </a>

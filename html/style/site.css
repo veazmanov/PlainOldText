@@ -123,6 +123,15 @@ hr {
     white-space: nowrap;
 }
 
+/* Whose it is, in small italic above the plaque */
+.site-masthead-owner {
+    margin: 0 0 0.45rem;
+    font-size: 0.95rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: var(--ink-muted);
+}
+
 /* Diamond ornaments flanking the name */
 .site-logo-name::before,
 .site-logo-name::after {
@@ -972,6 +981,11 @@ body:where(.page-article) > header {
 body:where(.page-article) .site-masthead {
     margin: 0;
     text-align: left;
+}
+
+body:where(.page-article) .site-masthead-owner {
+    margin: 0 0 0.15rem;
+    font-size: 0.8rem;
 }
 
 body:where(.page-article) .site-logo {
