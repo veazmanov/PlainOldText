@@ -2216,6 +2216,11 @@ body:where(.page-article).show-translation .parallel-translation .editor-note::b
     margin-top: 0;
 }
 
+:where(.page-article) .figure-pair :is(th, td) {
+    padding: 0.1rem 0.5rem;
+    vertical-align: top;
+}
+
 /* Side by side with the translation, the photograph is shown once, beside the original */
 body:where(.page-article).show-translation .parallel-translation .figure-pair > p:first-child {
     display: none;

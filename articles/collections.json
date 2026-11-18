@@ -81,5 +81,16 @@
         "source": "Huygens, Christiaan. *Discours de la cause de la pesanteur*. In *Traité de la lumière*, by Christiaan Huygens. Leiden: Pierre vander Aa, 1690.",
         "transcribed_from": "the [page images](https://archive.org/details/bub_gb_X9PKaZlChggC) of a copy digitised by Google Books, on the Internet Archive.",
         "copyright": "In the public domain. Huygens died in 1695; the scan carries the Public Domain Mark."
+    },
+    "kepler-1597-schreibcalender": {
+        "id": "c5rs5",
+        "source_url": "https://publikationen.badw.de/de/008831995",
+        "title": "Schreib Calender auff das Jahr 1598",
+        "subtitle": "Kepler's calendar and prognostication for 1598",
+        "author": "Johannes Kepler",
+        "summary": "The calendar and prognostication Kepler made for Styria for 1598 while he taught mathematics at Graz: the only one of his six Graz calendars whose calendar survives, with the Practica in which he argues that astrology can foretell only in general and describes the three eclipses of the year.",
+        "source": "Kepler, Johannes. *Schreib Calender, Auff das Jahr nach deß Herren Christi vnsers Erlösers Geburt M. D. XCVIII* and *Practica. Auff die vier zeiten / auch andere Bedeutungen der Planeten vnd Finsternussen*. Graz: Hans Schmidt, 1597. Copy in the Steiermärkische Landesbibliothek, Graz.",
+        "transcribed_from": "Johannes Kepler, *Gesammelte Werke*, vol. 11.2, *Calendaria et Prognostica*, ed. Volker Bialas and Helmuth Grössing (Munich, 1993), pp. 19–44: the facsimile of the calendar and the edited text of the Practica. The Bavarian Academy of Sciences publishes the volume [online](https://publikationen.badw.de/de/008831995) under a CC BY licence.",
+        "copyright": "Kepler's text is in the public domain; he died in 1630. The photographs are cropped from the facsimiles in *Gesammelte Werke* 11.2, published by the Bavarian Academy of Sciences under a CC BY licence. The editors' notes and commentary are not reproduced."
     }
 }

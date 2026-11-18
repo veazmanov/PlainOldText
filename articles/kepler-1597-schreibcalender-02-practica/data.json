@@ -1,0 +1,37 @@
+{
+    "id": "cp61y",
+    "title": "Practica",
+    "publication": "Schreib Calender auff das Jahr 1598",
+    "collection": "kepler-1597-schreibcalender",
+    "category": "book-chapter",
+    "language": "German",
+    "author": "Johannes Kepler",
+    "place": "Graz",
+    "printer": "Hans Schmidt",
+    "year": "1597",
+    "source_url": "https://publikationen.badw.de/de/008831995",
+    "full_title": "Practica. Auff die vier zeiten / auch andere Bedeutungen der Planeten vnd Finsternussen. Gestelt auff das Jahr nach Christi Geburt M. D. XCVIII",
+    "source": "The prognostication printed with Kepler's calendar for 1598 (Graz: Hans Schmidt, 1597), with his dedication to the Estates of Styria dated 1 September 1597. The copy is in the Steiermärkische Landesbibliothek, Graz.",
+    "transcribed_from": "the text in Johannes Kepler, *Gesammelte Werke*, vol. 11.2, *Calendaria et Prognostica*, ed. Volker Bialas and Helmuth Grössing (Munich, 1993), pp. 36–44, which the Bavarian Academy of Sciences publishes [online](https://publikationen.badw.de/de/008831995) under a CC BY licence. The photograph of the title page is cropped from its facsimile.",
+    "summary": "Kepler's forecast for 1598. In the dedication he argues that prophecies which come true owe it to God, to the Devil or to luck, not to astrology, which can foretell only in general; then he gives the year's weather, describes the three eclipses of 1598, among them the great solar eclipse of 7 March, and reads them cautiously: the heavens cannot make war or peace, and whoever is stronger brings the heavens to his side.",
+    "notes": [
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "ein kleins nach aindlff vhr",
+            "note": "*aindlff*: eleven (*elf*)."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "mein Viertes Prognosticum",
+            "note": "His fourth: Kepler had made the calendars and prognostications for 1595, 1596 and 1597. Those for 1595 and 1596 are lost; of 1597's only the Practica survives."
+        },
+        {
+            "edition": "main",
+            "type": "explanatory",
+            "on": "Heinrich der letzte König in Portugal",
+            "note": "Cardinal Henry, King of Portugal, died on 31 January 1580; Philip II of Spain took the crown that year."
+        }
+    ]
+}
