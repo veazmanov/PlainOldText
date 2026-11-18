@@ -58,6 +58,7 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 
 ![](/img/schreibcalender-1598/01-januarius.webp){alt="Photograph of the calendar page for Januarius" data-label="Januarius"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | a New Jahr. | 20 ♎︎ | ‡▽ Sonschein | Von der beschneidung Christi. Lu. 2. |
@@ -91,11 +92,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | a Valerius | 29 ♎︎ | †▽ schein. |  |
 | 30 | b Adelgund. | 12 ♏︎ | ☾ 8.32.V. |  |
 | 31 | c Virgilius | 26 ♏︎ | ♃ dir: ‡▽ ✱ wind |  |
+:::
 
 ## Februarius · Hornung.
 
 ![](/img/schreibcalender-1598/02-februarius.webp){alt="Photograph of the calendar page for Februarius" data-label="Februarius"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | D. Esto mi. Bri. | 10 ♐︎ | ♂ dir: ✱ | Esto mih. Er nam zu sich die zwölff. Luce am 18. |
@@ -126,11 +129,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 26 | a Nestorius | 8 ♏︎ | ‡▽ ✱ Lind sons. |  |
 | 27 | b Leander | 22 ♏︎ | †▽ ✱ doch vnstet |  |
 | 28 | c Hildegard. | 6 ♐︎ | ☾ 7.2.N. |  |
+:::
 
 ## Martius · Mertz.
 
 ![](/img/schreibcalender-1598/03-martius.webp){alt="Photograph of the calendar page for Martius" data-label="Martius"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | D Letare | 20 ♐︎ | ‡▽ ✱ frisch | Letare. Von den 5 gerstenbrot. Jo. 6. |
@@ -164,11 +169,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | D Quasimo. | 0 ♑︎ | ☿ dir: wind ✗ |  |
 | 30 | e Guido | 15 ♑︎ | ☾ 2.3·.V. |  |
 | 31 | f Balbina | 29 ♑︎ | ♠︎ ✤ Donner | Quas. Am abend aber dessel: Jo. 20 |
+:::
 
 ## Aprilis · April.
 
 ![](/img/schreibcalender-1598/04-aprilis.webp){alt="Photograph of the calendar page for Aprilis" data-label="Aprilis"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | g Hugo | 14 ♒︎ | ‡▽ ✱ Schön | Mise. Ich bin ein gueter Hirt. Jo. 10. |
@@ -201,11 +208,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 28 | f Vitalis | 10 ♒︎ | ☾ 8.9 V. |  |
 | 29 | g Peter mart. | 24 ♒︎ | ♀ ♉︎ ‡▽ |  |
 | 30 | a Auffart | 9 ♓︎ | ‡▽✤ ✱ Doñer. |  |
+:::
 
 ## Maius · May.
 
 ![](/img/schreibcalender-1598/05-maius.webp){alt="Photograph of the calendar page for Maius" data-label="Maius"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | b Philip: Jac. | 23 ♓︎ | †▽ ✤ Ver- | Exau. Wen aber d' Tröst. Jo. 15. 16 |
@@ -239,11 +248,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | b Maximin. | 3 ♈︎ | Don- ✗ |  |
 | 30 | c Felix bapst | 17 ♈︎ | †▽ ner win- |  |
 | 31 | D 2. Petronel. | 30 ♈︎ | ‡▽ ✱ dig. | 2. Vom grossen Abendmal / Luce am 14. |
+:::
 
 ## Junius · Brachmon.
 
 ![](/img/schreibcalender-1598/06-junius.webp){alt="Photograph of the calendar page for Junius" data-label="Junius"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | e Nicodemus | 13 ♉︎ | ♠︎ heisse zeit ✗ |  |
@@ -276,11 +287,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 28 | D 6. Leo bapst | 10 ♉︎ | ♠︎ se vnd |  |
 | 29 | e Peter Paul | 22 ♉︎ | ♃ ♋︎. ✤ düere |  |
 | 30 | f Paul gedäch. | 5 ♊︎ | zeit. |  |
+:::
 
 ## Julius · Hewmon.
 
 ![](/img/schreibcalender-1598/07-julius.webp){alt="Photograph of the calendar page for Julius" data-label="Julius"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | g Otto | 17 ♊︎ | ☿ ℞. Wind regen | 7. Jesus speist mit 7. Brot. Marc. 8. |
@@ -314,11 +327,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | g Beatrix | 26 ♊︎ | Vngewiter ✗ |  |
 | 30 | a Abdon | 8 ♋︎ | †▽ ✱ Schön |  |
 | 31 | b Germanus | 20 ♋︎ | †▽ heiß |  |
+:::
 
 ## Augustus · Augstmon.
 
 ![](/img/schreibcalender-1598/08-augustus.webp){alt="Photograph of the calendar page for Augustus" data-label="Augustus"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | c Peter kettēfeur | 2 ♌︎ | Einkömling | 11. Vom Pharise. vñ Zölner. Lu. 18. |
@@ -352,11 +367,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | c Johan enth. | 11 ♌︎ | ▽ schön vñ warm |  |
 | 30 | D 15. Adauct. | 23 ♌︎ | September |  |
 | 31 | e Rebecca | 4 ♍︎ | ● 7.56.N. | 15. Niemand kan 2 herrn. Matt. 6. |
+:::
 
 ## September · Herbstmon.
 
 ![](/img/schreibcalender-1598/09-september.webp){alt="Photograph of the calendar page for September" data-label="September"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | f Egidius | 16 ♍︎ | ✤ ♠︎ Schön |  |
@@ -389,11 +406,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 28 | e Wenceslaus | 13 ♍︎ | ✤ ♠︎ schein. |  |
 | 29 | Michael | 25 ♍︎ | ♠︎ Weinmon |  |
 | 30 | g Hieronimus | 7 ♎︎ | ● 11.50.V. ♀ ♍︎ |  |
+:::
 
 ## October · Weinmon.
 
 ![](/img/schreibcalender-1598/10-october.webp){alt="Photograph of the calendar page for October" data-label="October"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | a Remigius | 19 ♎︎ | ▽ bald nebel | 20. Vom Hochzeitlichē kl. Matt. 22. |
@@ -427,11 +446,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | a Narcissus | 29 ♎︎ | Wintermon. |  |
 | 30 | b Felicianus | 11 ♏︎ | ● 2.56.V. |  |
 | 31 | c Wolffgang | 24 ♏︎ | ‡▽ wind schön |  |
+:::
 
 ## November · Wintermon.
 
 ![](/img/schreibcalender-1598/11-november.webp){alt="Photograph of the calendar page for November" data-label="November"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | D 24. Allheil. | 8 ♐︎ | ‡▽ ✱ schön win- | 24. Jesus erweckt des Ob. Mat. 9. |
@@ -464,11 +485,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 28 | c Gunther | 4 ♐︎ | ● 4.46.N. |  |
 | 29 | D 1. Advent | 17 ♐︎ | †▽ win- |  |
 | 30 | e Andreas | 1 ♑︎ | ♠︎ dig schön lind. | 1. Advent. Von d' einreittung Christi / Matth. 21. |
+:::
 
 ## December · Christmon.
 
 ![](/img/schreibcalender-1598/12-december.webp){alt="Photograph of the calendar page for December" data-label="December"}
 
+::: {.calendar}
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
 | 1 | f Longinus | 15 ♑︎ | Vnstet ✗ | 2. Es werden zeichen geschehen an Son. Luce. 21. |
@@ -502,6 +525,7 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | f Thomas Bi | 25 ♑︎ | ♠︎ Sonnen- |  |
 | 30 | g David | 10 ♒︎ | †▽ schein. |  |
 | 31 | a Sylvester. | 24 ♒︎ | †▽ Kalt. |  |
+:::
 
 ## In dieser Figur sihet man / in welchem Zeichen zu jedem Glid das Lassen zu meyden sey.
 

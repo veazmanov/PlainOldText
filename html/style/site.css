@@ -2221,6 +2221,29 @@ body:where(.page-article).show-translation .parallel-translation .editor-note::b
     vertical-align: top;
 }
 
+/* ---- A month of a printed calendar (::: {.calendar}): a table of five narrow columns, kept to the text column
+        so it doesn't run under the docked diagram beside it ---- */
+:where(.page-article) .calendar {
+    max-width: 500px;
+    overflow-x: auto;
+    margin: 1.4rem 0;
+}
+
+:where(.page-article) .calendar table {
+    width: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+:where(.page-article) .calendar :is(th, td) {
+    padding: 0.1rem 0.4rem;
+    vertical-align: top;
+}
+
+:where(.page-article) .calendar td:last-child {
+    min-width: 7rem;
+}
+
 /* Side by side with the translation, the photograph is shown once, beside the original */
 body:where(.page-article).show-translation .parallel-translation .figure-pair > p:first-child {
     display: none;
