@@ -21,8 +21,8 @@ $body_class = $body_class ?? '';
         <link rel="canonical" href="<?= htmlspecialchars($canonical_url) ?>">
     <?php endif; ?>
     <?php // The body font, so the text doesn't first appear in the fallback serif ?>
-    <link rel="preload" href="/style/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
-    <link rel="stylesheet" href="<?= asset('style/tufte.css') ?>">
+    <link rel="preload" href="/style/tufte/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="<?= asset('style/tufte/tufte.css') ?>">
     <link rel="stylesheet" href="<?= asset('style/site.css') ?>">
     <?php if (in_array('page-article', explode(' ', $body_class))): ?>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

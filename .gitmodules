@@ -1,0 +1,3 @@
+[submodule "html/style/tufte"]
+	path = html/style/tufte
+	url = https://github.com/veazmanov/tufte-css.git
