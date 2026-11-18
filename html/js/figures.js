@@ -18,8 +18,10 @@
     var current = null;
     var ticking = false;
 
-    // "Schema XIV" from an alt text such as "Schema XIV: a tall rectangle…", or plain "Diagram"
+    // The image's own label ({data-label="Januarius"} in the Markdown), "Schema XIV" from an alt text such as
+    // "Schema XIV: a tall rectangle…", or plain "Diagram"
     function label(img) {
+        if (img.getAttribute('data-label')) return img.getAttribute('data-label');
         var m = (img.getAttribute('alt') || '').match(/^Schema [IVXLC]+/);
         return m ? m[0] : 'Diagram';
     }

@@ -1,18 +1,18 @@
 # Schreib Calender auff das Jahr 1598
 
 ::: {.editorial-note}
-Each month is shown as a photograph of its page with the transcription beneath. Saints' days, feasts and weather are given as printed, row by row, so a word the printer divided between two days (*Son- / schein*) is divided here too. The column headings are supplied; the last column is the Sunday Gospel printed in the margin beside the woodcuts, placed in the row where it begins. Red printing is not distinguished. Long s is given as s. *V.* and *N.* after a time are hours before and after noon (*Stund vor* and *nach Mittag*).
+Each month is transcribed beside a photograph of its page. Saints' days, feasts and weather are given as printed, row by row, so a word the printer divided between two days (*Son- / schein*) is divided here too. The column headings are supplied; the last column is the Sunday Gospel printed in the margin beside the woodcuts, placed in the row where it begins. Red printing is not distinguished. Long s is given as s. *V.* and *N.* after a time are hours before and after noon (*Stund vor* and *nach Mittag*).
 
 The calendar's marks are given with these stand-ins: ● new moon, ☽ first quarter, ○ full moon (printed as a solid disc, like the new moon, but in red), ☾ last quarter; ‡ *Außerwelt lassen*, † *Mittel Aderlassen*, ▽ *Gut baden vnd schrepffen*, ✤ *Gut Säen / Pflantzen*, ♠︎ *Gut Kinder entwehnen*, ✗ *Böß Aderlassen oder Artzney einnemen ausser der Noth*, ℞ *Hindersich lauffent*. The star ✱ is not explained in the key. The signs of the zodiac and the planets are given in their modern forms; in the moon column the printer used small pictures of the signs. Where a worn planet sign could be read two ways, the reading that fits that planet's motion through the year is given.
 :::
 
-![](/img/schreibcalender-1598/title.webp){alt="Photograph of the title page, with the arms of Styria in a woodcut border"}
+![](/img/schreibcalender-1598/title.webp){alt="Photograph of the title page, with the arms of Styria in a woodcut border" data-label="Title page"}
 
 Schreib Calender / Auff das Jahr nach deß Herren Christi vnsers Erlösers Geburt. M. D. XCVIII. Gestelt durch M. Joannem Kheplerum / Einer Ersamen Landschafft deß Hertzogthumbs Steyr Mathematicum.
 
 Gedruckt zu Grätz in Steyer / durch Hansen Schmidt.
 
-![](/img/schreibcalender-1598/title-verso.webp){alt="Photograph of the page giving the year's reckonings and the signs of the planets"}
+![](/img/schreibcalender-1598/title-verso.webp){alt="Photograph of the page giving the year's reckonings and the signs of the planets" data-label="Title verso"}
 
 Im Jahr nach der geburt vnd gnadenreichen Menschwerdung Jhesu Christi vnsers Einigen Erlösers vnd Seligmachers / als man zelt 1598. Nach erschaffung der Welt 5560. Nach der Sündtflut 3904. Das Ander nach dem Schaltjar.
 
@@ -29,8 +29,7 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 
 ♄ Saturnus / ♃ Jupiter / ♂ Mars / ☉ Sonn / ♀ Venus / ☿ Mercurius / ☾ Mon
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/merckzeichen.webp){alt="Photograph of the key to the calendar's marks and the signs of the zodiac"}
+![](/img/schreibcalender-1598/merckzeichen.webp){alt="Photograph of the key to the calendar's marks and the signs of the zodiac" data-label="Merckzeichen"}
 
 ### Erklerung etlicher Merckzeichen in diesem Allmanach.
 
@@ -51,16 +50,13 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | Hindersich lauffent | ℞ |
 | Für sich lauffent. | dir: |
 
-:::
-
 ### Character der Zwölff Himblischen Zeichen.
 
 ♈︎ Wider / ♉︎ Stier / ♊︎ Zwiling / ♋︎ Krebs / ♌︎ Löw / ♍︎ Junckfraw / ♎︎ Wag / ♏︎ Scorpion / ♐︎ Schütz / ♑︎ Steinbock / ♒︎ Wasserman / ♓︎ Visch.
 
 ## Januarius · Jenner.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/01-januarius.webp){alt="Photograph of the calendar page for Januarius"}
+![](/img/schreibcalender-1598/01-januarius.webp){alt="Photograph of the calendar page for Januarius" data-label="Januarius"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -96,12 +92,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 30 | b Adelgund. | 12 ♏︎ | ☾ 8.32.V. |  |
 | 31 | c Virgilius | 26 ♏︎ | ♃ dir: ‡▽ ✱ wind |  |
 
-:::
-
 ## Februarius · Hornung.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/02-februarius.webp){alt="Photograph of the calendar page for Februarius"}
+![](/img/schreibcalender-1598/02-februarius.webp){alt="Photograph of the calendar page for Februarius" data-label="Februarius"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -134,12 +127,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 27 | b Leander | 22 ♏︎ | †▽ ✱ doch vnstet |  |
 | 28 | c Hildegard. | 6 ♐︎ | ☾ 7.2.N. |  |
 
-:::
-
 ## Martius · Mertz.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/03-martius.webp){alt="Photograph of the calendar page for Martius"}
+![](/img/schreibcalender-1598/03-martius.webp){alt="Photograph of the calendar page for Martius" data-label="Martius"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -175,12 +165,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 30 | e Guido | 15 ♑︎ | ☾ 2.3·.V. |  |
 | 31 | f Balbina | 29 ♑︎ | ♠︎ ✤ Donner | Quas. Am abend aber dessel: Jo. 20 |
 
-:::
-
 ## Aprilis · April.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/04-aprilis.webp){alt="Photograph of the calendar page for Aprilis"}
+![](/img/schreibcalender-1598/04-aprilis.webp){alt="Photograph of the calendar page for Aprilis" data-label="Aprilis"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -215,12 +202,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | g Peter mart. | 24 ♒︎ | ♀ ♉︎ ‡▽ |  |
 | 30 | a Auffart | 9 ♓︎ | ‡▽✤ ✱ Doñer. |  |
 
-:::
-
 ## Maius · May.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/05-maius.webp){alt="Photograph of the calendar page for Maius"}
+![](/img/schreibcalender-1598/05-maius.webp){alt="Photograph of the calendar page for Maius" data-label="Maius"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -256,12 +240,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 30 | c Felix bapst | 17 ♈︎ | †▽ ner win- |  |
 | 31 | D 2. Petronel. | 30 ♈︎ | ‡▽ ✱ dig. | 2. Vom grossen Abendmal / Luce am 14. |
 
-:::
-
 ## Junius · Brachmon.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/06-junius.webp){alt="Photograph of the calendar page for Junius"}
+![](/img/schreibcalender-1598/06-junius.webp){alt="Photograph of the calendar page for Junius" data-label="Junius"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -296,12 +277,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | e Peter Paul | 22 ♉︎ | ♃ ♋︎. ✤ düere |  |
 | 30 | f Paul gedäch. | 5 ♊︎ | zeit. |  |
 
-:::
-
 ## Julius · Hewmon.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/07-julius.webp){alt="Photograph of the calendar page for Julius"}
+![](/img/schreibcalender-1598/07-julius.webp){alt="Photograph of the calendar page for Julius" data-label="Julius"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -337,12 +315,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 30 | a Abdon | 8 ♋︎ | †▽ ✱ Schön |  |
 | 31 | b Germanus | 20 ♋︎ | †▽ heiß |  |
 
-:::
-
 ## Augustus · Augstmon.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/08-augustus.webp){alt="Photograph of the calendar page for Augustus"}
+![](/img/schreibcalender-1598/08-augustus.webp){alt="Photograph of the calendar page for Augustus" data-label="Augustus"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -378,12 +353,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 30 | D 15. Adauct. | 23 ♌︎ | September |  |
 | 31 | e Rebecca | 4 ♍︎ | ● 7.56.N. | 15. Niemand kan 2 herrn. Matt. 6. |
 
-:::
-
 ## September · Herbstmon.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/09-september.webp){alt="Photograph of the calendar page for September"}
+![](/img/schreibcalender-1598/09-september.webp){alt="Photograph of the calendar page for September" data-label="September"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -418,12 +390,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | Michael | 25 ♍︎ | ♠︎ Weinmon |  |
 | 30 | g Hieronimus | 7 ♎︎ | ● 11.50.V. ♀ ♍︎ |  |
 
-:::
-
 ## October · Weinmon.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/10-october.webp){alt="Photograph of the calendar page for October"}
+![](/img/schreibcalender-1598/10-october.webp){alt="Photograph of the calendar page for October" data-label="October"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -459,12 +428,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 30 | b Felicianus | 11 ♏︎ | ● 2.56.V. |  |
 | 31 | c Wolffgang | 24 ♏︎ | ‡▽ wind schön |  |
 
-:::
-
 ## November · Wintermon.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/11-november.webp){alt="Photograph of the calendar page for November"}
+![](/img/schreibcalender-1598/11-november.webp){alt="Photograph of the calendar page for November" data-label="November"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -499,12 +465,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 29 | D 1. Advent | 17 ♐︎ | †▽ win- |  |
 | 30 | e Andreas | 1 ♑︎ | ♠︎ dig schön lind. | 1. Advent. Von d' einreittung Christi / Matth. 21. |
 
-:::
-
 ## December · Christmon.
 
-::: {.figure-pair}
-![](/img/schreibcalender-1598/12-december.webp){alt="Photograph of the calendar page for December"}
+![](/img/schreibcalender-1598/12-december.webp){alt="Photograph of the calendar page for December" data-label="December"}
 
 | | | ☽ | | |
 |-:|:--|-:|:--|:--|
@@ -540,11 +503,9 @@ Die bewegliche vnd vnbewegliche Fest / sambt den Euangelijs / der Tagleng / vñ 
 | 30 | g David | 10 ♒︎ | †▽ schein. |  |
 | 31 | a Sylvester. | 24 ♒︎ | †▽ Kalt. |  |
 
-:::
-
 ## In dieser Figur sihet man / in welchem Zeichen zu jedem Glid das Lassen zu meyden sey.
 
-![](/img/schreibcalender-1598/lassmann.webp){alt="Photograph of the bloodletting figure: a man surrounded by the twelve signs of the zodiac, each panel marked BÖS, GVET or MITL"}
+![](/img/schreibcalender-1598/lassmann.webp){alt="Photograph of the bloodletting figure: a man surrounded by the twelve signs of the zodiac, each panel marked BÖS, GVET or MITL" data-label="Laßmann"}
 
 Laß an eim Glid zu kainer frist /\
 Wann der Mond in dem zeichen ist,\
